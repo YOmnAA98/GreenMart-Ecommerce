@@ -1,0 +1,30 @@
+.top-featured .title h3 span {
+  font-weight: 300;
+}
+.top-featured .nav {
+  width: fit-content;
+  margin: auto;
+}
+.top-featured .nav button {
+  color: var(--dark-text-color);
+  font-size: var(--text-small);
+  font-weight: var(--main-weight);
+  border: none;
+  border: 1px solid transparent;
+}
+.top-featured .nav button.active,
+.top-featured .nav button:hover {
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+@media screen and (max-width: 767px) {
+  .top-featured .nav {
+    border: none;
+  }
+  .top-featured .nav button,
+  .top-featured .nav button.active,
+  .top-featured .nav button:hover{
+    border: none;
+  }
+}

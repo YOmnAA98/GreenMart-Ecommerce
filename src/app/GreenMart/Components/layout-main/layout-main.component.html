@@ -1,3 +1,24 @@
+<div class="side-menu" *ngIf="isShown">
+  <ul class="list-group">
+    <li class="list-group-item p-0 border-0">
+      <a routerLink="wishlist">
+        <i class="position-relative fa-solid fa-heart">
+          <span class="badge circle-badge">0</span>
+        </i>
+      </a>
+    </li>
+    <li class="list-group-item p-0 border-0">
+      <a routerLink="cart">
+        <i class="position-relative fa-solid fa-cart-shopping">
+          <span class="badge circle-badge">0</span>
+        </i>
+      </a>
+    </li>
+    <li class="list-group-item p-0 border-0">
+      <a (click)="goUp()"><i class="fa-solid fa-arrow-up"></i></a>
+    </li>
+  </ul>
+</div>
 <app-main-nav></app-main-nav>
 <router-outlet></router-outlet>
 <app-footer></app-footer>

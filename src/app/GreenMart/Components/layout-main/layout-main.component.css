@@ -4,3 +4,38 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.side-menu{
+  position: fixed;
+  z-index: 99;
+  bottom: 3.125rem;
+  right: 0.625rem;
+}
+.side-menu ul{
+  row-gap: 5px;
+}
+.side-menu li:nth-child(3){
+  cursor: pointer;
+}
+.side-menu a{
+  width: 2.8125rem;
+  height: 2.8125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  transition: background-color 0.5s ease;
+}
+.side-menu a:hover{
+  background-color: var(--primary-color);
+}
+.side-menu i{
+  transition: color 0.5s ease;
+  color: var(--main-text-color);
+}
+.side-menu a:hover i{
+  color: var(--white-color);
+}
+.side-menu .circle-badge{
+  background-color: var(--primary-color);
+}
