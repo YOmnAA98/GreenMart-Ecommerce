@@ -265,7 +265,7 @@
     .footerMopile a:active h6 {
         color: rgb(134, 188, 66); 
     }
-    .circle-badge {
+    .badge {
         position: absolute;
         top: -1px;
         right: -8px;
