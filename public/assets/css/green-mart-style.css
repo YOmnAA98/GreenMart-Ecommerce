@@ -1,0 +1,129 @@
+/* card */
+.card,
+.card .card-body h4{
+  transition: all 0.3s ease;
+}
+.card:hover{
+  border-color: var(--primary-color);
+}
+.card .image {
+  position: relative;
+}
+.card .badge.sale{
+  left: 0.625rem;
+  background-color: var(--red-color);
+}
+.card .badge.hot{
+  right: 0.625rem;
+  background-color: var(--orange-color);
+}
+.card .image .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--dark-text-color);
+  padding-block: 10px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--text-small);
+  font-weight: var(--main-weight);
+}
+.card .card-body h4:hover{
+  color: var(--primary-color);
+}
+.card .card-body p{
+  color: var(--main-text-color);
+  font-size: 12px;
+}
+.card .card-body .card-info span{
+  color: var(--primary-color);
+  font-weight: var(--main-weight);
+}
+.card .card-body .card-info ul i{
+  font-size: smaller;
+  color: var(--orange-color);
+}
+
+/* modal */
+.modal .modal-body{
+  border: 10px solid rgba(0, 0, 0, 0.3);
+}
+.modal .carousel-indicators button{
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  border: 1px solid var(--primary-color);
+  opacity: 1;
+}
+.modal .carousel-indicators button.active{
+  background-color: var(--primary-color);
+}
+.modal .carousel-control-prev, .modal .carousel-control-next{
+  background-color: var(--primary-color);
+  width: 2.1875rem;
+  height: 2.1875rem;
+  border-radius: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.modal .carousel-control-prev{
+  left: 0.625rem;
+}
+.modal .carousel-control-next{
+  right: 0.625rem;
+}
+.modal .carousel-control-prev span, .modal .carousel-control-next span{
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+.modal .data h2{
+  font-size: 27px;
+  font-weight: 700;
+  color: var(--dark-text-color);
+}
+.modal .data p.weight,
+.modal .data p.description,
+.modal .data p.category{
+  font-size: var(--text-small);
+  color: var(--main-text-color);
+}
+.modal .data ul i{
+  font-size: smaller;
+  color: var(--orange-color);
+}
+.modal .data span.price{
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: 700;
+}
+.modal .data .actions{
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.modal .data .actions input:focus{
+  border-color: var(--primary-color);
+}
+.modal .data p.out{
+  font-size: 22px;
+  font-weight: 700;
+}
+.modal .data .category span{
+  color: var(--dark-text-color);
+}
+@media screen and (max-width: 991px) {
+  .modal .data .actions{
+    flex-direction: column;
+  }
+  .modal .data .actions button{
+    width: 100%;
+  }
+  .modal .data .actions input{
+    align-self: flex-start;
+  }
+}
