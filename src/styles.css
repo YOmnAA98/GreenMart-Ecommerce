@@ -96,7 +96,7 @@ button, input{
 }
 .circle-badge{
   position: absolute;
-  top: 0rem;
+  top: -0.5rem;
   left: 100%;
   transform: translate(-50%, -25%);
   max-width: 1.25rem;
