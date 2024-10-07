@@ -128,6 +128,7 @@
     color: #777;
     column-gap: 30px;
     font-size: 16px;
+    margin-top: 20px;
     margin-left: -55px;
 }
 .icons i:hover {
@@ -194,6 +195,7 @@
     }
     .icons{
         margin-left: -90px;
+        margin-top: 20px;
 
     }
 }

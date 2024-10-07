@@ -87,7 +87,9 @@
     width: 770px;
     height: 110px;
     padding: 0 15px;
+    margin-bottom: 30px;
     text-align: center;
+
 }
 .part p{
     margin: 0 0 14px;
@@ -98,6 +100,7 @@
     }
 
     .title , .tTwo , .tThree{
+        padding-top: 30px;
         flex-direction: column;
         width:auto;
         text-align: center;
@@ -130,6 +133,7 @@
         flex-direction: column;
         width: 100%;
         text-align: center;
+        margin-bottom: 35px;
     }
     .title h3{
         padding-top: 70px;
