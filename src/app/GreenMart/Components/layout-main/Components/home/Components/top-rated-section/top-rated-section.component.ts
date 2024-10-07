@@ -14,12 +14,20 @@ import { RouterLink } from '@angular/router';
 export class TopRatedSectionComponent implements OnInit{
   inStock: boolean = true
   products: Products[] = [];
+  topRatedProducts: Products[] = [];
   constructor(private _apiDataService: ApiDataService){}
   ngOnInit(): void {
     this._apiDataService.getAllProducts().subscribe({
       next: (response) => {
-        this.products = response.data;
-      }
+        this.products = response;
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    })
+
+    this.topRatedProducts = this.products.filter((product) => {
+      return product.ratingsAverage > 4.5;
     })
   }
 }

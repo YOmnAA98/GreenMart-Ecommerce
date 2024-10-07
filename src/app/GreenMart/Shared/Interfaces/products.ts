@@ -1,40 +1,57 @@
-export interface Products {
-  sold: number
-  images: string[]
-  subcategory: Subcategory[]
-  ratingsQuantity: number
-  _id: string
-  title: string
-  slug: string
-  description: string
-  quantity: number
-  price: number
-  imageCover: string
-  category: Category
-  brand: Brand
-  ratingsAverage: number
-  createdAt: string
-  updatedAt: string
-  id: string
-}
+// export interface Products {
+//   sold: number
+//   images: string[]
+//   subcategory: Subcategory[]
+//   ratingsQuantity: number
+//   _id: string
+//   title: string
+//   slug: string
+//   description: string
+//   quantity: number
+//   price: number
+//   imageCover: string
+//   category: Category
+//   brand: Brand
+//   ratingsAverage: number
+//   createdAt: string
+//   updatedAt: string
+//   id: string
+// }
 
-export interface Subcategory {
-  _id: string
-  name: string
-  slug: string
-  category: string
+// export interface Subcategory {
+//   _id: string
+//   name: string
+//   slug: string
+//   category: string
+// }
+
+// export interface Category {
+//   _id: string
+//   name: string
+//   slug: string
+//   image: string
+// }
+
+// export interface Brand {
+//   _id: string
+//   name: string
+//   slug: string
+//   image: string
+// }
+
+export interface Products {
+  id: number
+  productName: string
+  productDescription: string
+  productPrice: number
+  category: Category[]
+  imagesURL: string[]
+  productQuantity: number
+  productSize: string
+  ratingsAverage: number
 }
 
 export interface Category {
-  _id: string
+  id: number
   name: string
-  slug: string
-  image: string
-}
-
-export interface Brand {
-  _id: string
-  name: string
-  slug: string
-  image: string
 }

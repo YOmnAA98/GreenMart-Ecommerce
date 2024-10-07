@@ -10,6 +10,10 @@ export class ApiDataService {
   constructor(private _httpClient: HttpClient) { }
 
   getAllProducts(): Observable<any>{
-    return this._httpClient.get<any>('https://ecommerce.routemisr.com/api/v1/products');
+    return this._httpClient.get<any>('http://localhost:3000/products');
+  }
+
+  getProductById(id: number): Observable<any>{
+    return this._httpClient.get<any>('http://localhost:3000/products/'+id);
   }
 }
