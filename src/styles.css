@@ -99,7 +99,7 @@ button, input{
   top: -0.5rem;
   left: 100%;
   transform: translate(-50%, -25%);
-  max-width: 1.25rem;
+  min-width: 1.25rem;
   max-height: 1.25rem;
   border-radius: 50%;
   padding: var(--border-radius);

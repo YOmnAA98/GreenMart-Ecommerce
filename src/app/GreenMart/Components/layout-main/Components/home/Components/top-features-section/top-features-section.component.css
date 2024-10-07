@@ -19,8 +19,28 @@
 }
 
 @media screen and (max-width: 767px) {
+  .top-featured nav{
+    width: 100%;
+  }
   .top-featured .nav {
+    width: 90%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
     border: none;
+  }
+  .top-featured .nav button {
+    white-space: nowrap;
+  }
+  .top-featured .nav::-webkit-scrollbar{
+    height: 3px;
+  }
+  .top-featured .nav::-webkit-scrollbar-track{
+    background: transparent;
+  }
+  .top-featured .nav::-webkit-scrollbar-thumb{
+    background: var(--light-text-color);
+    border-radius: 1px;
   }
   .top-featured .nav button,
   .top-featured .nav button.active,

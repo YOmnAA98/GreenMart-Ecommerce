@@ -38,6 +38,7 @@
 }
 .side-menu .circle-badge{
   background-color: var(--primary-color);
+  font-size: 10px;
 }
 
 @media screen and (max-width: 575px) {

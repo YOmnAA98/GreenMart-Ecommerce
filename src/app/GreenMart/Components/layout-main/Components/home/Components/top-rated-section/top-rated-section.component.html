@@ -11,115 +11,25 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
-          <div class="col">
+          <div class="col" *ngFor="let product of products.slice(0, 4)">
             <div class="card">
-              <a href="#">
+              <a routerLink="/product-details">
                 <div class="image">
-                  <span class="badge square-badge sale">Sale</span>
-                  <img src="assets/images/products/milk&cream/product-01/image-01.webp" class="card-img-top" alt="...">
-                  <p class="overlay">out of stock</p>
+                  <img [src]="product.imageCover" class="card-img-top" [alt]="product.title">
                 </div>
               </a>
               <div class="card-body">
-                <a href="#"><h4 class="card-title">title</h4></a>
+                <a routerLink="/product-details"><h4 class="card-title">{{product.title.split(' ').slice(0, 3).join(' ')}}</h4></a>
                 <p class="card-text">Approx 100kg</p>
                 <div class="card-info d-flex justify-content-between mt-2">
-                  <span class="price">$50.00</span>
+                  <span class="price">${{product.price}}</span>
                   <ul class="p-0 d-flex align-items-center">
                     <li><i class="fa-solid fa-star"></i></li>
                     <li><i class="fa-solid fa-star"></i></li>
                     <li><i class="fa-solid fa-star"></i></li>
                     <li><i class="fa-solid fa-star"></i></li>
                     <li><i class="fa-solid fa-star"></i></li>
-                    <p class="ms-1">10</p>
-                  </ul>
-                </div>
-                <div class="my-2">
-                  <button class="btn product-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-eye"></i></button>
-                  <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <a href="#">
-                <div class="image">
-                  <img src="assets/images/products/milk&cream/product-02/image-01.webp" class="card-img-top" alt="...">
-                </div>
-              </a>
-              <div class="card-body">
-                <a href="#"><h4 class="card-title">title</h4></a>
-                <p class="card-text">Approx 100kg</p>
-                <div class="card-info d-flex justify-content-between mt-2">
-                  <span class="price">$50.00</span>
-                  <ul class="p-0 d-flex align-items-center">
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <p class="ms-1">10</p>
-                  </ul>
-                </div>
-                <div class="my-2">
-                  <button class="btn product-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-eye"></i></button>
-                  <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <a href="#">
-                <div class="image">
-                  <span class="badge square-badge hot">Hot</span>
-                  <img src="assets/images/products/milk&cream/product-03/image-01.webp" class="card-img-top" alt="...">
-                </div>
-              </a>
-              <div class="card-body">
-                <a href="#"><h4 class="card-title">title</h4></a>
-                <p class="card-text">Approx 100kg</p>
-                <div class="card-info d-flex justify-content-between mt-2">
-                  <span class="price">$50.00</span>
-                  <ul class="p-0 d-flex align-items-center">
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <p class="ms-1">10</p>
-                  </ul>
-                </div>
-                <div class="my-2">
-                  <button class="btn product-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-eye"></i></button>
-                  <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <a href="#">
-                <div class="image">
-                  <img src="assets/images/products/milk&cream/product-04/image-01.webp" class="card-img-top" alt="...">
-                </div>
-              </a>
-              <div class="card-body">
-                <a href="#"><h4 class="card-title">title</h4></a>
-                <p class="card-text">Approx 100kg</p>
-                <div class="card-info d-flex justify-content-between mt-2">
-                  <span class="price">$50.00</span>
-                  <ul class="p-0 d-flex align-items-center">
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <p class="ms-1">10</p>
+                    <p class="ms-1">{{product.ratingsAverage}}</p>
                   </ul>
                 </div>
                 <div class="my-2">
@@ -134,115 +44,25 @@
         </div>
         <div class="carousel-item">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4">
-          <div class="col">
+          <div class="col" *ngFor="let product of products.slice(4, 8)">
             <div class="card">
-              <a href="#">
+              <a routerLink="/product-details">
                 <div class="image">
-                  <span class="badge square-badge sale">Sale</span>
-                  <img src="assets/images/products/milk&cream/product-01/image-01.webp" class="card-img-top" alt="...">
-                  <p class="overlay">out of stock</p>
+                  <img [src]="product.imageCover" class="card-img-top" [alt]="product.title">
                 </div>
               </a>
               <div class="card-body">
-                <a href="#"><h4 class="card-title">title</h4></a>
+                <a routerLink="/product-details"><h4 class="card-title">{{product.title.split(' ').slice(0, 3).join(' ')}}</h4></a>
                 <p class="card-text">Approx 100kg</p>
                 <div class="card-info d-flex justify-content-between mt-2">
-                  <span class="price">$50.00</span>
+                  <span class="price">${{product.price}}</span>
                   <ul class="p-0 d-flex align-items-center">
                     <li><i class="fa-solid fa-star"></i></li>
                     <li><i class="fa-solid fa-star"></i></li>
                     <li><i class="fa-solid fa-star"></i></li>
                     <li><i class="fa-solid fa-star"></i></li>
                     <li><i class="fa-solid fa-star"></i></li>
-                    <p class="ms-1">10</p>
-                  </ul>
-                </div>
-                <div class="my-2">
-                  <button class="btn product-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-eye"></i></button>
-                  <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <a href="#">
-                <div class="image">
-                  <img src="assets/images/products/milk&cream/product-02/image-01.webp" class="card-img-top" alt="...">
-                </div>
-              </a>
-              <div class="card-body">
-                <a href="#"><h4 class="card-title">title</h4></a>
-                <p class="card-text">Approx 100kg</p>
-                <div class="card-info d-flex justify-content-between mt-2">
-                  <span class="price">$50.00</span>
-                  <ul class="p-0 d-flex align-items-center">
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <p class="ms-1">10</p>
-                  </ul>
-                </div>
-                <div class="my-2">
-                  <button class="btn product-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-eye"></i></button>
-                  <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <a href="#">
-                <div class="image">
-                  <span class="badge square-badge hot">Hot</span>
-                  <img src="assets/images/products/milk&cream/product-03/image-01.webp" class="card-img-top" alt="...">
-                </div>
-              </a>
-              <div class="card-body">
-                <a href="#"><h4 class="card-title">title</h4></a>
-                <p class="card-text">Approx 100kg</p>
-                <div class="card-info d-flex justify-content-between mt-2">
-                  <span class="price">$50.00</span>
-                  <ul class="p-0 d-flex align-items-center">
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <p class="ms-1">10</p>
-                  </ul>
-                </div>
-                <div class="my-2">
-                  <button class="btn product-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-eye"></i></button>
-                  <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <a href="#">
-                <div class="image">
-                  <img src="assets/images/products/milk&cream/product-04/image-01.webp" class="card-img-top" alt="...">
-                </div>
-              </a>
-              <div class="card-body">
-                <a href="#"><h4 class="card-title">title</h4></a>
-                <p class="card-text">Approx 100kg</p>
-                <div class="card-info d-flex justify-content-between mt-2">
-                  <span class="price">$50.00</span>
-                  <ul class="p-0 d-flex align-items-center">
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <p class="ms-1">10</p>
+                    <p class="ms-1">{{product.ratingsAverage}}</p>
                   </ul>
                 </div>
                 <div class="my-2">
@@ -272,8 +92,8 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl w-75 m-auto">
     <div class="modal-content rounded-0">
       <div class="modal-body">
-        <div class="row">
-          <div class="slider col-lg-6">
+        <div class="row" *ngFor="let product of products; let i = index">
+          <div class="slider col-xl-6">
             <div id="viewCarouselIndicators" class="carousel slide">
               <div class="carousel-indicators">
                 <button type="button" data-bs-target="#viewCarouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -282,13 +102,7 @@
               </div>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="assets/images/products/milk&cream/product-01/image-01.webp" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="assets/images/products/milk&cream/product-02/image-01.webp" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="assets/images/products/milk&cream/product-03/image-01.webp" class="d-block w-100" alt="...">
+                  <img [src]="product.images[i]" class="d-block w-100" alt="...">
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#viewCarouselIndicators" data-bs-slide="prev">
@@ -310,15 +124,15 @@
               <li><i class="fa-solid fa-star"></i></li>
               <p class="mt-1 ms-1">10</p>
             </ul>
-            <span class="price">$50.00</span>
-            <p class="description my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quae iure distinctio dicta nesciunt illo, enim, sit deleniti dolorem inventore impedit nemo animi consequuntur quos. Corporis beatae aspernatur voluptate at.</p>
+            <span class="price">${{product.price}}</span>
+            <p class="description my-3">{{product.description}}</p>
             <div class="actions" *ngIf="inStock">
               <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1">
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
             </div>
             <p class="out text-danger" *ngIf="!inStock">Out of Stock</p>
-            <p class="category my-3">Category: <span>Milk & Cream</span></p>
+            <p class="category my-3">Category: <span>{{product.category.name}}</span></p>
           </div>
         </div>
       </div>

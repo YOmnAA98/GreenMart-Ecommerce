@@ -2,8 +2,7 @@ import { Routes } from '@angular/router';
 import { LayoutMainComponent } from './GreenMart/Components/layout-main/layout-main.component';
 import { LayoutAuthComponent } from './GreenMart/Components/layout-auth/layout-auth.component';
 import { HomeComponent } from './GreenMart/Components/layout-main/Components/home/home.component';
-import { LoginComponent } from './GreenMart/Components/layout-auth/Components/login/login.component';
-import { RegisterComponent } from './GreenMart/Components/layout-auth/Components/register/register.component';
+import { RegisterLoginComponent } from './GreenMart/Components/layout-auth/Components/register-login/register-login.component';
 import { ForgetPasswordComponent } from './GreenMart/Components/layout-auth/Components/forget-password/forget-password.component';
 import { NotFoundComponent } from './GreenMart/Components/layout-main/Components/not-found/not-found.component';
 import { AccountComponent } from './GreenMart/Components/layout-main/Components/account/account.component';
@@ -146,19 +145,14 @@ export const routes: Routes = [
     children:[
       {
         path: '',
-        redirectTo: 'login',
+        redirectTo: 'account',
         pathMatch: 'full',
-        title:'GreenMart | Login'
+        title:'GreenMart | Account'
       },
       {
-        path: 'login',
-        component: LoginComponent,
-        title:'GreenMart | Login'
-      },
-      {
-        path: 'register',
-        component: RegisterComponent,
-        title:'GreenMart | Register'
+        path: 'account',
+        component: RegisterLoginComponent,
+        title:'GreenMart | Account'
       },
       {
         path: 'forget-password',
