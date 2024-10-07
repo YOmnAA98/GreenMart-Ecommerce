@@ -1,0 +1,17 @@
+p, a{
+  color: var(--main-text-color);
+  font-size: var(--text-small);
+  transition: color 0.3s ease;
+}
+i{
+  color: var(--primary-color);
+}
+a:hover{
+  color: var(--primary-color);
+}
+input:focus, textarea:focus{
+  border-color: var(--primary-color);
+}
+::placeholder{
+  font-size: var(--text-small);
+}
