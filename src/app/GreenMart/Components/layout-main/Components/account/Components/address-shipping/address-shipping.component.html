@@ -1,1 +1,48 @@
-<p>address-shipping works!</p>
+<div>
+    <h4 class="mb-4">Shipping Address</h4>
+    <form>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="firstName" class="form-label">First name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="firstName" placeholder="">
+            </div>
+            <div class="col">
+                <label for="lastName" class="form-label">Last name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="lastName" placeholder="">
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="companyName" class="form-label">Company name (optional)</label>
+            <input type="text" class="form-control" id="companyName" placeholder="">
+        </div>
+        
+        <div class="mb-3">
+            <label for="country" class="form-label">Country / Region <span class="text-danger">*</span></label>
+            <select id="country" class="form-select">
+                <option selected>Select a country / region...</option>
+                <option value="Eg">Egypt</option>
+                <option value="Sa">Saudi Arabia</option>
+            </select>
+        </div>
+        
+        <div class="mb-3">
+            <label for="streetAddress" class="form-label">Street address <span class="text-danger">*</span></label>
+            <input type="text" class="form-control mb-2" id="streetAddress" placeholder="House number and street name">
+            <input type="text" class="form-control" id="apartment" placeholder="Apartment, suite, unit, etc. (optional)">
+        </div>
+        
+        <div class="mb-3">
+            <label for="postcode" class="form-label">Postcode / ZIP (optional)</label>
+            <input type="text" class="form-control" id="postcode" placeholder="">
+        </div>
+        
+        <div class="mb-3">
+            <label for="city" class="form-label">Town / City <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="city" placeholder="">
+        </div>
+        
+        <button type="submit" class="btn shipping-button">Save address</button>
+    </form>
+
+</div>

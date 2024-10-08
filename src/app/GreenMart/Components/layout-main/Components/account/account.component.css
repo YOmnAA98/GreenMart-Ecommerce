@@ -26,15 +26,17 @@ a {
     display: block;
   }
   .list-group-item {
+    cursor: pointer;
     font-size: 0.9rem;
     font-weight: 600;
     color: #666;
     padding: 15px 20px;
     transition: background-color 0.4s ease, color 0.4s ease;
+    border:1px solid transparent;
   }
   .list-group-item.active,
   .list-group-item:hover {
     background-color: #86BC42;
     color: #fff;
-    border: transparent; 
+    border:1px solid #fff;
   }

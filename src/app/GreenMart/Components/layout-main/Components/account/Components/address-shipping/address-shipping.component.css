@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 20px;
+  }
+  .shipping-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .form-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .btn-save {
+    background-color: #6cc24a;
+    border-color: #6cc24a;
+    color: #fff;
+  }
+  .shipping-button{  
+    background: #86BC42;;
+    color: #fff;
+    transition: .4s ease;
+  }
+  
+  .shipping-button:hover{
+    background-color: #fff;
+    color: #86BC42;
+    border: 1px solid #86BC42;
+  }

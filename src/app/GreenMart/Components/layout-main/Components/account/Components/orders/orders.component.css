@@ -1,0 +1,34 @@
+.order-info{
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    background-color: #f6f5f8;
+    color: #515151;
+    border-top: 3px solid #1e85be;
+    padding: 30px 44px;
+  }
+  
+    .order-button{
+      text-decoration: none;
+      text-transform: uppercase;
+      padding:  12px;
+      font-weight: bold;
+      font-size: 13px;
+      background: #86BC42;;
+      color: #fff;
+      transition: .4s ease;
+      text-align: center;
+      border: 1px solid transparent;
+      float: right;
+      transform: translateY(-50%);
+    }
+  
+    .order-button:hover{
+      background-color: #fff;
+      color: #86BC42;
+      border: 1px solid #86BC42;
+    }
+    .fa-calendar {
+      color: #1e85be;
+      font-size: 16px;
+    }

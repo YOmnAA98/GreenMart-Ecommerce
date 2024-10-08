@@ -1,0 +1,35 @@
+.address-content h2{
+    font-size: 1.5rem; 
+  }
+  .address {
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    overflow: hidden; 
+  }
+  .address-header {
+    background-color: #f9f9f9; 
+    padding: 0.75rem 1rem; 
+    border-bottom: 1px solid #ddd; 
+  }
+  .address-body {
+    background-color: #fff; 
+    padding: 1.25rem;
+  }
+  .address-header h3 {
+    font-size: 1rem; 
+    margin-bottom: 0;
+  }
+  .address-header .edit {
+    font-size: 0.95rem; 
+    color: #333; 
+    text-decoration: none;
+    transition: 0.3s ease;
+  }
+  .address-header .edit:hover {
+    color: #86BC42;
+  }
+  address {
+    font-size: 0.875rem; 
+    margin-top: 1rem;
+    color: #6c757d; 
+  }

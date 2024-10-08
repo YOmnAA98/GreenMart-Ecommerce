@@ -1,0 +1,15 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #777;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #222;
+  }
+  .account-sidebar-txt a:hover {
+    color: #86BC42;
+    transition: color 0.3s ease;
+  }
