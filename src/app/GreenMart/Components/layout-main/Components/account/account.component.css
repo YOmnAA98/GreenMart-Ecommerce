@@ -1,0 +1,40 @@
+a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .account-sidebar-txt a:hover {
+    color: #86BC42;
+    transition: color 0.3s ease;
+  }
+  
+  .breadcrumb {
+    background-color: transparent;
+    padding-left: 10px;
+    font-weight: 500;
+  }
+  
+  .breadcrumb-item.active {
+    color: #86BC42;
+  }
+  
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    margin-right: 5px;
+  }
+  
+  .list-group-item a{
+    display: block;
+  }
+  .list-group-item {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+    padding: 15px 20px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  .list-group-item.active,
+  .list-group-item:hover {
+    background-color: #86BC42;
+    color: #fff;
+    border: transparent; 
+  }

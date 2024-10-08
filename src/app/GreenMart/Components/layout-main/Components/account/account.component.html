@@ -1,1 +1,34 @@
-<router-outlet></router-outlet>
+<div class="container pb-5">
+    <nav>
+        <ol class="breadcrumb text-dark mt-5">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">My account</li>
+        </ol>
+    </nav>
+
+    <!-- Account section will be changed by ts-->
+    <section>
+        <header class="row mb-5 mt-5">
+            <div class="col-12 bg-light p-3">
+                <h3 class="fw-bold fs-3 ps-5 text-dark">My account</h3>
+            </div>
+        </header>
+        <div class="row">
+            <nav class="col-md-2">
+                <ul class="list-group border">
+                  <li class="list-group-item" routerLinkActive="active"><a routerLink="dashboard"><i class="fa-solid fa-gauge-high"></i> Dashboard</a></li>
+                  <li class="list-group-item" routerLinkActive="active"><a routerLink="orders"><i class="fa-solid fa-cart-shopping"></i> Orders</a></li>
+                  <li class="list-group-item" routerLinkActive="active"><a routerLink="downloads"><i class="fa-solid fa-cloud-arrow-down"></i> Downloads</a></li>
+                  <li class="list-group-item" routerLinkActive="active"><a routerLink="edit-address"><i class="fa-solid fa-location-dot"></i> Addresses</a></li>
+                  <li class="list-group-item" routerLinkActive="active"><a routerLink="account-details"><i class="fa-regular fa-user"></i> Account details</a></li>
+                  <li class="list-group-item"><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a></li>
+                </ul>
+              </nav>
+
+            <!-- route part will be changed -->
+            <div class="account-sidebar-txt col-md-9">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </section>
+</div>
