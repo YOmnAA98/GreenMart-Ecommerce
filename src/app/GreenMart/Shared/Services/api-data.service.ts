@@ -14,6 +14,6 @@ export class ApiDataService {
   }
 
   getProductById(id: number): Observable<any>{
-    return this._httpClient.get<any>('http://localhost:3000/products/'+id);
+    return this._httpClient.get<any>(`http://localhost:3000/products/${id}`);
   }
 }

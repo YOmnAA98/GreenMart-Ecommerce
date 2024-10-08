@@ -1,0 +1,97 @@
+/* left side */
+.details .carousel{
+  position: relative;
+}
+.details .left-side{
+  margin-top: 2.5rem;
+  margin-bottom: 6.25rem;
+}
+.details .left-side .carousel{
+  position: relative;
+}
+.details .left-side .carousel-indicators{
+  position: absolute;
+  bottom: -6.875rem;
+  display: flex;
+  gap: 0.625rem;
+}
+.details .left-side .carousel-indicators button,
+.details .left-side .carousel-indicators button img{  
+  width: 6.25rem;
+  height: 5rem; 
+  border: 1.5px solid transparent;
+  border-radius: var(--border-radius);
+  opacity: 1;
+  transition: border 0.3s ease;
+  object-fit: cover;
+}
+.details .left-side .carousel-indicators button.active,
+.details .left-side .carousel-indicators button:hover{
+  border-color: var(--primary-color);  
+}
+.details .left-side .carousel-control-prev,
+.details .left-side .carousel-control-next{
+  position: relative;
+  width: 100%
+}
+.details .left-side .carousel-control-prev span,
+.details .left-side .carousel-control-next span{
+  position: absolute;
+  bottom: -4.375rem;
+}
+.details .left-side .carousel-control-prev span{
+  left: 0.625rem;
+}
+.details .left-side .carousel-control-next span{
+  right: 0.625rem;
+}
+.details .left-side .carousel-control-prev span i,
+.details .left-side .carousel-control-next span i{
+  color: var(--dark-text-color);
+  font-size: 16px;
+}
+/* right side */
+.details .right-side h2{  
+  font-weight: 700;
+  color: var(--dark-text-color);
+}
+.details .right-side p.weight,
+.details .right-side p.description,
+.details .right-side p.category{
+  font-size: var(--text-small);
+  color: var(--main-text-color);
+}
+.details .right-side ul i{
+  font-size: smaller;
+  color: var(--orange-color);
+}
+.details .right-side span.price{
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: 700;
+}
+.details .right-side .actions{
+  display: flex;
+  gap: 1.25rem;
+}
+.details .right-side .actions input:focus{
+  border-color: var(--primary-color);
+}
+.details .right-side p.out{
+  font-size: 22px;
+}
+.details .right-side p.category span{
+  color: var(--dark-text-color);
+}
+
+@media screen and (max-width: 575px){
+  .details .right-side .actions{
+    flex-direction: column;
+  }
+  .details .right-side .actions button{
+    width: 100%;
+  }
+  .details .right-side .actions input{
+    align-self: flex-start;
+  }
+}
