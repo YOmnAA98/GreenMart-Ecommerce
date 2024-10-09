@@ -53,20 +53,18 @@ export const routes: Routes = [
           {
             path: 'edit-address',
       component: AddressesComponent,
-      title: 'GreenMart | Addresses',
-      children: [
-        {
-          path: 'billing',
+      title: 'GreenMart | Addresses',},
+      {
+          path: 'edit-address/billing',
           component: AddressBillingComponent,
           title: 'GreenMart | Billing Address',
         },
         {
-          path: 'shipping',
+          path: 'edit-address/shipping',
           component: AddressShippingComponent,
           title: 'GreenMart | Shipping Address',
         }
-      ]
-    },
+      ,
     {
             path: 'dashboard',
             component: DashboardComponent,
