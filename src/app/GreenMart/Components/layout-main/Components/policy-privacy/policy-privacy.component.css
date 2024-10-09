@@ -1,0 +1,17 @@
+nav .breadcrumb {
+    padding-left: 10px;
+    font-weight: 500;
+    margin-top: 50px;
+  }
+  
+  nav .breadcrumb-item.active {
+    color: #86BC42;
+    background-color: #fff;
+  }
+  nav .breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    margin-right: 5px;
+  }
+  .ordered-list {
+    list-style-type: upper-alpha !important;
+}
