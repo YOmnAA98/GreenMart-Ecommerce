@@ -1,9 +1,20 @@
+nav .breadcrumb {
+    padding-left: 10px;
+    font-weight: 500;
+  }
+  
+  nav .breadcrumb-item.active {
+    color: #86BC42;
+    background-color: #fff;
+  }
+  
+  nav .breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    margin-right: 5px;
+  }
 .faq-section {
     padding: 20px;
     margin-top: 30px;
-}
-.c-color {
-    background-color: #fafafa;
 }
 .faq-question {
     cursor: pointer;
