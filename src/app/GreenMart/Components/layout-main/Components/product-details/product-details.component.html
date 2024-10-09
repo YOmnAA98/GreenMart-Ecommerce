@@ -3,11 +3,11 @@
     <div class="content">
       <div class="row align-items-center">
         <div class="left-side col-lg-6">
-          <div id="carouselExampleIndicators" class="carousel slide">
+          <div id="imageExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
               <button *ngFor="let image of productDetails.imagesURL; let i = index"
                 type="button"
-                [attr.data-bs-target]="'#carouselExampleIndicators'"
+                [attr.data-bs-target]="'#imageExampleIndicators'"
                 [attr.data-bs-slide-to]="i"
                 [attr.aria-current]="i === 0 ? 'true' : null"
                 [ngClass]="(i === 0) ? 'active' : ''">
@@ -16,15 +16,22 @@
             </div>
             <div class="carousel-inner" >
               <div *ngFor="let image of productDetails.imagesURL; let i = index"
-                class="carousel-item"
+                class="carousel-item w-100"
                 [ngClass]="(i === 0) ? 'active' : ''">
-                <img [src]="image" class="img-fluid d-block w-100" [alt]="productDetails.productName">
+                <img [src]="image" class="w-100" [alt]="productDetails.productName">
+                <lib-ngx-image-zoom
+                    [thumbImage]="image"
+                    [fullImage]="image"
+                    [magnification]="1.5"
+                    zoomMode="hover"
+                    [altText]="productDetails.productName"
+                ></lib-ngx-image-zoom>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#imageExampleIndicators" data-bs-slide="prev">
               <span aria-hidden="true"><i class="fa-solid fa-angle-left"></i></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#imageExampleIndicators" data-bs-slide="next">
               <span aria-hidden="true"><i class="fa-solid fa-angle-right"></i></span>
             </button>
           </div>
@@ -86,7 +93,7 @@
                   </div>
                   <div class="my-2">
                     <button class="btn product-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-                    <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#relatedModal">
+                    <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#relatedModal" (click)="openProductModal(product.id)">
                       <i class="fa-solid fa-eye"></i>
                     </button>
                     <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
@@ -122,7 +129,7 @@
                   </div>
                   <div class="my-2">
                     <button class="btn product-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-                    <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#relatedModal">
+                    <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#relatedModal" (click)="openProductModal(product.id)">
                       <i class="fa-solid fa-eye"></i>
                     </button>
                     <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
@@ -152,33 +159,33 @@
       <div class="modal-body">
         <div class="row">
           <div class="slider col-xl-6">
-            <div id="viewCarouselIndicators" class="carousel slide">
+            <div id="relatedProductsCarouselIndicators" class="carousel slide">
               <div class="carousel-indicators">
-                <button *ngFor="let image of productDetails.imagesURL; let i = index"
+                <button *ngFor="let image of selectedProduct?.imagesURL; let i = index"
                 type="button"
-                [attr.data-bs-target]="'#carouselExampleIndicators'"
+                [attr.data-bs-target]="'#relatedProductsCarouselIndicators'"
                 [attr.data-bs-slide-to]="i"
                 [attr.aria-current]="i === 0 ? 'true' : null"
                 [ngClass]="(i === 0) ? 'active' : ''"></button>
               </div>
               <div class="carousel-inner">
-                <div *ngFor="let image of productDetails.imagesURL; let i = index"
+                <div *ngFor="let image of selectedProduct?.imagesURL; let i = index"
                   class="carousel-item"
                   [ngClass]="(i === 0) ? 'active' : ''">
-                  <img [src]="image" class="d-block w-100" [alt]="productDetails.productName">                  
+                  <img [src]="image" class="d-block w-100" [alt]="selectedProduct?.productName">
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#viewCarouselIndicators" data-bs-slide="prev">
+              <button class="carousel-control-prev" type="button" data-bs-target="#relatedProductsCarouselIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#viewCarouselIndicators" data-bs-slide="next">
+              <button class="carousel-control-next" type="button" data-bs-target="#relatedProductsCarouselIndicators" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
               </button>
             </div>
           </div>
           <div class="data col-lg-6">
-            <h2>{{productDetails.productName}}</h2>
-            <p class="weight mb-2">(Approx {{productDetails.productSize}} )</p>
+            <h2>{{selectedProduct?.productName}}</h2>
+            <p class="weight mb-2">(Approx {{selectedProduct?.productSize}} )</p>
             <ul class="p-0 d-flex align-items-center">
               <li><i class="fa-solid fa-star"></i></li>
               <li><i class="fa-solid fa-star"></i></li>
@@ -187,16 +194,16 @@
               <li><i class="fa-solid fa-star"></i></li>
               <p class="mt-1 ms-1"></p>
             </ul>
-            <span class="price">${{productDetails.productPrice}}</span>
-            <p class="description my-3">{{productDetails.productDescription}}</p>
+            <span class="price">${{selectedProduct?.productPrice}}</span>
+            <p class="description my-3">{{selectedProduct?.productDescription}}</p>
             <div class="actions" *ngIf="inStock">
               <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1">
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
             </div>
             <p class="out text-danger" *ngIf="!inStock">Out of Stock</p>
-            <p class="category my-3">Category: <span>{{productDetails.category.name}}</span></p>
-            <p class="quantity my-3">Quantity: <span>{{productDetails.productQuantity}}</span></p>
+            <p class="category my-3">Category: <span>{{selectedProduct?.category.name}}</span></p>
+            <p class="quantity my-3">Quantity: <span>{{selectedProduct?.productQuantity}}</span></p>
           </div>
         </div>
       </div>
