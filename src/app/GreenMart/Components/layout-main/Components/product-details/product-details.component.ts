@@ -3,12 +3,12 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ApiDataService } from '../../../../Shared/Services/api-data.service';
 import { Products } from '../../../../Shared/Interfaces/products';
 import { CommonModule } from '@angular/common';
-import { NgxImageZoomModule } from 'ngx-image-zoom';
+// import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CommonModule, RouterLink, NgxImageZoomModule],
+  imports: [CommonModule, RouterLink, /*NgxImageZoomModule*/],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })
