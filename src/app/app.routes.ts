@@ -52,20 +52,22 @@ export const routes: Routes = [
           },
           {
             path: 'edit-address',
-            component: AddressesComponent,
-            title: 'GreenMart | Addresses',
-          },
-          {
-            path: 'billing',
-            component: AddressBillingComponent,
-            title: 'GreenMart | My Account'
-          },
-          {
-            path: 'shipping',
-            component: AddressShippingComponent,
-            title: 'GreenMart | My Account'
-          },
-          {
+      component: AddressesComponent,
+      title: 'GreenMart | Addresses',
+      children: [
+        {
+          path: 'billing',
+          component: AddressBillingComponent,
+          title: 'GreenMart | Billing Address',
+        },
+        {
+          path: 'shipping',
+          component: AddressShippingComponent,
+          title: 'GreenMart | Shipping Address',
+        }
+      ]
+    },
+    {
             path: 'dashboard',
             component: DashboardComponent,
             title: 'GreenMart | My Account'
