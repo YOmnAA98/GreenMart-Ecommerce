@@ -15,6 +15,7 @@ export class TopRatedSectionComponent implements OnInit{
   inStock: boolean = true
   products: Products[] = [];
   topRatedProducts: Products[] = [];
+  selectedProduct: any
   constructor(private _apiDataService: ApiDataService){}
   ngOnInit(): void {
     this._apiDataService.getAllProducts().subscribe({
@@ -29,5 +30,8 @@ export class TopRatedSectionComponent implements OnInit{
     this.topRatedProducts = this.products.filter((product) => {
       return product.ratingsAverage > 4.5;
     })
+  }
+  openProductModel(productID: any): void {
+    this.selectedProduct = this.topRatedProducts.find((product: any) => product.id === productID);
   }
 }

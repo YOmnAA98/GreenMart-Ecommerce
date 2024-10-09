@@ -3,11 +3,12 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ApiDataService } from '../../../../Shared/Services/api-data.service';
 import { Products } from '../../../../Shared/Interfaces/products';
 import { CommonModule } from '@angular/common';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, NgxImageZoomModule],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })
@@ -16,7 +17,7 @@ export class ProductDetailsComponent implements OnInit{
   inStockOverlay: boolean = true;
   productDetails: Products = {} as Products;
   relatedProducts: Products[] = [];
-  selectedProduct: Products = {} as Products;
+  selectedProduct: any;
   constructor(private _activatedRoute: ActivatedRoute, private _apiDataService: ApiDataService) { }
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe({
@@ -24,7 +25,7 @@ export class ProductDetailsComponent implements OnInit{
         let productID: any = param.get('id');
         this._apiDataService.getProductById(productID).subscribe({
           next: (response) => {
-            this.productDetails = response;  
+            this.productDetails = response;
             if (this.productDetails.productQuantity === 0) {
               this.inStock = false;
             } else {
@@ -36,20 +37,21 @@ export class ProductDetailsComponent implements OnInit{
     })
     this._apiDataService.getAllProducts().subscribe({
       next: (response) => {
-        this.relatedProducts = response.filter((product: any) => {          
+        this.relatedProducts = response.filter((product: any) => {
           return product.category.name === this.productDetails.category.name;
-        }) 
+        })
         this.relatedProducts.forEach((product: any) => {
           if(product.productQuantity === 0) {
-            this.inStockOverlay = false;                        
+            this.inStockOverlay = false;
           }else{
-            this.inStockOverlay = true;            
+            this.inStockOverlay = true;
           }
         })
       }
     })
   }
-  // openProductModal(product: any): void{ 
-  //   console.log(product);         
-  // }
+  openProductModal(productID: any): void{
+    this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productID);
+    console.log(this.selectedProduct);
+  }
 }
