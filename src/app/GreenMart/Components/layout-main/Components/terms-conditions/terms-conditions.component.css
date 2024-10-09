@@ -1,0 +1,58 @@
+nav .breadcrumb {
+    padding-left: 10px;
+    font-weight: 500;
+  }
+  
+  nav .breadcrumb-item.active {
+    color: #86BC42;
+    background-color: #fff;
+  }
+  
+  nav .breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    margin-right:5px;
+}
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+   
+}
+
+.breadcrumb {
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    
+}
+
+.breadcrumb span {
+    color: #6c757d;
+}
+
+.terms-section h3 {
+    font-size: ;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+.terms-section p {
+    margin-bottom: 20px;
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .terms-section h1 {
+        font-size: 1.5em;
+    }
+}
