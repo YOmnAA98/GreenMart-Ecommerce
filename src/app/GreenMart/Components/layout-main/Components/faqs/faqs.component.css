@@ -7,13 +7,12 @@ nav .breadcrumb {
     color: #86BC42;
     background-color: #fff;
   }
-  .c-color{
-    background-color: #fafafa;
-  }
-  
   nav .breadcrumb-item + .breadcrumb-item::before {
     content: "/";
     margin-right: 5px;
+  }
+  .c-color{
+    background-color: #fafafa;
   }
 .faq-section {
     padding: 20px;
