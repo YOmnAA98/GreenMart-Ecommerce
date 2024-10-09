@@ -5,31 +5,31 @@
         <div class="left-side col-lg-6">
           <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
-              <button 
-                *ngFor="let image of productDetails.imagesURL; let i = index" 
-                type="button" 
-                [attr.data-bs-target]="'#carouselExampleIndicators'" 
-                [attr.data-bs-slide-to]="i" 
-                [attr.aria-current]="i === 0 ? 'true' : null" 
+              <button
+                *ngFor="let image of productDetails.imagesURL; let i = index"
+                type="button"
+                [attr.data-bs-target]="'#carouselExampleIndicators'"
+                [attr.data-bs-slide-to]="i"
+                [attr.aria-current]="i === 0 ? 'true' : null"
                 [ngClass]="(i === 0) ? 'active' : ''">
-                <img [src]="image" [alt]="productDetails.productName" class="d-block">
-              </button>              
+                <img [src]="image" [alt]="productDetails.productName" class="img-fluid d-block">
+              </button>
             </div>
             <div class="carousel-inner" >
-              <div 
-                *ngFor="let image of productDetails.imagesURL; let i = index" 
-                class="carousel-item" 
+              <div
+                *ngFor="let image of productDetails.imagesURL; let i = index"
+                class="carousel-item"
                 [ngClass]="(i === 0) ? 'active' : ''">
-                <img [src]="image" class="d-block w-100" [alt]="productDetails.productName">
-              </div>              
+                <img [src]="image" class="img-fluid d-block w-100" [alt]="productDetails.productName">
+              </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span aria-hidden="true"><i class="fa-solid fa-angle-left"></i></span>              
+              <span aria-hidden="true"><i class="fa-solid fa-angle-left"></i></span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span aria-hidden="true"><i class="fa-solid fa-angle-right"></i></span>              
+              <span aria-hidden="true"><i class="fa-solid fa-angle-right"></i></span>
             </button>
-          </div>          
+          </div>
         </div>
         <div class="right-side col-lg-6">
           <h2 class="h3">{{productDetails.productName}}</h2>
