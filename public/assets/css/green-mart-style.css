@@ -88,7 +88,8 @@
 }
 .modal .data p.weight,
 .modal .data p.description,
-.modal .data p.category{
+.modal .data p.category,
+.modal .data p.quantity{
   font-size: var(--text-small);
   color: var(--main-text-color);
 }
@@ -113,7 +114,8 @@
   font-size: 22px;
   font-weight: 700;
 }
-.modal .data .category span{
+.modal .data .category span,
+.modal .data .quantity span{
   color: var(--dark-text-color);
 }
 @media screen and (max-width: 991px) {

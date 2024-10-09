@@ -50,7 +50,7 @@
           "name" : "Milk & Cream"
         },
       "imagesURL": ["assets/images/products/milk&cream/product-10/image-01.webp", "assets/images/products/milk&cream/product-10/image-02.webp"],
-      "productQuantity": 12,
+      "productQuantity": 0,
       "productSize": "500Ml",
       "ratingsAverage": 4.5
     },

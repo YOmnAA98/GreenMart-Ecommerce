@@ -57,7 +57,8 @@
 }
 .details .right-side p.weight,
 .details .right-side p.description,
-.details .right-side p.category{
+.details .right-side p.category,
+.details .right-side p.quantity{
   font-size: var(--text-small);
   color: var(--main-text-color);
 }
@@ -79,9 +80,38 @@
 }
 .details .right-side p.out{
   font-size: 22px;
+  font-weight: var(--bold-weight);
 }
-.details .right-side p.category span{
+.details .right-side p.category span,
+.details .right-side p.quantity span{
   color: var(--dark-text-color);
+}
+
+
+/* related */
+.details .related .carousel .carousel-control-prev,
+.details .related .carousel .carousel-control-next {
+  border: 1px solid var(--light-text-color);
+  width: 2.5rem;
+  height: 1.25rem;
+  border-radius: 3px;
+  color: var(--black-color);
+  top: -40px;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+.details .related .carousel .carousel-control-next {
+  left: 2.8125rem;
+}
+.details .related .carousel .carousel-control-prev span i,
+.details .related .carousel .carousel-control-next span i {
+  font-size: 12px;
+  vertical-align: middle;
+}
+.details .related .carousel .carousel-control-prev:hover,
+.details .related .carousel .carousel-control-next:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }
 
 @media screen and (max-width: 575px){
