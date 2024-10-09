@@ -7,6 +7,9 @@ nav .breadcrumb {
     color: #86BC42;
     background-color: #fff;
   }
+  .c-color{
+    background-color: #fafafa;
+  }
   
   nav .breadcrumb-item + .breadcrumb-item::before {
     content: "/";
