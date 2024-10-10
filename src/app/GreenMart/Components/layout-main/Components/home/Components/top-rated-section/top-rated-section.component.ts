@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { ApiDataService } from '../../../../../../Shared/Services/api-data.service';
 import { Products } from '../../../../../../Shared/Interfaces/products';
 import { RouterLink } from '@angular/router';
+import { SlicingPipe } from '../../../../../../Shared/Pipes/slicing.pipe';
 
 @Component({
   selector: 'app-top-rated-section',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, SlicingPipe],
   templateUrl: './top-rated-section.component.html',
   styleUrl: './top-rated-section.component.css'
 })

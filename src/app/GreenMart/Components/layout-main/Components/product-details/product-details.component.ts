@@ -4,11 +4,12 @@ import { ApiDataService } from '../../../../Shared/Services/api-data.service';
 import { Products } from '../../../../Shared/Interfaces/products';
 import { CommonModule } from '@angular/common';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
+import { SlicingPipe } from '../../../../Shared/Pipes/slicing.pipe';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CommonModule, RouterLink, NgxImageZoomModule],
+  imports: [CommonModule, RouterLink, NgxImageZoomModule, SlicingPipe],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })
