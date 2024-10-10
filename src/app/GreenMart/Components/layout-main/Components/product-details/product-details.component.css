@@ -16,18 +16,24 @@
   gap: 0.625rem;
 }
 .details .left-side .carousel-indicators button,
-.details .left-side .carousel-indicators button img{  
+.details .left-side .carousel-indicators button img{
   width: 6.25rem;
-  height: 5rem; 
+  height: 5rem;
   border: 1.5px solid transparent;
   border-radius: var(--border-radius);
   opacity: 1;
   transition: border 0.3s ease;
   object-fit: cover;
 }
+.details .left-side .carousel-inner img{
+  display: none;
+}
+.details .left-side .carousel-inner lib-ngx-image-zoom:hover{
+  cursor: zoom-in;
+}
 .details .left-side .carousel-indicators button.active,
 .details .left-side .carousel-indicators button:hover{
-  border-color: var(--primary-color);  
+  border-color: var(--primary-color);
 }
 .details .left-side .carousel-control-prev,
 .details .left-side .carousel-control-next{
@@ -51,13 +57,14 @@
   font-size: 16px;
 }
 /* right side */
-.details .right-side h2{  
+.details .right-side h2{
   font-weight: 700;
   color: var(--dark-text-color);
 }
 .details .right-side p.weight,
 .details .right-side p.description,
-.details .right-side p.category{
+.details .right-side p.category,
+.details .right-side p.quantity{
   font-size: var(--text-small);
   color: var(--main-text-color);
 }
@@ -79,12 +86,47 @@
 }
 .details .right-side p.out{
   font-size: 22px;
+  font-weight: var(--bold-weight);
 }
-.details .right-side p.category span{
+.details .right-side p.category span,
+.details .right-side p.quantity span{
   color: var(--dark-text-color);
 }
 
+
+/* related */
+.details .related .carousel .carousel-control-prev,
+.details .related .carousel .carousel-control-next {
+  border: 1px solid var(--light-text-color);
+  width: 2.5rem;
+  height: 1.25rem;
+  border-radius: 3px;
+  color: var(--black-color);
+  top: -40px;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+.details .related .carousel .carousel-control-next {
+  left: 2.8125rem;
+}
+.details .related .carousel .carousel-control-prev span i,
+.details .related .carousel .carousel-control-next span i {
+  font-size: 12px;
+  vertical-align: middle;
+}
+.details .related .carousel .carousel-control-prev:hover,
+.details .related .carousel .carousel-control-next:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
 @media screen and (max-width: 575px){
+  .details .left-side .carousel-inner lib-ngx-image-zoom{
+    display: none;
+  }
+  .details .left-side .carousel-inner img{
+    display: block;
+  }
   .details .right-side .actions{
     flex-direction: column;
   }
