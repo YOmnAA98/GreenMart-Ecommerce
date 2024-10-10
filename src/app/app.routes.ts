@@ -167,5 +167,14 @@ export const routes: Routes = [
     path: '**',
     component: NotFoundComponent,
     title:'GreenMart | Not Found'
-  }
+  },
+  
+  // {
+  //   path:'',
+  //   component: HomeComponent,
+  // },
+  // {
+  //   path:'home',
+  //   redirectTo:'', pathMatch:'full'
+  // }
 ];
