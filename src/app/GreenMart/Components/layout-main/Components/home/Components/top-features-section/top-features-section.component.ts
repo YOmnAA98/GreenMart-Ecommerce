@@ -22,6 +22,11 @@ export class TopFeaturesSectionComponent implements OnInit{
   activeTab: number = 0;
   constructor(private _apiDataService: ApiDataService){}  
   ngOnInit(): void {
+    this._apiDataService.getAllProducts().subscribe({
+      next: (response) => {
+        this.filteredProducts = response;
+      }
+    });
     this._apiDataService.getAllCategories().subscribe({
       next: (response) => {
         this.categories = response;         
