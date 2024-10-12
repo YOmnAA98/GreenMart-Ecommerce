@@ -16,9 +16,12 @@ import { SlicingPipe } from '../../../../Shared/Pipes/slicing.pipe';
 export class ProductDetailsComponent implements OnInit{
   inStock: boolean = true;
   inStockOverlay: boolean = true;
-  productDetails: Products = {} as Products;
+  inStockModal: boolean = true;
+
+  productDetails: any = {};
   relatedProducts: Products[] = [];
   selectedProduct: any;
+  
   constructor(private _activatedRoute: ActivatedRoute, private _apiDataService: ApiDataService) { }
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe({
@@ -41,18 +44,22 @@ export class ProductDetailsComponent implements OnInit{
         this.relatedProducts = response.filter((product: any) => {
           return product.category.name === this.productDetails.category.name;
         })
-        this.relatedProducts.forEach((product: any) => {
-          if(product.productQuantity === 0) {
-            this.inStockOverlay = false;
-          }else{
-            this.inStockOverlay = true;
-          }
-        })
+        // this.relatedProducts.forEach((product: any) => {
+        //   if(product.productQuantity === 0) {
+        //     this.inStockOverlay = false;
+        //   }else{
+        //     this.inStockOverlay = true;
+        //   }          
+        // })
       }
     })
   }
-  openProductModal(productID: any): void{
+  quickView(productID: any): void{
     this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productID);
-    console.log(this.selectedProduct);
+    if(this.selectedProduct.productQuantity === 0) {
+      this.inStockModal = false;
+    }else{
+      this.inStockModal = true;
+    }
   }
 }

@@ -28,6 +28,10 @@
 .details .left-side .carousel-inner img{
   display: none;
 }
+/* lib-ngx-image-zoom .ngxImageZoomContainer {
+  width: 100% !important;
+  height: auto !important;
+} */
 .details .left-side .carousel-inner lib-ngx-image-zoom:hover{
   cursor: zoom-in;
 }
