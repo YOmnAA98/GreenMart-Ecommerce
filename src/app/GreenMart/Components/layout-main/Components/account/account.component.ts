@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-account',
   standalone: true,
-  imports: [AppComponent, RouterOutlet,RouterLink,RouterLinkActive,CommonModule],
+  imports: [AppComponent, RouterOutlet, RouterLink, RouterLinkActive, CommonModule],
   templateUrl: './account.component.html',
   styleUrl: './account.component.css'
 })

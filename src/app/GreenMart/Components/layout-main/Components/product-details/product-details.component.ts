@@ -1,9 +1,7 @@
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ApiDataService } from '../../../../Shared/Services/api-data.service';
 import { Products } from '../../../../Shared/Interfaces/products';
-import { WishlistService } from '../../../../../../app/wishlist.service';
 import { CommonModule } from '@angular/common';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { SlicingPipe } from '../../../../Shared/Pipes/slicing.pipe';
@@ -13,21 +11,18 @@ import { SlicingPipe } from '../../../../Shared/Pipes/slicing.pipe';
   standalone: true,
   imports: [CommonModule, RouterLink, NgxImageZoomModule, SlicingPipe],
   templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.scss']
+  styleUrl: './product-details.component.css'
 })
-export class ProductDetailsComponent implements OnInit {
-  productDetails: any = {};
-  relatedProducts: any[] = [];
+export class ProductDetailsComponent implements OnInit{
   inStock: boolean = true;
   inStockOverlay: boolean = true;
-  selectedProduct: Products | undefined;
+  inStockModal: boolean = true;
 
-  constructor(
-    private _activatedRoute: ActivatedRoute, 
-    private _apiDataService: ApiDataService, 
-    private wishlistService: WishlistService 
-  ) { }
-
+  productDetails: any = {};
+  relatedProducts: Products[] = [];
+  selectedProduct: any;
+  
+  constructor(private _activatedRoute: ActivatedRoute, private _apiDataService: ApiDataService) { }
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe({
       next: (param) => {
@@ -41,37 +36,30 @@ export class ProductDetailsComponent implements OnInit {
               this.inStock = true;
             }
           }
-        });
+        })
       }
-    });
-
+    })
     this._apiDataService.getAllProducts().subscribe({
       next: (response) => {
         this.relatedProducts = response.filter((product: any) => {
           return product.category.name === this.productDetails.category.name;
-        });
-        this.relatedProducts.forEach((product: any) => {
-          if (product.productQuantity === 0) {
-            this.inStockOverlay = false;
-          } else {
-            this.inStockOverlay = true;
-          }
-        });
+        })
+        // this.relatedProducts.forEach((product: any) => {
+        //   if(product.productQuantity === 0) {
+        //     this.inStockOverlay = false;
+        //   }else{
+        //     this.inStockOverlay = true;
+        //   }          
+        // })
       }
-    });
+    })
   }
-
-  
-  addToWishlist(product: Products): void {
-    if (product) {
-      this.wishlistService.addToWishlist(product);
-      alert(`${product.productName} added to wishlist!`);
-    } else {
-      console.error('Product is undefined');
-    }
-  }
-  
-  openProductModal(productId: number): void {
-    this.selectedProduct = this.relatedProducts.find(product => product.id === productId);
-  }
+  quickView(productID: any): void{
+    this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productID);
+    if(this.selectedProduct.productQuantity === 0) {
+      this.inStockModal = false;
+    }else{
+      this.inStockModal = true;
+}
+}
 }

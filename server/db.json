@@ -2,27 +2,33 @@
   "categories": [
     {
       "id": 1,
-      "categoryName": "Milk & Cream"
+      "name": "Milk & Cream",
+      "attribute": "milk-cream"
     },
     {
       "id": 2,
-      "categoryName": "Butter & Egg"
+      "name": "Butter & Egg",
+      "attribute": "butter-egg"
     },
     {
       "id": 3,
-      "categoryName": "Fruits"
+      "name": "Fruits",
+      "attribute": "fruits"
     },
     {
       "id": 4,
-      "categoryName": "Vegetables"
+      "name": "Vegetables",
+      "attribute": "vegetables"
     },
     {
       "id": 5,
-      "categoryName": "Fresh Meat"
+      "name": "Fresh Meat",
+      "attribute": "fresh-meat"
     },
     {
       "id": 6,
-      "categoryName": "Ocean Food"
+      "name": "Ocean Food",
+      "attribute": "ocean-food"
     }
   ],
   "products": [
@@ -677,7 +683,7 @@
       "productPrice": 70.50,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-04/image-01.webp"],
       "productQuantity": 23,
@@ -691,7 +697,7 @@
       "productPrice": 70.00,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-05/image-01.webp"],
       "productQuantity": 14,
@@ -705,7 +711,7 @@
       "productPrice": 150.00,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-06/image-01.webp"],
       "productQuantity": 20,
@@ -719,7 +725,7 @@
       "productPrice": 60.00,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-03/image-01.webp"],
       "productQuantity": 10,
@@ -733,7 +739,7 @@
       "productPrice": 30.00,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-10/image-01.webp"],
       "productQuantity": 12,
@@ -747,7 +753,7 @@
       "productPrice": 140.00,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-09/image-01.webp"],
       "productQuantity": 10,
@@ -761,7 +767,7 @@
       "productPrice": 100.00,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-11/image-01.webp"],
       "productQuantity": 9,
@@ -775,7 +781,7 @@
       "productPrice": 95.00,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-02/image-01.webp"],
       "productQuantity": 32,
@@ -789,7 +795,7 @@
       "productPrice": 155.00,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-12/image-01.webp"],
       "productQuantity": 14,
@@ -803,7 +809,7 @@
       "productPrice": 135.00,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-13/image-01.webp"],
       "productQuantity": 9,
@@ -817,7 +823,7 @@
       "productPrice": 180.00,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-14/image-01.webp"],
       "productQuantity": 19,
@@ -831,7 +837,7 @@
       "productPrice": 230,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-15/image-01.webp"],
       "productQuantity": 52,
@@ -845,7 +851,7 @@
       "productPrice": 225.00,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-07/image-01.webp"],
       "productQuantity": 36,
@@ -859,7 +865,7 @@
       "productPrice": 255.00,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-08/image-01.webp"],
       "productQuantity": 17,
@@ -873,7 +879,7 @@
       "productPrice": 200.00,
       "category":{
           "id": 5,
-          "name" : "Frash Meat"
+          "name" : "Fresh Meat"
         },
       "imagesURL": ["assets/images/products/fresh-meat/product-01/image-01.webp"],
       "productQuantity": 29,
@@ -882,7 +888,7 @@
     },
     {
       "id": 62,
-      "productName": "Tesco 4 Salmon Fillets",
+      "productName": "Tesco Salmon Fillets",
       "productDescription": "Responsibly Sourced. Carefully chosen for freshness and tender texture.",
       "productPrice": 169.00,
       "category":{

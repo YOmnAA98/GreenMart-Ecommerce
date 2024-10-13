@@ -5,131 +5,56 @@
     </div>
     <nav class="my-5 border-0">
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <button class="nav-link px-2 py-3 active" id="nav-milk-cream-tab" data-bs-toggle="tab" data-bs-target="#nav-milk-cream" type="button" role="tab" aria-controls="nav-milk-cream" aria-selected="true">Milk & Cream</button>
-        <button class="nav-link px-2 py-3" id="nav-butter-egg-tab" data-bs-toggle="tab" data-bs-target="#nav-butter-egg" type="button" role="tab" aria-controls="nav-butter-egg" aria-selected="false">Butter & Egg</button>
-        <button class="nav-link px-2 py-3" id="nav-fruits-tab" data-bs-toggle="tab" data-bs-target="#nav-fruits" type="button" role="tab" aria-controls="nav-fruits" aria-selected="false">Fruits</button>
-        <button class="nav-link px-2 py-3" id="nav-vegetables-tab" data-bs-toggle="tab" data-bs-target="#nav-vegetables" type="button" role="tab" aria-controls="nav-vegetables" aria-selected="false">Vegetables</button>
-        <button class="nav-link px-2 py-3" id="nav-fresh-meat-tab" data-bs-toggle="tab" data-bs-target="#nav-fresh-meat" type="button" role="tab" aria-controls="nav-fresh-meat" aria-selected="false">Fresh Meat</button>
-        <button class="nav-link px-2 py-3" id="nav-ocean-food-tab" data-bs-toggle="tab" data-bs-target="#nav-ocean-food" type="button" role="tab" aria-controls="nav-ocean-food" aria-selected="false">Ocean Food</button>
+        <button *ngFor="let category of categories"
+          class="nav-link px-2 py-3" [ngClass]="{'active': activeTab === category.id}"
+          (click)="setActiveTab(category.id)"
+          [attr.id]="'nav-' + category.attribute + '-tab'"
+          data-bs-toggle="tab"
+          [attr.data-bs-target]="'#nav-'+category.attribute"
+          type="button" role="tab"
+          [attr.aria-controls]="'nav-'+category.id"
+          [attr.aria-selected]="activeTab === category.id">{{category.name}}
+        </button>
       </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="nav-milk-cream" role="tabpanel" aria-labelledby="nav-milk-cream-tab" tabindex="0">
+      <div *ngFor="let category of categories"
+        [ngClass]="{'show active': activeTab === category.id}" class="tab-pane fade"
+        [attr.id]="'nav-' + category.attribute" role="tabpanel"
+        [attr.aria-labelledby]="'nav-'+ category.attribute +'-tab'"
+        tabindex="0">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
-          <div class="col">
+          <div class="col" *ngFor="let product of filteredProducts.slice(0, 8)">
             <div class="card">
-              <a href="#">
+              <a [routerLink]="['/product-details', product.id]">
                 <div class="image">
-                  <span class="badge square-badge sale">Sale</span>
-                  <img src="assets/images/products/milk&cream/product-01/image-01.webp" class="card-img-top" alt="...">
-                  <p class="overlay">out of stock</p>
+                  <!-- <span class="badge square-badge sale">Sale</span> -->
+                   <!-- <span class="badge square-badge hot">Hot</span> -->
+                  <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName">
+                  <!-- <p class="overlay">out of stock</p> -->
                 </div>
               </a>
               <div class="card-body">
-                <a href="#"><h4 class="card-title">title</h4></a>
-                <p class="card-text">Approx 100kg</p>
+                <a [routerLink]="['/product-details', product.id]">
+                  <h4 class="card-title">{{product.productName | slicing : 2}}</h4>
+                </a>
+                <p class="card-text">Approx {{product.productSize}}</p>
                 <div class="card-info d-sm-flex justify-content-between mt-2">
-                  <span class="price">$50.00</span>
+                  <span class="price">{{product.productPrice | currency}}</span>
                   <ul class="p-0 d-flex align-items-center">
                     <li><i class="fa-solid fa-star"></i></li>
                     <li><i class="fa-solid fa-star"></i></li>
                     <li><i class="fa-solid fa-star"></i></li>
                     <li><i class="fa-solid fa-star"></i></li>
                     <li><i class="fa-solid fa-star"></i></li>
-                    <p class="ms-1">10</p>
+                    <p class="ms-1">{{product.ratingsAverage}}</p>
                   </ul>
                 </div>
                 <div class="my-2">
                   <button class="btn product-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-eye"></i></button>
-                  <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <a href="#">
-                <div class="image">
-                  <img src="assets/images/products/milk&cream/product-02/image-01.webp" class="card-img-top" alt="...">
-                </div>
-              </a>
-              <div class="card-body">
-                <a href="#"><h4 class="card-title">title</h4></a>
-                <p class="card-text">Approx 100kg</p>
-                <div class="card-info d-sm-flex justify-content-between mt-2">
-                  <span class="price">$50.00</span>
-                  <ul class="p-0 d-flex align-items-center">
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <p class="ms-1">10</p>
-                  </ul>
-                </div>
-                <div class="my-2">
-                  <button class="btn product-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-eye"></i></button>
-                  <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <a href="#">
-                <div class="image">
-                  <span class="badge square-badge hot">Hot</span>
-                  <img src="assets/images/products/milk&cream/product-03/image-01.webp" class="card-img-top" alt="...">
-                </div>
-              </a>
-              <div class="card-body">
-                <a href="#"><h4 class="card-title">title</h4></a>
-                <p class="card-text">Approx 100kg</p>
-                <div class="card-info d-sm-flex justify-content-between mt-2">
-                  <span class="price">$50.00</span>
-                  <ul class="p-0 d-flex align-items-center">
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <p class="ms-1">10</p>
-                  </ul>
-                </div>
-                <div class="my-2">
-                  <button class="btn product-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-eye"></i></button>
-                  <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <a href="#">
-                <div class="image">
-                  <img src="assets/images/products/milk&cream/product-04/image-01.webp" class="card-img-top" alt="...">
-                </div>
-              </a>
-              <div class="card-body">
-                <a href="#"><h4 class="card-title">title</h4></a>
-                <p class="card-text">Approx 100kg</p>
-                <div class="card-info d-sm-flex justify-content-between mt-2">
-                  <span class="price">$50.00</span>
-                  <ul class="p-0 d-flex align-items-center">
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <p class="ms-1">10</p>
-                  </ul>
-                </div>
-                <div class="my-2">
-                  <button class="btn product-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-eye"></i></button>
+                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#featuresModal" (click)="quickView(product.id)">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
                   <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
                 </div>
               </div>
@@ -137,11 +62,6 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="nav-butter-egg" role="tabpanel" aria-labelledby="nav-butter-egg-tab" tabindex="0">...</div>
-      <div class="tab-pane fade" id="nav-fruits" role="tabpanel" aria-labelledby="nav-fruits-tab" tabindex="0">...</div>
-      <div class="tab-pane fade" id="nav-vegetables" role="tabpanel" aria-labelledby="nav-vegetables-tab" tabindex="0">...</div>
-      <div class="tab-pane fade" id="nav-fresh-meat" role="tabpanel" aria-labelledby="nav-fresh-meat-tab" tabindex="0">...</div>
-      <div class="tab-pane fade" id="nav-ocean-food" role="tabpanel" aria-labelledby="nav-ocean-food-tab" tabindex="0">...</div>
     </div>
     <div class="text-center mt-5">
       <a class="btn primary-btn all" routerLink="/shop">View All</a>
@@ -150,58 +70,59 @@
 </section>
 
 
-<!-- View Modal -->
-<div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+<!-- Features Modal -->
+<div class="modal fade" id="featuresModal" tabindex="-1" aria-labelledby="featuresModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl w-75 m-auto">
     <div class="modal-content rounded-0">
       <div class="modal-body">
         <div class="row">
           <div class="slider col-lg-6">
-            <div id="viewCarouselIndicators" class="carousel slide">
+            <div id="featuresCarouselIndicators" class="carousel slide">
               <div class="carousel-indicators">
-                <button type="button" data-bs-target="#viewCarouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#viewCarouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#viewCarouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button *ngFor="let image of selectedProduct?.imagesURL; let i = index"
+                  type="button"
+                  [attr.data-bs-target]="'#featuresCarouselIndicators'"
+                  [attr.data-bs-slide-to]="i"
+                  [attr.aria-current]="i === 0 ? 'true' : null"
+                  [ngClass]="(i === 0) ? 'active' : ''">
+                </button>
               </div>
               <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="assets/images/products/milk&cream/product-01/image-01.webp" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="assets/images/products/milk&cream/product-02/image-01.webp" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="assets/images/products/milk&cream/product-03/image-01.webp" class="d-block w-100" alt="...">
+                <div *ngFor="let image of selectedProduct?.imagesURL; let i = index"
+                  class="carousel-item"
+                  [ngClass]="(i === 0) ? 'active' : ''">
+                  <img [src]="image" class="d-block w-100" [alt]="selectedProduct?.productName">
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#viewCarouselIndicators" data-bs-slide="prev">
+              <button class="carousel-control-prev" type="button" data-bs-target="#featuresCarouselIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#viewCarouselIndicators" data-bs-slide="next">
+              <button class="carousel-control-next" type="button" data-bs-target="#featuresCarouselIndicators" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
               </button>
             </div>
           </div>
           <div class="data col-lg-6">
-            <h2>title</h2>
-            <p class="weight mb-2">(Approx 100kg)</p>
+            <h2>{{selectedProduct?.productName}}</h2>
+            <p class="weight mb-2">(Approx {{selectedProduct?.productSize}})</p>
             <ul class="p-0 d-flex align-items-center">
               <li><i class="fa-solid fa-star"></i></li>
               <li><i class="fa-solid fa-star"></i></li>
               <li><i class="fa-solid fa-star"></i></li>
               <li><i class="fa-solid fa-star"></i></li>
               <li><i class="fa-solid fa-star"></i></li>
-              <p class="mt-1 ms-1">10</p>
+              <p class="mt-1 ms-1">{{selectedProduct?.ratingsAverage}}</p>
             </ul>
-            <span class="price">$50.00</span>
-            <p class="description my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quae iure distinctio dicta nesciunt illo, enim, sit deleniti dolorem inventore impedit nemo animi consequuntur quos. Corporis beatae aspernatur voluptate at.</p>
-            <div class="actions" *ngIf="inStock">
+            <span class="price">{{selectedProduct?.productPrice | currency}}</span>
+            <p class="description my-3">{{selectedProduct?.productDescription}}</p>
+            <div class="actions" *ngIf="inStockModal">
               <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1">
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
             </div>
-            <p class="out text-danger" *ngIf="!inStock">Out of Stock</p>
-            <p class="category my-3">Category: <span>Milk & Cream</span></p>
+            <p class="out text-danger" *ngIf="!inStockModal">Out of Stock</p>
+            <p class="category my-3">Category: <span>{{selectedProduct?.category.name}}</span></p>
+            <p class="quantity my-3">Quantity: <span>{{selectedProduct?.productQuantity}}</span></p>
           </div>
         </div>
       </div>

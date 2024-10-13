@@ -14,6 +14,7 @@ import { SlicingPipe } from '../../../../../../Shared/Pipes/slicing.pipe';
 })
 export class TopRatedSectionComponent implements OnInit{
   inStock: boolean = true
+  inStockModal: boolean = true
   products: Products[] = [];
   topRatedProducts: Products[] = [];
   selectedProduct: any
@@ -22,17 +23,21 @@ export class TopRatedSectionComponent implements OnInit{
     this._apiDataService.getAllProducts().subscribe({
       next: (response) => {
         this.products = response;
+        this.topRatedProducts = this.products.filter((product) => {
+          return product.ratingsAverage > 4.5;
+        })
       },
       error: (error) => {
         console.log(error);
       },
-    })
-
-    this.topRatedProducts = this.products.filter((product) => {
-      return product.ratingsAverage > 4.5;
-    })
+    })    
   }
-  openProductModel(productID: any): void {
-    this.selectedProduct = this.topRatedProducts.find((product: any) => product.id === productID);
+  quickView(productId: any): void {
+    this.selectedProduct = this.topRatedProducts.find((product: any) => product.id === productId);
+    if(this.selectedProduct.productQuantity === 0) {
+      this.inStockModal = false;
+    }else{
+      this.inStockModal = true;
+    }
   }
 }

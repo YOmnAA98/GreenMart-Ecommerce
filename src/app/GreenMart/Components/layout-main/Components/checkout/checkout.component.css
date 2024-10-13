@@ -1,0 +1,52 @@
+.checkout .left-side form label,
+.checkout .left-side form input,
+.checkout .left-side form select,
+.checkout .left-side form textarea,
+.checkout .left-side form textarea::placeholder,
+.checkout .right-side .table th,
+.checkout .right-side .table td,
+.checkout .right-side .payment label{
+  color: var(--main-text-color);
+  font-size: var(--text-small);
+  padding-block: 9px;
+}
+.checkout .left-side form input:focus,
+.checkout .left-side form select:focus,
+.checkout .left-side form textarea:focus{
+  border-color: var(--primary-color);
+}
+
+.checkout .right-side .payment{
+  background-color: #F8F7F8;
+  padding: 20px;
+}
+.checkout .right-side .payment input:checked{
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.checkout .right-side .payment input:focus{
+  border-color: var(--primary-color);
+}
+.checkout .right-side .payment .accordion-item {
+  background-color: transparent;
+}
+.checkout .right-side .payment .accordion-body{
+  position: relative;
+  background-color: #DCD7E3;
+  font-size: 13px;
+  margin-top: 10px;
+}
+.checkout .right-side .payment .accordion-body::after{
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 25px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #DCD7E3 transparent;
+}
+.checkout .right-side .payment a:hover{
+  color: var(--primary-color);
+}

@@ -138,7 +138,7 @@
     color: var(--primary-color) !important;
   }
   .breadcrumb a{
-    color: var(--dark-text-color);
+    color: var(--dark-text-color) !important;
     transition: color 0.3s ease;
   }
   .breadcrumb a:hover{

@@ -1,0 +1,29 @@
+.shop .left-side .filter .nav p{
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: var(--text-small);
+  font-weight: var(--main-weight);
+}
+.shop .left-side .filter .nav button{
+  background-color: var(--white-color);
+  color: var(--dark-text-color);
+  font-size: var(--text-small);
+  font-weight: var(--main-weight); 
+  transition: color 0.3s ease; 
+}
+.shop .left-side .filter .nav button:hover{
+  color: var(--primary-color);
+  border-right: 3px solid var(--primary-color);
+}
+.shop .left-side .filter .nav button.active{
+  background-color: var(--border-color);
+}
+.shop .left-side .filter .nav button:last-child{
+  border-bottom: none !important;
+  border-bottom-left-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+}
+
+.shop .right-side .search input:focus{
+  border-color: var(--primary-color);
+}

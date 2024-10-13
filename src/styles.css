@@ -81,7 +81,7 @@ button, input{
   color: var(--primary-color);
 }
 
-.product-btn {
+.product-btn, .product-btn:focus, .product-btn:active {
   background-color: var(--white-color);
   color: var(--light-text-color);
   border: 1px solid var(--light-text-color);
