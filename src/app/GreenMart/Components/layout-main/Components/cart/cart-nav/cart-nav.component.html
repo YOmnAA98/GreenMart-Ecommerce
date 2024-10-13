@@ -1,0 +1,28 @@
+<div class="empty" *ngIf="cartItems.length === 0">
+   <p>You have no items in your shopping cart</p>
+    <p>Subtotal: $0,00</p> 
+  </div>
+
+    <div class="container mt-5" *ngIf="cartItems.length > 0">
+        <div class="cart-container">
+           
+          <div class="cart-item">
+             <ul>
+                <li class="cart-item-details" *ngFor="let item of cartItems">
+                    <app-cart-item [cartItem]="item"></app-cart-item>
+                </li>
+             </ul>
+          <hr>
+      
+          <div class="subtotal">
+            <p>Subtotal: {{cartTotal|currency:'USD'}}</p>
+          </div>
+      
+          <div class="cart-buttons d-flex justify-content-between mt-3">
+            <button class="btn primary-btn ">View Cart</button>
+            <button class="btn primary-btn">Checkout</button>
+          </div>
+        </div>
+      </div>
+      </div>
+ 
