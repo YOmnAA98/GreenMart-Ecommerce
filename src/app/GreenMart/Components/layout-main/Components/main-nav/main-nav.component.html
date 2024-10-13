@@ -105,9 +105,8 @@
           </div>
         </div>
         <div class="dropdown-menu dropdown-menu-end">
-          <div class="empty" *ngIf="isEmpty">
-            <p>You have no items in your shopping cart</p>
-            <p>Subtotal: $0,00</p>
+          <div>
+            <app-cart-nav></app-cart-nav>
           </div>
           <div class="products" *ngIf="!isEmpty">
             <div class="pro">

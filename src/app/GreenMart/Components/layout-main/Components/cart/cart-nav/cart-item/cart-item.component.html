@@ -1,0 +1,23 @@
+
+    <div class="cart-item">
+      <!-- Item Image -->
+      <img src="{{ cartItem.imagesURL }}" alt="Product Image">
+      
+      <!-- Item Details -->
+      <div class="cart-item-details">
+        <p>{{ cartItem.productName }}</p>
+      </div>
+  
+      <!-- Quantity Controls -->
+      <div class="cart-item-quantity">
+        <button class="btn btn-sm btn-outline-secondary">-</button>
+        <input type="text" value="{{ cartItem.qty }}" readonly>
+        <button class="btn btn-sm btn-outline-secondary">+</button>
+      </div>
+  
+      <!-- Price -->
+      <div class="cart-price">
+        {{ (cartItem.qty * cartItem.price) | currency:'USD' }}
+      </div>
+    </div>
+

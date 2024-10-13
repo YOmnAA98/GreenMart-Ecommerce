@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ApiDataService } from '../../../../Shared/Services/api-data.service';
 import { Products } from '../../../../Shared/Interfaces/products';
 import { CommonModule } from '@angular/common';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { SlicingPipe } from '../../../../Shared/Pipes/slicing.pipe';
+import { ShoppingCartService } from '../../../../Shared/Services/shopping-cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -22,7 +23,9 @@ export class ProductDetailsComponent implements OnInit{
   relatedProducts: Products[] = [];
   selectedProduct: any;
   
-  constructor(private _activatedRoute: ActivatedRoute, private _apiDataService: ApiDataService) { }
+
+  // @Input productItem: Product
+  constructor(private _activatedRoute: ActivatedRoute, private _apiDataService: ApiDataService, private msg: ShoppingCartService) { }
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe({
       next: (param) => {
@@ -61,5 +64,8 @@ export class ProductDetailsComponent implements OnInit{
     }else{
       this.inStockModal = true;
     }
+  }
+  handleAddToCart() {
+    this.msg.sendMsg(this.productDetails);
   }
 }
