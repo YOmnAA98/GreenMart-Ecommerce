@@ -80,7 +80,7 @@
             [attr.aria-labelledby]="'nav-'+ category.attribute +'-tab'"
             tabindex="0">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-              <div class="col" *ngFor="let product of filteredProducts">
+              <div class="col" *ngFor="let product of filteredProducts | search: searchText">
                 <div class="card">
                   <a [routerLink]="['/product-details', product.id]">
                     <div class="image">
