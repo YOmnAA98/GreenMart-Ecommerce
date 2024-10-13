@@ -26,6 +26,9 @@
     font-size: 20px;
     font-weight: 300;
 }
+.title h3 strong{
+    font-weight: 700;
+}
 .tTwo{
   padding: 23px 0 0;
   font-size: 16px;
@@ -83,9 +86,15 @@
 }
 .third h3{
     padding: 0 0 62px;
-    font-size: 20px;
-    
+    font-size: 20px;  
     font-weight: 300;
+}
+.third h3 strong{
+    font-weight: 700;
+}
+.third .sto{
+    font-weight: 700;
+
 }
 .part{
     width: 770px;

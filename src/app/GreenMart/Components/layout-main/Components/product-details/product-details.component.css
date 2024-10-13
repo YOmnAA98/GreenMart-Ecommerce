@@ -124,6 +124,10 @@
   color: var(--white-color);
 }
 
+
+/* wishlist */
+
+
 @media screen and (max-width: 575px){
   .details .left-side .carousel-inner lib-ngx-image-zoom{
     display: none;

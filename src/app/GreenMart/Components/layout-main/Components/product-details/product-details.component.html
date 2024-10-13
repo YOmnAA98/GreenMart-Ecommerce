@@ -37,7 +37,13 @@
           </div>
         </div>
         <div class="right-side col-lg-6">
+         <div class="d-flex justify-content-between">
           <h2 class="h3">{{productDetails.productName}}</h2>
+          
+          <button class="btn " (click)="addToWishlist(productDetails)">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+         </div>
           <p class="weight mb-2">Approx {{productDetails.productSize}}</p>
             <ul class="p-0 d-flex align-items-center">
               <li><i class="fa-solid fa-star"></i></li>
@@ -51,7 +57,8 @@
             <p class="description my-3">{{productDetails.productDescription}}</p>
             <div class="actions border-top border-bottom py-4" *ngIf="inStock">
               <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1">
-              <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+              <button class="btn primary-btn" (click)="handleAddToCart()"><i class="fa-solid fa-cart-shopping" ></i>
+                 Add to Cart</button>
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
             </div>
             <p class="out text-danger" *ngIf="!inStock">Out of Stock</p>
@@ -212,5 +219,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>
 </div>

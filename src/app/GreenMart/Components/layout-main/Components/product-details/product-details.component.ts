@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ApiDataService } from '../../../../Shared/Services/api-data.service';
 import { Products } from '../../../../Shared/Interfaces/products';
 import { CommonModule } from '@angular/common';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { SlicingPipe } from '../../../../Shared/Pipes/slicing.pipe';
+import { ShoppingCartService } from '../../../../Shared/Services/shopping-cart.service';
+import { WishlistService } from '../../../../Shared/Services/wishlist.service';
 
 @Component({
   selector: 'app-product-details',
@@ -22,7 +24,9 @@ export class ProductDetailsComponent implements OnInit{
   relatedProducts: Products[] = [];
   selectedProduct: any;
   
-  constructor(private _activatedRoute: ActivatedRoute, private _apiDataService: ApiDataService) { }
+
+  // @Input productItem: Product
+  constructor(private _activatedRoute: ActivatedRoute, private _apiDataService: ApiDataService, private msg: ShoppingCartService, private wishlistService: WishlistService) { }
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe({
       next: (param) => {
@@ -62,4 +66,29 @@ export class ProductDetailsComponent implements OnInit{
       this.inStockModal = true;
     }
   }
+  handleAddToCart() {
+    this.msg.sendMsg(this.productDetails);
+  }
+
+
+
+
+
+
+
+
+
+
+  addToWishlist(product: Products): void {
+    if (product) {
+      this.wishlistService.addToWishlist(product);
+      alert(`${product.productName} added to wishlist!`);
+    } else {
+      console.error('Product is undefined');
+    }
+  }
 }
+
+
+
+
