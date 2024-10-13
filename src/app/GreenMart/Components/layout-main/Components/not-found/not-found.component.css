@@ -17,7 +17,7 @@ nav .breadcrumb {
   .error-page {
     position: relative;
     padding: 30px 20px;  
-    background-color: #eee;
+    background-color: #eee ;
     min-height: 300px; 
 }
 
@@ -37,7 +37,7 @@ nav .breadcrumb {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-   padding-top: 0px;
+   padding-top: 30px;
 }
 .error-content .found{
     color: #000;
@@ -66,11 +66,6 @@ nav .breadcrumb {
     color: #6fb443;
 } 
 
-
-
-
-
-
 .input-group input[type="text"] {
     padding: 10px;
     border: 2px solid #6fb443;
@@ -86,13 +81,6 @@ nav .breadcrumb {
     border-radius: 3px;
     cursor: pointer;
 }
-
-
-
-
-/* .input-group button:hover {
-    background-color: #5ca535;
-} */
 
 h2 +.found {
     margin-bottom: 150px;

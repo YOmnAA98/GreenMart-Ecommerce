@@ -1,3 +1,4 @@
+
 <section class="details my-5">
   <div class="container">
     <div class="content">
@@ -18,7 +19,7 @@
               <div *ngFor="let image of productDetails.imagesURL; let i = index"
                 class="carousel-item w-100"
                 [ngClass]="(i === 0) ? 'active' : ''">
-                <img [src]="image" class="w-100" [alt]="productDetails.productName">
+                <img [src]="image" class="w-100" [alt]="productDetails.productName"> 
                 <!-- <lib-ngx-image-zoom
                     [thumbImage]="image"
                     [fullImage]="image"
@@ -49,10 +50,13 @@
             </ul>
             <span class="price">${{productDetails.productPrice}}</span>
             <p class="description my-3">{{productDetails.productDescription}}</p>
-            <div class="actions border-top border-bottom py-4" *ngIf="inStock">
-              <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1">
+            <div class="actions border-top border-bottom py-5" *ngIf="inStock">
+              <!-- <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1"> -->
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+              <button class="btn primary-btn" (click)="addToWishlist(productDetails)">
+                <i class="fa-solid fa-heart"></i> Add to Wishlist
+              </button>
             </div>
             <p class="out text-danger" *ngIf="!inStock">Out of Stock</p>
             <p class="category my-3">Category: <span>{{productDetails.category.name}}</span></p>
@@ -151,8 +155,6 @@
   </div>
 </section>
 
-
-<!-- Related Products Modal -->
 <div class="modal fade" id="relatedModal" tabindex="-1" aria-labelledby="relatedModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl w-75 m-auto">
     <div class="modal-content rounded-0">
@@ -161,7 +163,7 @@
           <div class="slider col-xl-6">
             <div id="relatedProductsCarouselIndicators" class="carousel slide">
               <div class="carousel-indicators">
-                <button *ngFor="let image of selectedProduct?.imagesURL; let i = index"
+                <button *ngFor="let image of productDetails.imagesURL; let i = index"
                 type="button"
                 [attr.data-bs-target]="'#relatedProductsCarouselIndicators'"
                 [attr.data-bs-slide-to]="i"
@@ -169,10 +171,10 @@
                 [ngClass]="(i === 0) ? 'active' : ''"></button>
               </div>
               <div class="carousel-inner">
-                <div *ngFor="let image of selectedProduct?.imagesURL; let i = index"
+                <div *ngFor="let image of productDetails.imagesURL; let i = index"
                   class="carousel-item"
                   [ngClass]="(i === 0) ? 'active' : ''">
-                  <img [src]="image" class="d-block w-100" [alt]="selectedProduct?.productName">
+                  <img [src]="image" class="d-block w-100" [alt]="productDetails.productName">
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#relatedProductsCarouselIndicators" data-bs-slide="prev">
@@ -184,8 +186,8 @@
             </div>
           </div>
           <div class="data col-lg-6">
-            <h2>{{selectedProduct?.productName}}</h2>
-            <p class="weight mb-2">(Approx {{selectedProduct?.productSize}} )</p>
+            <h2>{{productDetails.productName}}</h2>
+            <p class="weight mb-2">(Approx {{productDetails.productSize}} )</p>
             <ul class="p-0 d-flex align-items-center">
               <li><i class="fa-solid fa-star"></i></li>
               <li><i class="fa-solid fa-star"></i></li>
@@ -194,19 +196,33 @@
               <li><i class="fa-solid fa-star"></i></li>
               <p class="mt-1 ms-1"></p>
             </ul>
-            <span class="price">${{selectedProduct?.productPrice}}</span>
-            <p class="description my-3">{{selectedProduct?.productDescription}}</p>
+            <span class="price">${{productDetails.productPrice}}</span>
+            <p class="description my-3">{{productDetails.productDescription}}</p>
+
             <div class="actions" *ngIf="inStock">
               <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1">
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+              
             </div>
             <p class="out text-danger" *ngIf="!inStock">Out of Stock</p>
-            <p class="category my-3">Category: <span>{{selectedProduct?.category.name}}</span></p>
-            <p class="quantity my-3">Quantity: <span>{{selectedProduct?.productQuantity}}</span></p>
+            <p class="category my-3">Category: <span>{{productDetails.category.name}}</span></p>
+            <p class="quantity my-3">Quantity: <span>{{productDetails.productQuantity}}</span></p>
+
+            
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
