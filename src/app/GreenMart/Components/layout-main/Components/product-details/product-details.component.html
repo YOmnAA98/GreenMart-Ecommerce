@@ -37,7 +37,13 @@
           </div>
         </div>
         <div class="right-side col-lg-6">
+         <div class="d-flex justify-content-between">
           <h2 class="h3">{{productDetails.productName}}</h2>
+          
+          <button class="btn " (click)="addToWishlist(productDetails)">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+         </div>
           <p class="weight mb-2">Approx {{productDetails.productSize}}</p>
             <ul class="p-0 d-flex align-items-center">
               <li><i class="fa-solid fa-star"></i></li>

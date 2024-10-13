@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { Products } from '../app/GreenMart/Shared/Interfaces/products'; 
+import { Products } from '../Interfaces/products'; 
 
 @Injectable({
   providedIn: 'root'

@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { SlicingPipe } from '../../../../Shared/Pipes/slicing.pipe';
 import { ShoppingCartService } from '../../../../Shared/Services/shopping-cart.service';
+import { WishlistService } from '../../../../Shared/Services/wishlist.service';
 
 @Component({
   selector: 'app-product-details',
@@ -25,7 +26,7 @@ export class ProductDetailsComponent implements OnInit{
   
 
   // @Input productItem: Product
-  constructor(private _activatedRoute: ActivatedRoute, private _apiDataService: ApiDataService, private msg: ShoppingCartService) { }
+  constructor(private _activatedRoute: ActivatedRoute, private _apiDataService: ApiDataService, private msg: ShoppingCartService, private wishlistService: WishlistService) { }
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe({
       next: (param) => {
@@ -68,5 +69,26 @@ export class ProductDetailsComponent implements OnInit{
   handleAddToCart() {
     this.msg.sendMsg(this.productDetails);
   }
+
+
+
+
+
+
+
+
+
+
+  addToWishlist(product: Products): void {
+    if (product) {
+      this.wishlistService.addToWishlist(product);
+      alert(`${product.productName} added to wishlist!`);
+    } else {
+      console.error('Product is undefined');
+    }
+  }
 }
+
+
+
 

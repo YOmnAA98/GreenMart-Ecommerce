@@ -1,7 +1,7 @@
 
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { WishlistService } from '../../../../../wishlist.service';
+import { WishlistService } from '../../../../Shared/Services/wishlist.service';
 import { Products } from '../../../../Shared/Interfaces/products'; 
 
 @Component({
