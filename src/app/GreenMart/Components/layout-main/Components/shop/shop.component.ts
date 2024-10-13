@@ -8,6 +8,8 @@ import { SearchPipe } from '../../../../Shared/Pipes/search.pipe';
 import { Category } from '../../../../Shared/Interfaces/category';
 import { Products } from '../../../../Shared/Interfaces/products';
 import { TopRatedSectionComponent } from "../home/Components/top-rated-section/top-rated-section.component";
+import { ShoppingCartService } from '../../../../Shared/Services/shopping-cart.service';
+import { Cart } from '../../../../Shared/Interfaces/cart';
 
 @Component({
   selector: 'app-shop',
@@ -17,15 +19,16 @@ import { TopRatedSectionComponent } from "../home/Components/top-rated-section/t
   styleUrl: './shop.component.css'
 })
 export class ShopComponent implements OnInit{
-  inStock: boolean = true;  
+  inStock: boolean = true;
   inStockModal: boolean = true;
   categories: Category[] = [];
   products: Products[] = [];
-  filteredProducts: Products[] = []; 
-  selectedProduct: any; 
+  filteredProducts: Products[] = [];
+  selectedProduct: any;
   activeTab: number = 0;
   searchText: string = '';
-  constructor(private _apiDataService: ApiDataService){}
+  cartItems: Cart[] = [];
+  constructor(private _apiDataService: ApiDataService, private _cartService: ShoppingCartService){}
   ngOnInit():void{
     this._apiDataService.getAllProducts().subscribe({
       next: (response) => {
@@ -34,8 +37,8 @@ export class ShopComponent implements OnInit{
     })
     this._apiDataService.getAllCategories().subscribe({
       next: (response) => {
-        this.categories = response;         
-        this.activeTab = this.categories[0].id;    
+        this.categories = response;
+        this.activeTab = this.categories[0].id;
       },
       error: (error) => {
         console.log(error);
@@ -46,11 +49,11 @@ export class ShopComponent implements OnInit{
   }
 
   setActiveTab(tabId: number):void{
-    this.activeTab = tabId;        
-    
+    this.activeTab = tabId;
+
     this._apiDataService.getProductsByCategoryId(tabId).subscribe({
       next: (response) => {
-        this.filteredProducts = response;        
+        this.filteredProducts = response;
       }
     })
   }
@@ -62,5 +65,16 @@ export class ShopComponent implements OnInit{
     }else{
       this.inStockModal = true;
     }
+  }
+
+  addToCart(product: Products, quantity: number): void {
+    this._cartService.addToCart(product, quantity).subscribe({
+      next: (newItem) => {
+        this.cartItems.push(newItem);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 }

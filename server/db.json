@@ -1,1058 +1,1228 @@
 {
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Milk & Cream",
       "attribute": "milk-cream"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Butter & Egg",
       "attribute": "butter-egg"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Fruits",
       "attribute": "fruits"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Vegetables",
       "attribute": "vegetables"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Fresh Meat",
       "attribute": "fresh-meat"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Ocean Food",
       "attribute": "ocean-food"
     }
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "productName": "Yop Strawberry Drinkable Yoghurt",
       "productDescription": "Strawberry Flavour Drinking Yogurt Yop Strawberry flavour drinking yoghurt, great source of Calcium and Vitamin D  with no colours or artificial flavourings. The perfect on-the- go snack with a taste that teens will love! It is a food that you can drink, and super filling! It lasts for 8 Hours  out of the fridge and perfect for busy days! Calcium and vitamin D are needed for normal growth and development of bone in children After 8 hours out of the fridge, the product must be discarded",
       "productPrice": 29.99,
-      "category":{
-          "id": 1,
-          "name" : "Milk & Cream"
-        },
-      "imagesURL": ["assets/images/products/milk&cream/product-01/image-01.webp"],
+      "category": {
+        "id": 1,
+        "name": "Milk & Cream"
+      },
+      "imagesURL": [
+        "assets/images/products/milk&cream/product-01/image-01.webp"
+      ],
       "productQuantity": 10,
       "productSize": "180g",
       "ratingsAverage": 4.4
     },
     {
-      "id": 2,
+      "id": "2",
       "productName": "Strawberry Dairy Drink ",
       "productDescription": "Biotiful kefir is a source of calcium which contributes to the normal function of digestive enzymes.Immunity Support Biotiful kefir is a source of vitamin B12 which supports the normal functioning of the immune system.Biotiful kefir is packed with naturally healthy nutrients, supporting your immunity** and with no sugar added. We love it for breakfast or as a snack.",
       "productPrice": 39.99,
-      "category":{
-          "id": 1,
-          "name" : "Milk & Cream"
-        },
-      "imagesURL": ["assets/images/products/milk&cream/product-10/image-01.webp", "assets/images/products/milk&cream/product-10/image-02.webp"],
+      "category": {
+        "id": 1,
+        "name": "Milk & Cream"
+      },
+      "imagesURL": [
+        "assets/images/products/milk&cream/product-10/image-01.webp",
+        "assets/images/products/milk&cream/product-10/image-02.webp"
+      ],
       "productQuantity": 0,
       "productSize": "500Ml",
       "ratingsAverage": 4.5
     },
     {
-      "id": 3,
+      "id": "3",
       "productName": "Actimel Yoghurt Drink ",
       "productDescription": "Yogurt drink with L. casei Danone cultures, vitamins D and B6.This mighty shot has:20 Billion live L. casei cultures.Vitamin DVitamin B63 Strains of live culturesOver 8h fermentation.Gluten freeNo preservatives or coloursNo artificial flavours",
       "productPrice": 19.99,
-      "category":{
-          "id": 1,
-          "name" : "Milk & Cream"
-        },
-      "imagesURL": ["assets/images/products/milk&cream/product-08/image-01.webp", "assets/images/products/milk&cream/product-08/image-02.webp"],
+      "category": {
+        "id": 1,
+        "name": "Milk & Cream"
+      },
+      "imagesURL": [
+        "assets/images/products/milk&cream/product-08/image-01.webp",
+        "assets/images/products/milk&cream/product-08/image-02.webp"
+      ],
       "productQuantity": 20,
       "productSize": "100g",
       "ratingsAverage": 4.2
     },
     {
-      "id": 4,
+      "id": "4",
       "productName": "Glenisk Creme Fraiche",
       "productDescription": "Glenisk Creme Fraiche 250GOur Crème Fraiche is crafted using blend of Ireland's best Organic Wholemilk and Organic Fresh Cream, cultured to perfection over time to create a distinctive and delicious flavour. With much less than a third of the fat of mayonnaise, and free from any artificial ingredients, it's a tasty, healthy choice that brings good food to life.",
-      "productPrice": 15.00,
-      "category":{
-          "id": 1,
-          "name" : "Milk & Cream"
-        },
-      "imagesURL": ["assets/images/products/milk&cream/product-06/image-01.webp"],
+      "productPrice": 15,
+      "category": {
+        "id": 1,
+        "name": "Milk & Cream"
+      },
+      "imagesURL": [
+        "assets/images/products/milk&cream/product-06/image-01.webp"
+      ],
       "productQuantity": 22,
       "productSize": "250g",
       "ratingsAverage": 4.2
     },
     {
-      "id": 5,
+      "id": "5",
       "productName": "Irish Yogurts Creme",
       "productDescription": "Half Fat Crème Fraîche. Our delicious half fat crème fraiche can be eaten on its own or used as a versatile alternative to fresh cream. Crème Fraiche may separate naturally, stir to ensure natural smoothness.",
       "productPrice": 59.99,
-      "category":{
-          "id": 1,
-          "name" : "Milk & Cream"
-        },
-      "imagesURL": ["assets/images/products/milk&cream/product-07/image-01.webp"],
+      "category": {
+        "id": 1,
+        "name": "Milk & Cream"
+      },
+      "imagesURL": [
+        "assets/images/products/milk&cream/product-07/image-01.webp"
+      ],
       "productQuantity": 27,
       "productSize": "250g",
       "ratingsAverage": 4.2
     },
     {
-      "id": 6,
+      "id": "6",
       "productName": "Avonmore Double Cream",
       "productDescription": "Avonmore Double Cream is a rich and luxurious dairy product, perfect for enhancing both sweet and savory dishes. This 229ml carton contains thick, velvety cream that boasts a high butterfat content, making it ideal for whipping, pouring, or adding a sumptuous finish to your recipes. Its smooth texture and creamy flavor make it an excellent choice for desserts like cakes, custards, and mousses, as well as for adding richness to sauces and soups. Whether used in cooking or enjoyed on its own, Avonmore Double Cream elevates any culinary creation.",
       "productPrice": 39.99,
-      "category":{
-          "id": 1,
-          "name" : "Milk & Cream"
-        },
-      "imagesURL": ["assets/images/products/milk&cream/product-09/image-01.webp"],
+      "category": {
+        "id": 1,
+        "name": "Milk & Cream"
+      },
+      "imagesURL": [
+        "assets/images/products/milk&cream/product-09/image-01.webp"
+      ],
       "productQuantity": 18,
       "productSize": "229Ml",
       "ratingsAverage": 4.2
     },
     {
-      "id": 7,
+      "id": "7",
       "productName": "Tesco Green Seedless ",
       "productDescription": "Tesco Green Seedless Grapes are a refreshing and sweet snack option, perfect for enjoying on their own or adding to fruit salads and desserts. These plump, juicy grapes are vibrant green in color, known for their crisp texture and delightful flavor. Conveniently seedless, they offer a hassle-free eating experience, making them a favorite for both kids and adults. Packed with vitamins and antioxidants, these grapes are not only delicious but also a healthy choice. Whether enjoyed fresh, in smoothies, or as a topping for yogurt, Tesco Green Seedless Grapes are a versatile and tasty addition to any diet.",
       "productPrice": 257.99,
-      "category":{
-          "id": 1,
-          "name" : "Milk & Cream"
-        },
-      "imagesURL": ["assets/images/products/milk&cream/product-02/image-01.webp"],
+      "category": {
+        "id": 1,
+        "name": "Milk & Cream"
+      },
+      "imagesURL": [
+        "assets/images/products/milk&cream/product-02/image-01.webp"
+      ],
       "productQuantity": 29,
       "productSize": " 700g",
       "ratingsAverage": 4.2
     },
     {
-      "id": 8,
+      "id": "8",
       "productName": "StIvel Buttermilk",
       "productDescription": "The buttermilk can be used in a variety of recipes, including pancakes, waffles, biscuits, and scones.It can also be used as a marinade for chicken or fish.It can be enjoyed on its own as a refreshing drink.",
-      "productPrice": 75.00,
-      "category":{
-          "id": 1,
-          "name" : "Milk & Cream"
-        },
-      "imagesURL": ["assets/images/products/milk&cream/product-03/image-01.webp"],
+      "productPrice": 75,
+      "category": {
+        "id": 1,
+        "name": "Milk & Cream"
+      },
+      "imagesURL": [
+        "assets/images/products/milk&cream/product-03/image-01.webp"
+      ],
       "productQuantity": 21,
       "productSize": "284ml",
       "ratingsAverage": 4.5
     },
     {
-      "id": 9,
+      "id": "9",
       "productName": "Tesco Whole Milk",
       "productDescription": "Tesco Whole Milk is a good source of calcium and vitamin D. It is also a good source of protein and carbohydrates. Tesco Whole Milk is suitable for people of all ages.",
-      "productPrice": 55.00,
-      "category":{
-          "id": 1,
-          "name" : "Milk & Cream"
-        },
-      "imagesURL": ["assets/images/products/milk&cream/product-04/image-01.webp"],
+      "productPrice": 55,
+      "category": {
+        "id": 1,
+        "name": "Milk & Cream"
+      },
+      "imagesURL": [
+        "assets/images/products/milk&cream/product-04/image-01.webp"
+      ],
       "productQuantity": 32,
       "productSize": "700g",
       "ratingsAverage": 4.6
     },
     {
-      "id": 10,
+      "id": "10",
       "productName": "Yoplait Yop Yogurts",
       "productDescription": "Yoplait Yop Pop is a fruity yogurt drink with a refreshing and creamy texture. It combines the smoothness of yogurt with vibrant fruit flavors, making it an ideal on-the-go drink. It's designed for convenience, offering a quick and tasty source of calcium and other nutrients. The drink comes in various fruit flavors, often in playful, colorful packaging, appealing to younger audiences or those looking for a fun and nutritious snack. Its light consistency makes it easy to sip, and it typically has a mildly sweet taste balanced by the tang of yogurt.",
-      "productPrice": 30.00,
-      "category":{
-          "id": 1,
-          "name" : "Milk & Cream"
-        },
-      "imagesURL": ["assets/images/products/milk&cream/product-05/image-01.webp" , "assets/images/products/milk&cream/product-05/image-02.webp"],
+      "productPrice": 30,
+      "category": {
+        "id": 1,
+        "name": "Milk & Cream"
+      },
+      "imagesURL": [
+        "assets/images/products/milk&cream/product-05/image-01.webp",
+        "assets/images/products/milk&cream/product-05/image-02.webp"
+      ],
       "productQuantity": 41,
       "productSize": "200ml",
       "ratingsAverage": 4.1
     },
     {
-      "id": 11,
+      "id": "11",
       "productName": "Big & Fresh",
       "productDescription": "Eggs are a good source of protein, vitamins, and minerals.One large egg contains approximately 78 calories, 6 grams of protein, 5 grams of fat, and 72 milligrams of cholesterol.Eggs are also a good source of vitamin D, vitamin B12, and selenium.",
-      "productPrice": 174.00,
-      "category":{
-          "id": 2,
-          "name" : "Butter & Egg"
-        },
-      "imagesURL": ["assets/images/products/butter&egg/product-01/image-01.webp"],
+      "productPrice": 174,
+      "category": {
+        "id": 2,
+        "name": "Butter & Egg"
+      },
+      "imagesURL": [
+        "assets/images/products/butter&egg/product-01/image-01.webp"
+      ],
       "productQuantity": 19,
       "productSize": "600g",
       "ratingsAverage": 4.7
     },
     {
-      "id": 12,
+      "id": "12",
       "productName": "ASDA Buttermilk ",
       "productDescription": "The buttermilk is low in fat, containing only 0.5g of fat per 100g.It is a good source of protein, containing 3.5g of protein per 100g.It is also a good source of calcium, containing 120mg of calcium per 100g.",
-      "productPrice": 42.50,
-      "category":{
-          "id": 2,
-          "name" : "Butter & Egg"
-        },
-      "imagesURL": ["assets/images/products/butter&egg/product-02/image-01.webp"],
+      "productPrice": 42.5,
+      "category": {
+        "id": 2,
+        "name": "Butter & Egg"
+      },
+      "imagesURL": [
+        "assets/images/products/butter&egg/product-02/image-01.webp"
+      ],
       "productQuantity": 27,
       "productSize": "500Ml",
       "ratingsAverage": 4.5
     },
     {
-      "id": 13,
+      "id": "13",
       "productName": "Tesco Organic eggs",
       "productDescription": "Eggs are a good source of protein, vitamins, and minerals.One large egg contains approximately 78 calories, 6 grams of protein, 5 grams of fat, and 72 milligrams of cholesterol.Eggs are also a good source of vitamin D, vitamin B12, and selenium.",
       "productPrice": 299.99,
-      "category":{
-          "id": 2,
-          "name" : "Butter & Egg"
-        },
-      "imagesURL": ["assets/images/products/butter&egg/product-03/image-01.webp"],
+      "category": {
+        "id": 2,
+        "name": "Butter & Egg"
+      },
+      "imagesURL": [
+        "assets/images/products/butter&egg/product-03/image-01.webp"
+      ],
       "productQuantity": 35,
       "productSize": "300g",
       "ratingsAverage": 4.3
     },
     {
-      "id": 14,
+      "id": "14",
       "productName": "Dairygold Original Butter",
       "productDescription": "Butter is a high-fat dairy product that is a good source of energy.One serving (1 tablespoon or 14g) of butter contains approximately 102 calories, 11g of fat, and 0.3g of protein.Butter is also a good source of vitamin A and vitamin D.",
-      "productPrice": 90.00,
-      "category":{
-          "id": 2,
-          "name" : "Butter & Egg"
-        },
-      "imagesURL": ["assets/images/products/butter&egg/product-04/image-01.webp"],
+      "productPrice": 90,
+      "category": {
+        "id": 2,
+        "name": "Butter & Egg"
+      },
+      "imagesURL": [
+        "assets/images/products/butter&egg/product-04/image-01.webp"
+      ],
       "productQuantity": 53,
       "productSize": "454g",
       "ratingsAverage": 4.4
     },
     {
-      "id": 15,
+      "id": "15",
       "productName": "Kerrygold Butter",
       "productDescription": "IRISH CREAMERY BUTTER.",
-      "productPrice": 75.00,
-      "category":{
-          "id": 2,
-          "name" : "Butter & Egg"
-        },
-      "imagesURL": ["assets/images/products/butter&egg/product-05/image-01.webp"],
+      "productPrice": 75,
+      "category": {
+        "id": 2,
+        "name": "Butter & Egg"
+      },
+      "imagesURL": [
+        "assets/images/products/butter&egg/product-05/image-01.webp"
+      ],
       "productQuantity": 13,
       "productSize": "227g",
       "ratingsAverage": 4.2
     },
     {
-      "id": 16,
+      "id": "16",
       "productName": "Irish Barn Eggs ",
       "productDescription": "Eggs are a good source of protein, vitamins, and minerals.One large egg contains approximately 78 calories, 6 grams of protein, 5 grams of fat, and 72 milligrams of cholesterol.Eggs are also a good source of vitamin D, vitamin B12, and selenium.",
-      "productPrice": 35.00,
-      "category":{
-          "id": 2,
-          "name" : "Butter & Egg"
-        },
-      "imagesURL": ["assets/images/products/butter&egg/product-06/image-01.webp"],
+      "productPrice": 35,
+      "category": {
+        "id": 2,
+        "name": "Butter & Egg"
+      },
+      "imagesURL": [
+        "assets/images/products/butter&egg/product-06/image-01.webp"
+      ],
       "productQuantity": 19,
       "productSize": "300g",
       "ratingsAverage": 4.3
     },
     {
-      "id": 17,
+      "id": "17",
       "productName": "Flora Original Spread ",
       "productDescription": "Flora Original Spread is a plant-based spread that is a good source of unsaturated fatty acids.One serving (1 tablespoon or 15g) of the spread contains approximately 102 calories, 11g of fat, and 0.3g of protein.The spread is also a good source of vitamin D.",
-      "productPrice": 78.00,
-      "category":{
-          "id": 2,
-          "name" : "Butter & Egg"
-        },
-      "imagesURL": ["assets/images/products/butter&egg/product-07/image-01.webp", "assets/images/products/butter&egg/product-07/image-02.webp"],
+      "productPrice": 78,
+      "category": {
+        "id": 2,
+        "name": "Butter & Egg"
+      },
+      "imagesURL": [
+        "assets/images/products/butter&egg/product-07/image-01.webp",
+        "assets/images/products/butter&egg/product-07/image-02.webp"
+      ],
       "productQuantity": 22,
       "productSize": "450g",
       "ratingsAverage": 4.4
     },
     {
-      "id": 18,
+      "id": "18",
       "productName": " Bertolli Olive Oil  ",
       "productDescription": "Bertolli Olive Oil Spread is a blend of butter and olive oil.One serving (1 tablespoon or 15g) of the spread contains approximately 102 calories, 11g of fat, and 0.3g of protein.The spread is a good source of unsaturated fatty acids and vitamin D.",
-      "productPrice": 73.50,
-      "category":{
-          "id": 2,
-          "name" : "Butter & Egg"
-        },
-      "imagesURL": ["assets/images/products/butter&egg/product-08/image-01.webp","assets/images/products/butter&egg/product-08/image-02.webp"],
+      "productPrice": 73.5,
+      "category": {
+        "id": 2,
+        "name": "Butter & Egg"
+      },
+      "imagesURL": [
+        "assets/images/products/butter&egg/product-08/image-01.webp",
+        "assets/images/products/butter&egg/product-08/image-02.webp"
+      ],
       "productQuantity": 21,
       "productSize": "450g",
       "ratingsAverage": 4.4
     },
     {
-      "id": 19,
+      "id": "19",
       "productName": "Ballyfree",
       "productDescription": "Ballyfree 10 Free Range Medium Eggs",
-      "productPrice": 40.00,
-      "category":{
-          "id": 2,
-          "name" : "Butter & Egg"
-        },
-      "imagesURL": ["assets/images/products/butter&egg/product-09/image-01.webp"],
+      "productPrice": 40,
+      "category": {
+        "id": 2,
+        "name": "Butter & Egg"
+      },
+      "imagesURL": [
+        "assets/images/products/butter&egg/product-09/image-01.webp"
+      ],
       "productQuantity": 15,
       "productSize": "135g",
       "ratingsAverage": 4.3
     },
     {
-      "id": 20,
+      "id": "20",
       "productName": "Avonmore",
       "productDescription": "Serve hot or cold, Ready to use!, Made with fresh Irish milk, infused with vanilla beans, Gluten free, No artificial colours or preservatives, Suitable for vegetarians",
-      "productPrice": 25.00,
-      "category":{
-          "id": 2,
-          "name" : "Butter & Egg"
-        },
-      "imagesURL": ["assets/images/products/butter&egg/product-10/image-01.webp"],
+      "productPrice": 25,
+      "category": {
+        "id": 2,
+        "name": "Butter & Egg"
+      },
+      "imagesURL": [
+        "assets/images/products/butter&egg/product-10/image-01.webp"
+      ],
       "productQuantity": 30,
       "productSize": "70g",
       "ratingsAverage": 4.1
     },
     {
-      "id": 21,
+      "id": "21",
       "productName": "Ballyfree",
       "productDescription": "Ballyfree 6 Free Range Medium Eggs.",
       "productPrice": 37.99,
-      "category":{
-          "id": 2,
-          "name" : "Butter & Egg"
-        },
-      "imagesURL": ["assets/images/products/butter&egg/product-11/image-01.webp"],
+      "category": {
+        "id": 2,
+        "name": "Butter & Egg"
+      },
+      "imagesURL": [
+        "assets/images/products/butter&egg/product-11/image-01.webp"
+      ],
       "productQuantity": 19,
       "productSize": "50g",
       "ratingsAverage": 4.5
     },
     {
-      "id": 22,
+      "id": "22",
       "productName": "Braeburn Apples Loose",
       "productDescription": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.",
-      "productPrice": 33.00,
-      "category":{
-          "id": 3,
-          "name" : "Fruits"
-        },
-      "imagesURL": ["assets/images/products/fruits/product-01/image-01.webp","assets/images/products/fruits/product-01/image-02.webp"],
+      "productPrice": 33,
+      "category": {
+        "id": 3,
+        "name": "Fruits"
+      },
+      "imagesURL": [
+        "assets/images/products/fruits/product-01/image-01.webp",
+        "assets/images/products/fruits/product-01/image-02.webp"
+      ],
       "productQuantity": 15,
       "productSize": "300g",
       "ratingsAverage": 4.3
     },
     {
-      "id": 23,
+      "id": "23",
       "productName": "Tesco Ripe Bananas",
       "productDescription": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.",
-      "productPrice": 90.00,
-      "category":{
-          "id": 3,
-          "name" : "Fruits"
-        },
-      "imagesURL": ["assets/images/products/fruits/product-02/image-01.webp", "assets/images/products/fruits/product-02/image-02.webp"],
+      "productPrice": 90,
+      "category": {
+        "id": 3,
+        "name": "Fruits"
+      },
+      "imagesURL": [
+        "assets/images/products/fruits/product-02/image-01.webp",
+        "assets/images/products/fruits/product-02/image-02.webp"
+      ],
       "productQuantity": 100,
       "productSize": "400g",
       "ratingsAverage": 4.4
     },
     {
-      "id": 24,
+      "id": "24",
       "productName": "Tesco Juicing Orange",
       "productDescription": "Juicing Orange",
       "productPrice": 2.29,
-      "category":{
-          "id": 3,
-          "name" : "Fruits"
-        },
-      "imagesURL": ["assets/images/products/fruits/product-03/image-01.webp", "assets/images/products/fruits/product-03/image-02.webp"],
+      "category": {
+        "id": 3,
+        "name": "Fruits"
+      },
+      "imagesURL": [
+        "assets/images/products/fruits/product-03/image-01.webp",
+        "assets/images/products/fruits/product-03/image-02.webp"
+      ],
       "productQuantity": 50,
       "productSize": "1.9kg",
       "ratingsAverage": 4.1
     },
     {
-      "id": 25,
+      "id": "25",
       "productName": "Tesco Limes",
       "productDescription": "Tesco Limes 4 Pack",
       "productPrice": 0.99,
-      "category":{
-          "id": 3,
-          "name" : "Fruits"
-        },
-      "imagesURL": ["assets/images/products/fruits/product-04/image-01.webp", "assets/images/products/fruits/product-04/image-02.webp"],
+      "category": {
+        "id": 3,
+        "name": "Fruits"
+      },
+      "imagesURL": [
+        "assets/images/products/fruits/product-04/image-01.webp",
+        "assets/images/products/fruits/product-04/image-02.webp"
+      ],
       "productQuantity": 30,
       "productSize": "1kg",
       "ratingsAverage": 4.5
     },
     {
-      "id": 26,
+      "id": "26",
       "productName": "Tesco Green Seedless Grapes",
       "productDescription": "Green seedless grapes. Hand picked Carefully grown in vineyards for a crisp bite and delicate sweetness",
       "productPrice": 2.69,
-      "category":{
-          "id": 3,
-          "name" : "Fruits"
-        },
-      "imagesURL": ["assets/images/products/fruits/product-05/image-01.webp"],
+      "category": {
+        "id": 3,
+        "name": "Fruits"
+      },
+      "imagesURL": [
+        "assets/images/products/fruits/product-05/image-01.webp"
+      ],
       "productQuantity": 15,
       "productSize": "500g",
       "ratingsAverage": 4.8
     },
     {
-      "id": 27,
+      "id": "27",
       "productName": "Tesco Clementine",
       "productDescription": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante",
       "productPrice": 60,
-      "category":{
-          "id": 3,
-          "name" : "Fruits"
-        },
-      "imagesURL": ["assets/images/products/fruits/product-06/image-01.webp", "assets/images/products/fruits/product-06/image-02.webp"],
+      "category": {
+        "id": 3,
+        "name": "Fruits"
+      },
+      "imagesURL": [
+        "assets/images/products/fruits/product-06/image-01.webp",
+        "assets/images/products/fruits/product-06/image-02.webp"
+      ],
       "productQuantity": 5,
       "productSize": "1kg",
       "ratingsAverage": 4.2
     },
     {
-      "id": 28,
+      "id": "28",
       "productName": "Tesco Orange",
       "productDescription": "Tesco Orange",
       "productPrice": 1.5,
-      "category":{
-          "id": 3,
-          "name" : "Fruits"
-        },
-      "imagesURL": ["assets/images/products/fruits/product-07/image-01.webp"],
+      "category": {
+        "id": 3,
+        "name": "Fruits"
+      },
+      "imagesURL": [
+        "assets/images/products/fruits/product-07/image-01.webp"
+      ],
       "productQuantity": 8,
       "productSize": "1.5kg",
       "ratingsAverage": 4.1
     },
     {
-      "id": 29,
+      "id": "29",
       "productName": "Coconut Each",
       "productDescription": "Coconut. Selected for their rich and crunchy flesh.",
-      "productPrice": 1.00,
-      "category":{
-          "id": 3,
-          "name" : "Fruits"
-        },
-      "imagesURL": ["assets/images/products/fruits/product-08/image-01.webp"],
+      "productPrice": 1,
+      "category": {
+        "id": 3,
+        "name": "Fruits"
+      },
+      "imagesURL": [
+        "assets/images/products/fruits/product-08/image-01.webp"
+      ],
       "productQuantity": 15,
       "productSize": "0.5kg",
       "ratingsAverage": 4.8
     },
     {
-      "id": 30,
+      "id": "30",
       "productName": "Fresh Golden Kiwi",
       "productDescription": "Fresh Golden Kiwi Fruit Kiwifruit",
-      "productPrice": 2.00,
-      "category":{
-          "id": 3,
-          "name" : "Fruits"
-        },
-      "imagesURL": ["assets/images/products/fruits/product-09/image-01.webp", "assets/images/products/fruits/product-09/image-02.webp"],
+      "productPrice": 2,
+      "category": {
+        "id": 3,
+        "name": "Fruits"
+      },
+      "imagesURL": [
+        "assets/images/products/fruits/product-09/image-01.webp",
+        "assets/images/products/fruits/product-09/image-02.webp"
+      ],
       "productQuantity": 10,
       "productSize": "0.5kg",
       "ratingsAverage": 4.2
     },
     {
-      "id": 31,
+      "id": "31",
       "productName": "Tesco Raspberries",
       "productDescription": "Raspberries. Delicately Hand picked Selected when ripe, fragrant and bursting with flavour",
       "productPrice": 1.95,
-      "category":{
-          "id": 3,
-          "name" : "Fruits"
-        },
-      "imagesURL": ["assets/images/products/fruits/product-10/image-01.webp"],
+      "category": {
+        "id": 3,
+        "name": "Fruits"
+      },
+      "imagesURL": [
+        "assets/images/products/fruits/product-10/image-01.webp"
+      ],
       "productQuantity": 20,
       "productSize": "125g",
       "ratingsAverage": 4.8
     },
     {
-      "id": 32,
+      "id": "32",
       "productName": "Baby Cado's Avocados",
       "productDescription": "Delicious mini avocados full of the same taste and flavour as a regular sized avocados",
       "productPrice": 2.19,
-      "category":{
-          "id": 3,
-          "name" : "Fruits"
-        },
-      "imagesURL": ["assets/images/products/fruits/product-11/image-01.webp"],
+      "category": {
+        "id": 3,
+        "name": "Fruits"
+      },
+      "imagesURL": [
+        "assets/images/products/fruits/product-11/image-01.webp"
+      ],
       "productQuantity": 0,
       "productSize": "0.8kg",
-      "ratingsAverage": 4.0
+      "ratingsAverage": 4
     },
     {
-      "id": 33,
+      "id": "33",
       "productName": "Tesco Blueberry",
       "productDescription": "Delicately hand picked. Carefully selected for a crisp bite and balanced flavour.Delicately hand picked. Carefully selected for a crisp bite and balanced flavour.",
       "productPrice": 1.99,
-      "category":{
-          "id": 3,
-          "name" : "Fruits"
-        },
-      "imagesURL": ["assets/images/products/fruits/product-12/image-01.webp", "assets/images/products/fruits/product-12/image-02.webp"],
+      "category": {
+        "id": 3,
+        "name": "Fruits"
+      },
+      "imagesURL": [
+        "assets/images/products/fruits/product-12/image-01.webp",
+        "assets/images/products/fruits/product-12/image-02.webp"
+      ],
       "productQuantity": 15,
       "productSize": "150g",
       "ratingsAverage": 4.5
     },
     {
-      "id": 34,
+      "id": "34",
       "productName": "Keelings Blackberries",
       "productDescription": "Keelings Blackberries",
       "productPrice": 2.99,
-      "category":{
-          "id": 3,
-          "name" : "Fruits"
-        },
-      "imagesURL": ["assets/images/products/fruits/product-13/image-01.webp"],
+      "category": {
+        "id": 3,
+        "name": "Fruits"
+      },
+      "imagesURL": [
+        "assets/images/products/fruits/product-13/image-01.webp"
+      ],
       "productQuantity": 9,
       "productSize": "125g",
       "ratingsAverage": 4.1
     },
     {
-      "id": 35,
+      "id": "35",
       "productName": "Orange Peel Zest",
       "productDescription": "This extra fancy California orange zest offers exceptional flavor and color. It has an alluring sweetness, perfect in baked goods, dressings, and marinades.",
-      "productPrice": 77.50,
-      "category":{
-          "id": 3,
-          "name" : "Fruits"
-        },
-      "imagesURL": ["assets/images/products/fruits/product-14/product-01.webp", "assets/images/products/fruits/product-14/product-02.webp"],
+      "productPrice": 77.5,
+      "category": {
+        "id": 3,
+        "name": "Fruits"
+      },
+      "imagesURL": [
+        "assets/images/products/fruits/product-14/product-01.webp",
+        "assets/images/products/fruits/product-14/product-02.webp"
+      ],
       "productQuantity": 5,
       "productSize": "800g",
       "ratingsAverage": 4.3
     },
     {
-      "id": 36,
+      "id": "36",
       "productName": "Tesco Asparagus Tips",
       "productDescription": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
       "productPrice": 100,
-      "category":{
-          "id": 4,
-          "name" : "Vegetables"
-        },
-      "imagesURL": ["assets/images/products/vegetables/product-01/image-01.webp", "assets/images/products/vegetables/product-01/image-02.webp"],
+      "category": {
+        "id": 4,
+        "name": "Vegetables"
+      },
+      "imagesURL": [
+        "assets/images/products/vegetables/product-01/image-01.webp",
+        "assets/images/products/vegetables/product-01/image-02.webp"
+      ],
       "productQuantity": 100,
       "productSize": "125g",
       "ratingsAverage": 4.8
     },
     {
-      "id": 37,
+      "id": "37",
       "productName": "Green Bell Pepper",
       "productDescription": "Green bell peppers are a crunchy and refreshing addition to any meal. Their mild and slightly sweet flavor makes them a versatile ingredient in both savory and sweet dishes.",
       "productPrice": 1.2,
-      "category":{
-          "id": 4,
-          "name" : "Vegetables"
-        },
-      "imagesURL": ["assets/images/products/vegetables/product-02/image-01.webp"],
+      "category": {
+        "id": 4,
+        "name": "Vegetables"
+      },
+      "imagesURL": [
+        "assets/images/products/vegetables/product-02/image-01.webp"
+      ],
       "productQuantity": 100,
       "productSize": "200g",
       "ratingsAverage": 4.2
     },
     {
-      "id": 38,
+      "id": "38",
       "productName": "Tesco Cauliflower",
       "productDescription": "Harvested by hand Grown for their delicate flavour and creamy texture At Tesco we believe in the importance of expertly selecting our seasonal produce for its freshness and quality. We develop long standing partnerships with growers and suppliers to bring you the very best quality cauliflower all year round.",
       "productPrice": 3.29,
-      "category":{
-          "id": 4,
-          "name" : "Vegetables"
-        },
-      "imagesURL": ["assets/images/products/vegetables/product-03/image-01.webp", "assets/images/products/vegetables/product-03/image-02.webp"],
+      "category": {
+        "id": 4,
+        "name": "Vegetables"
+      },
+      "imagesURL": [
+        "assets/images/products/vegetables/product-03/image-01.webp",
+        "assets/images/products/vegetables/product-03/image-02.webp"
+      ],
       "productQuantity": 50,
       "productSize": "400g",
       "ratingsAverage": 4.4
     },
     {
-      "id": 39,
+      "id": "39",
       "productName": "Tesco Irish Potatoes",
       "productDescription": "Tesco Irish Rooster Potatoes",
       "productPrice": 3.79,
-      "category":{
-          "id": 4,
-          "name" : "Vegetables"
-        },
-      "imagesURL": ["assets/images/products/vegetables/product-04/image-01.webp", "assets/images/products/vegetables/product-04/image-02.webp"],
+      "category": {
+        "id": 4,
+        "name": "Vegetables"
+      },
+      "imagesURL": [
+        "assets/images/products/vegetables/product-04/image-01.webp",
+        "assets/images/products/vegetables/product-04/image-02.webp"
+      ],
       "productQuantity": 50,
       "productSize": "2kg",
       "ratingsAverage": 4.3
     },
     {
-      "id": 40,
+      "id": "40",
       "productName": "Tesco Carrot Bag",
       "productDescription": "Tesco Carrots, Tesco 2kg Carrots / Tesco 1kg Carrots / Tesco 500g Carrots",
       "productPrice": 0.79,
-      "category":{
-          "id": 4,
-          "name" : "Vegetables"
-        },
-      "imagesURL": ["assets/images/products/vegetables/product-05/image-01.webp", "assets/images/products/vegetables/product-05/image-02.webp"],
+      "category": {
+        "id": 4,
+        "name": "Vegetables"
+      },
+      "imagesURL": [
+        "assets/images/products/vegetables/product-05/image-01.webp",
+        "assets/images/products/vegetables/product-05/image-02.webp"
+      ],
       "productQuantity": 30,
       "productSize": "500g",
       "ratingsAverage": 4.5
     },
     {
-      "id": 41,
+      "id": "41",
       "productName": "Tesco Pre-Packed Leeks",
       "productDescription": "Pre-Packed Leeks",
       "productPrice": 1.79,
-      "category":{
-          "id": 4,
-          "name" : "Vegetables"
-        },
-      "imagesURL": ["assets/images/products/vegetables/product-06/image-01.webp", "assets/images/products/vegetables/product-06/image-02.webp"],
+      "category": {
+        "id": 4,
+        "name": "Vegetables"
+      },
+      "imagesURL": [
+        "assets/images/products/vegetables/product-06/image-01.webp",
+        "assets/images/products/vegetables/product-06/image-02.webp"
+      ],
       "productQuantity": 20,
       "productSize": "500g",
       "ratingsAverage": 4.3
     },
     {
-      "id": 42,
+      "id": "42",
       "productName": "Tesco Garlic",
       "productDescription": "Tesco Garlic 4 Pack",
       "productPrice": 0.99,
-      "category":{
-          "id": 4,
-          "name" : "Vegetables"
-        },
-      "imagesURL": ["assets/images/products/vegetables/product-07/image-01.webp", "assets/images/products/vegetables/product-07/image-02.webp"],
+      "category": {
+        "id": 4,
+        "name": "Vegetables"
+      },
+      "imagesURL": [
+        "assets/images/products/vegetables/product-07/image-01.webp",
+        "assets/images/products/vegetables/product-07/image-02.webp"
+      ],
       "productQuantity": 15,
       "productSize": "200g",
       "ratingsAverage": 4.2
     },
     {
-      "id": 43,
+      "id": "43",
       "productName": "Tesco Organic Mushrooms",
       "productDescription": "Gently hand picked. Carefully grown to strict organic standards, with a delicate flavour. All of our organic mushrooms come from trusted growers . Using compost made of only organic approved straw and raw materials, our organic mushrooms are grown without the use of any artificial chemicals or fertilisers.",
       "productPrice": 1.39,
-      "category":{
-          "id": 4,
-          "name" : "Vegetables"
-        },
-      "imagesURL": ["assets/images/products/vegetables/product-08/image-01.webp", "assets/images/products/vegetables/product-08/image-02.webp"],
+      "category": {
+        "id": 4,
+        "name": "Vegetables"
+      },
+      "imagesURL": [
+        "assets/images/products/vegetables/product-08/image-01.webp",
+        "assets/images/products/vegetables/product-08/image-02.webp"
+      ],
       "productQuantity": 30,
       "productSize": "200g",
       "ratingsAverage": 4.2
     },
     {
-      "id": 44,
+      "id": "44",
       "productName": "Tesco Finest Sweet Onion",
       "productDescription": "Mild and sweet in flavour Perfect for salads.",
       "productPrice": 1.79,
-      "category":{
-          "id": 4,
-          "name" : "Vegetables"
-        },
-      "imagesURL": ["assets/images/products/vegetables/product-09/image-01.webp", "assets/images/products/vegetables/product-09/image-02.webp"],
+      "category": {
+        "id": 4,
+        "name": "Vegetables"
+      },
+      "imagesURL": [
+        "assets/images/products/vegetables/product-09/image-01.webp",
+        "assets/images/products/vegetables/product-09/image-02.webp"
+      ],
       "productQuantity": 40,
       "productSize": "385g",
       "ratingsAverage": 4.3
     },
     {
-      "id": 45,
+      "id": "45",
       "productName": "vacuum pack sweet corn",
       "productDescription": "High quality New crop sweet corn cob in vacuum pack.",
-      "productPrice": 15.50,
-      "category":{
-          "id": 4,
-          "name" : "Vegetables"
-        },
-      "imagesURL": ["assets/images/products/vegetables/product-10/image-01.webp"],
+      "productPrice": 15.5,
+      "category": {
+        "id": 4,
+        "name": "Vegetables"
+      },
+      "imagesURL": [
+        "assets/images/products/vegetables/product-10/image-01.webp"
+      ],
       "productQuantity": 30,
       "productSize": "400g",
       "ratingsAverage": 4.4
     },
     {
-      "id": 46,
+      "id": "46",
       "productName": "Tesco Sugar Snap Peas",
       "productDescription": "Harvested by hand Sweet, whole pods picked for their size and crisp texture At Tesco we believe in the importance of expertly selecting our seasonal produce for its freshness and quality. Working in partnership with trusted growers from around the world, our Sugarsnaps are grown in carefully tended fields where the pods are harvested by hand and specially selected for their size, maturity and sweet flavour.",
       "productPrice": 0.79,
-      "category":{
-          "id": 4,
-          "name" : "Vegetables"
-        },
-      "imagesURL": ["assets/images/products/vegetables/product-11/image-01.webp"],
+      "category": {
+        "id": 4,
+        "name": "Vegetables"
+      },
+      "imagesURL": [
+        "assets/images/products/vegetables/product-11/image-01.webp"
+      ],
       "productQuantity": 20,
       "productSize": "150g",
       "ratingsAverage": 4.5
     },
     {
-      "id": 47,
+      "id": "47",
       "productName": "Tesco Irish Chicken Breast Mini Fillets",
       "productDescription": "Tesco Irish Chicken Breast Mini Fillets IRISH CHICKEN Fed on a cereal based diet for a succulent texture",
-      "productPrice": 70.50,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-04/image-01.webp"],
+      "productPrice": 70.5,
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-04/image-01.webp"
+      ],
       "productQuantity": 23,
       "productSize": "24kg",
       "ratingsAverage": 4.2
     },
     {
-      "id": 48,
+      "id": "48",
       "productName": "Tesco Irish Chicken Thigh Fillets",
       "productDescription": "Irish Chicken Fed on a cereal based diet for a succulent texture",
-      "productPrice": 70.00,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-05/image-01.webp"],
+      "productPrice": 70,
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-05/image-01.webp"
+      ],
       "productQuantity": 14,
       "productSize": "450g",
       "ratingsAverage": 4.3
     },
     {
-      "id": 49,
+      "id": "49",
       "productName": "Tesco Whole Chicken",
       "productDescription": "Fresh Class A Irish small whole chicken without giblets",
-      "productPrice": 150.00,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-06/image-01.webp"],
+      "productPrice": 150,
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-06/image-01.webp"
+      ],
       "productQuantity": 20,
       "productSize": "1300g",
       "ratingsAverage": 4.1
     },
     {
-      "id": 50,
+      "id": "50",
       "productName": "Tesco Irish Beef Sirloin Steak",
       "productDescription": "Irish Beef Sirloin Steak 28 Day Matured. A prime cut, chosen for a full and rich flavour.",
-      "productPrice": 60.00,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-03/image-01.webp"],
+      "productPrice": 60,
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-03/image-01.webp"
+      ],
       "productQuantity": 10,
       "productSize": "260g",
       "ratingsAverage": 4.1
     },
     {
-      "id": 51,
+      "id": "51",
       "productName": "Tesco Irish Diced Beef",
       "productDescription": "Tesco Irish Diced Beef, slow cook",
-      "productPrice": 30.00,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-10/image-01.webp"],
+      "productPrice": 30,
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-10/image-01.webp"
+      ],
       "productQuantity": 12,
       "productSize": "350g",
       "ratingsAverage": 4.3
     },
     {
-      "id": 52,
+      "id": "52",
       "productName": "Tesco Irish Lean Beef Steak Mince 5% Fat",
       "productDescription": "Irish lean beef steak mince. Typical percentage of fat content under 5%. Typical percentage of collagen/meat protein ratio under 12%.",
-      "productPrice": 140.00,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-09/image-01.webp"],
+      "productPrice": 140,
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-09/image-01.webp"
+      ],
       "productQuantity": 10,
       "productSize": "797g",
       "ratingsAverage": 4.5
     },
     {
-      "id": 53,
+      "id": "53",
       "productName": "Tesco Thin Sliced Steak",
       "productDescription": "Irish Thin Sliced Beef Steaks. Quick Cook. Thinly sliced prime cuts for a quick cook meal.",
-      "productPrice": 100.00,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-11/image-01.webp"],
+      "productPrice": 100,
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-11/image-01.webp"
+      ],
       "productQuantity": 9,
       "productSize": "300g",
       "ratingsAverage": 4.3
     },
     {
-      "id": 54,
+      "id": "54",
       "productName": "Tesco Finest 4 Irish Angus Beef Quarter Pounders",
       "productDescription": "Tesco Finest 4 Certified Irish Angus Beef Quarter Pounders Irish Beef. Succulent Irish beef lightly seasoned with salt and spices.",
-      "productPrice": 95.00,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-02/image-01.webp"],
+      "productPrice": 95,
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-02/image-01.webp"
+      ],
       "productQuantity": 32,
       "productSize": "450g",
       "ratingsAverage": 4.5
     },
     {
-      "id": 55,
+      "id": "55",
       "productName": "Tesco Irish Chicken Breast Fillets",
       "productDescription": "Tesco Large Fillet Irish Chicken Fed on a cereal based diet for a succulent texture",
-      "productPrice": 155.00,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-12/image-01.webp"],
+      "productPrice": 155,
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-12/image-01.webp"
+      ],
       "productQuantity": 14,
       "productSize": "750g",
       "ratingsAverage": 4.2
     },
     {
-      "id": 56,
+      "id": "56",
       "productName": "Tesco Irish Chicken Wings",
       "productDescription": "Tesco Irish Chicken Wings, IRISH CHICKEN Fed on a cereal based diet for a succulent texture.",
-      "productPrice": 135.00,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-13/image-01.webp"],
+      "productPrice": 135,
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-13/image-01.webp"
+      ],
       "productQuantity": 9,
       "productSize": "925g",
       "ratingsAverage": 4.1
     },
     {
-      "id": 57,
+      "id": "57",
       "productName": "Tesco Large Diced Chicken Fillets",
       "productDescription": "Fresh Class A Irish diced chicken breast pieces without skin",
-      "productPrice": 180.00,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-14/image-01.webp"],
+      "productPrice": 180,
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-14/image-01.webp"
+      ],
       "productQuantity": 19,
       "productSize": "550g",
       "ratingsAverage": 4.4
     },
     {
-      "id": 58,
+      "id": "58",
       "productName": "Tesco 16 Irish Pork Sausages",
       "productDescription": "Tesco 16 Irish pork sausages, Irish Pork. Simply prepared and lightly seasoned for a full flavour.",
       "productPrice": 230,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-15/image-01.webp"],
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-15/image-01.webp"
+      ],
       "productQuantity": 52,
       "productSize": "450g",
       "ratingsAverage": 4.9
     },
     {
-      "id": 59,
+      "id": "59",
       "productName": "Tesco Finest Chicken Mozzarella Stuffing",
       "productDescription": "Skin on, boneless, corn fed chicken thighs filled with a nut-free pesto, sundried tomato and mozzarella stuffing and garnished with mixed pepper sprinkle and semi dried cherry tomatoes.",
-      "productPrice": 225.00,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-07/image-01.webp"],
+      "productPrice": 225,
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-07/image-01.webp"
+      ],
       "productQuantity": 36,
       "productSize": "560g",
       "ratingsAverage": 4.5
     },
     {
-      "id": 60,
+      "id": "60",
       "productName": "Tesco Irish Beef Sirloin Steak",
       "productDescription": "Irish Beef Sirloin Steak 28 Day Matured. A prime cut, chosen for a full and rich flavour.",
-      "productPrice": 255.00,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-08/image-01.webp"],
+      "productPrice": 255,
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-08/image-01.webp"
+      ],
       "productQuantity": 17,
       "productSize": "266g",
       "ratingsAverage": 4.5
     },
     {
-      "id": 61,
+      "id": "61",
       "productName": "Tesco Irish Diced Lamb ",
       "productDescription": "Tesco Irish Diced Lamb100% Irish Lamb. Diced for your convenience, perfect for slow cooking.",
-      "productPrice": 200.00,
-      "category":{
-          "id": 5,
-          "name" : "Fresh Meat"
-        },
-      "imagesURL": ["assets/images/products/fresh-meat/product-01/image-01.webp"],
+      "productPrice": 200,
+      "category": {
+        "id": 5,
+        "name": "Fresh Meat"
+      },
+      "imagesURL": [
+        "assets/images/products/fresh-meat/product-01/image-01.webp"
+      ],
       "productQuantity": 29,
       "productSize": "265g",
       "ratingsAverage": 4.6
     },
     {
-      "id": 62,
+      "id": "62",
       "productName": "Tesco Salmon Fillets",
       "productDescription": "Responsibly Sourced. Carefully chosen for freshness and tender texture.",
-      "productPrice": 169.00,
-      "category":{
-          "id": 6,
-          "name" : "Ocean Food"
-        },
-      "imagesURL": ["assets/images/products/ocean-food/product-02/image-01.webp"],
+      "productPrice": 169,
+      "category": {
+        "id": 6,
+        "name": "Ocean Food"
+      },
+      "imagesURL": [
+        "assets/images/products/ocean-food/product-02/image-01.webp"
+      ],
       "productQuantity": 34,
       "productSize": "440g",
       "ratingsAverage": 4.8
     },
     {
-      "id": 63,
+      "id": "63",
       "productName": "Open Ocean Garlic And Herb King Prawns",
       "productDescription": "Description of Product 63.",
-      "productPrice": 170.00,
-      "category":{
-          "id": 6,
-          "name" : "Ocean Food"
-        },
-      "imagesURL": ["assets/images/products/ocean-food/product-03/image-01.webp"],
+      "productPrice": 170,
+      "category": {
+        "id": 6,
+        "name": "Ocean Food"
+      },
+      "imagesURL": [
+        "assets/images/products/ocean-food/product-03/image-01.webp"
+      ],
       "productQuantity": 31,
       "productSize": "90g",
       "ratingsAverage": 4.8
     },
     {
-      "id": 64,
+      "id": "64",
       "productName": "Atlantictresures Smoked Mackerel World Taste Ginger",
       "productDescription": "Atlantic Treasures, based in the fishing town of Killybegs, Co. Donegal has a long tradition of producing hand crafted fish fillets. With this experience we have developed our range of smoked fish with glazes and butters to tempt your senses.",
-      "productPrice": 95.00,
-      "category":{
-          "id": 6,
-          "name" : "Ocean Food"
-        },
-      "imagesURL": ["assets/images/products/ocean-food/product-04/image-01.webp"],
+      "productPrice": 95,
+      "category": {
+        "id": 6,
+        "name": "Ocean Food"
+      },
+      "imagesURL": [
+        "assets/images/products/ocean-food/product-04/image-01.webp"
+      ],
       "productQuantity": 22,
       "productSize": "175g",
       "ratingsAverage": 4.8
     },
     {
-      "id": 65,
+      "id": "65",
       "productName": "Tesco Organic Cooked & Peeled Black Tiger Prawns",
       "productDescription": "From Organic Farms Plump, juicy warm water prawns, with a sweet and delicate flavour. Proof point: From Organic Farms. Care Story: Plump, juicy warm water prawns, with a sweet and delicate flavour.",
       "productPrice": 270,
-      "category":{
-          "id": 6,
-          "name" : "Ocean Food"
-        },
-      "imagesURL": ["assets/images/products/ocean-food/product-05/image-01.webp"],
+      "category": {
+        "id": 6,
+        "name": "Ocean Food"
+      },
+      "imagesURL": [
+        "assets/images/products/ocean-food/product-05/image-01.webp"
+      ],
       "productQuantity": 8,
       "productSize": "150g",
       "ratingsAverage": 4.8
     },
     {
-      "id": 66,
+      "id": "66",
       "productName": "Tesco Ready To Eat Hot Smoked Salmon Slices",
       "productDescription": "Skin-on, hot smoked salmon (Salmo salar) slices, defrosted.",
-      "productPrice": 300.00,
-      "category":{
-          "id": 6,
-          "name" : "Ocean Food"
-        },
-      "imagesURL": ["assets/images/products/ocean-food/product-06/image-01.webp"],
+      "productPrice": 300,
+      "category": {
+        "id": 6,
+        "name": "Ocean Food"
+      },
+      "imagesURL": [
+        "assets/images/products/ocean-food/product-06/image-01.webp"
+      ],
       "productQuantity": 69,
       "productSize": "100g",
       "ratingsAverage": 4.2
     },
     {
-      "id": 67,
+      "id": "67",
       "productName": "Tesco Ready to Eat Sweet Chilli Hot Smoked Salmon Flakes",
       "productDescription": "Hot smoked salmon (Salmo salar) flakes with a sweet chilli seasoning, defrosted.",
-      "productPrice": 165.00,
-      "category":{
-          "id": 6,
-          "name" : "Ocean Food"
-        },
-      "imagesURL": ["assets/images/products/ocean-food/product-07/image-01.webp"],
+      "productPrice": 165,
+      "category": {
+        "id": 6,
+        "name": "Ocean Food"
+      },
+      "imagesURL": [
+        "assets/images/products/ocean-food/product-07/image-01.webp"
+      ],
       "productQuantity": 4,
       "productSize": "100g",
       "ratingsAverage": 4.2
     },
     {
-      "id": 68,
+      "id": "68",
       "productName": "Tesco Hake Fillets",
       "productDescription": "2 Hake Fillets. Caught in the wild Chosen for its mild flavour and succulent flakes",
       "productPrice": 320,
-      "category":{
-          "id": 6,
-          "name" : "Ocean Food"
-        },
-      "imagesURL": ["assets/images/products/ocean-food/product-08/image-01.webp"],
+      "category": {
+        "id": 6,
+        "name": "Ocean Food"
+      },
+      "imagesURL": [
+        "assets/images/products/ocean-food/product-08/image-01.webp"
+      ],
       "productQuantity": 23,
       "productSize": "250g",
       "ratingsAverage": 4.2
     },
     {
-      "id": 69,
+      "id": "69",
       "productName": "Keoh/Ob Creamy Coconut Hake Curry",
       "productDescription": "Skinless Hake Chunks (Defrosted) with Green Beans in a Creamy Coconut Curry SauceDelicate Hake Chunks, responsibly sourced. Paired with green beans in a creamy coconut curry sauce. Fish Made Easy",
-      "productPrice": 365.00,
-      "category":{
-          "id": 6,
-          "name" : "Ocean Food"
-        },
-      "imagesURL": ["assets/images/products/ocean-food/product-09/image-01.webp"],
+      "productPrice": 365,
+      "category": {
+        "id": 6,
+        "name": "Ocean Food"
+      },
+      "imagesURL": [
+        "assets/images/products/ocean-food/product-09/image-01.webp"
+      ],
       "productQuantity": 23,
       "productSize": "350g",
       "ratingsAverage": 4.8
     },
     {
-      "id": 70,
+      "id": "70",
       "productName": "Tesco Fish Pie Mix",
       "productDescription": "White fish, smoked fish and salmon fillet pieces, defrosted.",
-      "productPrice": 100.00,
-      "category":{
-          "id": 6,
-          "name" : "Ocean Food"
-        },
-      "imagesURL": ["assets/images/products/ocean-food/product-10/image-01.webp"],
+      "productPrice": 100,
+      "category": {
+        "id": 6,
+        "name": "Ocean Food"
+      },
+      "imagesURL": [
+        "assets/images/products/ocean-food/product-10/image-01.webp"
+      ],
       "productQuantity": 16,
       "productSize": "250g",
       "ratingsAverage": 4.2
     },
     {
-      "id": 71,
+      "id": "71",
       "productName": "Keohane's Of Bantry Hake Fillets",
       "productDescription": "Skinless Hake Fillets Defrosted",
       "productPrice": 292,
-      "category":{
-          "id": 6,
-          "name" : "Ocean Food"
-        },
-      "imagesURL": ["assets/images/products/ocean-food/product-11/image-01.webp"],
+      "category": {
+        "id": 6,
+        "name": "Ocean Food"
+      },
+      "imagesURL": [
+        "assets/images/products/ocean-food/product-11/image-01.webp"
+      ],
       "productQuantity": 34,
       "productSize": "400g",
       "ratingsAverage": 4.4
     },
     {
-      "id": 72,
+      "id": "72",
       "productName": "Tesco Sea Bass Fillets",
       "productDescription": "Seabass (Dicentrarchus labrax) fillets",
       "productPrice": 450,
-      "category":{
-          "id": 6,
-          "name" : "Ocean Food"
-        },
-      "imagesURL": ["assets/images/products/ocean-food/product-01/image-01.webp","assets/images/products/ocean-food/product-01/image-02.webp"],
+      "category": {
+        "id": 6,
+        "name": "Ocean Food"
+      },
+      "imagesURL": [
+        "assets/images/products/ocean-food/product-01/image-01.webp",
+        "assets/images/products/ocean-food/product-01/image-02.webp"
+      ],
       "productQuantity": 39,
       "productSize": "170g",
       "ratingsAverage": 4.8
     },
     {
-      "id": 73,
+      "id": "73",
       "productName": "Tesco 2 Lightly Dusted Cod Fillets",
       "productDescription": "Cod (Gadus morhua) fillets coated in batter and dusted in a seasoned crumb.",
       "productPrice": 340,
-      "category":{
-          "id": 6,
-          "name" : "Ocean Food"
-        },
-      "imagesURL": ["assets/images/products/ocean-food/product-12/image-01.webp"],
+      "category": {
+        "id": 6,
+        "name": "Ocean Food"
+      },
+      "imagesURL": [
+        "assets/images/products/ocean-food/product-12/image-01.webp"
+      ],
       "productQuantity": 50,
       "productSize": "255g",
       "ratingsAverage": 4.8
     }
-  ]
+  ],
+  "cart": [],
+  "wishlist": []
 }

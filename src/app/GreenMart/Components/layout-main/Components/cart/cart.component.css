@@ -1,0 +1,17 @@
+button,
+button:active,
+button:focus{
+  border: none;
+}
+.cart .empty p{
+  background-color: var(--background-color);
+  padding: 1.25rem 2.5rem;
+  border-top: 3px solid var(--primary-color);
+}
+.cart .table td{
+  font-size: var(--text-small);
+  font-weight: var(--main-weight);
+}
+.cart .total .table th{
+  color: var(--main-text-color);
+}
