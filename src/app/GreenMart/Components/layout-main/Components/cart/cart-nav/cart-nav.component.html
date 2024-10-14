@@ -1,4 +1,15 @@
-
+<div class="d-flex align-items-center gap-4" data-bs-toggle="dropdown" aria-expanded="false">
+  <div class="icon position-relative">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span class="badge circle-badge">{{0}}</span>
+  </div>
+  <div class="text">
+    <span>My Shopping Cart <i class="fa-solid fa-angle-down ms-1"></i></span>
+    <p class="price">${{cartTotal}}</p>
+  </div>
+</div>
+<div class="dropdown-menu dropdown-menu-end">
+  <div>
 <div class="empty" *ngIf="cartItems.length === 0">
    <p>You have no items in your shopping cart</p>
     <p>Subtotal: $0,00</p> 
@@ -27,4 +38,5 @@
         </div>
       </div>
       </div>
- 
+ </div>
+</div>
