@@ -76,9 +76,6 @@ export class ProductDetailsComponent implements OnInit{
 
 
 
-
-
-
   addToWishlist(product: Products): void {
     if (product) {
       this.wishlistService.addToWishlist(product);

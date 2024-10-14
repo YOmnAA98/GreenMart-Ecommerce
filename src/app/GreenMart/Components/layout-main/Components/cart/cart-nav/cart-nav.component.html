@@ -1,3 +1,4 @@
+
 <div class="empty" *ngIf="cartItems.length === 0">
    <p>You have no items in your shopping cart</p>
     <p>Subtotal: $0,00</p> 
@@ -9,7 +10,7 @@
           <div class="cart-item">
              <ul>
                 <li class="cart-item-details" *ngFor="let item of cartItems">
-                    <app-cart-item [cartItem]="item"></app-cart-item>
+                    <app-cart-item [cartItem]="item" (quantityChanged)="calculateCartTotal()"></app-cart-item>
                 </li>
              </ul>
           <hr>
@@ -19,8 +20,9 @@
           </div>
       
           <div class="cart-buttons d-flex justify-content-between mt-3">
-            <button class="btn primary-btn ">View Cart</button>
-            <button class="btn primary-btn">Checkout</button>
+            <a class="btn w-20 primary-btn" routerLink="/cart">View cart <i class="fa-solid fa-angle-right ms-1"></i></a>
+            <a class="btn w-20 primary-btn" routerLink="/checkout">Checkout <i class="fa-solid fa-angle-right ms-1"></i></a>
+            <button class="btn primary-btn" (click)="clearCart()">Clear</button>
           </div>
         </div>
       </div>
