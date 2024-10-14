@@ -1223,6 +1223,67 @@
       "ratingsAverage": 4.8
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "784b",
+      "product": {
+        "id": "11",
+        "productName": "Big & Fresh",
+        "productDescription": "Eggs are a good source of protein, vitamins, and minerals.One large egg contains approximately 78 calories, 6 grams of protein, 5 grams of fat, and 72 milligrams of cholesterol.Eggs are also a good source of vitamin D, vitamin B12, and selenium.",
+        "productPrice": 174,
+        "category": {
+          "id": 2,
+          "name": "Butter & Egg"
+        },
+        "imagesURL": [
+          "assets/images/products/butter&egg/product-01/image-01.webp"
+        ],
+        "productQuantity": 19,
+        "productSize": "600g",
+        "ratingsAverage": 4.7
+      },
+      "quantity": 1
+    },
+    {
+      "id": "de5e",
+      "product": {
+        "id": "11",
+        "productName": "Big & Fresh",
+        "productDescription": "Eggs are a good source of protein, vitamins, and minerals.One large egg contains approximately 78 calories, 6 grams of protein, 5 grams of fat, and 72 milligrams of cholesterol.Eggs are also a good source of vitamin D, vitamin B12, and selenium.",
+        "productPrice": 174,
+        "category": {
+          "id": 2,
+          "name": "Butter & Egg"
+        },
+        "imagesURL": [
+          "assets/images/products/butter&egg/product-01/image-01.webp"
+        ],
+        "productQuantity": 19,
+        "productSize": "600g",
+        "ratingsAverage": 4.7
+      },
+      "quantity": 1
+    },
+    {
+      "id": "8856",
+      "product": {
+        "id": "11",
+        "productName": "Big & Fresh",
+        "productDescription": "Eggs are a good source of protein, vitamins, and minerals.One large egg contains approximately 78 calories, 6 grams of protein, 5 grams of fat, and 72 milligrams of cholesterol.Eggs are also a good source of vitamin D, vitamin B12, and selenium.",
+        "productPrice": 174,
+        "category": {
+          "id": 2,
+          "name": "Butter & Egg"
+        },
+        "imagesURL": [
+          "assets/images/products/butter&egg/product-01/image-01.webp"
+        ],
+        "productQuantity": 19,
+        "productSize": "600g",
+        "ratingsAverage": 4.7
+      },
+      "quantity": 1
+    }
+  ],
   "wishlist": []
 }

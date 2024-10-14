@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Cart } from '../../../../Shared/Interfaces/cart';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { Products } from '../../../../Shared/Interfaces/products';
 
 @Component({
   selector: 'app-cart',
@@ -14,16 +15,11 @@ import { RouterLink } from '@angular/router';
 })
 export class CartComponent implements OnInit {
   cartItems: Cart[] = [];
-  count: number = 1;
   constructor(private _cartService: ShoppingCartService) { }
   ngOnInit(): void {
-    this.getCartItems();
-  }
-
-  getCartItems(): void {
     this._cartService.getCartItems().subscribe({
-      next: (items) => {
-        this.cartItems = items;
+      next: (response) => {
+        this.cartItems = response;
       },
       error: (err) => {
         console.error(err);
@@ -31,21 +27,7 @@ export class CartComponent implements OnInit {
     });
   }
 
-  updateCartItem(cartItemId: number, newQuantity: number): void {
-    this._cartService.updateCartItem(cartItemId, newQuantity).subscribe({
-      next: (updatedItem) => {
-        const index = this.cartItems.findIndex(item => item.id === cartItemId);
-        if (index !== -1) {
-          this.cartItems[index].quantity = updatedItem.quantity;
-        }
-      },
-      error: (err) => {
-        console.error(err);
-      }
-    });
-  }
-
-  updateCartQuantity(itemId: number, newQuantity: number): void {
+  updateCartQuantity(itemId: number, product: Products, newQuantity: number): void {
     if (newQuantity < 1) {
       return;
     }
@@ -53,7 +35,7 @@ export class CartComponent implements OnInit {
 
     if (cartItem) {
       cartItem.quantity = newQuantity;
-      this._cartService.updateCartItem(cartItem.id!,  this.count).subscribe({
+      this._cartService.updateCartItem(cartItem.id!, product, newQuantity).subscribe({
         next: (response) => {
           console.log('Cart updated successfully');
         },

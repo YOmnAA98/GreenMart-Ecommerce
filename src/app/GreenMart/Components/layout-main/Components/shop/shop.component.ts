@@ -68,7 +68,7 @@ export class ShopComponent implements OnInit{
   }
 
   addToCart(product: Products, quantity: number): void {
-    this._cartService.addToCart(product, quantity).subscribe({
+    this._cartService.addToCart(product, quantity = 1).subscribe  ({
       next: (newItem) => {
         this.cartItems.push(newItem);
       },

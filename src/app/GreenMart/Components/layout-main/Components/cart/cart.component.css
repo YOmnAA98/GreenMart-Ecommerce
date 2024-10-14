@@ -15,3 +15,9 @@ button:focus{
 .cart .total .table th{
   color: var(--main-text-color);
 }
+.cart .table .remove i{
+  color: var(--main-text-color);
+}
+.cart .table .remove i:hover{
+  color: var(--red-color);
+}
