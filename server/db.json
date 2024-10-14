@@ -1242,11 +1242,10 @@
         "productSize": "150g",
         "ratingsAverage": 4.5
       },
-      "quantity": 2,
+      "quantity": 1,
       "id": "62c4"
     },
     {
-      "id": "c882",
       "product": {
         "id": "62",
         "productName": "Tesco Salmon Fillets",
@@ -1263,7 +1262,8 @@
         "productSize": "440g",
         "ratingsAverage": 4.8
       },
-      "quantity": 1
+      "quantity": 3,
+      "id": "c882"
     },
     {
       "id": "58c5",
@@ -1322,6 +1322,46 @@
         ],
         "productQuantity": 100,
         "productSize": "400g",
+        "ratingsAverage": 4.4
+      },
+      "quantity": 1
+    },
+    {
+      "id": "e574",
+      "product": {
+        "id": "1",
+        "productName": "Yop Strawberry Drinkable Yoghurt",
+        "productDescription": "Strawberry Flavour Drinking Yogurt Yop Strawberry flavour drinking yoghurt, great source of Calcium and Vitamin D  with no colours or artificial flavourings. The perfect on-the- go snack with a taste that teens will love! It is a food that you can drink, and super filling! It lasts for 8 Hours  out of the fridge and perfect for busy days! Calcium and vitamin D are needed for normal growth and development of bone in children After 8 hours out of the fridge, the product must be discarded",
+        "productPrice": 29.99,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-01/image-01.webp"
+        ],
+        "productQuantity": 10,
+        "productSize": "180g",
+        "ratingsAverage": 4.4
+      },
+      "quantity": 1
+    },
+    {
+      "id": "1ba8",
+      "product": {
+        "id": "1",
+        "productName": "Yop Strawberry Drinkable Yoghurt",
+        "productDescription": "Strawberry Flavour Drinking Yogurt Yop Strawberry flavour drinking yoghurt, great source of Calcium and Vitamin D  with no colours or artificial flavourings. The perfect on-the- go snack with a taste that teens will love! It is a food that you can drink, and super filling! It lasts for 8 Hours  out of the fridge and perfect for busy days! Calcium and vitamin D are needed for normal growth and development of bone in children After 8 hours out of the fridge, the product must be discarded",
+        "productPrice": 29.99,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-01/image-01.webp"
+        ],
+        "productQuantity": 10,
+        "productSize": "180g",
         "ratingsAverage": 4.4
       },
       "quantity": 1
