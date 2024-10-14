@@ -1,7 +1,7 @@
 
     <div class="cart-item">
       <!-- Item Image -->
-      <img src="{{ cartItem.imagesURL }}" alt="Product Image">
+      <img src="{{ cartItem.imagesURL }}" alt="Product Image" loading="lazy">
       
       <!-- Item Details -->
       <div class="cart-item-details">
@@ -10,9 +10,9 @@
   
       <!-- Quantity Controls -->
       <div class="cart-item-quantity">
-        <button class="btn btn-sm btn-outline-secondary">-</button>
+        <button class="btn btn-sm btn-outline-secondary" (click)="decrementQuantity()">-</button>
         <input type="text" value="{{ cartItem.qty }}" readonly>
-        <button class="btn btn-sm btn-outline-secondary">+</button>
+        <button class="btn btn-sm btn-outline-secondary" (click)="incrementQuantity()">+</button>
       </div>
   
       <!-- Price -->

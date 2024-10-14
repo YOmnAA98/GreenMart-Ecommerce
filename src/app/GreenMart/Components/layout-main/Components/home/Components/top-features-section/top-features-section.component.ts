@@ -5,6 +5,8 @@ import { ApiDataService } from '../../../../../../Shared/Services/api-data.servi
 import { Products } from '../../../../../../Shared/Interfaces/products';
 import { Category } from '../../../../../../Shared/Interfaces/category';
 import { SlicingPipe } from '../../../../../../Shared/Pipes/slicing.pipe';
+import { ShoppingCartService } from '../../../../../../Shared/Services/shopping-cart.service';
+import { Cart } from '../../../../../../Shared/Interfaces/cart';
 
 @Component({
   selector: 'app-top-features-section',
@@ -20,7 +22,8 @@ export class TopFeaturesSectionComponent implements OnInit{
   filteredProducts: Products[] = []; 
   selectedProduct: any; 
   activeTab: number = 0;
-  constructor(private _apiDataService: ApiDataService){}  
+  cartItems: Cart[] = [];
+  constructor(private _apiDataService: ApiDataService, private _cartService: ShoppingCartService){}  
   ngOnInit(): void {
     this._apiDataService.getAllProducts().subscribe({
       next: (response) => {
@@ -57,5 +60,16 @@ export class TopFeaturesSectionComponent implements OnInit{
     }else{
       this.inStockModal = true;
     }
+  }
+
+  addToCart(product: Products, quantity: number): void {
+    this._cartService.addToCart(product, quantity = 1).subscribe  ({
+      next: (newItem) => {
+        this.cartItems.push(newItem);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 }
