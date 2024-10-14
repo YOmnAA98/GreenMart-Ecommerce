@@ -5,6 +5,8 @@ import { RouterLink } from '@angular/router';
 import { ShoppingCartService } from '../../../../Shared/Services/shopping-cart.service';
 import { Cart } from '../../../../Shared/Interfaces/cart';
 import { Products } from '../../../../Shared/Interfaces/products';
+import { OrdersService } from '../../../../Shared/Services/orders.service';
+import { CartItem, Orders } from '../../../../Shared/Interfaces/orders';
 
 @Component({
   selector: 'app-checkout',
@@ -14,11 +16,13 @@ import { Products } from '../../../../Shared/Interfaces/products';
   styleUrl: './checkout.component.css'
 })
 export class CheckoutComponent implements OnInit {
-  checkoutForm: FormGroup;
-  ErrorMessage: string = '';
-  isLoading: boolean = false;
-  cartItems: Cart[] = [];
-  constructor(private _formBuilder: FormBuilder, private _cartService: ShoppingCartService) {
+  checkoutForm: FormGroup;  
+  cartItems: Cart[] = [];  
+  orders: Orders[] = [];
+  constructor(private _formBuilder: FormBuilder,
+    private _cartService: ShoppingCartService,
+    private _orderService: OrdersService) 
+    {
     this.checkoutForm = this._formBuilder.group({
       firstName: [null, [Validators.required]],
       lastName: [null, [Validators.required]],
@@ -43,6 +47,25 @@ export class CheckoutComponent implements OnInit {
     })
   }
 
+  onSubmit(){    
+    if(this.checkoutForm.valid){     
+      const formValues = this.checkoutForm.value;
+      const items: CartItem[] = this.cartItems.map(item => ({
+        productId: item.product.id,
+        quantity: item.quantity,
+        productName: item.product.productName,
+        productPrice: item.product.productPrice
+      }));       
+      this._orderService.submitOrder(items, this.getTotalPrice(), formValues.address).subscribe({
+        next: (response) => {
+          this.orders.push(response);
+          console.log(this.orders);          
+        }
+      })
+    }else{
+      this.checkoutForm.markAllAsTouched();
+    }
+  }
   updateCartQuantity(itemId: number, product: Products, newQuantity: number): void {
     if (newQuantity < 1) {
       this.removeFromCart(itemId);

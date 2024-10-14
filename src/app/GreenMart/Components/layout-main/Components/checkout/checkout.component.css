@@ -1,8 +1,8 @@
-.checkout .left-side form label,
-.checkout .left-side form input,
-.checkout .left-side form select,
-.checkout .left-side form textarea,
-.checkout .left-side form textarea::placeholder,
+.checkout .left-side label,
+.checkout .left-side input,
+.checkout .left-side select,
+.checkout .left-side textarea,
+.checkout .left-side textarea::placeholder,
 .checkout .right-side .table th,
 .checkout .right-side .table td,
 .checkout .right-side .payment label{
@@ -10,9 +10,9 @@
   font-size: var(--text-small);
   padding-block: 9px;
 }
-.checkout .left-side form input:focus,
-.checkout .left-side form select:focus,
-.checkout .left-side form textarea:focus{
+.checkout .left-side input:focus,
+.checkout .left-side select:focus,
+.checkout .left-side textarea:focus{
   border-color: var(--primary-color);
 }
 

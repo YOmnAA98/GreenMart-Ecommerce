@@ -9,83 +9,81 @@
     <div class="page-title my-5">
       <h2 class="h5">Checkout</h2>
     </div>
-    <section class="content">
+    <form class="content" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
       <div class="row">
         <div class="left-side col-lg-6 mb-5">
-          <h3 class="mb-4">Billing details</h3>
-          <form [formGroup]="checkoutForm">
-            <div class="row">
-              <div class="mb-3 col-lg-6">
-                <label class="form-label" for="firstName">First name</label>
-                <input type="text" id="firstName" class="form-control shadow-none rounded-1" formControlName="firstName">
-                <small class="text-danger text-sm" *ngIf="checkoutForm.get('firstName')?.errors?.['required'] && checkoutForm.get('firstName')?.touched">First name is required</small>
-              </div>
-              <div class="mb-3 col-lg-6">
-                <label class="form-label" for="lastName">Last name</label>
-                <input type="text" id="lastName" class="form-control shadow-none rounded-1" formControlName="lastName">
-                <small class="text-danger text-sm" *ngIf="checkoutForm.get('lastName')?.errors?.['required'] && checkoutForm.get('lastName')?.touched">Last name is required</small>
-              </div>
+          <h3 class="mb-4">Billing details</h3>          
+          <div class="row">
+            <div class="mb-3 col-lg-6">
+              <label class="form-label" for="firstName">First name</label>
+              <input type="text" id="firstName" class="form-control shadow-none rounded-1" formControlName="firstName">
+              <small class="text-danger text-sm" *ngIf="checkoutForm.get('firstName')?.errors?.['required'] && checkoutForm.get('firstName')?.touched">First name is required</small>
             </div>
-            <div class="mb-3">
-              <label class="form-label" for="companyName">Company name(optional)</label>
-              <input type="text" id="companyName" class="form-control shadow-none rounded-1" formControlName="companyName">
+            <div class="mb-3 col-lg-6">
+              <label class="form-label" for="lastName">Last name</label>
+              <input type="text" id="lastName" class="form-control shadow-none rounded-1" formControlName="lastName">
+              <small class="text-danger text-sm" *ngIf="checkoutForm.get('lastName')?.errors?.['required'] && checkoutForm.get('lastName')?.touched">Last name is required</small>
             </div>
-            <div class="mb-3">
-              <label class="form-label" for="country">Country / Region</label>
-              <select id="country" class="form-select shadow-none rounded-1">
-                <option selected>Select a country / region...</option>
-                <option value="Eg">Egypt</option>
-                <option value="Ps">Palestine</option>
-                <option value="Sy">Syria</option>
-                <option value="Sa">Saudi Arabia</option>
-                <option value="Sd">Sudan</option>
-                <option value="Ua">UAE</option>
-                <option value="Ku">Kuwait</option>
-                <option value="Qa">Qatar</option>
-                <option value="Jor">Jordan</option>
-                <option value="Iq">Iraq</option>
-                <option value="Lb">Lebanon</option>
-                <option value="Ym">Yemen</option>
-              </select>
-              <small class="text-danger text-sm" *ngIf="checkoutForm.get('country')?.errors?.['required'] && checkoutForm.get('country')?.touched">Country / Region is required</small>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="streetAddress">Street address</label>
-              <input type="text" id="streetAddress" class="form-control shadow-none rounded-1" formControlName="address">
-              <small class="text-danger text-sm" *ngIf="checkoutForm.get('address')?.errors?.['required'] && checkoutForm.get('address')?.touched">Street address is required</small>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="city">Town / City</label>
-              <input type="text" id="city" class="form-control shadow-none rounded-1" formControlName="city">
-              <small class="text-danger text-sm" *ngIf="checkoutForm.get('city')?.errors?.['required'] && checkoutForm.get('city')?.touched">Town / City is required</small>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="state">State / County</label>
-              <input type="text" id="state" class="form-control shadow-none rounded-1" formControlName="state">
-              <small class="text-danger text-sm" *ngIf="checkoutForm.get('state')?.errors?.['required'] && checkoutForm.get('state')?.touched">State / County is required</small>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="postcode">Postcode / ZIP</label>
-              <input type="text" id="postcode" class="form-control shadow-none rounded-1" formControlName="postcode">
-              <small class="text-danger text-sm" *ngIf="checkoutForm.get('postcode')?.errors?.['required'] && checkoutForm.get('postcode')?.touched">Postcode / ZIP is required</small>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="phone">Phone</label>
-              <input type="text" id="phone" class="form-control shadow-none rounded-1" formControlName="phone">
-              <small class="text-danger text-sm" *ngIf="checkoutForm.get('phone')?.errors?.['required'] && checkoutForm.get('phone')?.touched">Phone is required</small>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="email">Email address</label>
-              <input type="email" id="email" class="form-control shadow-none rounded-1" formControlName="email">
-              <small class="text-danger text-sm" *ngIf="checkoutForm.get('email')?.errors?.['required'] && checkoutForm.get('email')?.touched">Email address is required</small>
-              <small class="text-danger text-sm" *ngIf="checkoutForm.get('email')?.errors?.['email']">Email address is invalid</small>
-            </div>
-            <h3 class="my-4">Additional information</h3>
-            <div class="mb-3">
-              <label class="form-label" for="orderNotes">Order notes</label>
-              <textarea id="orderNotes" class="form-control shadow-none rounded-1" rows="3" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
-            </div>
-          </form>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="companyName">Company name(optional)</label>
+            <input type="text" id="companyName" class="form-control shadow-none rounded-1" name="companyName">
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="country">Country / Region</label>
+            <select id="country" class="form-select shadow-none rounded-1" formControlName="country">
+              <option selected>Select a country / region...</option>
+              <option value="Eg">Egypt</option>
+              <option value="Ps">Palestine</option>
+              <option value="Sy">Syria</option>
+              <option value="Sa">Saudi Arabia</option>
+              <option value="Sd">Sudan</option>
+              <option value="Ua">UAE</option>
+              <option value="Ku">Kuwait</option>
+              <option value="Qa">Qatar</option>
+              <option value="Jor">Jordan</option>
+              <option value="Iq">Iraq</option>
+              <option value="Lb">Lebanon</option>
+              <option value="Ym">Yemen</option>
+            </select>
+            <small class="text-danger text-sm" *ngIf="checkoutForm.get('country')?.errors?.['required'] && checkoutForm.get('country')?.touched">Country / Region is required</small>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="streetAddress">Street address</label>
+            <input type="text" id="streetAddress" class="form-control shadow-none rounded-1" formControlName="address">
+            <small class="text-danger text-sm" *ngIf="checkoutForm.get('address')?.errors?.['required'] && checkoutForm.get('address')?.touched">Street address is required</small>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="city">Town / City</label>
+            <input type="text" id="city" class="form-control shadow-none rounded-1" formControlName="city">
+            <small class="text-danger text-sm" *ngIf="checkoutForm.get('city')?.errors?.['required'] && checkoutForm.get('city')?.touched">Town / City is required</small>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="state">State / County</label>
+            <input type="text" id="state" class="form-control shadow-none rounded-1" formControlName="state">
+            <small class="text-danger text-sm" *ngIf="checkoutForm.get('state')?.errors?.['required'] && checkoutForm.get('state')?.touched">State / County is required</small>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="postcode">Postcode / ZIP</label>
+            <input type="text" id="postcode" class="form-control shadow-none rounded-1" formControlName="postcode">
+            <small class="text-danger text-sm" *ngIf="checkoutForm.get('postcode')?.errors?.['required'] && checkoutForm.get('postcode')?.touched">Postcode / ZIP is required</small>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="phone">Phone</label>
+            <input type="tel" id="phone" class="form-control shadow-none rounded-1" formControlName="phone">
+            <small class="text-danger text-sm" *ngIf="checkoutForm.get('phone')?.errors?.['required'] && checkoutForm.get('phone')?.touched">Phone is required</small>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="email">Email address</label>
+            <input type="email" id="email" class="form-control shadow-none rounded-1" formControlName="email">
+            <small class="text-danger text-sm" *ngIf="checkoutForm.get('email')?.errors?.['required'] && checkoutForm.get('email')?.touched">Email address is required</small>
+            <small class="text-danger text-sm" *ngIf="checkoutForm.get('email')?.errors?.['email']">Email address is invalid</small>
+          </div>
+          <h3 class="my-4">Additional information</h3>
+          <div class="mb-3">
+            <label class="form-label" for="orderNotes">Order notes</label>
+            <textarea id="orderNotes" class="form-control shadow-none rounded-1" rows="3" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
+          </div>          
         </div>
         <div class="right-side col-lg-6">
           <h3 class="mb-4">Your Order</h3>
@@ -148,15 +146,17 @@
                 <div class="accordion-body">Pay with cash upon delivery.</div>
               </div>
             </div>
-            <div class="border-top d-flex align-items-center gap-3 my-3">
-              <input type="checkbox" class="form-check-input shadow-none" id="agreement" formControlName="agreement">
-              <label class="form-label" class="form-check-label" for="agreement">I have read and agree to the website <a routerLink="/terms-and-conditions">terms and conditions</a> </label>
+            <div class="border-top my-3">
+              <div class="d-flex align-items-center gap-3">
+                <input type="checkbox" class="form-check-input shadow-none" id="agreement" formControlName="agreement">
+                <label class="form-label" class="form-check-label" for="agreement">I have read and agree to the website <a routerLink="/terms-and-conditions">terms and conditions</a> </label>
+              </div>
               <small class="text-danger text-sm" *ngIf="checkoutForm.get('agreement')?.errors?.['required'] && checkoutForm.get('agreement')?.touched">Agreement is required</small>
             </div>
-            <button class="btn primary-btn">Place Order</button>
+            <button type="submit" class="btn primary-btn">Place Order</button>
           </div>
         </div>
       </div>
-    </section>
+    </form>
   </div>
 </section>
