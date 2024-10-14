@@ -13,7 +13,7 @@ export class CartItemComponent implements OnInit {
   @Input() cartItem: any;
   @Output() quantityChanged = new EventEmitter<void>();
   price: any;
-  qty: any;
+  
 
   constructor(private shoppingCartService: ShoppingCartService) { }
 
