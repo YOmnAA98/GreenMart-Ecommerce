@@ -11,6 +11,7 @@ import { Subject } from 'rxjs';
 })
 export class ShoppingCartService {
   subject = new Subject ()
+  static productQuantity: any;
 
   constructor(private _httpClient: HttpClient) { }
 

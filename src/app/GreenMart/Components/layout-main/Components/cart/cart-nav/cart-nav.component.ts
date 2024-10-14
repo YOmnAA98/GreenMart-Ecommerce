@@ -14,6 +14,7 @@ interface CartItem {
   qty: number;
   price: number;
   imagesURL: string[];
+  productQuantity: number;
 }
 
 @Component({
@@ -28,7 +29,8 @@ export class CartNavComponent implements OnInit {
   
   cartItems: any[] = [];
   cartTotal: number = 0;
-
+  qty: any;
+ShoppingCartService: any;
   
   constructor(private msg: ShoppingCartService, ) { }
 

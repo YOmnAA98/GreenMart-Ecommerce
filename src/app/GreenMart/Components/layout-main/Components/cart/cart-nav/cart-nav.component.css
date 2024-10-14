@@ -1,0 +1,92 @@
+
+ .icon i {
+    font-size: 1.5625rem;
+  }
+.icon span.badge{
+    background-color: var(--red-color);
+  }
+  .text .price {
+    color: var(--primary-color);
+  }
+.text i {
+    font-size: 0.75rem;
+  }
+  .dropdown-menu {
+    position: absolute;
+    min-width: 320px;
+    border-left: none;
+    border-radius: 0%;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    cursor: default;
+  }
+.dropdown-menu::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: 15px;
+    width: 0.9375rem;
+    height: 0.9375rem;
+    transform: rotate(45deg);
+    background-color: var(--white-color);
+    border-top: 1px solid var(--light-text-color);
+    border-left: 1px solid var(--light-text-color);
+  }
+.dropdown-menu .empty {
+    padding: 0.9375rem 1.25rem;
+  }
+.text span {
+    font-size: var(--text-small);
+    line-height: 2.5;
+  }
+ .dropdown-menu .products .pro {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  .dropdown-menu .products .pro::-webkit-scrollbar {
+    width: 13px;
+  }
+ .dropdown-menu .products .pro::-webkit-scrollbar-track {
+    background: var(--light-text-color);
+    border-radius: 1px;
+  }
+.dropdown-menu .products .pro::-webkit-scrollbar-thumb {
+    background: var(--main-text-color);
+    border-radius: 1px;
+  }
+.dropdown-menu .products .item {
+    border-bottom: 1px solid var(--border-color);
+  }
+ .dropdown-menu .products .item input:focus {
+    border-color: var(--primary-color);
+  }
+ .dropdown-menu .products .info a:hover {
+    color: var(--primary-color);
+  }
+  .dropdown-menu .products .total p {
+    color: var(--dark-text-color);
+    font-size: 16px;
+    font-weight: var(--main-weight);
+  }
+ .dropdown-menu .products .total p:last-child {
+    color: var(--primary-color);
+  }
+ .dropdown-menu .products .actions {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+  }
+ .dropdown-menu .products .actions a {
+    color: var(--white-color);
+    font-size: var(--text-small);
+    border: 1px solid var(--white-color);
+    border-radius: 0;
+    max-width: 60%;
+    margin: auto;
+    transition: color 0.5s ease, background-color 0.5s ease;
+  }
+ .dropdown-menu .products .actions a:hover {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+  }
