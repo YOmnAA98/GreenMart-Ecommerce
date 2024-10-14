@@ -1,5 +1,5 @@
-<section class="details my-5">
-  <div class="container">
+<section class="details my-5 ">
+   <div class="container">
     <div class="content">
       <div class="row align-items-center">
         <div class="left-side col-lg-6">
@@ -43,6 +43,10 @@
           <button class="btn " (click)="addToWishlist(productDetails)">
             <i class="fa-solid fa-heart"></i>
           </button>
+          <div id="custom-alert" class="alert hidden" role="alert">
+            <span id="custom-alert-message"></span>
+          </div>
+          
          </div>
           <p class="weight mb-2">Approx {{productDetails.productSize}}</p>
             <ul class="p-0 d-flex align-items-center">

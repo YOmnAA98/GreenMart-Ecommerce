@@ -1,15 +1,14 @@
-
- <div class="wishlist-container container my-5">
+<div class="wishlist-container container my-5">
   <nav>
     <ol class="breadcrumb mt-5">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active" >Wishlist</li>
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active">Wishlist</li>
     </ol>
   </nav>
-  <div class="wishlist-header p-3" >
+  <div class="wishlist-header p-3">
     <h3 class="h3 px-5">Wishlist</h3>
   </div>
-  <h2 class="my-5 fs-2 ">My Wishlist</h2>
+  <h2 class="my-5 fs-2">My Wishlist</h2>
   <div class="wishlist-content mt-4">
     <table class="table table-striped">
       <thead>
@@ -29,11 +28,31 @@
           <td>{{ item.productName }}</td>
           <td>{{ item.productPrice | currency }}</td>
           <td>{{ item.productQuantity > 0 ? 'In Stock' : 'Out of Stock' }}</td>
-          <td><button (click)="addToCart(item)" class="btn btn-primary">Add to cart</button></td>
-          <td><button (click)="removeFromWishlist(item)" class="btn btn-danger">Remove</button></td>
+          <td>
+            <button (click)="addToCart(item)" class="btn btn-success">
+              <i class="fa-solid fa-cart-plus"></i>
+            </button>
+          </td>
+          <td>
+            <button (click)="removeFromWishlist(item)" class="btn btn-danger">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
+     <!-- Alert -->
+     <div id="custom-alert" class="custom-alert hidden" role="alert">
+      <span id="custom-alert-message"></span>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
 
