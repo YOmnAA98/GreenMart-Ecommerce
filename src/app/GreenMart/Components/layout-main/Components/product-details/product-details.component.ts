@@ -9,6 +9,8 @@ import { ShoppingCartService } from '../../../../Shared/Services/shopping-cart.s
 import { WishlistService } from '../../../../Shared/Services/wishlist.service';
 import { Cart } from '../../../../Shared/Interfaces/cart';
 
+
+
 @Component({
   selector: 'app-product-details',
   standalone: true,
@@ -28,6 +30,7 @@ export class ProductDetailsComponent implements OnInit{
   cartItems: Cart[] = [];
   // @Input productItem: Product
   constructor(private _activatedRoute: ActivatedRoute,
+    
     private _apiDataService: ApiDataService,
     private msg: ShoppingCartService,
     private wishlistService: WishlistService,
@@ -78,12 +81,39 @@ export class ProductDetailsComponent implements OnInit{
   addToWishlist(product: Products): void {
     if (product) {
       this.wishlistService.addToWishlist(product);
-      alert(`${product.productName} added to wishlist!`);
+      
+     
+      this.showCustomAlert(`${product.productName} added to wishlist!`);
     } else {
       console.error('Product is undefined');
     }
   }
-
+  
+  
+  showCustomAlert(message: string): void {
+    const alertBox = document.getElementById('custom-alert');
+    const alertMessage = document.getElementById('custom-alert-message');
+  
+    if (alertBox && alertMessage) {
+      alertMessage.textContent = message;
+      alertBox.classList.remove('hidden');
+      alertBox.classList.add('show');
+  
+     
+      setTimeout(() => {
+        this.hideCustomAlert();
+      }, 4000);
+    }
+  }
+  
+  hideCustomAlert(): void {
+    const alertBox = document.getElementById('custom-alert');
+    if (alertBox) {
+      alertBox.classList.remove('show');
+      alertBox.classList.add('hidden');
+    }
+  }
+  
   addToCart(product: Products, quantity: number): void {
     this._cartService.addToCart(product, quantity = 1).subscribe  ({
       next: (newItem) => {
