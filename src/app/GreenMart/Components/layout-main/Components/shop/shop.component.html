@@ -63,7 +63,7 @@
                         </ul>
                       </div>
                       <div class="my-2">
-                        <button class="btn product-btn" (click)="addToCart(product, product.productQuantity)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                        <button class="btn product-btn" (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
                         <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#shopModal" (click)="quickView(product.id)">
                           <i class="fa-solid fa-eye"></i>
                         </button>
@@ -107,7 +107,7 @@
                       </ul>
                     </div>
                     <div class="my-2">
-                      <button class="btn product-btn" (click)="addToCart(product, product.productQuantity)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                      <button class="btn product-btn" (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
                       <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#shopModal" (click)="quickView(product.id)">
                         <i class="fa-solid fa-eye"></i>
                       </button>
@@ -179,7 +179,7 @@
             <p class="description my-3">{{selectedProduct?.productDescription}}</p>
             <div class="actions" *ngIf="inStockModal">
               <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1">
-              <button class="btn primary-btn" (click)="addToCart(selectedProduct, selectedProduct.productQuantity)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+              <button class="btn primary-btn" (click)="addToCart(selectedProduct, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
             </div>
             <p class="out text-danger" *ngIf="!inStockModal">Out of Stock</p>

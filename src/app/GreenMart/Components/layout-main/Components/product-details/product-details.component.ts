@@ -7,6 +7,7 @@ import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { SlicingPipe } from '../../../../Shared/Pipes/slicing.pipe';
 import { ShoppingCartService } from '../../../../Shared/Services/shopping-cart.service';
 import { WishlistService } from '../../../../Shared/Services/wishlist.service';
+import { Cart } from '../../../../Shared/Interfaces/cart';
 
 @Component({
   selector: 'app-product-details',
@@ -23,10 +24,14 @@ export class ProductDetailsComponent implements OnInit{
   productDetails: any = {};
   relatedProducts: Products[] = [];
   selectedProduct: any;
-  
 
+  cartItems: Cart[] = [];
   // @Input productItem: Product
-  constructor(private _activatedRoute: ActivatedRoute, private _apiDataService: ApiDataService, private msg: ShoppingCartService, private wishlistService: WishlistService) { }
+  constructor(private _activatedRoute: ActivatedRoute,
+    private _apiDataService: ApiDataService,
+    private msg: ShoppingCartService,
+    private wishlistService: WishlistService,
+    private _cartService: ShoppingCartService) { }
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe({
       next: (param) => {
@@ -70,12 +75,6 @@ export class ProductDetailsComponent implements OnInit{
     this.msg.sendMsg(this.productDetails);
   }
 
-
-
-
-
-
-
   addToWishlist(product: Products): void {
     if (product) {
       this.wishlistService.addToWishlist(product);
@@ -83,6 +82,17 @@ export class ProductDetailsComponent implements OnInit{
     } else {
       console.error('Product is undefined');
     }
+  }
+
+  addToCart(product: Products, quantity: number): void {
+    this._cartService.addToCart(product, quantity = 1).subscribe  ({
+      next: (newItem) => {
+        this.cartItems.push(newItem);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 }
 

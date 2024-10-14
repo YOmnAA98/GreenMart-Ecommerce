@@ -19,7 +19,7 @@ export class ShoppingCartService {
     return this._httpClient.get<Cart[]>(`http://localhost:3000/cart`);
   }
 
-  addToCart(product: Products, quantity: number = 1): Observable<Cart>{
+  addToCart(product: Products, quantity: number): Observable<Cart>{
     const cartItem: Cart = {product, quantity};
     return this._httpClient.post<Cart>('http://localhost:3000/cart', cartItem);
   }
@@ -28,8 +28,9 @@ export class ShoppingCartService {
     return this._httpClient.delete<void>(`http://localhost:3000/cart/${id}`);
   }
 
-  updateCartItem(id: number, quantity: number): Observable<Cart>{
-    return this._httpClient.put<Cart>(`http://localhost:3000/cart/${id}`, {quantity});
+  updateCartItem(id: number, product: Products, quantity: number): Observable<Cart>{
+    const cartItem: Cart = {product, quantity};
+    return this._httpClient.put<Cart>(`http://localhost:3000/cart/${id}`, cartItem);
   }
 
   updateCartQuantity(id: number, quantity: number): Observable<Cart>{

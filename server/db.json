@@ -1225,65 +1225,64 @@
   ],
   "cart": [
     {
-      "id": "e261",
+      "id": "784b",
       "product": {
-        "id": "1",
-        "productName": "Yop Strawberry Drinkable Yoghurt",
-        "productDescription": "Strawberry Flavour Drinking Yogurt Yop Strawberry flavour drinking yoghurt, great source of Calcium and Vitamin D  with no colours or artificial flavourings. The perfect on-the- go snack with a taste that teens will love! It is a food that you can drink, and super filling! It lasts for 8 Hours  out of the fridge and perfect for busy days! Calcium and vitamin D are needed for normal growth and development of bone in children After 8 hours out of the fridge, the product must be discarded",
-        "productPrice": 29.99,
+        "id": "11",
+        "productName": "Big & Fresh",
+        "productDescription": "Eggs are a good source of protein, vitamins, and minerals.One large egg contains approximately 78 calories, 6 grams of protein, 5 grams of fat, and 72 milligrams of cholesterol.Eggs are also a good source of vitamin D, vitamin B12, and selenium.",
+        "productPrice": 174,
         "category": {
-          "id": 1,
-          "name": "Milk & Cream"
+          "id": 2,
+          "name": "Butter & Egg"
         },
         "imagesURL": [
-          "assets/images/products/milk&cream/product-01/image-01.webp"
+          "assets/images/products/butter&egg/product-01/image-01.webp"
         ],
-        "productQuantity": 10,
-        "productSize": "180g",
-        "ratingsAverage": 4.4
+        "productQuantity": 19,
+        "productSize": "600g",
+        "ratingsAverage": 4.7
       },
-      "quantity": 10
+      "quantity": 1
     },
     {
-      "id": "ead7",
+      "id": "de5e",
       "product": {
-        "id": "2",
-        "productName": "Strawberry Dairy Drink ",
-        "productDescription": "Biotiful kefir is a source of calcium which contributes to the normal function of digestive enzymes.Immunity Support Biotiful kefir is a source of vitamin B12 which supports the normal functioning of the immune system.Biotiful kefir is packed with naturally healthy nutrients, supporting your immunity** and with no sugar added. We love it for breakfast or as a snack.",
-        "productPrice": 39.99,
+        "id": "11",
+        "productName": "Big & Fresh",
+        "productDescription": "Eggs are a good source of protein, vitamins, and minerals.One large egg contains approximately 78 calories, 6 grams of protein, 5 grams of fat, and 72 milligrams of cholesterol.Eggs are also a good source of vitamin D, vitamin B12, and selenium.",
+        "productPrice": 174,
         "category": {
-          "id": 1,
-          "name": "Milk & Cream"
+          "id": 2,
+          "name": "Butter & Egg"
         },
         "imagesURL": [
-          "assets/images/products/milk&cream/product-10/image-01.webp",
-          "assets/images/products/milk&cream/product-10/image-02.webp"
+          "assets/images/products/butter&egg/product-01/image-01.webp"
         ],
-        "productQuantity": 0,
-        "productSize": "500Ml",
-        "ratingsAverage": 4.5
+        "productQuantity": 19,
+        "productSize": "600g",
+        "ratingsAverage": 4.7
       },
-      "quantity": 0
+      "quantity": 1
     },
     {
-      "id": "5800",
+      "id": "8856",
       "product": {
-        "id": "1",
-        "productName": "Yop Strawberry Drinkable Yoghurt",
-        "productDescription": "Strawberry Flavour Drinking Yogurt Yop Strawberry flavour drinking yoghurt, great source of Calcium and Vitamin D  with no colours or artificial flavourings. The perfect on-the- go snack with a taste that teens will love! It is a food that you can drink, and super filling! It lasts for 8 Hours  out of the fridge and perfect for busy days! Calcium and vitamin D are needed for normal growth and development of bone in children After 8 hours out of the fridge, the product must be discarded",
-        "productPrice": 29.99,
+        "id": "11",
+        "productName": "Big & Fresh",
+        "productDescription": "Eggs are a good source of protein, vitamins, and minerals.One large egg contains approximately 78 calories, 6 grams of protein, 5 grams of fat, and 72 milligrams of cholesterol.Eggs are also a good source of vitamin D, vitamin B12, and selenium.",
+        "productPrice": 174,
         "category": {
-          "id": 1,
-          "name": "Milk & Cream"
+          "id": 2,
+          "name": "Butter & Egg"
         },
         "imagesURL": [
-          "assets/images/products/milk&cream/product-01/image-01.webp"
+          "assets/images/products/butter&egg/product-01/image-01.webp"
         ],
-        "productQuantity": 10,
-        "productSize": "180g",
-        "ratingsAverage": 4.4
+        "productQuantity": 19,
+        "productSize": "600g",
+        "ratingsAverage": 4.7
       },
-      "quantity": 10
+      "quantity": 1
     }
   ],
   "wishlist": []
