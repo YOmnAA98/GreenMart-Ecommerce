@@ -42,4 +42,9 @@ export class ShoppingCartService {
   getMsg(){
     return this.subject.asObservable()
   }
+
+  updateCart() {
+    localStorage.setItem('cartItems', JSON.stringify(this.getCartItems));
+  }
+  
 }

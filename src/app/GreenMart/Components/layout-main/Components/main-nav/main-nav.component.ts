@@ -15,7 +15,7 @@ export class MainNavComponent implements OnInit{
   isShown: boolean = true;
   isEmpty: boolean = true;
   categories: Category[] = [];
-  constructor(private _apiDataService: ApiDataService){}
+  constructor(private _apiDataService: ApiDataService, ){}
 
   ngOnInit(): void{
     this._apiDataService.getAllCategories().subscribe({
