@@ -22,6 +22,7 @@ export class ProductDetailsComponent implements OnInit{
   inStock: boolean = true;
   inStockOverlay: boolean = true;
   inStockModal: boolean = true;
+  isInWishlist: boolean = false;
 
   productDetails: any = {};
   relatedProducts: Products[] = [];
@@ -29,7 +30,7 @@ export class ProductDetailsComponent implements OnInit{
 
   cartItems: Cart[] = [];
   // @Input productItem: Product
-  constructor(private _activatedRoute: ActivatedRoute,
+  constructor(private _activatedRoute: ActivatedRoute ,
     
     private _apiDataService: ApiDataService,
     private msg: ShoppingCartService,
@@ -81,8 +82,7 @@ export class ProductDetailsComponent implements OnInit{
   addToWishlist(product: Products): void {
     if (product) {
       this.wishlistService.addToWishlist(product);
-      
-     
+      this.isInWishlist = true; 
       this.showCustomAlert(`${product.productName} added to wishlist!`);
     } else {
       console.error('Product is undefined');

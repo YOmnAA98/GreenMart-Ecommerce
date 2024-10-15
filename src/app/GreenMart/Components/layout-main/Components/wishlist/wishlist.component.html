@@ -22,12 +22,14 @@
       </thead>
       <tbody>
         <tr *ngIf="wishlist.length === 0">
-          <td colspan="5" class="text-center">No products were added to the wishlist</td>
+          <td colspan="5" class="text-center">
+            No products were added to the wishlist
+          </td>
         </tr>
         <tr *ngFor="let item of wishlist">
           <td>{{ item.productName }}</td>
           <td>{{ item.productPrice | currency }}</td>
-          <td>{{ item.productQuantity > 0 ? 'In Stock' : 'Out of Stock' }}</td>
+          <td>{{ item.productQuantity > 0 ? "In Stock" : "Out of Stock" }}</td>
           <td>
             <button (click)="addToCart(item)" class="btn btn-success">
               <i class="fa-solid fa-cart-plus"></i>
@@ -41,18 +43,9 @@
         </tr>
       </tbody>
     </table>
-     <!-- Alert -->
-     <div id="custom-alert" class="custom-alert hidden" role="alert">
+    <!-- Alert -->
+    <div id="custom-alert" class="custom-alert hidden" role="alert">
       <span id="custom-alert-message"></span>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-

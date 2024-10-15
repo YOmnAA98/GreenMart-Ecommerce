@@ -1386,6 +1386,148 @@
         "ratingsAverage": 4.2
       },
       "quantity": 1
+    },
+    {
+      "id": "6ad8",
+      "product": {
+        "id": "3",
+        "productName": "Actimel Yoghurt Drink ",
+        "productDescription": "Yogurt drink with L. casei Danone cultures, vitamins D and B6.This mighty shot has:20 Billion live L. casei cultures.Vitamin DVitamin B63 Strains of live culturesOver 8h fermentation.Gluten freeNo preservatives or coloursNo artificial flavours",
+        "productPrice": 19.99,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-08/image-01.webp",
+          "assets/images/products/milk&cream/product-08/image-02.webp"
+        ],
+        "productQuantity": 20,
+        "productSize": "100g",
+        "ratingsAverage": 4.2
+      },
+      "quantity": 1
+    },
+    {
+      "id": "1cd0",
+      "product": {
+        "id": "4",
+        "productName": "Glenisk Creme Fraiche",
+        "productDescription": "Glenisk Creme Fraiche 250GOur Crème Fraiche is crafted using blend of Ireland's best Organic Wholemilk and Organic Fresh Cream, cultured to perfection over time to create a distinctive and delicious flavour. With much less than a third of the fat of mayonnaise, and free from any artificial ingredients, it's a tasty, healthy choice that brings good food to life.",
+        "productPrice": 15,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-06/image-01.webp"
+        ],
+        "productQuantity": 22,
+        "productSize": "250g",
+        "ratingsAverage": 4.2
+      },
+      "quantity": 1
+    },
+    {
+      "id": "4af2",
+      "product": {
+        "id": "7",
+        "productName": "Tesco Green Seedless ",
+        "productDescription": "Tesco Green Seedless Grapes are a refreshing and sweet snack option, perfect for enjoying on their own or adding to fruit salads and desserts. These plump, juicy grapes are vibrant green in color, known for their crisp texture and delightful flavor. Conveniently seedless, they offer a hassle-free eating experience, making them a favorite for both kids and adults. Packed with vitamins and antioxidants, these grapes are not only delicious but also a healthy choice. Whether enjoyed fresh, in smoothies, or as a topping for yogurt, Tesco Green Seedless Grapes are a versatile and tasty addition to any diet.",
+        "productPrice": 257.99,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-02/image-01.webp"
+        ],
+        "productQuantity": 29,
+        "productSize": " 700g",
+        "ratingsAverage": 4.2
+      },
+      "quantity": 1
+    },
+    {
+      "id": "145b",
+      "product": {
+        "id": "36",
+        "productName": "Tesco Asparagus Tips",
+        "productDescription": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+        "productPrice": 100,
+        "category": {
+          "id": 4,
+          "name": "Vegetables"
+        },
+        "imagesURL": [
+          "assets/images/products/vegetables/product-01/image-01.webp",
+          "assets/images/products/vegetables/product-01/image-02.webp"
+        ],
+        "productQuantity": 100,
+        "productSize": "125g",
+        "ratingsAverage": 4.8
+      },
+      "quantity": 1
+    },
+    {
+      "id": "2c63",
+      "product": {
+        "id": "37",
+        "productName": "Green Bell Pepper",
+        "productDescription": "Green bell peppers are a crunchy and refreshing addition to any meal. Their mild and slightly sweet flavor makes them a versatile ingredient in both savory and sweet dishes.",
+        "productPrice": 1.2,
+        "category": {
+          "id": 4,
+          "name": "Vegetables"
+        },
+        "imagesURL": [
+          "assets/images/products/vegetables/product-02/image-01.webp"
+        ],
+        "productQuantity": 100,
+        "productSize": "200g",
+        "ratingsAverage": 4.2
+      },
+      "quantity": 1
+    },
+    {
+      "id": "05b3",
+      "product": {
+        "id": "37",
+        "productName": "Green Bell Pepper",
+        "productDescription": "Green bell peppers are a crunchy and refreshing addition to any meal. Their mild and slightly sweet flavor makes them a versatile ingredient in both savory and sweet dishes.",
+        "productPrice": 1.2,
+        "category": {
+          "id": 4,
+          "name": "Vegetables"
+        },
+        "imagesURL": [
+          "assets/images/products/vegetables/product-02/image-01.webp"
+        ],
+        "productQuantity": 100,
+        "productSize": "200g",
+        "ratingsAverage": 4.2
+      },
+      "quantity": 1
+    },
+    {
+      "id": "e4cf",
+      "product": {
+        "id": "37",
+        "productName": "Green Bell Pepper",
+        "productDescription": "Green bell peppers are a crunchy and refreshing addition to any meal. Their mild and slightly sweet flavor makes them a versatile ingredient in both savory and sweet dishes.",
+        "productPrice": 1.2,
+        "category": {
+          "id": 4,
+          "name": "Vegetables"
+        },
+        "imagesURL": [
+          "assets/images/products/vegetables/product-02/image-01.webp"
+        ],
+        "productQuantity": 100,
+        "productSize": "200g",
+        "ratingsAverage": 4.2
+      },
+      "quantity": 1
     }
   ],
   "wishlist": [],

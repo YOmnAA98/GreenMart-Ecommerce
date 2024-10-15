@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -21,6 +22,9 @@ export class RegisterLoginComponent implements OnInit {
     email: '',
     password: ''
   };
+  
+  alertMessage: string | null = null; 
+  alertType: string = ''; 
 
   constructor(private router: Router) {}
 
@@ -30,27 +34,34 @@ export class RegisterLoginComponent implements OnInit {
     this.isRegisterActive = !this.isRegisterActive;
   }
 
+  
+  showAlert(message: string, type: string) {
+    this.alertMessage = message;
+    this.alertType = type;
+
+   
+    setTimeout(() => {
+      this.alertMessage = null;
+    }, 3000);
+  }
+
   onRegister(): void {
     if (this.registerData.name && this.registerData.email && this.registerData.password) {
-      
       let users = JSON.parse(localStorage.getItem('users') || '[]');
-
-      
       const emailExists = users.some((user: any) => user.email === this.registerData.email);
+
       if (emailExists) {
-        alert('This email is already registered. Please use a different email.');
+        this.showAlert('This email is already registered. Please use a different email.', 'alert-danger');
         return;
       }
 
-      
       users.push({ ...this.registerData });
-
       localStorage.setItem('users', JSON.stringify(users));
 
-      alert('Registration successful! You can now sign in.');
+      this.showAlert('Registration successful! You can now sign in.', 'alert-success');
       this.toggleRegister();
     } else {
-      alert('Please fill in all the fields to register.');
+      this.showAlert('Please fill in all the fields to register.', 'alert-warning');
     }
   }
 
@@ -60,12 +71,24 @@ export class RegisterLoginComponent implements OnInit {
       user.email === this.loginData.email &&
       user.password === this.loginData.password
     );
-
+  
     if (user) {
-      alert('Sign in successful! Redirecting to MyAccount page.');
-      this.router.navigate(['/my-account']); 
+      
+      localStorage.setItem('loggedInUserEmail', user.email);
+  
+      
+      this.showAlert('Sign in successful! Redirecting to MyAccount page.', 'alert-success');
+  
+      
+      setTimeout(() => {
+        this.router.navigate(['/my-account']); 
+      }, 3000); 
     } else {
-      alert('Invalid email or password. Please try again.');
+     
+      this.showAlert('Invalid email or password. Please try again.', 'alert-danger');
     }
   }
+  
 }
+
+

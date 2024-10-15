@@ -39,7 +39,7 @@
 }
 
 .container button{
-    background-color: #50a82d;
+    background-color: #425753;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -51,7 +51,12 @@
     margin-top: 10px;
     cursor: pointer;
 }
-
+.container button:hover{
+    background-color:transparent;
+    border: 1px solid #fc2f2f;
+    cursor: pointer;
+    color: #000;
+}
 .container button.hidden{
     background-color: transparent;
     border-color: #fff;
@@ -66,7 +71,10 @@
     padding: 0 40px;
     height: 100%;
 }
-
+.container form .social-icons a:hover {
+    background-color: #3aa220;
+    color: blue;
+}
 .container input{
     background-color: #eee;
     border: none;
@@ -153,9 +161,10 @@
 }
 
 .toggle{
+    
     background-color: #512da8;
     height: 100%;
-    background: linear-gradient(to right, #5c6bc0, #512da8);
+    background: linear-gradient(to right, #3aa220, #3aa220);
     color: #fff;
     position: relative;
     left: -100%;
@@ -201,3 +210,15 @@
     transform: translateX(200%);
 }
  
+
+/* alert */
+.alert {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 500px;
+  z-index: 9999;
+  text-align: center;
+}
