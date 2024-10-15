@@ -1,0 +1,56 @@
+<section class="orders my-5">
+  <div class="container">
+    <div class="page-title my-5">
+      <h2 class="h5">Order received</h2>
+    </div>
+    <div class="order mt-4 mb-5">
+      <p>Thank you. Your order has been received.</p>
+      <ul class="d-md-flex justify-content-between align-items-center gap-3 mt-3">
+        <li><p>Order number:</p><span>{{orderDetails.id}}</span></li>
+        <li><p>Date:</p><span>{{orderDetails.date | date}}</span></li>
+        <li><p>Email:</p><span class="email">{{orderDetails.shippingInfo.email}}</span></li>
+        <li><p>Total:</p><span>{{orderDetails.totalAmount | currency:'USD'}}</span></li>
+      </ul>
+    </div>
+    <div class="details my-5">
+      <h3 class="">Order details</h3>
+      <div class="table-responsive mt-3">
+        <table class="table table-bordered align-middle">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>              
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of orderDetails.cartItems">
+              <td>{{item.productName}} x {{item.quantity}}</td>
+              <td>{{item.productPrice * item.quantity | currency}}</td>
+            </tr>
+            <tr class="bg">
+              <td>Status</td>
+              <td>{{orderDetails.paymentStatus}}</td>
+            </tr>
+            <tr class="bg">
+              <td>Total</td>
+              <td>{{orderDetails.totalAmount | currency}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="info my-5">
+      <h3 class="">Billing address</h3>
+      <ul class="d-flex flex-column gap-2 mt-3 shadow-sm">
+        <li>{{orderDetails.shippingInfo.firstName + ' ' + orderDetails.shippingInfo.lastName}}</li>        
+        <li>{{orderDetails.shippingInfo.address}}</li>
+        <li>{{orderDetails.shippingInfo.city}}</li>
+        <li>{{orderDetails.shippingInfo.state}}</li>
+        <li>{{orderDetails.shippingInfo.country}}</li>
+        <li>{{orderDetails.shippingInfo.postcode}}</li>
+        <li><i class="fa fa-phone me-2"></i> {{orderDetails.shippingInfo.phone}}</li>
+        <li class="email"><i class="fa fa-envelope me-2"></i>{{orderDetails.shippingInfo.email}}</li>
+      </ul>
+    </div>
+  </div>
+</section>
