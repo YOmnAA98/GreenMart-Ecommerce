@@ -1,21 +1,17 @@
 
     <div class="cart-item">
-      <!-- Item Image -->
-      <img src="{{ cartItem.imagesURL }}" alt="Product Image" loading="lazy">
+
+      <img src="{{ cartItem.imagesURL || 'assets/images/products/fruits/product-12/image-01.webp' }}" alt="Product Image" loading="lazy">
       
-      <!-- Item Details -->
+
       <div class="cart-item-details">
         <p>{{ cartItem.productName }}</p>
       </div>
-  
-      <!-- Quantity Controls -->
       <div class="cart-item-quantity">
         <button class="btn btn-sm btn-outline-secondary" (click)="decrementQuantity()">-</button>
         <input type="text" value="{{ cartItem.qty }}" readonly>
         <button class="btn btn-sm btn-outline-secondary" (click)="incrementQuantity()">+</button>
       </div>
-  
-      <!-- Price -->
       <div class="cart-price">
         {{ (cartItem.qty * cartItem.price) | currency:'USD' }}
       </div>

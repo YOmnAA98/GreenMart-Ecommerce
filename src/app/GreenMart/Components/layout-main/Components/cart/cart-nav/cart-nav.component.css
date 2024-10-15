@@ -90,3 +90,9 @@
     background-color: var(--white-color);
     color: var(--primary-color);
   }
+  
+  .cart-buttons .btn{
+    padding: 5px 10px;
+    
+
+  }
