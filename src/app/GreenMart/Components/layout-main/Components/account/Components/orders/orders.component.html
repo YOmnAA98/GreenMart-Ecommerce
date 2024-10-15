@@ -1,3 +1,32 @@
-<div class="order-info"><i class="fa-regular fa-calendar"></i>
-    No order has been made yet. <a class="order-button" href="#">Browse products</a>	
-</div>
+<section class="order">
+  <div class="empty d-flex justify-content-between align-items-center" *ngIf="orderList.length === 0">
+    <p><i class="fa-regular fa-calendar me-2"></i> No order has been made yet.</p>
+    <button class="btn primary-btn" routerLink="/shop">
+      Browse products
+    </button>
+  </div>
+  <div class="full" *ngIf="!(orderList.length === 0)">
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle text-center">
+        <thead>
+          <tr>
+            <th scope="col">Order</th>
+            <th scope="col">Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Total</th>            
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of orderList">
+            <td>#{{item?.id}}</td>
+            <td>{{item?.date | date}}</td>
+            <td>{{item?.paymentStatus}}</td>
+            <td>{{item?.totalAmount | currency}}</td>
+            <td><a class="btn primary-btn" [routerLink]="['/order-details', item?.id]">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

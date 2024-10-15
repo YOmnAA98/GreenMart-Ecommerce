@@ -115,12 +115,12 @@
             </ul>
             <span class="price">{{selectedProduct?.productPrice | currency}}</span>
             <p class="description my-3">{{selectedProduct?.productDescription}}</p>
-            <div class="actions" *ngIf="inStockModal">
+            <div class="actions">
               <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1">
               <button class="btn primary-btn" (click)="addToCart(selectedProduct, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
             </div>
-            <p class="out text-danger" *ngIf="!inStockModal">Out of Stock</p>
+            <!-- <p class="out text-danger">Out of Stock</p> -->
             <p class="category my-3">Category: <span>{{selectedProduct?.category.name}}</span></p>
             <p class="quantity my-3">Quantity: <span>{{selectedProduct?.productQuantity}}</span></p>
           </div>

@@ -1,18 +1,18 @@
 <div class="wishlist-container container my-5">
   <nav>
     <ol class="breadcrumb mt-5">
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
       <li class="breadcrumb-item active">Wishlist</li>
     </ol>
   </nav>
-  <div class="wishlist-header p-3">
-    <h3 class="h3 px-5">Wishlist</h3>
+  <div class="page-title my-5">
+    <h2 class="h5">Wishlist</h2>
   </div>
-  <h2 class="my-5 fs-2">My Wishlist</h2>
-  <div class="wishlist-content mt-4">
-    <table class="table table-striped">
+  <div class="table-responsive wishlist-content mt-4">
+    <table class="table table-bordered text-center align-middle">
       <thead>
         <tr>
+          <th>Image</th>
           <th>Product Name</th>
           <th>Unit Price</th>
           <th>Stock Status</th>
@@ -20,23 +20,22 @@
           <th>Remove</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody>        
         <tr *ngIf="wishlist.length === 0">
-          <td colspan="5" class="text-center">
-            No products were added to the wishlist
-          </td>
+          <td colspan="6" class="text-center">No products were added to the wishlist</td>
         </tr>
         <tr *ngFor="let item of wishlist">
+          <td><img class="img-fluid" [src]="item.imagesURL[0]" alt="{{item.productName}}" width="70px" loading="lazy" /></td>
           <td>{{ item.productName }}</td>
           <td>{{ item.productPrice | currency }}</td>
           <td>{{ item.productQuantity > 0 ? "In Stock" : "Out of Stock" }}</td>
           <td>
-            <button (click)="addToCart(item)" class="btn btn-success">
-              <i class="fa-solid fa-cart-plus"></i>
+            <button (click)="addToCart(item)" class="btn primary-btn">
+              <i class="fa-solid fa-cart-shopping me-1"></i> Add to cart
             </button>
           </td>
-          <td>
-            <button (click)="removeFromWishlist(item)" class="btn btn-danger">
+          <td class="remove">
+            <button (click)="removeFromWishlist(item)" class="btn">
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </td>

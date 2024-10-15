@@ -18,16 +18,11 @@ import { Cart } from '../../../../Shared/Interfaces/cart';
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })
-export class ProductDetailsComponent implements OnInit{
-  inStock: boolean = true;
-  inStockOverlay: boolean = true;
-  inStockModal: boolean = true;
-  isInWishlist: boolean = false;
-
+export class ProductDetailsComponent implements OnInit{  
   productDetails: any = {};
   relatedProducts: Products[] = [];
   selectedProduct: any;
-
+  isInWishlist: boolean = false;
   cartItems: Cart[] = [];
   // @Input productItem: Product
   constructor(private _activatedRoute: ActivatedRoute ,
@@ -39,41 +34,24 @@ export class ProductDetailsComponent implements OnInit{
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe({
       next: (param) => {
-        let productID: any = param.get('id');
-        this._apiDataService.getProductById(productID).subscribe({
+        let productId: any = param.get('id');
+        this._apiDataService.getProductById(productId).subscribe({
           next: (response) => {
-            this.productDetails = response;
-            if (this.productDetails.productQuantity === 0) {
-              this.inStock = false;
-            } else {
-              this.inStock = true;
-            }
+            this.productDetails = response;           
           }
         })
       }
-    })
+    });
     this._apiDataService.getAllProducts().subscribe({
       next: (response) => {
         this.relatedProducts = response.filter((product: any) => {
           return product.category.name === this.productDetails.category.name;
-        })
-        // this.relatedProducts.forEach((product: any) => {
-        //   if(product.productQuantity === 0) {
-        //     this.inStockOverlay = false;
-        //   }else{
-        //     this.inStockOverlay = true;
-        //   }          
-        // })
+        })        
       }
     })
   }
-  quickView(productID: any): void{
-    this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productID);
-    if(this.selectedProduct.productQuantity === 0) {
-      this.inStockModal = false;
-    }else{
-      this.inStockModal = true;
-    }
+  quickView(productId: any): void{
+    this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productId);    
   }
   handleAddToCart() {
     this.msg.sendMsg(this.productDetails);

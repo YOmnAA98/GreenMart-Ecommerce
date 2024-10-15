@@ -1,0 +1,48 @@
+.orders .email{
+  word-break: break-all;
+}
+.orders .order ul{
+  background-color: #F5F5F5;
+  padding: 25px;  
+}
+.orders .order ul li p{
+  font-size: 12px;  
+  text-transform: uppercase;
+  color: var(--main-text-color);
+}
+.orders .order ul li span{
+  color: var(--main-text-color);
+  font-weight: var(--main-weight);
+}
+
+.orders .details .table th{
+  color: var(--main-text-color);
+  font-size: var(--text-small);
+}
+.orders .details .table td{
+  color: var(--dark-text-color);
+  font-size: var(--text-small);
+  width: 50%;
+}
+.orders .details .table .bg td{  
+  background-color: #F7F6F7;
+  color: var(--main-text-color);
+  font-weight: var(--main-weight);
+}
+
+.orders .info ul{
+  background-color: #F7F6F7;
+  padding: 25px;
+}
+.orders .info ul li{
+  color: var(--main-text-color);
+  font-size: var(--text-small);
+}
+.orders .info ul li:first-child::after{
+  content: "";
+  width: 20px;
+  height: 1px;
+  background-color: var(--dark-text-color);
+  display: block;
+  margin-top: 20px;
+}

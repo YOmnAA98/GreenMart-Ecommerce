@@ -61,7 +61,7 @@
         "assets/images/products/milk&cream/product-10/image-01.webp",
         "assets/images/products/milk&cream/product-10/image-02.webp"
       ],
-      "productQuantity": 0,
+      "productQuantity": 20,
       "productSize": "500Ml",
       "ratingsAverage": 4.5
     },
@@ -1223,353 +1223,40 @@
       "ratingsAverage": 4.8
     }
   ],
-  "cart": [
-    {
-      "product": {
-        "id": "33",
-        "productName": "Tesco Blueberry",
-        "productDescription": "Delicately hand picked. Carefully selected for a crisp bite and balanced flavour.Delicately hand picked. Carefully selected for a crisp bite and balanced flavour.",
-        "productPrice": 1.99,
-        "category": {
-          "id": 3,
-          "name": "Fruits"
-        },
-        "imagesURL": [
-          "assets/images/products/fruits/product-12/image-01.webp",
-          "assets/images/products/fruits/product-12/image-02.webp"
-        ],
-        "productQuantity": 15,
-        "productSize": "150g",
-        "ratingsAverage": 4.5
-      },
-      "quantity": 1,
-      "id": "62c4"
-    },
-    {
-      "product": {
-        "id": "62",
-        "productName": "Tesco Salmon Fillets",
-        "productDescription": "Responsibly Sourced. Carefully chosen for freshness and tender texture.",
-        "productPrice": 169,
-        "category": {
-          "id": 6,
-          "name": "Ocean Food"
-        },
-        "imagesURL": [
-          "assets/images/products/ocean-food/product-02/image-01.webp"
-        ],
-        "productQuantity": 34,
-        "productSize": "440g",
-        "ratingsAverage": 4.8
-      },
-      "quantity": 3,
-      "id": "c882"
-    },
-    {
-      "id": "58c5",
-      "product": {
-        "id": "6",
-        "productName": "Avonmore Double Cream",
-        "productDescription": "Avonmore Double Cream is a rich and luxurious dairy product, perfect for enhancing both sweet and savory dishes. This 229ml carton contains thick, velvety cream that boasts a high butterfat content, making it ideal for whipping, pouring, or adding a sumptuous finish to your recipes. Its smooth texture and creamy flavor make it an excellent choice for desserts like cakes, custards, and mousses, as well as for adding richness to sauces and soups. Whether used in cooking or enjoyed on its own, Avonmore Double Cream elevates any culinary creation.",
-        "productPrice": 39.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-09/image-01.webp"
-        ],
-        "productQuantity": 18,
-        "productSize": "229Ml",
-        "ratingsAverage": 4.2
-      },
-      "quantity": 1
-    },
-    {
-      "id": "8a33",
-      "product": {
-        "id": "69",
-        "productName": "Keoh/Ob Creamy Coconut Hake Curry",
-        "productDescription": "Skinless Hake Chunks (Defrosted) with Green Beans in a Creamy Coconut Curry SauceDelicate Hake Chunks, responsibly sourced. Paired with green beans in a creamy coconut curry sauce. Fish Made Easy",
-        "productPrice": 365,
-        "category": {
-          "id": 6,
-          "name": "Ocean Food"
-        },
-        "imagesURL": [
-          "assets/images/products/ocean-food/product-09/image-01.webp"
-        ],
-        "productQuantity": 23,
-        "productSize": "350g",
-        "ratingsAverage": 4.8
-      },
-      "quantity": 1
-    },
-    {
-      "id": "7726",
-      "product": {
-        "id": "23",
-        "productName": "Tesco Ripe Bananas",
-        "productDescription": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.",
-        "productPrice": 90,
-        "category": {
-          "id": 3,
-          "name": "Fruits"
-        },
-        "imagesURL": [
-          "assets/images/products/fruits/product-02/image-01.webp",
-          "assets/images/products/fruits/product-02/image-02.webp"
-        ],
-        "productQuantity": 100,
-        "productSize": "400g",
-        "ratingsAverage": 4.4
-      },
-      "quantity": 1
-    },
-    {
-      "id": "e574",
-      "product": {
-        "id": "1",
-        "productName": "Yop Strawberry Drinkable Yoghurt",
-        "productDescription": "Strawberry Flavour Drinking Yogurt Yop Strawberry flavour drinking yoghurt, great source of Calcium and Vitamin D  with no colours or artificial flavourings. The perfect on-the- go snack with a taste that teens will love! It is a food that you can drink, and super filling! It lasts for 8 Hours  out of the fridge and perfect for busy days! Calcium and vitamin D are needed for normal growth and development of bone in children After 8 hours out of the fridge, the product must be discarded",
-        "productPrice": 29.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-01/image-01.webp"
-        ],
-        "productQuantity": 10,
-        "productSize": "180g",
-        "ratingsAverage": 4.4
-      },
-      "quantity": 1
-    },
-    {
-      "id": "1ba8",
-      "product": {
-        "id": "1",
-        "productName": "Yop Strawberry Drinkable Yoghurt",
-        "productDescription": "Strawberry Flavour Drinking Yogurt Yop Strawberry flavour drinking yoghurt, great source of Calcium and Vitamin D  with no colours or artificial flavourings. The perfect on-the- go snack with a taste that teens will love! It is a food that you can drink, and super filling! It lasts for 8 Hours  out of the fridge and perfect for busy days! Calcium and vitamin D are needed for normal growth and development of bone in children After 8 hours out of the fridge, the product must be discarded",
-        "productPrice": 29.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-01/image-01.webp"
-        ],
-        "productQuantity": 10,
-        "productSize": "180g",
-        "ratingsAverage": 4.4
-      },
-      "quantity": 1
-    },
-    {
-      "id": "0ac4",
-      "product": {
-        "id": "3",
-        "productName": "Actimel Yoghurt Drink ",
-        "productDescription": "Yogurt drink with L. casei Danone cultures, vitamins D and B6.This mighty shot has:20 Billion live L. casei cultures.Vitamin DVitamin B63 Strains of live culturesOver 8h fermentation.Gluten freeNo preservatives or coloursNo artificial flavours",
-        "productPrice": 19.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-08/image-01.webp",
-          "assets/images/products/milk&cream/product-08/image-02.webp"
-        ],
-        "productQuantity": 20,
-        "productSize": "100g",
-        "ratingsAverage": 4.2
-      },
-      "quantity": 1
-    },
-    {
-      "id": "6ad8",
-      "product": {
-        "id": "3",
-        "productName": "Actimel Yoghurt Drink ",
-        "productDescription": "Yogurt drink with L. casei Danone cultures, vitamins D and B6.This mighty shot has:20 Billion live L. casei cultures.Vitamin DVitamin B63 Strains of live culturesOver 8h fermentation.Gluten freeNo preservatives or coloursNo artificial flavours",
-        "productPrice": 19.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-08/image-01.webp",
-          "assets/images/products/milk&cream/product-08/image-02.webp"
-        ],
-        "productQuantity": 20,
-        "productSize": "100g",
-        "ratingsAverage": 4.2
-      },
-      "quantity": 1
-    },
-    {
-      "id": "1cd0",
-      "product": {
-        "id": "4",
-        "productName": "Glenisk Creme Fraiche",
-        "productDescription": "Glenisk Creme Fraiche 250GOur Crème Fraiche is crafted using blend of Ireland's best Organic Wholemilk and Organic Fresh Cream, cultured to perfection over time to create a distinctive and delicious flavour. With much less than a third of the fat of mayonnaise, and free from any artificial ingredients, it's a tasty, healthy choice that brings good food to life.",
-        "productPrice": 15,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-06/image-01.webp"
-        ],
-        "productQuantity": 22,
-        "productSize": "250g",
-        "ratingsAverage": 4.2
-      },
-      "quantity": 1
-    },
-    {
-      "id": "4af2",
-      "product": {
-        "id": "7",
-        "productName": "Tesco Green Seedless ",
-        "productDescription": "Tesco Green Seedless Grapes are a refreshing and sweet snack option, perfect for enjoying on their own or adding to fruit salads and desserts. These plump, juicy grapes are vibrant green in color, known for their crisp texture and delightful flavor. Conveniently seedless, they offer a hassle-free eating experience, making them a favorite for both kids and adults. Packed with vitamins and antioxidants, these grapes are not only delicious but also a healthy choice. Whether enjoyed fresh, in smoothies, or as a topping for yogurt, Tesco Green Seedless Grapes are a versatile and tasty addition to any diet.",
-        "productPrice": 257.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-02/image-01.webp"
-        ],
-        "productQuantity": 29,
-        "productSize": " 700g",
-        "ratingsAverage": 4.2
-      },
-      "quantity": 1
-    },
-    {
-      "id": "145b",
-      "product": {
-        "id": "36",
-        "productName": "Tesco Asparagus Tips",
-        "productDescription": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-        "productPrice": 100,
-        "category": {
-          "id": 4,
-          "name": "Vegetables"
-        },
-        "imagesURL": [
-          "assets/images/products/vegetables/product-01/image-01.webp",
-          "assets/images/products/vegetables/product-01/image-02.webp"
-        ],
-        "productQuantity": 100,
-        "productSize": "125g",
-        "ratingsAverage": 4.8
-      },
-      "quantity": 1
-    },
-    {
-      "id": "2c63",
-      "product": {
-        "id": "37",
-        "productName": "Green Bell Pepper",
-        "productDescription": "Green bell peppers are a crunchy and refreshing addition to any meal. Their mild and slightly sweet flavor makes them a versatile ingredient in both savory and sweet dishes.",
-        "productPrice": 1.2,
-        "category": {
-          "id": 4,
-          "name": "Vegetables"
-        },
-        "imagesURL": [
-          "assets/images/products/vegetables/product-02/image-01.webp"
-        ],
-        "productQuantity": 100,
-        "productSize": "200g",
-        "ratingsAverage": 4.2
-      },
-      "quantity": 1
-    },
-    {
-      "id": "05b3",
-      "product": {
-        "id": "37",
-        "productName": "Green Bell Pepper",
-        "productDescription": "Green bell peppers are a crunchy and refreshing addition to any meal. Their mild and slightly sweet flavor makes them a versatile ingredient in both savory and sweet dishes.",
-        "productPrice": 1.2,
-        "category": {
-          "id": 4,
-          "name": "Vegetables"
-        },
-        "imagesURL": [
-          "assets/images/products/vegetables/product-02/image-01.webp"
-        ],
-        "productQuantity": 100,
-        "productSize": "200g",
-        "ratingsAverage": 4.2
-      },
-      "quantity": 1
-    },
-    {
-      "id": "e4cf",
-      "product": {
-        "id": "37",
-        "productName": "Green Bell Pepper",
-        "productDescription": "Green bell peppers are a crunchy and refreshing addition to any meal. Their mild and slightly sweet flavor makes them a versatile ingredient in both savory and sweet dishes.",
-        "productPrice": 1.2,
-        "category": {
-          "id": 4,
-          "name": "Vegetables"
-        },
-        "imagesURL": [
-          "assets/images/products/vegetables/product-02/image-01.webp"
-        ],
-        "productQuantity": 100,
-        "productSize": "200g",
-        "ratingsAverage": 4.2
-      },
-      "quantity": 1
-    }
-  ],
+  "cart": [],
   "wishlist": [],
   "orders": [
     {
-      "id": "06e7",
+      "id": "6a16",
       "cartItems": [
         {
-          "productId": "33",
+          "productId": "26",
+          "quantity": 1,
+          "productName": "Tesco Green Seedless Grapes",
+          "productPrice": 2.69
+        },
+        {
+          "productId": "29",
           "quantity": 2,
-          "productName": "Tesco Blueberry",
-          "productPrice": 1.99
-        },
-        {
-          "productId": "62",
-          "quantity": 1,
-          "productName": "Tesco Salmon Fillets",
-          "productPrice": 169
-        },
-        {
-          "productId": "6",
-          "quantity": 1,
-          "productName": "Avonmore Double Cream",
-          "productPrice": 39.99
-        },
-        {
-          "productId": "69",
-          "quantity": 1,
-          "productName": "Keoh/Ob Creamy Coconut Hake Curry",
-          "productPrice": 365
-        },
-        {
-          "productId": "23",
-          "quantity": 1,
-          "productName": "Tesco Ripe Bananas",
-          "productPrice": 90
+          "productName": "Coconut Each",
+          "productPrice": 1
         }
       ],
-      "totalAmount": 667.97,
-      "date": "2024-10-14T21:30:37.764Z",
-      "shippingAddress": "street street",
-      "paymentStatus": "Pending"
+      "totalAmount": 4.6899999999999995,
+      "date": "2024-10-15T11:41:55.059Z",
+      "shippingInfo": {
+        "firstName": "Yomna",
+        "lastName": "Raafat",
+        "email": "yomna.raafat98@gmail.com",
+        "phone": "01065769909",
+        "address": "9-street",
+        "city": "Assuit ",
+        "state": "Assuit",
+        "country": "Eg",
+        "postcode": "71517",
+        "agreement": true
+      },
+      "paymentStatus": "Processing"
     }
   ]
 }

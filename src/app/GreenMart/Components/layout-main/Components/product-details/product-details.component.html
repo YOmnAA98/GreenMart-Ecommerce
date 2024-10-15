@@ -37,14 +37,13 @@
           </div>
         </div>
         <div class="right-side col-lg-6">
-         <div class="d-flex justify-content-between">
-          <h2 class="h3">{{productDetails.productName}}</h2>
-            <button class="btn" (click)="addToWishlist(productDetails)">
-              <i [ngClass]="isInWishlist ? 'fa-solid fa-heart fs-4' : 'fa-regular fa-heart fs-4'" 
-                 [ngStyle]="{'color': isInWishlist ? 'red' : 'initial'}"></i>
-            </button>
-            <div id="custom-alert" class="alert hidden" role="alert">
-              <span id="custom-alert-message"></span>
+         <div class="title d-flex justify-content-between">
+          <h2 class="h3">{{productDetails.productName}}</h2>          
+          <button class="btn border-0" (click)="addToWishlist(productDetails)">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+          <div id="custom-alert" class="alert hidden" role="alert">
+            <span id="custom-alert-message"></span>
           </div>
           
          </div>
@@ -59,13 +58,13 @@
             </ul>
             <span class="price">${{productDetails.productPrice}}</span>
             <p class="description my-3">{{productDetails.productDescription}}</p>
-            <div class="actions border-top border-bottom py-4" *ngIf="inStock">
+            <div class="actions border-top border-bottom py-4">
               <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1">
               <button class="btn primary-btn" (click)="handleAddToCart()" (click)="addToCart(productDetails, 1)"><i class="fa-solid fa-cart-shopping" ></i>
                  Add to Cart</button>
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
             </div>
-            <p class="out text-danger" *ngIf="!inStock">Out of Stock</p>
+            <!-- <p class="out text-danger">Out of Stock</p> -->
             <p class="category my-3">Category: <span>{{productDetails.category.name}}</span></p>
             <p class="quantity my-3">Quantity: <span>{{productDetails.productQuantity}}</span></p>
         </div>
@@ -85,7 +84,7 @@
                 <a [routerLink]="['/product-details', product.id]">
                   <div class="image">
                     <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName">
-                    <p class="overlay" *ngIf="!inStockOverlay">out of stock</p>
+                    <!-- <p class="overlay">out of stock</p> -->
                   </div>
                 </a>
                 <div class="card-body">
@@ -123,7 +122,7 @@
                 <a [routerLink]="['/product-details', product.id]">
                   <div class="image">
                     <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName">
-                    <p class="overlay" *ngIf="!inStockOverlay">out of stock</p>
+                    <!-- <p class="overlay">out of stock</p> -->
                   </div>
                 </a>
                 <div class="card-body">
@@ -211,12 +210,12 @@
             </ul>
             <span class="price">${{selectedProduct?.productPrice}}</span>
             <p class="description my-3">{{selectedProduct?.productDescription}}</p>
-            <div class="actions" *ngIf="inStockModal">
+            <div class="actions">
               <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1">
               <button class="btn primary-btn" (click)="addToCart(selectedProduct, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
             </div>
-            <p class="out text-danger" *ngIf="!inStockModal">Out of Stock</p>
+            <!-- <p class="out text-danger">Out of Stock</p> -->
             <p class="category my-3">Category: <span>{{selectedProduct?.category.name}}</span></p>
             <p class="quantity my-3">Quantity: <span>{{selectedProduct?.productQuantity}}</span></p>
           </div>

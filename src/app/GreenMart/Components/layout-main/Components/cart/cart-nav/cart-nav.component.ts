@@ -73,7 +73,7 @@ ShoppingCartService: any;
 
   updateCart() {
     localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
-    this.calculateCartTotal();
+    this.cartTotal = this.cartItems.reduce((total, item) => total + item.price * item.qty, 0);
   }
   clearCart() {
     this.cartItems = [];
@@ -82,11 +82,8 @@ ShoppingCartService: any;
   }
  
   calculateCartTotal() {
-    this.cartTotal = 0;
-    this.cartItems.forEach(item => {
-      this.cartTotal += (item.qty * item.price);
-    });
-    this.updateCart();
-  }
- 
-}
+    if (this.cartItems.length > 0) {
+      this.cartTotal = this.cartItems.reduce((total, item) => total + item.price * item.qty, 0);
+    }
+ this.updateCart();
+}}
