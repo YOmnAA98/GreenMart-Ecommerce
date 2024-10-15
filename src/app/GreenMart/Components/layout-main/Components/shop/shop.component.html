@@ -11,40 +11,18 @@
       <div class="left-side col-xl-3 mb-5">
         <div class="filter">
           <div class="d-flex align-items-start">
-            <div
-              class="nav flex-column nav-pills w-100 border rounded-2"
-              id="v-pills-tab"
-              role="tablist"
-              aria-orientation="vertical"
-            >
-              <p class="py-3 px-4 rounded-top-2">
-                <i class="fa-solid fa-bars me-2"></i> Custom Menu
-              </p>
-              <button
-                class="nav-link active py-3 px-4 rounded-0 text-start border-bottom"
-                id="v-pills-all-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#v-pills-all"
-                type="button"
-                role="tab"
-                aria-controls="v-pills-home"
-                aria-selected="true"
-              >
-                All Products
-              </button>
-              <button
-                *ngFor="let category of categories"
+            <div class="nav flex-column nav-pills w-100 border rounded-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <p class="py-3 px-4 rounded-top-2"><i class="fa-solid fa-bars me-2"></i> Custom Menu</p>
+              <button class="nav-link active py-3 px-4 rounded-0 text-start border-bottom" id="v-pills-all-tab" data-bs-toggle="pill" data-bs-target="#v-pills-all" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">All Products</button>
+              <button *ngFor="let category of categories"
                 class="nav-link py-3 px-4 rounded-0 text-start border-bottom"
                 (click)="setActiveTab(category.id)"
                 [attr.id]="'nav-' + category.attribute + '-tab'"
                 data-bs-toggle="tab"
-                [attr.data-bs-target]="'#nav-' + category.attribute"
-                type="button"
-                role="tab"
-                [attr.aria-controls]="'nav-' + category.id"
-                [attr.aria-selected]="activeTab === category.id"
-              >
-                {{ category.name }}
+                [attr.data-bs-target]="'#nav-'+category.attribute"
+                type="button" role="tab"
+                [attr.aria-controls]="'nav-'+category.id"
+                [attr.aria-selected]="activeTab === category.id">{{category.name}}
               </button>
             </div>
           </div>
@@ -53,295 +31,165 @@
       <div class="right-side col-xl-9">
         <div class="content">
           <div class="search mb-3">
-            <input
-              type="search"
-              class="form-control shadow-none"
-              placeholder="search a product..."
-              [(ngModel)]="searchText"
-            />
+            <input type="search" class="form-control shadow-none" placeholder="search a product..." [(ngModel)]="searchText">
           </div>
           <div class="tab-content" id="v-pills-tabContent">
-            <div
-              class="tab-pane fade show active"
-              id="v-pills-all"
-              role="tabpanel"
-              aria-labelledby="v-pills-all-tab"
-              tabindex="0"
-            >
+            <div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab" tabindex="0">
               <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-                <div
-                  class="col"
-                  *ngFor="let product of products | search : searchText"
-                >
+                <div class="col" *ngFor="let product of products | search: searchText">
                   <div class="card">
                     <a [routerLink]="['/product-details', product.id]">
                       <div class="image">
                         <!-- <span class="badge square-badge sale">Sale</span> -->
-                        <!-- <span class="badge square-badge hot">Hot</span> -->
-                        <img
-                          [src]="product.imagesURL[0]"
-                          class="card-img-top"
-                          [alt]="product.productName"
-                        />
+                         <!-- <span class="badge square-badge hot">Hot</span> -->
+                        <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName">
                         <!-- <p class="overlay">out of stock</p> -->
                       </div>
                     </a>
                     <div class="card-body">
                       <a [routerLink]="['/product-details', product.id]">
-                        <h4 class="card-title">
-                          {{ product.productName | slicing : 2 }}
-                        </h4>
+                        <h4 class="card-title">{{product.productName | slicing : 2}}</h4>
                       </a>
-                      <p class="card-text">Approx {{ product.productSize }}</p>
-                      <div
-                        class="card-info d-sm-flex justify-content-between mt-2"
-                      >
-                        <span class="price">{{
-                          product.productPrice | currency
-                        }}</span>
+                      <p class="card-text">Approx {{product.productSize}}</p>
+                      <div class="card-info d-sm-flex justify-content-between mt-2">
+                        <span class="price">{{product.productPrice | currency}}</span>
                         <ul class="p-0 d-flex align-items-center">
                           <li><i class="fa-solid fa-star"></i></li>
                           <li><i class="fa-solid fa-star"></i></li>
                           <li><i class="fa-solid fa-star"></i></li>
                           <li><i class="fa-solid fa-star"></i></li>
                           <li><i class="fa-solid fa-star"></i></li>
-                          <p class="ms-1">{{ product.ratingsAverage }}</p>
+                          <p class="ms-1">{{product.ratingsAverage}}</p>
                         </ul>
                       </div>
                       <div class="my-2">
-                        <button
-                          class="btn product-btn"
-                          data-bs-toggle="modal"
-                          data-bs-target="#cartModal"
-                          (click)="ModalView(product.id)"
-                          (click)="handleAddToCart()"
-                          (click)="addToCart(product, 1)"
-                        >
-                          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
-                        </button>
-                        <button
-                          class="btn product-btn mx-2"
-                          data-bs-toggle="modal"
-                          data-bs-target="#shopModal"
-                          (click)="quickView(product.id)"
-                        >
+                        <button class="btn product-btn"(click)="ModalView(product.id)" (click)="handleAddToCart()" (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                        <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#shopModal" (click)="quickView(product.id)">
                           <i class="fa-solid fa-eye"></i>
                         </button>
-                        <button class="btn product-btn">
-                          <i class="fa-solid fa-heart"></i>
-                        </button>
+                        <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div
-              *ngFor="let category of categories"
-              class="tab-pane fade"
-              [attr.id]="'nav-' + category.attribute"
-              role="tabpanel"
-              [attr.aria-labelledby]="'nav-' + category.attribute + '-tab'"
-              tabindex="0"
-            >
-              <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-                <div
-                  class="col"
-                  *ngFor="let product of filteredProducts | search : searchText"
-                >
-                  <div class="card">
+            <div *ngFor="let category of categories"
+            class="tab-pane fade"
+            [attr.id]="'nav-' + category.attribute" role="tabpanel"
+            [attr.aria-labelledby]="'nav-'+ category.attribute +'-tab'"
+            tabindex="0">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+              <div class="col" *ngFor="let product of filteredProducts | search: searchText">
+                <div class="card">
+                  <a [routerLink]="['/product-details', product.id]">
+                    <div class="image">
+                      <!-- <span class="badge square-badge sale">Sale</span> -->
+                       <!-- <span class="badge square-badge hot">Hot</span> -->
+                      <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName">
+                      <!-- <p class="overlay">out of stock</p> -->
+                    </div>
+                  </a>
+                  <div class="card-body">
                     <a [routerLink]="['/product-details', product.id]">
-                      <div class="image">
-                        <!-- <span class="badge square-badge sale">Sale</span> -->
-                        <!-- <span class="badge square-badge hot">Hot</span> -->
-                        <img
-                          [src]="product.imagesURL[0]"
-                          class="card-img-top"
-                          [alt]="product.productName"
-                        />
-                        <!-- <p class="overlay">out of stock</p> -->
-                      </div>
+                      <h4 class="card-title">{{product.productName | slicing : 2}}</h4>
                     </a>
-                    <div class="card-body">
-                      <a [routerLink]="['/product-details', product.id]">
-                        <h4 class="card-title">
-                          {{ product.productName | slicing : 2 }}
-                        </h4>
-                      </a>
-                      <p class="card-text">Approx {{ product.productSize }}</p>
-                      <div
-                        class="card-info d-sm-flex justify-content-between mt-2"
-                      >
-                        <span class="price">{{
-                          product.productPrice | currency
-                        }}</span>
-                        <ul class="p-0 d-flex align-items-center">
-                          <li><i class="fa-solid fa-star"></i></li>
-                          <li><i class="fa-solid fa-star"></i></li>
-                          <li><i class="fa-solid fa-star"></i></li>
-                          <li><i class="fa-solid fa-star"></i></li>
-                          <li><i class="fa-solid fa-star"></i></li>
-                          <p class="ms-1">{{ product.ratingsAverage }}</p>
-                        </ul>
-                      </div>
-                      <div class="my-2">
-                        <button
-                          class="btn product-btn"
-                          (click)="addToCart(product, 1)"
-                          (click)="ModalView(product.id)"
-                        >
-                          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
-                        </button>
-                        <button
-                          class="btn product-btn mx-2"
-                          data-bs-toggle="modal"
-                          data-bs-target="#shopModal"
-                          (click)="quickView(product.id)"
-                        >
-                          <i class="fa-solid fa-eye"></i>
-                        </button>
-                        <button class="btn product-btn">
-                          <i class="fa-solid fa-heart"></i>
-                        </button>
-                      </div>
+                    <p class="card-text">Approx {{product.productSize}}</p>
+                    <div class="card-info d-sm-flex justify-content-between mt-2">
+                      <span class="price">{{product.productPrice | currency}}</span>
+                      <ul class="p-0 d-flex align-items-center">
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <p class="ms-1">{{product.ratingsAverage}}</p>
+                      </ul>
+                    </div>
+                    <div class="my-2">
+                      <button class="btn product-btn"(click)="ModalView(product.id)" (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                      <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#shopModal" (click)="quickView(product.id)">
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>
     </section>
 
     <div class="ads mt-5">
-      <img
-        class="img-fluid w-100"
-        src="./assets/images/banner-13.webp"
-        alt="advertesment"
-        loading="lazy"
-      />
+      <img class="img-fluid w-100" src="./assets/images/banner-13.webp" alt="advertesment" loading="lazy">
     </div>
 
     <app-top-rated-section></app-top-rated-section>
   </div>
 </section>
 
+
 <!-- Shop Modal -->
-<div
-  class="modal fade"
-  id="shopModal"
-  tabindex="-1"
-  aria-labelledby="shopModalLabel"
-  aria-hidden="true"
->
-  <div
-    class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl w-75 m-auto"
-  >
+<div class="modal fade" id="shopModal" tabindex="-1" aria-labelledby="shopModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl w-75 m-auto">
     <div class="modal-content rounded-0">
       <div class="modal-body">
         <div class="row">
           <div class="slider col-lg-6">
             <div id="shopCarouselIndicators" class="carousel slide">
               <div class="carousel-indicators">
-                <button
-                  *ngFor="
-                    let image of selectedProduct?.imagesURL;
-                    let i = index
-                  "
+                <button *ngFor="let image of selectedProduct?.imagesURL; let i = index"
                   type="button"
                   [attr.data-bs-target]="'#shopCarouselIndicators'"
                   [attr.data-bs-slide-to]="i"
                   [attr.aria-current]="i === 0 ? 'true' : null"
-                  [ngClass]="i === 0 ? 'active' : ''"
-                ></button>
+                  [ngClass]="(i === 0) ? 'active' : ''">
+                </button>
               </div>
               <div class="carousel-inner">
-                <div
-                  *ngFor="let image of selectedProduct?.imagesURL;let i = index "
+                <div *ngFor="let image of selectedProduct?.imagesURL; let i = index"
                   class="carousel-item"
-                  [ngClass]="i === 0 ? 'active' : ''"
-                >
-                  <img
-                    [src]="image"
-                    class="d-block w-100"
-                    [alt]="selectedProduct?.productName"
-                  />
+                  [ngClass]="(i === 0) ? 'active' : ''">
+                  <img [src]="image" class="d-block w-100" [alt]="selectedProduct?.productName">
                 </div>
               </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#shopCarouselIndicators"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
+              <button class="carousel-control-prev" type="button" data-bs-target="#shopCarouselIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#shopCarouselIndicators"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
+              <button class="carousel-control-next" type="button" data-bs-target="#shopCarouselIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
               </button>
             </div>
           </div>
           <div class="data col-lg-6">
-            <h2>{{ selectedProduct?.productName }}</h2>
-            <p class="weight mb-2">
-              (Approx {{ selectedProduct?.productSize }})
-            </p>
+            <h2>{{selectedProduct?.productName}}</h2>
+            <p class="weight mb-2">(Approx {{selectedProduct?.productSize}})</p>
             <ul class="p-0 d-flex align-items-center">
               <li><i class="fa-solid fa-star"></i></li>
               <li><i class="fa-solid fa-star"></i></li>
               <li><i class="fa-solid fa-star"></i></li>
               <li><i class="fa-solid fa-star"></i></li>
               <li><i class="fa-solid fa-star"></i></li>
-              <p class="mt-1 ms-1">{{ selectedProduct?.ratingsAverage }}</p>
+              <p class="mt-1 ms-1">{{selectedProduct?.ratingsAverage}}</p>
             </ul>
-            <span class="price">{{
-              selectedProduct?.productPrice | currency
-            }}</span>
-            <p class="description my-3">
-              {{ selectedProduct?.productDescription }}
-            </p>
-            <div class="actions" *ngIf="inStockModal">
-              <input
-                type="number"
-                class="form-control shadow-none w-25"
-                value="1"
-                min="1"
-                aria-label="1"
-              />
-              <button
-                class="btn primary-btn"
-                (click)="addToCart(selectedProduct, 1)"
-              >
-                <i class="fa-solid fa-cart-shopping"></i> Add to Cart
-              </button>
-              <button class="btn primary-btn">
-                <i class="fa-solid fa-cart-shopping"></i> Buy Now
-              </button>
+            <span class="price">{{selectedProduct?.productPrice | currency}}</span>
+            <p class="description my-3">{{selectedProduct?.productDescription}}</p>
+            <div class="actions">
+              <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1">
+              <button class="btn primary-btn" (click)="addToCart(selectedProduct, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+              <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
             </div>
-            <p class="out text-danger" *ngIf="!inStockModal">Out of Stock</p>
-            <p class="category my-3">
-              Category: <span>{{ selectedProduct?.category.name }}</span>
-            </p>
-            <p class="quantity my-3">
-              Quantity: <span>{{ selectedProduct?.productQuantity }}</span>
-            </p>
+            <!-- <p class="out text-danger">Out of Stock</p> -->
+            <p class="category my-3">Category: <span>{{selectedProduct?.category.name}}</span></p>
+            <p class="quantity my-3">Quantity: <span>{{selectedProduct?.productQuantity}}</span></p>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div>
 </div>
 
 <!-- Add to cart modal -->

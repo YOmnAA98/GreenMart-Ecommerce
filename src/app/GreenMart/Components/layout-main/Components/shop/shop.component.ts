@@ -18,9 +18,7 @@ import { Cart } from '../../../../Shared/Interfaces/cart';
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css'
 })
-export class ShopComponent implements OnInit{
-  inStock: boolean = true;
-  inStockModal: boolean = true;
+export class ShopComponent implements OnInit{  
   categories: Category[] = [];
   products: Products[] = [];
   filteredProducts: Products[] = [];
@@ -60,12 +58,7 @@ export class ShopComponent implements OnInit{
   }
 
   quickView(productId: any): void {
-    this.selectedProduct = this.products.find((product: any) => product.id === productId);
-    if(this.selectedProduct.productQuantity === 0) {
-      this.inStockModal = false;
-    }else{
-      this.inStockModal = true;
-    }
+    this.selectedProduct = this.products.find((product: any) => product.id === productId);    
   }
 
   addToCart(product: Products, quantity: number): void {

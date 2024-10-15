@@ -102,9 +102,9 @@
                     <div>
                       <h5 class="h6">{{item?.product?.productName}}</h5>
                       <div class="border d-inline-block">
-                        <button class="btn me-2" (click)="updateCartQuantity(item.id!, item.product ,item.quantity + 1)">+</button>
+                        <button class="btn border-0 me-2" (click)="updateCartQuantity(item.id!, item.product ,item.quantity + 1)">+</button>
                         <span>{{item?.quantity}}</span>
-                        <button class="btn ms-2" (click)="updateCartQuantity(item.id!, item.product, item.quantity - 1)">-</button>
+                        <button class="btn border-0 ms-2" (click)="updateCartQuantity(item.id!, item.product, item.quantity - 1)">-</button>
                        </div>
                     </div>
                   </td>

@@ -18,18 +18,19 @@ nav .breadcrumb-item + .breadcrumb-item::before {
   border-collapse: collapse;
   margin-bottom: 20px;
 }
-
+.table th{
+  color: var(--main-text-color);
+}
 .table th, .table td {
-  padding: 15px;
-  border: 1px solid #ddd;
-  text-align: center;
+  font-size: var(--text-small);
 }
-
-.btn {
-  padding: 8px 12px;
-  cursor: pointer;
+.table .remove i:hover{
+  color: var(--red-color)
 }
-
+.table .remove button,
+.table .remove button:active{
+  border: none;
+}
 .wishlist-header {
   background-color: #f8f9fa; 
   border-radius: 8px; 

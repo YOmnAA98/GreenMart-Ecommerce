@@ -212,6 +212,7 @@ nav .mob-cart {
 }
 nav .mob-cart i {
   font-size: 1.25rem;
+  color: #595C5F;
 }
 nav .mob-cart .badge {
   background-color: var(--primary-color);

@@ -28,10 +28,6 @@
 .details .left-side .carousel-inner img{
   display: none;
 }
-/* lib-ngx-image-zoom .ngxImageZoomContainer {
-  width: 100% !important;
-  height: auto !important;
-} */
 .details .left-side .carousel-inner lib-ngx-image-zoom:hover{
   cursor: zoom-in;
 }
@@ -126,8 +122,6 @@
 
 
 /* wishlist */
-
-
 @media screen and (max-width: 575px){
   .details .left-side .carousel-inner lib-ngx-image-zoom{
     display: none;
@@ -147,19 +141,17 @@
 }
 
 
-
-
 /* alert */
 .alert {
-  position: absolute; 
-  background-color: #f8d7da; 
-  color: #721c24; 
-  border: 1px solid #f5c6cb; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--primary-color); 
+  color: var(--white-color);   
   padding: 10px;
   border-radius: 5px;
-  z-index: 1000; 
-  margin-top: -70px; 
-  right: 20px;
+  z-index: 1000;   
 }
 
 .hidden {
@@ -169,5 +161,3 @@
 .show {
   display: block; 
 }
-
-
