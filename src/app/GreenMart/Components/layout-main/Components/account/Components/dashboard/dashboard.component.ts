@@ -5,8 +5,13 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  userEmail: string | null = null; 
 
+  constructor() {
+    
+    this.userEmail = localStorage.getItem('loggedInUserEmail');
+  }
 }

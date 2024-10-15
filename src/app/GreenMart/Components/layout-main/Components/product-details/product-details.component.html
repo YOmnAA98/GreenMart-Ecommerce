@@ -40,7 +40,8 @@
          <div class="title d-flex justify-content-between">
           <h2 class="h3">{{productDetails.productName}}</h2>          
           <button class="btn border-0" (click)="addToWishlist(productDetails)">
-            <i class="fa-solid fa-heart"></i>
+            <i [ngClass]="isInWishlist ? 'fa-solid fa-heart fs-4' : 'fa-regular fa-heart fs-4'" 
+               [ngStyle]="{'color': isInWishlist ? 'red' : 'initial'}"></i>
           </button>
           <div id="custom-alert" class="alert hidden" role="alert">
             <span id="custom-alert-message"></span>

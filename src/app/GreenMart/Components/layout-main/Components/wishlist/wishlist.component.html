@@ -28,7 +28,7 @@
           <td><img class="img-fluid" [src]="item.imagesURL[0]" alt="{{item.productName}}" width="70px" loading="lazy" /></td>
           <td>{{ item.productName }}</td>
           <td>{{ item.productPrice | currency }}</td>
-          <td>{{ item.productQuantity > 0 ? 'In Stock' : 'Out of Stock' }}</td>
+          <td>{{ item.productQuantity > 0 ? "In Stock" : "Out of Stock" }}</td>
           <td>
             <button (click)="addToCart(item)" class="btn primary-btn">
               <i class="fa-solid fa-cart-shopping me-1"></i> Add to cart
@@ -42,18 +42,9 @@
         </tr>
       </tbody>
     </table>
-     <!-- Alert -->
-     <div id="custom-alert" class="custom-alert hidden" role="alert">
+    <!-- Alert -->
+    <div id="custom-alert" class="custom-alert hidden" role="alert">
       <span id="custom-alert-message"></span>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-

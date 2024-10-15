@@ -22,10 +22,10 @@ export class ProductDetailsComponent implements OnInit{
   productDetails: any = {};
   relatedProducts: Products[] = [];
   selectedProduct: any;
-
+  isInWishlist: boolean = false;
   cartItems: Cart[] = [];
   // @Input productItem: Product
-  constructor(private _activatedRoute: ActivatedRoute,
+  constructor(private _activatedRoute: ActivatedRoute ,
     
     private _apiDataService: ApiDataService,
     private msg: ShoppingCartService,
@@ -60,8 +60,7 @@ export class ProductDetailsComponent implements OnInit{
   addToWishlist(product: Products): void {
     if (product) {
       this.wishlistService.addToWishlist(product);
-      
-     
+      this.isInWishlist = true; 
       this.showCustomAlert(`${product.productName} added to wishlist!`);
     } else {
       console.error('Product is undefined');
