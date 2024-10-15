@@ -15,9 +15,7 @@ import { Cart } from '../../../../../../Shared/Interfaces/cart';
   templateUrl: './top-features-section.component.html',
   styleUrl: './top-features-section.component.css'
 })
-export class TopFeaturesSectionComponent implements OnInit{
-  inStock: boolean = true;  
-  inStockModal: boolean = true  
+export class TopFeaturesSectionComponent implements OnInit{  
   categories: Category[] = [];  
   filteredProducts: Products[] = []; 
   selectedProduct: any; 
@@ -54,12 +52,7 @@ export class TopFeaturesSectionComponent implements OnInit{
   }
 
   quickView(productId: any): void {
-    this.selectedProduct = this.filteredProducts.find((product: any) => product.id === productId);
-    if(this.selectedProduct.productQuantity === 0) {
-      this.inStockModal = false;
-    }else{
-      this.inStockModal = true;
-    }
+    this.selectedProduct = this.filteredProducts.find((product: any) => product.id === productId);    
   }
 
   addToCart(product: Products, quantity: number): void {

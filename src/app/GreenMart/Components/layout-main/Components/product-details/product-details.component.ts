@@ -18,11 +18,7 @@ import { Cart } from '../../../../Shared/Interfaces/cart';
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })
-export class ProductDetailsComponent implements OnInit{
-  inStock: boolean = true;
-  inStockOverlay: boolean = true;
-  inStockModal: boolean = true;
-
+export class ProductDetailsComponent implements OnInit{  
   productDetails: any = {};
   relatedProducts: Products[] = [];
   selectedProduct: any;
@@ -41,12 +37,7 @@ export class ProductDetailsComponent implements OnInit{
         let productId: any = param.get('id');
         this._apiDataService.getProductById(productId).subscribe({
           next: (response) => {
-            this.productDetails = response;
-            if (this.productDetails.productQuantity === 0) {
-              this.inStock = false;
-            } else {
-              this.inStock = true;
-            }
+            this.productDetails = response;           
           }
         })
       }
@@ -55,24 +46,12 @@ export class ProductDetailsComponent implements OnInit{
       next: (response) => {
         this.relatedProducts = response.filter((product: any) => {
           return product.category.name === this.productDetails.category.name;
-        })
-        // this.relatedProducts.forEach((product: any) => {
-        //   if(product.productQuantity === 0) {
-        //     this.inStockOverlay = false;
-        //   }else{
-        //     this.inStockOverlay = true;
-        //   }          
-        // })
+        })        
       }
     })
   }
   quickView(productId: any): void{
-    this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productId);
-    if(this.selectedProduct.productQuantity === 0) {
-      this.inStockModal = false;
-    }else{
-      this.inStockModal = true;
-    }
+    this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productId);    
   }
   handleAddToCart() {
     this.msg.sendMsg(this.productDetails);

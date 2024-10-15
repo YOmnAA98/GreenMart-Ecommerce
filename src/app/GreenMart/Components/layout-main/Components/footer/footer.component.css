@@ -155,7 +155,7 @@
 }
 .third p span{
   color: rgb(134, 188, 66);
-  
+
 
 }
 .col-lg-3{
@@ -175,7 +175,7 @@
 .text{
   display: flex;
   column-gap: 8px;
-  
+
 }
 .text-uppercase p{
   margin: 0;
@@ -269,22 +269,5 @@
   .footerMopile a:active i,
   .footerMopile a:active h6 {
     color: rgb(134, 188, 66);
-  }
-  .badge {
-    position: absolute;
-    top: -1px;
-    right: -8px;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 4px;
-    font-size: 13px;
-    font-weight: normal;
-    height: 23px;
-    width: 23px;
-    transform: translate(-50%, -25%);
-    background-color: rgb(134, 188, 66);
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }

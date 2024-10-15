@@ -14,9 +14,7 @@ import { Cart } from '../../../../../../Shared/Interfaces/cart';
   templateUrl: './top-rated-section.component.html',
   styleUrl: './top-rated-section.component.css'
 })
-export class TopRatedSectionComponent implements OnInit{
-  inStock: boolean = true
-  inStockModal: boolean = true
+export class TopRatedSectionComponent implements OnInit{  
   products: Products[] = [];
   topRatedProducts: Products[] = [];
   selectedProduct: any;
@@ -36,12 +34,7 @@ export class TopRatedSectionComponent implements OnInit{
     })    
   }
   quickView(productId: any): void {
-    this.selectedProduct = this.topRatedProducts.find((product: any) => product.id === productId);
-    if(this.selectedProduct.productQuantity === 0) {
-      this.inStockModal = false;
-    }else{
-      this.inStockModal = true;
-    }
+    this.selectedProduct = this.topRatedProducts.find((product: any) => product.id === productId);    
   }
 
   addToCart(product: Products, quantity: number): void {
