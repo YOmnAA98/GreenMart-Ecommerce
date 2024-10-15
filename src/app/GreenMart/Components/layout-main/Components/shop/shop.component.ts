@@ -26,7 +26,8 @@ export class ShopComponent implements OnInit{
   activeTab: number = 0;
   searchText: string = '';
   cartItems: Cart[] = [];
-  constructor(private _apiDataService: ApiDataService, private _cartService: ShoppingCartService){}
+  productDetails: any;
+  constructor(private _apiDataService: ApiDataService, private _cartService: ShoppingCartService, private msg: ShoppingCartService){}
   ngOnInit():void{
     this._apiDataService.getAllProducts().subscribe({
       next: (response) => {
@@ -69,5 +70,8 @@ export class ShopComponent implements OnInit{
         console.error(err);
       }
     });
+  }
+  handleAddToCart() {
+    this.msg.sendMsg(this.productDetails);
   }
 }
