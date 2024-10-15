@@ -81,4 +81,13 @@ export class ShopComponent implements OnInit{
   handleAddToCart() {
     this.msg.sendMsg(this.productDetails);
   }
+
+  ModalView(productId: any): void {
+    this.selectedProduct = this.products.find((product: any) => product.id === productId);
+    if(this.selectedProduct.productQuantity === 0) {
+      this.inStockModal = false;
+    }else{
+      this.inStockModal = true;
+    }
+  }
 }

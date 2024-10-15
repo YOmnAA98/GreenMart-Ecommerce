@@ -27,3 +27,17 @@
 .shop .right-side .search input:focus{
   border-color: var(--primary-color);
 }
+
+
+.title-add{
+  color: green;
+}
+.cartPrice{
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* .total{
+  margin:100px;
+} */
+
