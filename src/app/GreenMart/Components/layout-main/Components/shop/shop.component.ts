@@ -27,6 +27,7 @@ export class ShopComponent implements OnInit{
   searchText: string = '';
   cartItems: Cart[] = [];
   productDetails: any;
+  inStockModal: any;
   constructor(private _apiDataService: ApiDataService, private _cartService: ShoppingCartService, private msg: ShoppingCartService){}
   ngOnInit():void{
     this._apiDataService.getAllProducts().subscribe({
