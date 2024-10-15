@@ -1,7 +1,7 @@
 
     <div class="cart-item">
 
-      <img src="{{ cartItem.imagesURL || 'assets/images/products/fruits/product-12/image-01.webp' }}" alt="Product Image" loading="lazy">
+      <img src="{{ cartItem.imagesURL?.[0] }}" alt="Product Image" loading="lazy">
       
 
       <div class="cart-item-details">
