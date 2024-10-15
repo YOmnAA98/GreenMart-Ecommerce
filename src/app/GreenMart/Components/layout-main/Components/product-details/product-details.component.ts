@@ -38,8 +38,8 @@ export class ProductDetailsComponent implements OnInit{
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe({
       next: (param) => {
-        let productID: any = param.get('id');
-        this._apiDataService.getProductById(productID).subscribe({
+        let productId: any = param.get('id');
+        this._apiDataService.getProductById(productId).subscribe({
           next: (response) => {
             this.productDetails = response;
             if (this.productDetails.productQuantity === 0) {
@@ -50,7 +50,7 @@ export class ProductDetailsComponent implements OnInit{
           }
         })
       }
-    })
+    });
     this._apiDataService.getAllProducts().subscribe({
       next: (response) => {
         this.relatedProducts = response.filter((product: any) => {
@@ -66,8 +66,8 @@ export class ProductDetailsComponent implements OnInit{
       }
     })
   }
-  quickView(productID: any): void{
-    this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productID);
+  quickView(productId: any): void{
+    this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productId);
     if(this.selectedProduct.productQuantity === 0) {
       this.inStockModal = false;
     }else{

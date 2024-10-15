@@ -35,11 +35,7 @@ export class ShoppingCartService {
 
   updateCartQuantity(id: number, quantity: number): Observable<Cart>{
     return this._httpClient.put<Cart>(`http://localhost:3000/cart/${id}`, {quantity});
-  }
-
-  clearCart(): Observable<void>{
-    return this._httpClient.delete<void>('http://localhost:3000/cart');
-  }
+  }  
 
   sendMsg(Products: Products){
     this.subject.next(Products)

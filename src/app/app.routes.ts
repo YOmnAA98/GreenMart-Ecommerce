@@ -23,6 +23,7 @@ import { CheckoutComponent } from './GreenMart/Components/layout-main/Components
 import { PolicyPrivacyComponent } from './GreenMart/Components/layout-main/Components/policy-privacy/policy-privacy.component';
 import { TermsConditionsComponent } from './GreenMart/Components/layout-main/Components/terms-conditions/terms-conditions.component';
 import { FaqsComponent } from './GreenMart/Components/layout-main/Components/faqs/faqs.component';
+import { OrderDetailsComponent } from './GreenMart/Components/layout-main/Components/account/Components/order-details/order-details.component';
 
 export const routes: Routes = [
   {
@@ -81,13 +82,18 @@ export const routes: Routes = [
             path: 'orders',
             component: OrdersComponent,
             title: 'GreenMart | Orders',
-          },
+          },          
           {
             path: '',
             redirectTo: 'dashboard',
             pathMatch: 'full'
           }
         ]
+      },
+      {
+        path: 'order-details/:id',
+        component: OrderDetailsComponent,
+        title: 'GreenMart | Order Details',
       },
       {
         path: 'about-us',
@@ -168,6 +174,6 @@ export const routes: Routes = [
     component: NotFoundComponent,
     title:'GreenMart | Not Found'
   },
-  
-  
+
+
 ];

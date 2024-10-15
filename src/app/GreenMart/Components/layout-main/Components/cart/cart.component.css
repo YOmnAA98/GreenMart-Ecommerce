@@ -8,6 +8,9 @@ button:focus{
   padding: 1.25rem 2.5rem;
   border-top: 3px solid var(--primary-color);
 }
+.cart .empty i{
+  color: var(--primary-color);
+}
 .cart .table td{
   font-size: var(--text-small);
   font-weight: var(--main-weight);
