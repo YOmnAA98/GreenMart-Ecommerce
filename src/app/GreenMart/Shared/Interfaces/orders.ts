@@ -3,8 +3,8 @@ export interface Orders {
   cartItems: CartItem[];
   totalAmount: number;
   date: Date;
-  shippingAddress: string;
-  paymentStatus: string;
+  shippingInfo: any
+  paymentStatus: string;  
 }
 
 export interface CartItem {
