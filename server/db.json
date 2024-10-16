@@ -1227,36 +1227,43 @@
   "wishlist": [],
   "orders": [
     {
-      "id": "6a16",
+      "id": "06e7",
       "cartItems": [
         {
-          "productId": "26",
-          "quantity": 1,
-          "productName": "Tesco Green Seedless Grapes",
-          "productPrice": 2.69
+          "productId": "33",
+          "quantity": 2,
+          "productName": "Tesco Blueberry",
+          "productPrice": 1.99
         },
         {
-          "productId": "29",
-          "quantity": 2,
-          "productName": "Coconut Each",
-          "productPrice": 1
+          "productId": "62",
+          "quantity": 1,
+          "productName": "Tesco Salmon Fillets",
+          "productPrice": 169
+        },
+        {
+          "productId": "6",
+          "quantity": 1,
+          "productName": "Avonmore Double Cream",
+          "productPrice": 39.99
+        },
+        {
+          "productId": "69",
+          "quantity": 1,
+          "productName": "Keoh/Ob Creamy Coconut Hake Curry",
+          "productPrice": 365
+        },
+        {
+          "productId": "23",
+          "quantity": 1,
+          "productName": "Tesco Ripe Bananas",
+          "productPrice": 90
         }
       ],
-      "totalAmount": 4.6899999999999995,
-      "date": "2024-10-15T11:41:55.059Z",
-      "shippingInfo": {
-        "firstName": "Yomna",
-        "lastName": "Raafat",
-        "email": "yomna.raafat98@gmail.com",
-        "phone": "01065769909",
-        "address": "9-street",
-        "city": "Assuit ",
-        "state": "Assuit",
-        "country": "Eg",
-        "postcode": "71517",
-        "agreement": true
-      },
-      "paymentStatus": "Processing"
+      "totalAmount": 667.97,
+      "date": "2024-10-14T21:30:37.764Z",
+      "shippingAddress": "street street",
+      "paymentStatus": "Pending"
     }
   ]
 }

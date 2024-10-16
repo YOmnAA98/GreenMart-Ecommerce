@@ -47,4 +47,5 @@ export class TopRatedSectionComponent implements OnInit{
       }
     });
   }
+  
 }

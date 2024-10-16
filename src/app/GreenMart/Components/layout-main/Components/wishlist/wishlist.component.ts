@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { WishlistService } from '../../../../Shared/Services/wishlist.service';
-import { Products } from '../../../../Shared/Interfaces/products'; 
+import { Products } from '../../../../Shared/Interfaces/products';
 import { RouterLink } from '@angular/router';
+import { ShoppingCartService } from '../../../../Shared/Services/shopping-cart.service';
+import { Cart } from '../../../../Shared/Interfaces/cart';
 
 
 @Component({
@@ -14,8 +16,9 @@ import { RouterLink } from '@angular/router';
 })
 export class WishlistComponent implements OnInit {
   wishlist: Products[] = [];
+  cartItems: Cart[] = [];
 
-  constructor(private wishlistService: WishlistService) {}
+  constructor(private wishlistService: WishlistService, private _cartService: ShoppingCartService,) {}
 
   ngOnInit(): void {
     
@@ -24,9 +27,20 @@ export class WishlistComponent implements OnInit {
     });
   }
 
-  addToCart(item: Products) {
-    
-    this.showCustomAlert(`${item.productName} has been added to your cart!`);
+  // addToCart(item: Products) {
+
+  //   this.showCustomAlert(`${item.productName} has been added to your cart!`);
+  // }
+
+  addToCart(product: Products, quantity: number): void {
+    this._cartService.addToCart(product, quantity = 1).subscribe  ({
+      next: (newItem) => {
+        this.cartItems.push(newItem);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 
   showCustomAlert(message: string): void {
