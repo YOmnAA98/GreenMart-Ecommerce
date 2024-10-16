@@ -20,7 +20,7 @@
           <th>Remove</th>
         </tr>
       </thead>
-      <tbody>        
+      <tbody>
         <tr *ngIf="wishlist.length === 0">
           <td colspan="6" class="text-center">No products were added to the wishlist</td>
         </tr>
@@ -30,7 +30,7 @@
           <td>{{ item.productPrice | currency }}</td>
           <td>{{ item.productQuantity > 0 ? "In Stock" : "Out of Stock" }}</td>
           <td>
-            <button (click)="addToCart(item)" class="btn primary-btn">
+            <button (click)="addToCart(item, 1)" class="btn primary-btn">
               <i class="fa-solid fa-cart-shopping me-1"></i> Add to cart
             </button>
           </td>

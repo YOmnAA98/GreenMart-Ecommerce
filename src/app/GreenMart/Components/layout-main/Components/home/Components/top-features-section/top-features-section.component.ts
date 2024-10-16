@@ -15,13 +15,13 @@ import { Cart } from '../../../../../../Shared/Interfaces/cart';
   templateUrl: './top-features-section.component.html',
   styleUrl: './top-features-section.component.css'
 })
-export class TopFeaturesSectionComponent implements OnInit{  
-  categories: Category[] = [];  
-  filteredProducts: Products[] = []; 
-  selectedProduct: any; 
+export class TopFeaturesSectionComponent implements OnInit{
+  categories: Category[] = [];
+  filteredProducts: Products[] = [];
+  selectedProduct: any;
   activeTab: number = 0;
   cartItems: Cart[] = [];
-  constructor(private _apiDataService: ApiDataService, private _cartService: ShoppingCartService){}  
+  constructor(private _apiDataService: ApiDataService, private _cartService: ShoppingCartService){} 
   ngOnInit(): void {
     this._apiDataService.getAllProducts().subscribe({
       next: (response) => {
@@ -30,29 +30,30 @@ export class TopFeaturesSectionComponent implements OnInit{
     });
     this._apiDataService.getAllCategories().subscribe({
       next: (response) => {
-        this.categories = response;         
-        this.activeTab = this.categories[0].id;    
+        this.categories = response;
+        if (this.categories.length > 0) {
+          this.activeTab = this.categories[0].id;
+          this.setActiveTab(this.activeTab);
+        }        
       },
       error: (error) => {
         console.log(error);
       }
-    });
-
-    this.setActiveTab(this.activeTab);
+    });    
   }
 
   setActiveTab(tabId: number):void{
-    this.activeTab = tabId;        
-    
+    this.activeTab = tabId;
+
     this._apiDataService.getProductsByCategoryId(tabId).subscribe({
       next: (response) => {
-        this.filteredProducts = response;        
+        this.filteredProducts = response;
       }
     })
   }
 
   quickView(productId: any): void {
-    this.selectedProduct = this.filteredProducts.find((product: any) => product.id === productId);    
+    this.selectedProduct = this.filteredProducts.find((product: any) => product.id === productId);
   }
 
   addToCart(product: Products, quantity: number): void {

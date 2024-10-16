@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { WishlistService } from '../../../../Shared/Services/wishlist.service';
-import { Products } from '../../../../Shared/Interfaces/products'; 
+import { Products } from '../../../../Shared/Interfaces/products';
 import { RouterLink } from '@angular/router';
+import { ShoppingCartService } from '../../../../Shared/Services/shopping-cart.service';
+import { Cart } from '../../../../Shared/Interfaces/cart';
 
 @Component({
   selector: 'app-wishlist',
@@ -13,8 +15,9 @@ import { RouterLink } from '@angular/router';
 })
 export class WishlistComponent implements OnInit {
   wishlist: Products[] = [];
+  cartItems: Cart[] = [];
 
-  constructor(private wishlistService: WishlistService) {}
+  constructor(private wishlistService: WishlistService, private _cartService: ShoppingCartService,) {}
 
   ngOnInit(): void {
     this.loadWishlist();
@@ -24,12 +27,22 @@ export class WishlistComponent implements OnInit {
     this.wishlist = this.wishlistService.getWishlist();
   }
 
-  addToCart(item: Products) {
-    
-    this.showCustomAlert(`${item.productName} has been added to your cart!`);
+  // addToCart(item: Products) {
+
+  //   this.showCustomAlert(`${item.productName} has been added to your cart!`);
+  // }
+
+  addToCart(product: Products, quantity: number): void {
+    this._cartService.addToCart(product, quantity = 1).subscribe  ({
+      next: (newItem) => {
+        this.cartItems.push(newItem);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 
-  
   showCustomAlert(message: string): void {
     const alertBox = document.getElementById('custom-alert');
     const alertMessage = document.getElementById('custom-alert-message');
@@ -39,14 +52,14 @@ export class WishlistComponent implements OnInit {
       alertBox.classList.remove('hidden');
       alertBox.classList.add('show');
 
-      
+
       setTimeout(() => {
         this.hideCustomAlert();
       }, 3000);
     }
   }
 
-  
+
   hideCustomAlert(): void {
     const alertBox = document.getElementById('custom-alert');
     if (alertBox) {
@@ -57,6 +70,6 @@ export class WishlistComponent implements OnInit {
 
   removeFromWishlist(item: Products) {
     this.wishlistService.removeFromWishlist(item);
-    this.loadWishlist(); 
+    this.loadWishlist();
   }
 }
