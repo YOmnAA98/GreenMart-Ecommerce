@@ -19,12 +19,15 @@ import { WishlistService } from '../../../../../../Shared/Services/wishlist.serv
 export class TopFeaturesSectionComponent implements OnInit {
   categories: Category[] = [];
   filteredProducts: Products[] = [];
-  wishlist: any[] = []; // قائمة الرغبات
   selectedProduct: any;
   activeTab: number = 0;
   cartItems: Cart[] = [];
-  
-  constructor(private _apiDataService: ApiDataService, private _cartService: ShoppingCartService, private wishlistService: WishlistService) {}
+
+  constructor(
+    private _apiDataService: ApiDataService,
+    private _cartService: ShoppingCartService,
+    private wishlistService: WishlistService
+  ) {}
 
   ngOnInit(): void {
     this._apiDataService.getAllProducts().subscribe({
@@ -44,12 +47,6 @@ export class TopFeaturesSectionComponent implements OnInit {
     });
 
     this.setActiveTab(this.activeTab);
-
-    // استرجاع قائمة الرغبات من localStorage عند التحميل
-    const savedWishlist = localStorage.getItem('wishlist');
-    if (savedWishlist) {
-      this.wishlist = JSON.parse(savedWishlist);
-    }
   }
 
   setActiveTab(tabId: number): void {
@@ -63,27 +60,15 @@ export class TopFeaturesSectionComponent implements OnInit {
   }
 
   toggleWishlist(product: Products): void {
-    if (this.isInWishlist(product)) {
-      this.removeFromWishlist(product);
+    if (this.wishlistService.isInWishlist(product)) {
+      this.wishlistService.removeFromWishlist(product);
     } else {
-      this.addToWishlist(product);
+      this.wishlistService.addToWishlist(product);
     }
   }
 
   isInWishlist(product: Products): boolean {
-    return this.wishlist.some((item: any) => item.id === product.id);
-  }
-
-  addToWishlist(product: Products): void {
-    this.wishlist.push(product);
-    // حفظ قائمة الرغبات في localStorage
-    localStorage.setItem('wishlist', JSON.stringify(this.wishlist));
-  }
-
-  removeFromWishlist(product: Products): void {
-    this.wishlist = this.wishlist.filter((item: any) => item.id !== product.id);
-    // تحديث قائمة الرغبات في localStorage
-    localStorage.setItem('wishlist', JSON.stringify(this.wishlist));
+    return this.wishlistService.isInWishlist(product);
   }
 
   quickView(productId: any): void {
@@ -98,11 +83,6 @@ export class TopFeaturesSectionComponent implements OnInit {
       error: (err) => {
         console.error(err);
       }
-
-
-
-
-      
     });
   }
 }

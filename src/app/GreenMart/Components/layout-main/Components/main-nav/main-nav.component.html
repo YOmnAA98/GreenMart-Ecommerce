@@ -83,60 +83,19 @@
         <div class="account">
           <div>
             <span>Hello</span>
-            <p>YOMNA</p>
+            <p>{{ loggedInUserEmail }}</p>
           </div>
           <ul class="list-group list-group-flush gap-2">
             <li><a routerLink="/my-account">My account</a></li>
             <li><a routerLink="/checkout">Checkout</a></li>
             <li><a routerLink="/wishlist">Wishlist</a></li>
-            <li><a routerLink="">LogOut</a></li>
+            <li><a (click)="logout()">LogOut</a></li>
           </ul>
         </div>
       </a>
       <div class="cart dropdown">
-        <!-- <div class="d-flex align-items-center gap-4" data-bs-toggle="dropdown" aria-expanded="false">
-          <div class="icon position-relative">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span class="badge circle-badge">0</span>
-          </div>
-          <div class="text">
-            <p>My Shopping Cart <i class="fa-solid fa-angle-down ms-1"></i></p>
-            <p class="price">$ 0.00</p>
-          </div>
-        </div> -->
-        <!-- <div class="dropdown-menu dropdown-menu-end">
-          <div> -->
-            <app-cart-nav></app-cart-nav>
-          </div>
-          <!-- <div class="products" *ngIf="!isEmpty">
-            <div class="pro">
-              <div class="item d-flex align-items-center gap-2 py-3 mx-3">
-                <div class="img col-4">
-                  <img class="img-fluid w-100" src="assets/images/products/butter&egg/product-01/image-01.webp" alt="product" loading="lazy">
-                </div>
-                <div class="info">
-                  <p><a routerLink="">product name</a></p>
-                  <div class="d-flex justify-content-between align-items-center gap-1">
-                    <input type="number" class="form-control shadow-none w-50" value="1">
-                    <span>$ 0.00</span>
-                  </div>
-                </div>
-                <div class="align-self-start">
-                  <i class="fa-solid fa-xmark"></i>
-                </div>
-              </div>
-            </div>
-            <div class="total d-flex justify-content-between p-3">
-              <p>Subtotal:</p>
-              <p>$ 0.00</p>
-            </div>
-            <div class="actions p-4">
-              <a class="btn w-100" routerLink="/cart">View cart <i class="fa-solid fa-angle-right ms-1"></i></a>
-              <a class="btn w-100" routerLink="/checkout">Checkout <i class="fa-solid fa-angle-right ms-1"></i></a>
-            </div>
-          </div> -->
-        <!-- </div>
-      </div> -->
+        <app-cart-nav></app-cart-nav>
+      </div>
     </div>
 
     <div class="mob-cart">

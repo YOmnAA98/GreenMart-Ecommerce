@@ -11,71 +11,75 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
-          <div class="col" *ngFor="let product of topRatedProducts.slice(0, 4)">
-            <div class="card">
-              <a [routerLink]="['/product-details', product.id]">
-                <div class="image">
-                  <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName">
-                </div>
-              </a>
-              <div class="card-body">
-                <a [routerLink]="['/product-details', product.id]"><h4 class="card-title">{{product.productName | slicing : 2}}</h4></a>
-                <p class="card-text">Approx {{product.productSize}}</p>
-                <div class="card-info d-flex justify-content-between mt-2">
-                  <span class="price">{{product.productPrice | currency}}</span>
-                  <ul class="p-0 d-flex align-items-center">
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <p class="ms-1">{{product.ratingsAverage}}</p>
-                  </ul>
-                </div>
-                <div class="my-2">
-                  <button class="btn product-btn" (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#TopModal" (click)="quickView(product.id)"><i class="fa-solid fa-eye"></i></button>
-                  <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
+            <div class="col" *ngFor="let product of topRatedProducts.slice(0, 4)">
+              <div class="card">
+                <a [routerLink]="['/product-details', product.id]">
+                  <div class="image">
+                    <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName">
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a [routerLink]="['/product-details', product.id]"><h4 class="card-title">{{product.productName | slicing : 2}}</h4></a>
+                  <p class="card-text">Approx {{product.productSize}}</p>
+                  <div class="card-info d-flex justify-content-between mt-2">
+                    <span class="price">{{product.productPrice | currency}}</span>
+                    <ul class="p-0 d-flex align-items-center">
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <p class="ms-1">{{product.ratingsAverage}}</p>
+                    </ul>
+                  </div>
+                  <div class="my-2">
+                    <button class="btn product-btn" (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                    <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#TopModal" (click)="quickView(product.id)"><i class="fa-solid fa-eye"></i></button>
+                    <button class="btn product-btn" (click)="toggleWishlist(product)">
+                      <i [ngClass]="isInWishlist(product) ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart'"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         </div>
         <div class="carousel-item">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
-          <div class="col" *ngFor="let product of topRatedProducts.slice(4, 8)">
-            <div class="card">
-              <a [routerLink]="['/product-details', product.id]">
-                <div class="image">
-                  <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName">
-                </div>
-              </a>
-              <div class="card-body">
-                <a [routerLink]="['/product-details', product.id]"><h4 class="card-title">{{product.productName | slicing : 2}}</h4></a>
-                <p class="card-text">Approx {{product.productSize}}</p>
-                <div class="card-info d-flex justify-content-between mt-2">
-                  <span class="price">${{product.productPrice | currency}}</span>
-                  <ul class="p-0 d-flex align-items-center">
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <p class="ms-1">{{product.ratingsAverage}}</p>
-                  </ul>
-                </div>
-                <div class="my-2">
-                  <button class="btn product-btn" (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#TopModal" (click)="quickView(product.id)">
-                    <i class="fa-solid fa-eye"></i>
-                  </button>
-                  <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
+            <div class="col" *ngFor="let product of topRatedProducts.slice(4, 8)">
+              <div class="card">
+                <a [routerLink]="['/product-details', product.id]">
+                  <div class="image">
+                    <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName">
+                  </div>
+                </a>
+                <div class="card-body">
+                  <a [routerLink]="['/product-details', product.id]"><h4 class="card-title">{{product.productName | slicing : 2}}</h4></a>
+                  <p class="card-text">Approx {{product.productSize}}</p>
+                  <div class="card-info d-flex justify-content-between mt-2">
+                    <span class="price">${{product.productPrice | currency}}</span>
+                    <ul class="p-0 d-flex align-items-center">
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <p class="ms-1">{{product.ratingsAverage}}</p>
+                    </ul>
+                  </div>
+                  <div class="my-2">
+                    <button class="btn product-btn" (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                    <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#TopModal" (click)="quickView(product.id)">
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                    <button class="btn product-btn" (click)="toggleWishlist(product)">
+                      <i [ngClass]="isInWishlist(product) ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart'"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#ratedCarouselIndicators" data-bs-slide="prev">
@@ -87,7 +91,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- Top Rated Modal -->
 <div class="modal fade" id="TopModal" tabindex="-1" aria-labelledby="TopModalLabel" aria-hidden="true">

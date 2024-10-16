@@ -6,7 +6,6 @@ import { RouterLink } from '@angular/router';
 import { ShoppingCartService } from '../../../../Shared/Services/shopping-cart.service';
 import { Cart } from '../../../../Shared/Interfaces/cart';
 
-
 @Component({
   selector: 'app-wishlist',
   standalone: true,
@@ -18,24 +17,22 @@ export class WishlistComponent implements OnInit {
   wishlist: Products[] = [];
   cartItems: Cart[] = [];
 
-  constructor(private wishlistService: WishlistService, private _cartService: ShoppingCartService,) {}
+  constructor(
+    private wishlistService: WishlistService,
+    private _cartService: ShoppingCartService
+  ) {}
 
   ngOnInit(): void {
-    
     this.wishlistService.wishlist$.subscribe((wishlist) => {
-      this.wishlist = wishlist; 
+      this.wishlist = wishlist;
     });
   }
 
-  // addToCart(item: Products) {
-
-  //   this.showCustomAlert(`${item.productName} has been added to your cart!`);
-  // }
-
   addToCart(product: Products, quantity: number): void {
-    this._cartService.addToCart(product, quantity = 1).subscribe  ({
+    this._cartService.addToCart(product, quantity = 1).subscribe({
       next: (newItem) => {
         this.cartItems.push(newItem);
+        this.showCustomAlert(`${product.productName} has been added to your cart!`);
       },
       error: (err) => {
         console.error(err);
@@ -68,6 +65,5 @@ export class WishlistComponent implements OnInit {
 
   removeFromWishlist(item: Products) {
     this.wishlistService.removeFromWishlist(item);
-    
   }
 }
