@@ -4,6 +4,7 @@ import { WishlistService } from '../../../../Shared/Services/wishlist.service';
 import { Products } from '../../../../Shared/Interfaces/products'; 
 import { RouterLink } from '@angular/router';
 
+
 @Component({
   selector: 'app-wishlist',
   standalone: true,
@@ -17,11 +18,10 @@ export class WishlistComponent implements OnInit {
   constructor(private wishlistService: WishlistService) {}
 
   ngOnInit(): void {
-    this.loadWishlist();
-  }
-
-  loadWishlist() {
-    this.wishlist = this.wishlistService.getWishlist();
+    
+    this.wishlistService.wishlist$.subscribe((wishlist) => {
+      this.wishlist = wishlist; 
+    });
   }
 
   addToCart(item: Products) {
@@ -29,7 +29,6 @@ export class WishlistComponent implements OnInit {
     this.showCustomAlert(`${item.productName} has been added to your cart!`);
   }
 
-  
   showCustomAlert(message: string): void {
     const alertBox = document.getElementById('custom-alert');
     const alertMessage = document.getElementById('custom-alert-message');
@@ -39,14 +38,12 @@ export class WishlistComponent implements OnInit {
       alertBox.classList.remove('hidden');
       alertBox.classList.add('show');
 
-      
       setTimeout(() => {
         this.hideCustomAlert();
       }, 3000);
     }
   }
 
-  
   hideCustomAlert(): void {
     const alertBox = document.getElementById('custom-alert');
     if (alertBox) {
@@ -57,6 +54,6 @@ export class WishlistComponent implements OnInit {
 
   removeFromWishlist(item: Products) {
     this.wishlistService.removeFromWishlist(item);
-    this.loadWishlist(); 
+    
   }
 }
