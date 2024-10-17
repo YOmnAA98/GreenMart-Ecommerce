@@ -1,57 +1,80 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { Cart } from '../Interfaces/cart';
 import { Products } from '../Interfaces/products';
-import { Subject } from 'rxjs';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoppingCartService {
-  subject = new Subject ()
-  static productQuantity: any;
-  cartSubject: any;
-  private cartItems = new BehaviorSubject<any[]>([]);
+  private subject = new Subject<Products>();
+  private cartItems = new BehaviorSubject<Cart[]>([]);
   cartItems$ = this.cartItems.asObservable();
-  constructor(private _httpClient: HttpClient) { }
 
-  getCartItems(): Observable<Cart[]>{
-    return this._httpClient.get<Cart[]>(`http://localhost:3000/cart`);
+  constructor(private _httpClient: HttpClient) {}
+
+  getCartItems(): Observable<Cart[]> {
+    return this._httpClient.get<Cart[]>('http://localhost:3000/cart').pipe(
+      tap((items: Cart[]) => this.cartItems.next(items)) 
+    );
   }
 
-  addToCart(product: Products, quantity: number): Observable<Cart>{
-    const cartItem: Cart = {product, quantity};
-    return this._httpClient.post<Cart>('http://localhost:3000/cart', cartItem);
+  addToCart(product: Products, quantity: number): Observable<Cart> {
+    const cartItem: Cart = { product, quantity };
+    return this._httpClient.post<Cart>('http://localhost:3000/cart', cartItem).pipe(
+      tap(() => {
+        this.sendMsg(product); 
+        this.notifyCartChange(); 
+      })
+    );
   }
 
-  removeFromCart(id: number): Observable<void>{
-    return this._httpClient.delete<void>(`http://localhost:3000/cart/${id}`);
+  removeFromCart(id: number): Observable<void> {
+    return this._httpClient.delete<void>(`http://localhost:3000/cart/${id}`).pipe(
+      tap(() => {
+        
+        this.getCartItems().subscribe((items) => {
+          this.cartItems.next(items); 
+        });
+      })
+    );
+  }
+  
+
+  updateCartItem(id: number, product: Products, quantity: number): Observable<Cart> {
+    const cartItem: Cart = { product, quantity };
+    return this._httpClient.put<Cart>(`http://localhost:3000/cart/${id}`, cartItem).pipe(
+      tap(() => this.notifyCartChange()) 
+    );
   }
 
-  updateCartItem(id: number, product: Products, quantity: number): Observable<Cart>{
-    const cartItem: Cart = {product, quantity};
-    return this._httpClient.put<Cart>(`http://localhost:3000/cart/${id}`, cartItem);
+  clearCart(): Observable<void> {
+    return this._httpClient.delete<void>('http://localhost:3000/cart').pipe(
+      tap(() => {
+        this.cartItems.next([]);
+        this.notifyCartChange(); 
+      })
+    );
   }
 
-  updateCartQuantity(id: number, quantity: number): Observable<Cart>{
-    return this._httpClient.put<Cart>(`http://localhost:3000/cart/${id}`, {quantity});
-  }  
+  sendMsg(product: Products) {
+    this.subject.next(product);
+  }
 
-  sendMsg(Products: Products){
-    this.subject.next(Products)
+  getMsg(): Observable<Products> {
+    return this.subject.asObservable();
   }
-  getMsg(){
-    return this.subject.asObservable()
+
+
+  notifyCartChange() {
+    
+    this.cartItems.next(this.cartItems.value);
   }
+
 
   updateCart() {
-    localStorage.setItem('cartItems', JSON.stringify(this.getCartItems));
-  }
-  clearCart(): Observable<void> {
-    return this._httpClient.delete<void>(`http://localhost:3000/cart`).pipe(
-      tap(() => this.cartSubject.next([])) // Clear the cart in the BehaviorSubject after API call
-    );
+    localStorage.setItem('cartItems', JSON.stringify(this.cartItems.value));
   }
 }

@@ -53,9 +53,9 @@ export class ProductDetailsComponent implements OnInit{
   quickView(productId: any): void{
     this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productId);    
   }
-  handleAddToCart() {
-    this.msg.sendMsg(this.productDetails);
-  }
+  // handleAddToCart() {
+  //   this.msg.sendMsg(this.productDetails);
+  // }
 
   addToWishlist(product: Products): void {
     if (product) {

@@ -70,21 +70,20 @@ export class ShopComponent implements OnInit {
     this.selectedProduct = this.products.find((product: any) => product.id === productId);
   }
 
-  addToCart(product: Products, quantity: number): void {
-    this._cartService.addToCart(product, quantity = 1).subscribe({
-      next: (newItem) => {
-        this.cartItems.push(newItem);
+  addToCart(product: Products, productId: any): void {
+    this._cartService.addToCart(product, 1).subscribe({
+      next: (response) => {
+        console.log('Product added to cart', response);
       },
       error: (err) => {
-        console.error(err);
+        console.error('Error adding to cart', err);
       }
     });
-    this._cartService.addToCart(product, quantity);
   }
 
-  handleAddToCart() {
-    // This method can be used for additional logic if needed
-  }
+
+  // handleAddToCart() {
+  // }
 
   ModalView(productId: any): void {
     this.selectedProduct = this.products.find((product: any) => product.id === productId);
