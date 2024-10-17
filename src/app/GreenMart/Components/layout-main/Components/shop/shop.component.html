@@ -67,7 +67,11 @@
                         <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#shopModal" (click)="quickView(product.id)">
                           <i class="fa-solid fa-eye"></i>
                         </button>
-                        <button class="btn product-btn"><i class="fa-solid fa-heart"></i></button>
+                       
+                        <button class="btn product-btn" (click)="toggleWishlist(product)">
+                          <i [ngClass]="isInWishlist(product) ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart'"></i>
+                        </button>
+                        
                       </div>
                     </div>
                   </div>

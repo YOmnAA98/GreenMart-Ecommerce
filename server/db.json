@@ -61,7 +61,7 @@
         "assets/images/products/milk&cream/product-10/image-01.webp",
         "assets/images/products/milk&cream/product-10/image-02.webp"
       ],
-      "productQuantity": 0,
+      "productQuantity": 20,
       "productSize": "500Ml",
       "ratingsAverage": 4.5
     },
@@ -1223,230 +1223,40 @@
       "ratingsAverage": 4.8
     }
   ],
-  "cart": [
-    {
-      "id": "11a5",
-      "product": {
-        "id": "3",
-        "productName": "Actimel Yoghurt Drink ",
-        "productDescription": "Yogurt drink with L. casei Danone cultures, vitamins D and B6.This mighty shot has:20 Billion live L. casei cultures.Vitamin DVitamin B63 Strains of live culturesOver 8h fermentation.Gluten freeNo preservatives or coloursNo artificial flavours",
-        "productPrice": 19.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-08/image-01.webp",
-          "assets/images/products/milk&cream/product-08/image-02.webp"
-        ],
-        "productQuantity": 20,
-        "productSize": "100g",
-        "ratingsAverage": 4.2
-      },
-      "quantity": 1
-    },
-    {
-      "id": "3915",
-      "product": {
-        "id": "2",
-        "productName": "Strawberry Dairy Drink ",
-        "productDescription": "Biotiful kefir is a source of calcium which contributes to the normal function of digestive enzymes.Immunity Support Biotiful kefir is a source of vitamin B12 which supports the normal functioning of the immune system.Biotiful kefir is packed with naturally healthy nutrients, supporting your immunity** and with no sugar added. We love it for breakfast or as a snack.",
-        "productPrice": 39.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-10/image-01.webp",
-          "assets/images/products/milk&cream/product-10/image-02.webp"
-        ],
-        "productQuantity": 0,
-        "productSize": "500Ml",
-        "ratingsAverage": 4.5
-      },
-      "quantity": 1
-    },
-    {
-      "id": "dc58",
-      "product": {
-        "id": "5",
-        "productName": "Irish Yogurts Creme",
-        "productDescription": "Half Fat Crème Fraîche. Our delicious half fat crème fraiche can be eaten on its own or used as a versatile alternative to fresh cream. Crème Fraiche may separate naturally, stir to ensure natural smoothness.",
-        "productPrice": 59.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-07/image-01.webp"
-        ],
-        "productQuantity": 27,
-        "productSize": "250g",
-        "ratingsAverage": 4.2
-      },
-      "quantity": 1
-    },
-    {
-      "id": "2321",
-      "product": {
-        "id": "6",
-        "productName": "Avonmore Double Cream",
-        "productDescription": "Avonmore Double Cream is a rich and luxurious dairy product, perfect for enhancing both sweet and savory dishes. This 229ml carton contains thick, velvety cream that boasts a high butterfat content, making it ideal for whipping, pouring, or adding a sumptuous finish to your recipes. Its smooth texture and creamy flavor make it an excellent choice for desserts like cakes, custards, and mousses, as well as for adding richness to sauces and soups. Whether used in cooking or enjoyed on its own, Avonmore Double Cream elevates any culinary creation.",
-        "productPrice": 39.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-09/image-01.webp"
-        ],
-        "productQuantity": 18,
-        "productSize": "229Ml",
-        "ratingsAverage": 4.2
-      },
-      "quantity": 1
-    },
-    {
-      "id": "6408",
-      "product": {
-        "id": "4",
-        "productName": "Glenisk Creme Fraiche",
-        "productDescription": "Glenisk Creme Fraiche 250GOur Crème Fraiche is crafted using blend of Ireland's best Organic Wholemilk and Organic Fresh Cream, cultured to perfection over time to create a distinctive and delicious flavour. With much less than a third of the fat of mayonnaise, and free from any artificial ingredients, it's a tasty, healthy choice that brings good food to life.",
-        "productPrice": 15,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-06/image-01.webp"
-        ],
-        "productQuantity": 22,
-        "productSize": "250g",
-        "ratingsAverage": 4.2
-      },
-      "quantity": 1
-    },
-    {
-      "id": "e7f8",
-      "product": {
-        "id": "1",
-        "productName": "Yop Strawberry Drinkable Yoghurt",
-        "productDescription": "Strawberry Flavour Drinking Yogurt Yop Strawberry flavour drinking yoghurt, great source of Calcium and Vitamin D  with no colours or artificial flavourings. The perfect on-the- go snack with a taste that teens will love! It is a food that you can drink, and super filling! It lasts for 8 Hours  out of the fridge and perfect for busy days! Calcium and vitamin D are needed for normal growth and development of bone in children After 8 hours out of the fridge, the product must be discarded",
-        "productPrice": 29.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-01/image-01.webp"
-        ],
-        "productQuantity": 10,
-        "productSize": "180g",
-        "ratingsAverage": 4.4
-      },
-      "quantity": 1
-    },
-    {
-      "id": "10dd",
-      "product": {
-        "id": "1",
-        "productName": "Yop Strawberry Drinkable Yoghurt",
-        "productDescription": "Strawberry Flavour Drinking Yogurt Yop Strawberry flavour drinking yoghurt, great source of Calcium and Vitamin D  with no colours or artificial flavourings. The perfect on-the- go snack with a taste that teens will love! It is a food that you can drink, and super filling! It lasts for 8 Hours  out of the fridge and perfect for busy days! Calcium and vitamin D are needed for normal growth and development of bone in children After 8 hours out of the fridge, the product must be discarded",
-        "productPrice": 29.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-01/image-01.webp"
-        ],
-        "productQuantity": 10,
-        "productSize": "180g",
-        "ratingsAverage": 4.4
-      },
-      "quantity": 1
-    },
-    {
-      "id": "5922",
-      "product": {
-        "id": "1",
-        "productName": "Yop Strawberry Drinkable Yoghurt",
-        "productDescription": "Strawberry Flavour Drinking Yogurt Yop Strawberry flavour drinking yoghurt, great source of Calcium and Vitamin D  with no colours or artificial flavourings. The perfect on-the- go snack with a taste that teens will love! It is a food that you can drink, and super filling! It lasts for 8 Hours  out of the fridge and perfect for busy days! Calcium and vitamin D are needed for normal growth and development of bone in children After 8 hours out of the fridge, the product must be discarded",
-        "productPrice": 29.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-01/image-01.webp"
-        ],
-        "productQuantity": 10,
-        "productSize": "180g",
-        "ratingsAverage": 4.4
-      },
-      "quantity": 1
-    },
-    {
-      "id": "27a6",
-      "product": {
-        "id": "4",
-        "productName": "Glenisk Creme Fraiche",
-        "productDescription": "Glenisk Creme Fraiche 250GOur Crème Fraiche is crafted using blend of Ireland's best Organic Wholemilk and Organic Fresh Cream, cultured to perfection over time to create a distinctive and delicious flavour. With much less than a third of the fat of mayonnaise, and free from any artificial ingredients, it's a tasty, healthy choice that brings good food to life.",
-        "productPrice": 15,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-06/image-01.webp"
-        ],
-        "productQuantity": 22,
-        "productSize": "250g",
-        "ratingsAverage": 4.2
-      },
-      "quantity": 1
-    }
-  ],
+  "cart": [],
   "wishlist": [],
   "orders": [
     {
-      "id": "06e7",
+      "id": "6a16",
       "cartItems": [
         {
-          "productId": "33",
+          "productId": "26",
+          "quantity": 1,
+          "productName": "Tesco Green Seedless Grapes",
+          "productPrice": 2.69
+        },
+        {
+          "productId": "29",
           "quantity": 2,
-          "productName": "Tesco Blueberry",
-          "productPrice": 1.99
-        },
-        {
-          "productId": "62",
-          "quantity": 1,
-          "productName": "Tesco Salmon Fillets",
-          "productPrice": 169
-        },
-        {
-          "productId": "6",
-          "quantity": 1,
-          "productName": "Avonmore Double Cream",
-          "productPrice": 39.99
-        },
-        {
-          "productId": "69",
-          "quantity": 1,
-          "productName": "Keoh/Ob Creamy Coconut Hake Curry",
-          "productPrice": 365
-        },
-        {
-          "productId": "23",
-          "quantity": 1,
-          "productName": "Tesco Ripe Bananas",
-          "productPrice": 90
+          "productName": "Coconut Each",
+          "productPrice": 1
         }
       ],
-      "totalAmount": 667.97,
-      "date": "2024-10-14T21:30:37.764Z",
-      "shippingAddress": "street street",
-      "paymentStatus": "Pending"
+      "totalAmount": 4.6899999999999995,
+      "date": "2024-10-15T11:41:55.059Z",
+      "shippingInfo": {
+        "firstName": "Yomna",
+        "lastName": "Raafat",
+        "email": "yomna.raafat98@gmail.com",
+        "phone": "01065769909",
+        "address": "9-street",
+        "city": "Assuit ",
+        "state": "Assuit",
+        "country": "Eg",
+        "postcode": "71517",
+        "agreement": true
+      },
+      "paymentStatus": "Processing"
     }
   ]
 }

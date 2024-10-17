@@ -1,44 +1,40 @@
 
+
+
 import { Injectable } from '@angular/core';
-import { Products } from '../Interfaces/products'; 
+import { BehaviorSubject } from 'rxjs';
+import { Products } from '../Interfaces/products';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WishlistService {
-  private wishlist: Products[] = [];
+  private wishlistSubject = new BehaviorSubject<Products[]>([]);
+  wishlist$ = this.wishlistSubject.asObservable();
 
   constructor() {
-    this.loadWishlist(); 
-  }
-
-  
-  loadWishlist() {
-    const storedWishlist = localStorage.getItem('wishlist');
-    if (storedWishlist) {
-      this.wishlist = JSON.parse(storedWishlist);
+    const savedWishlist = localStorage.getItem('wishlist');
+    if (savedWishlist) {
+      this.wishlistSubject.next(JSON.parse(savedWishlist));
     }
   }
 
-  
-  addToWishlist(product: Products) {
-    const exists = this.wishlist.find(item => item.id === product.id);
-    if (!exists) {
-      this.wishlist.push(product);
-      localStorage.setItem('wishlist', JSON.stringify(this.wishlist));
-    }
+  addToWishlist(product: Products): void {
+    const currentWishlist = this.wishlistSubject.value;
+    const updatedWishlist = [...currentWishlist, product];
+    this.wishlistSubject.next(updatedWishlist);
+    localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
   }
 
-  
-  removeFromWishlist(product: Products) {
-    this.wishlist = this.wishlist.filter(item => item.id !== product.id);
-    localStorage.setItem('wishlist', JSON.stringify(this.wishlist));
+  removeFromWishlist(product: Products): void {
+    const currentWishlist = this.wishlistSubject.value;
+    const updatedWishlist = currentWishlist.filter(item => item.id !== product.id);
+    this.wishlistSubject.next(updatedWishlist);
+    localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
   }
 
-  
-  getWishlist() {
-    return this.wishlist;
+  isInWishlist(product: Products): boolean {
+    return this.wishlistSubject.value.some(item => item.id === product.id);
   }
 }
-
 

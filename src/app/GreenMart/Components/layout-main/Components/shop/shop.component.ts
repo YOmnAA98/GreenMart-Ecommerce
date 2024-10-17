@@ -10,15 +10,16 @@ import { Products } from '../../../../Shared/Interfaces/products';
 import { TopRatedSectionComponent } from "../home/Components/top-rated-section/top-rated-section.component";
 import { ShoppingCartService } from '../../../../Shared/Services/shopping-cart.service';
 import { Cart } from '../../../../Shared/Interfaces/cart';
+import { WishlistService } from '../../../../Shared/Services/wishlist.service';
 
 @Component({
   selector: 'app-shop',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, SlicingPipe, SearchPipe,TopRatedSectionComponent],
+  imports: [CommonModule, FormsModule, RouterLink, SlicingPipe, SearchPipe, TopRatedSectionComponent],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css'
 })
-export class ShopComponent implements OnInit{  
+export class ShopComponent implements OnInit {
   categories: Category[] = [];
   products: Products[] = [];
   filteredProducts: Products[] = [];
@@ -27,14 +28,21 @@ export class ShopComponent implements OnInit{
   searchText: string = '';
   cartItems: Cart[] = [];
   productDetails: any;
+  inStockModal: any;
 
-  constructor(private _apiDataService: ApiDataService, private _cartService: ShoppingCartService, private shoppingCartService: ShoppingCartService){}
-  ngOnInit():void{
+  constructor(
+    private _apiDataService: ApiDataService,
+    private _cartService: ShoppingCartService,
+    private wishlistService: WishlistService
+  ) {}
+
+  ngOnInit(): void {
     this._apiDataService.getAllProducts().subscribe({
       next: (response) => {
         this.products = response;
       }
-    })
+    });
+
     this._apiDataService.getAllCategories().subscribe({
       next: (response) => {
         this.categories = response;
@@ -48,22 +56,22 @@ export class ShopComponent implements OnInit{
     this.setActiveTab(this.activeTab);
   }
 
-  setActiveTab(tabId: number):void{
+  setActiveTab(tabId: number): void {
     this.activeTab = tabId;
 
     this._apiDataService.getProductsByCategoryId(tabId).subscribe({
       next: (response) => {
         this.filteredProducts = response;
       }
-    })
+    });
   }
 
   quickView(productId: any): void {
-    this.selectedProduct = this.products.find((product: any) => product.id === productId);    
+    this.selectedProduct = this.products.find((product: any) => product.id === productId);
   }
 
   addToCart(product: Products, quantity: number): void {
-    this._cartService.addToCart(product, quantity = 1).subscribe  ({
+    this._cartService.addToCart(product, quantity = 1).subscribe({
       next: (newItem) => {
         this.cartItems.push(newItem);
       },
@@ -71,15 +79,31 @@ export class ShopComponent implements OnInit{
         console.error(err);
       }
     });
-    this.shoppingCartService.addToCart(product, quantity);
+    this._cartService.addToCart(product, quantity);
   }
 
-  
- 
-  // handleAddToCart() {
-  //   this.msg.sendMsg(this.productDetails);
-  // }
+  handleAddToCart() {
+    // This method can be used for additional logic if needed
+  }
 
   ModalView(productId: any): void {
     this.selectedProduct = this.products.find((product: any) => product.id === productId);
-}}
+    if (this.selectedProduct.productQuantity === 0) {
+      this.inStockModal = false;
+    } else {
+      this.inStockModal = true;
+    }
+  }
+
+  toggleWishlist(product: Products): void {
+    if (this.wishlistService.isInWishlist(product)) {
+      this.wishlistService.removeFromWishlist(product);
+    } else {
+      this.wishlistService.addToWishlist(product);
+    }
+  }
+
+  isInWishlist(product: Products): boolean {
+    return this.wishlistService.isInWishlist(product);
+  }
+}

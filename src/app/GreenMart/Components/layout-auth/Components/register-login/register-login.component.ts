@@ -34,12 +34,10 @@ export class RegisterLoginComponent implements OnInit {
     this.isRegisterActive = !this.isRegisterActive;
   }
 
-  
   showAlert(message: string, type: string) {
     this.alertMessage = message;
     this.alertType = type;
 
-   
     setTimeout(() => {
       this.alertMessage = null;
     }, 3000);
@@ -73,22 +71,16 @@ export class RegisterLoginComponent implements OnInit {
     );
   
     if (user) {
-      
       localStorage.setItem('loggedInUserEmail', user.email);
-  
-      
       this.showAlert('Sign in successful! Redirecting to MyAccount page.', 'alert-success');
-  
-      
       setTimeout(() => {
         this.router.navigate(['/my-account']); 
       }, 3000); 
     } else {
-     
       this.showAlert('Invalid email or password. Please try again.', 'alert-danger');
     }
   }
-  
 }
+
 
 
