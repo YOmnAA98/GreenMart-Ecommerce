@@ -35,7 +35,7 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   cursor: default;
 }
-.dropdown-menu div{
+.dropdown-menu .empty{
   padding: 10px;
   line-height: 2.7;
 }
@@ -75,7 +75,7 @@
   display: flex;
   align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
 }
 
 .drop-img {
@@ -91,7 +91,7 @@
 
 .cart-item-details {
   flex: 1;
-  font-size: 0.875rem;
+  font-size: 0.75rem; ;
 }
 
 .cart-item-details p {
@@ -124,7 +124,7 @@
 }
 
 .cart-item-info .product-name {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
