@@ -14,7 +14,7 @@ export class CartItemComponent implements OnInit {
   @Output() quantityChanged = new EventEmitter<void>();
   price: any;
 item: any;
-  
+
 
   constructor(private shoppingCartService: ShoppingCartService) { }
 

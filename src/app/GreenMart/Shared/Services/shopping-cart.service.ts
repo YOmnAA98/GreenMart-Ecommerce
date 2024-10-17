@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Cart } from '../Interfaces/cart';
 import { Products } from '../Interfaces/products';
 import { Subject } from 'rxjs';
@@ -12,7 +12,9 @@ import { Subject } from 'rxjs';
 export class ShoppingCartService {
   subject = new Subject ()
   static productQuantity: any;
-
+  cartSubject: any;
+  private cartItems = new BehaviorSubject<any[]>([]);
+  cartItems$ = this.cartItems.asObservable();
   constructor(private _httpClient: HttpClient) { }
 
   getCartItems(): Observable<Cart[]>{
@@ -47,5 +49,9 @@ export class ShoppingCartService {
   updateCart() {
     localStorage.setItem('cartItems', JSON.stringify(this.getCartItems));
   }
-  
+  clearCart(): Observable<void> {
+    return this._httpClient.delete<void>(`http://localhost:3000/cart`).pipe(
+      tap(() => this.cartSubject.next([])) // Clear the cart in the BehaviorSubject after API call
+    );
+  }
 }

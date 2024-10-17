@@ -5,7 +5,7 @@
   </div>
   <div class="text">
     <span>My Shopping Cart <i class="fa-solid fa-angle-down ms-1"></i></span>
-    <p class="price">{{cartTotal|currency:'USD'}}</p>
+    <p class="price">{{getTotalPrice() | currency}}</p>
   </div>
 </div>
 <div class="dropdown-menu dropdown-menu-end">
@@ -20,22 +20,36 @@
            
           <div class="cart-item">
              <ul>
-                <li class="cart-item-details" *ngFor="let item of cartItems">
-                    <app-cart-item [cartItem]="item" (quantityChanged)="calculateCartTotal()"></app-cart-item>
+                <li class="cart-item-details" *ngFor="let item of cartItems" >
+                  <div class="cart-item">
+                    <div *ngIf="item?.product">
+                      <img class="img-fluid" [src]="item.product.imagesURL[0]" alt="{{item?.product?.productName}}" width="100px"/>
+                    </div>
+              
+                    <div class="cart-item-details">
+                      <p>{{item?.product?.productName}}</p>
+                    </div>
+                    <div class="cart-item-quantity">
+                      <button class="btn border-0 ms-2" (click)="updateCartQuantity(item.id!, item.product, item.quantity - 1)">-</button>
+                      <input type="text" value="{{item?.quantity}}" readonly>
+                      <button class="btn border-0 me-2" (click)="updateCartQuantity(item.id!, item.product,item.quantity + 1)">+</button>
+                    </div>
+                    <div class="cart-price"*ngIf="item?.product && item?.quantity">{{item.product.productPrice * item.quantity | currency}}
+                    </div>
+                  </div>
                 </li>
              </ul>
-          <hr>
-      
-          <div class="subtotal">
-            <p>Subtotal: {{cartTotal|currency:'USD'}}</p>
+        </div>
+ 
+          <div class="subtotal mt-4">
+            <p>Subtotal: {{getTotalPrice() | currency}}</p>
           </div>
-      
-          <div class="cart-buttons d-flex justify-content-between mt-3">
+        <hr>
+        <div class="cart-buttons d-flex justify-content-between mt-3">
             <a class="btn primary-btn" routerLink="/cart">View cart <i class="fa-solid fa-angle-right ms-1"></i></a>
             <a class="btn  primary-btn" routerLink="/checkout">Checkout <i class="fa-solid fa-angle-right ms-1"></i></a>
-            <button class="btn primary-btn" (click)="clearCart()">Clear</button>
+            <!-- <button class="btn primary-btn" (click)="removeFromCart(item.id!)" >Clear</button> -->
           </div>
-        </div>
       </div>
       </div>
  </div>

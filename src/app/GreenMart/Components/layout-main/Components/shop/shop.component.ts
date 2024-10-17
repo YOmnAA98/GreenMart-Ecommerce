@@ -27,8 +27,8 @@ export class ShopComponent implements OnInit{
   searchText: string = '';
   cartItems: Cart[] = [];
   productDetails: any;
-  inStockModal: any;
-  constructor(private _apiDataService: ApiDataService, private _cartService: ShoppingCartService, private msg: ShoppingCartService){}
+
+  constructor(private _apiDataService: ApiDataService, private _cartService: ShoppingCartService, private shoppingCartService: ShoppingCartService){}
   ngOnInit():void{
     this._apiDataService.getAllProducts().subscribe({
       next: (response) => {
@@ -71,17 +71,15 @@ export class ShopComponent implements OnInit{
         console.error(err);
       }
     });
+    this.shoppingCartService.addToCart(product, quantity);
   }
-  handleAddToCart() {
-    this.msg.sendMsg(this.productDetails);
-  }
+
+  
+ 
+  // handleAddToCart() {
+  //   this.msg.sendMsg(this.productDetails);
+  // }
 
   ModalView(productId: any): void {
     this.selectedProduct = this.products.find((product: any) => product.id === productId);
-    if(this.selectedProduct.productQuantity === 0) {
-      this.inStockModal = false;
-    }else{
-      this.inStockModal = true;
-    }
-  }
-}
+}}
