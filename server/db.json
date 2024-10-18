@@ -1225,7 +1225,7 @@
   ],
   "cart": [
     {
-      "id": "1321",
+      "id": "267d",
       "product": {
         "id": "1",
         "productName": "Yop Strawberry",
@@ -1241,69 +1241,6 @@
         "productQuantity": 10,
         "productSize": "180g",
         "ratingsAverage": 4.4
-      },
-      "quantity": 1
-    },
-    {
-      "id": "7864",
-      "product": {
-        "id": "2",
-        "productName": "Strawberry Dairy ",
-        "productDescription": "Biotiful kefir is a source of calcium which contributes to the normal function of digestive enzymes.Immunity Support Biotiful kefir is a source of vitamin B12 which supports the normal functioning of the immune system.Biotiful kefir is packed with naturally healthy nutrients, supporting your immunity** and with no sugar added. We love it for breakfast or as a snack.",
-        "productPrice": 39.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-10/image-01.webp",
-          "assets/images/products/milk&cream/product-10/image-02.webp"
-        ],
-        "productQuantity": 20,
-        "productSize": "500Ml",
-        "ratingsAverage": 4.5
-      },
-      "quantity": 1
-    },
-    {
-      "id": "a184",
-      "product": {
-        "id": "3",
-        "productName": "Actimel Yoghurt ",
-        "productDescription": "Yogurt drink with L. casei Danone cultures, vitamins D and B6.This mighty shot has:20 Billion live L. casei cultures.Vitamin DVitamin B63 Strains of live culturesOver 8h fermentation.Gluten freeNo preservatives or coloursNo artificial flavours",
-        "productPrice": 19.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-08/image-01.webp",
-          "assets/images/products/milk&cream/product-08/image-02.webp"
-        ],
-        "productQuantity": 20,
-        "productSize": "100g",
-        "ratingsAverage": 4.2
-      },
-      "quantity": 1
-    },
-    {
-      "id": "41dc",
-      "product": {
-        "id": "3",
-        "productName": "Actimel Yoghurt ",
-        "productDescription": "Yogurt drink with L. casei Danone cultures, vitamins D and B6.This mighty shot has:20 Billion live L. casei cultures.Vitamin DVitamin B63 Strains of live culturesOver 8h fermentation.Gluten freeNo preservatives or coloursNo artificial flavours",
-        "productPrice": 19.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-08/image-01.webp",
-          "assets/images/products/milk&cream/product-08/image-02.webp"
-        ],
-        "productQuantity": 20,
-        "productSize": "100g",
-        "ratingsAverage": 4.2
       },
       "quantity": 1
     }

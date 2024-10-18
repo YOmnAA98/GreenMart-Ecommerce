@@ -33,7 +33,8 @@ export class ShopComponent implements OnInit {
   constructor(
     private _apiDataService: ApiDataService,
     private _cartService: ShoppingCartService,
-    private wishlistService: WishlistService
+    private wishlistService: WishlistService,
+    private shoppingCartService: ShoppingCartService
   ) {}
 
   ngOnInit(): void {
@@ -42,6 +43,10 @@ export class ShopComponent implements OnInit {
         this.products = response;
       }
     });
+    this.shoppingCartService.cartItems$.subscribe((items: Cart[]) => {
+      this.cartItems = items;
+    });
+  
 
     this._apiDataService.getAllCategories().subscribe({
       next: (response) => {
@@ -56,6 +61,11 @@ export class ShopComponent implements OnInit {
     this.setActiveTab(this.activeTab);
   }
 
+  isInCart(product: Products): boolean {
+    // Check if the product is in the cart
+    return this.cartItems.some(item => item.product.id === product.id);
+  }
+  
   setActiveTab(tabId: number): void {
     this.activeTab = tabId;
 
@@ -105,4 +115,5 @@ export class ShopComponent implements OnInit {
   isInWishlist(product: Products): boolean {
     return this.wishlistService.isInWishlist(product);
   }
+
 }

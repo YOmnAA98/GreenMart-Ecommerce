@@ -63,7 +63,15 @@
                         </ul>
                       </div>
                       <div class="my-2">
-                        <button class="btn product-btn"data-bs-toggle="modal" data-bs-target="#cartModal" (click)="ModalView(product.id)" (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                        <button *ngIf="!isInCart(product)" class="btn product-btn"data-bs-toggle="modal" data-bs-target="#cartModal" 
+                        (click)="ModalView(product.id)" 
+                        (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart
+                        </button>
+
+                        <button *ngIf="isInCart(product)" class="btn product-btn">
+                          <a href="/cart"><i class="fa-solid fa-cart-shopping"></i> VIEW CART</a>
+                        </button>
+                        
                         <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#shopModal" (click)="quickView(product.id)">
                           <i class="fa-solid fa-eye"></i>
                         </button>
