@@ -1225,7 +1225,107 @@
   ],
   "cart": [
     {
-      "id": "267d",
+      "id": "b5a6",
+      "product": {
+        "id": "11",
+        "productName": "Big & Fresh",
+        "productDescription": "Eggs are a good source of protein, vitamins, and minerals.One large egg contains approximately 78 calories, 6 grams of protein, 5 grams of fat, and 72 milligrams of cholesterol.Eggs are also a good source of vitamin D, vitamin B12, and selenium.",
+        "productPrice": 174,
+        "category": {
+          "id": 2,
+          "name": "Butter & Egg"
+        },
+        "imagesURL": [
+          "assets/images/products/butter&egg/product-01/image-01.webp"
+        ],
+        "productQuantity": 19,
+        "productSize": "600g",
+        "ratingsAverage": 4.7
+      },
+      "quantity": 1
+    },
+    {
+      "id": "9cd9",
+      "product": {
+        "id": "73",
+        "productName": "Tesco 2 Lightly Dusted Cod Fillets",
+        "productDescription": "Cod (Gadus morhua) fillets coated in batter and dusted in a seasoned crumb.",
+        "productPrice": 340,
+        "category": {
+          "id": 6,
+          "name": "Ocean Food"
+        },
+        "imagesURL": [
+          "assets/images/products/ocean-food/product-12/image-01.webp"
+        ],
+        "productQuantity": 50,
+        "productSize": "255g",
+        "ratingsAverage": 4.8
+      },
+      "quantity": 1
+    },
+    {
+      "id": "8d5a",
+      "product": {
+        "id": "29",
+        "productName": "Coconut Each",
+        "productDescription": "Coconut. Selected for their rich and crunchy flesh.",
+        "productPrice": 1,
+        "category": {
+          "id": 3,
+          "name": "Fruits"
+        },
+        "imagesURL": [
+          "assets/images/products/fruits/product-08/image-01.webp"
+        ],
+        "productQuantity": 15,
+        "productSize": "0.5kg",
+        "ratingsAverage": 4.8
+      },
+      "quantity": 1
+    },
+    {
+      "id": "e949",
+      "product": {
+        "id": "26",
+        "productName": "Tesco Green Seedless Grapes",
+        "productDescription": "Green seedless grapes. Hand picked Carefully grown in vineyards for a crisp bite and delicate sweetness",
+        "productPrice": 2.69,
+        "category": {
+          "id": 3,
+          "name": "Fruits"
+        },
+        "imagesURL": [
+          "assets/images/products/fruits/product-05/image-01.webp"
+        ],
+        "productQuantity": 15,
+        "productSize": "500g",
+        "ratingsAverage": 4.8
+      },
+      "quantity": 1
+    },
+    {
+      "id": "33d9",
+      "product": {
+        "id": "9",
+        "productName": "Tesco Milk",
+        "productDescription": "Tesco Whole Milk is a good source of calcium and vitamin D. It is also a good source of protein and carbohydrates. Tesco Whole Milk is suitable for people of all ages.",
+        "productPrice": 55,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-04/image-01.webp"
+        ],
+        "productQuantity": 32,
+        "productSize": "700g",
+        "ratingsAverage": 4.6
+      },
+      "quantity": 1
+    },
+    {
+      "id": "d9b5",
       "product": {
         "id": "1",
         "productName": "Yop Strawberry",
@@ -1241,6 +1341,128 @@
         "productQuantity": 10,
         "productSize": "180g",
         "ratingsAverage": 4.4
+      },
+      "quantity": 1
+    },
+    {
+      "id": "9eeb",
+      "product": {
+        "id": "3",
+        "productName": "Actimel Yoghurt ",
+        "productDescription": "Yogurt drink with L. casei Danone cultures, vitamins D and B6.This mighty shot has:20 Billion live L. casei cultures.Vitamin DVitamin B63 Strains of live culturesOver 8h fermentation.Gluten freeNo preservatives or coloursNo artificial flavours",
+        "productPrice": 19.99,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-08/image-01.webp",
+          "assets/images/products/milk&cream/product-08/image-02.webp"
+        ],
+        "productQuantity": 20,
+        "productSize": "100g",
+        "ratingsAverage": 4.2
+      },
+      "quantity": 1
+    },
+    {
+      "id": "3449",
+      "product": {
+        "id": "2",
+        "productName": "Strawberry Dairy ",
+        "productDescription": "Biotiful kefir is a source of calcium which contributes to the normal function of digestive enzymes.Immunity Support Biotiful kefir is a source of vitamin B12 which supports the normal functioning of the immune system.Biotiful kefir is packed with naturally healthy nutrients, supporting your immunity** and with no sugar added. We love it for breakfast or as a snack.",
+        "productPrice": 39.99,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-10/image-01.webp",
+          "assets/images/products/milk&cream/product-10/image-02.webp"
+        ],
+        "productQuantity": 20,
+        "productSize": "500Ml",
+        "ratingsAverage": 4.5
+      },
+      "quantity": 1
+    },
+    {
+      "id": "3bd7",
+      "product": {
+        "id": "4",
+        "productName": "Glenisk Creme",
+        "productDescription": "Glenisk Creme Fraiche 250GOur Crème Fraiche is crafted using blend of Ireland's best Organic Wholemilk and Organic Fresh Cream, cultured to perfection over time to create a distinctive and delicious flavour. With much less than a third of the fat of mayonnaise, and free from any artificial ingredients, it's a tasty, healthy choice that brings good food to life.",
+        "productPrice": 15,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-06/image-01.webp"
+        ],
+        "productQuantity": 22,
+        "productSize": "250g",
+        "ratingsAverage": 4.2
+      },
+      "quantity": 1
+    },
+    {
+      "id": "3160",
+      "product": {
+        "id": "8",
+        "productName": "StIvel Buttermilk",
+        "productDescription": "The buttermilk can be used in a variety of recipes, including pancakes, waffles, biscuits, and scones.It can also be used as a marinade for chicken or fish.It can be enjoyed on its own as a refreshing drink.",
+        "productPrice": 75,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-03/image-01.webp"
+        ],
+        "productQuantity": 21,
+        "productSize": "284ml",
+        "ratingsAverage": 4.5
+      },
+      "quantity": 1
+    },
+    {
+      "id": "ffcd",
+      "product": {
+        "id": "7",
+        "productName": "Tesco Green ",
+        "productDescription": "Tesco Green Seedless Grapes are a refreshing and sweet snack option, perfect for enjoying on their own or adding to fruit salads and desserts. These plump, juicy grapes are vibrant green in color, known for their crisp texture and delightful flavor. Conveniently seedless, they offer a hassle-free eating experience, making them a favorite for both kids and adults. Packed with vitamins and antioxidants, these grapes are not only delicious but also a healthy choice. Whether enjoyed fresh, in smoothies, or as a topping for yogurt, Tesco Green Seedless Grapes are a versatile and tasty addition to any diet.",
+        "productPrice": 257.99,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-02/image-01.webp"
+        ],
+        "productQuantity": 29,
+        "productSize": " 700g",
+        "ratingsAverage": 4.2
+      },
+      "quantity": 1
+    },
+    {
+      "id": "a9d4",
+      "product": {
+        "id": "6",
+        "productName": "Avonmore Double",
+        "productDescription": "Avonmore Double Cream is a rich and luxurious dairy product, perfect for enhancing both sweet and savory dishes. This 229ml carton contains thick, velvety cream that boasts a high butterfat content, making it ideal for whipping, pouring, or adding a sumptuous finish to your recipes. Its smooth texture and creamy flavor make it an excellent choice for desserts like cakes, custards, and mousses, as well as for adding richness to sauces and soups. Whether used in cooking or enjoyed on its own, Avonmore Double Cream elevates any culinary creation.",
+        "productPrice": 39.99,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-09/image-01.webp"
+        ],
+        "productQuantity": 18,
+        "productSize": "229Ml",
+        "ratingsAverage": 4.2
       },
       "quantity": 1
     }

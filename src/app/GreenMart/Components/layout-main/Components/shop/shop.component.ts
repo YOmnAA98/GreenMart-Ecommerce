@@ -61,10 +61,7 @@ export class ShopComponent implements OnInit {
     this.setActiveTab(this.activeTab);
   }
 
-  isInCart(product: Products): boolean {
-    // Check if the product is in the cart
-    return this.cartItems.some(item => item.product.id === product.id);
-  }
+  
   
   setActiveTab(tabId: number): void {
     this.activeTab = tabId;
@@ -92,17 +89,21 @@ export class ShopComponent implements OnInit {
   }
 
 
-  // handleAddToCart() {
-  // }
-
+  getTotalPrice(): number {
+    return this.cartItems.reduce((total, item) => {
+      if (item && item.product && item.product.productPrice) {
+        return total + item.product.productPrice * item.quantity;
+      }
+      return total;
+    }, 0);
+  }
   ModalView(productId: any): void {
     this.selectedProduct = this.products.find((product: any) => product.id === productId);
-    if (this.selectedProduct.productQuantity === 0) {
-      this.inStockModal = false;
-    } else {
-      this.inStockModal = true;
-    }
   }
+  isInCart(product: Products): boolean {
+    return this.cartItems.some(item => item.product.id === product.id);
+  }
+  
 
   toggleWishlist(product: Products): void {
     if (this.wishlistService.isInWishlist(product)) {
