@@ -31,8 +31,7 @@
               "node_modules/bootstrap-icons/font/bootstrap-icons.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.css",
-              "public/assets/css/green-mart-style.css",
-              "public/assets/css/dashboard-style.css"
+              "public/assets/css/green-mart-style.css"              
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"

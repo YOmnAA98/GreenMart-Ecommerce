@@ -39,6 +39,7 @@ nav .breadcrumb {
     margin-block: 30px;
     padding: 0 20px;
     color: #666;
+    width: 75%;
 }
 .contact-form h3 {
     color: #000;
@@ -69,13 +70,14 @@ nav .breadcrumb {
 .contact-form .form-control {
     padding-left: 50px; 
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .contact-form {
         padding: 0 30px;
+        width: 100%;
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
     .contact-form {
         padding: 0 15px;
     }
