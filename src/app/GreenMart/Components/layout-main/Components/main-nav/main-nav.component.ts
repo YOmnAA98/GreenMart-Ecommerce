@@ -4,6 +4,8 @@ import { ApiDataService } from '../../../../Shared/Services/api-data.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Category } from '../../../../Shared/Interfaces/category';
 import { CartNavComponent } from '../cart/cart-nav/cart-nav.component';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-main-nav',
@@ -18,7 +20,10 @@ export class MainNavComponent implements OnInit {
   categories: Category[] = [];
   loggedInUserEmail: string | null = null;
 
-  constructor(private _apiDataService: ApiDataService) {}
+  constructor(
+    private _apiDataService: ApiDataService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit(): void {
     this._apiDataService.getAllCategories().subscribe({
@@ -30,15 +35,17 @@ export class MainNavComponent implements OnInit {
       }
     });
 
-  
-    this.loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
-    this.isShown = !this.loggedInUserEmail;
+    if (isPlatformBrowser(this.platformId)) {
+      this.loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
+      this.isShown = !this.loggedInUserEmail;
+    }
   }
 
   logout(): void {
-    localStorage.removeItem('loggedInUserEmail');
-    this.loggedInUserEmail = null;
-    this.isShown = true;
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.removeItem('loggedInUserEmail');
+      this.loggedInUserEmail = null;
+      this.isShown = true;
+    }
   }
 }
-

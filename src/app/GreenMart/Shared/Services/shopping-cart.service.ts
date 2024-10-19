@@ -74,7 +74,7 @@ export class ShoppingCartService {
   }
 
 
-  updateCart() {
-    localStorage.setItem('cartItems', JSON.stringify(this.cartItems.value));
-  }
+  // updateCart() {
+  //   localStorage.setItem('cartItems', JSON.stringify(this.cartItems.value));
+  // }
 }
