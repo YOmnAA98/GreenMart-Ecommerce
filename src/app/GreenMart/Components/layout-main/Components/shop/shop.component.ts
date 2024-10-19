@@ -51,14 +51,15 @@ export class ShopComponent implements OnInit {
     this._apiDataService.getAllCategories().subscribe({
       next: (response) => {
         this.categories = response;
-        this.activeTab = this.categories[0].id;
+        if (this.categories.length > 0){
+          this.activeTab = this.categories[0].id;
+          this.setActiveTab(this.activeTab);
+        }
       },
       error: (error) => {
         console.log(error);
       }
-    });
-
-    this.setActiveTab(this.activeTab);
+    });    
   }
 
   

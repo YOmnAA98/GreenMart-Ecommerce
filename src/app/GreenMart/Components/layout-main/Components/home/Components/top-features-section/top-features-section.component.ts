@@ -45,7 +45,10 @@ export class TopFeaturesSectionComponent implements OnInit {
     this._apiDataService.getAllCategories().subscribe({
       next: (response) => {
         this.categories = response;
-        this.activeTab = this.categories[0].id;
+        if (this.categories.length > 0){
+          this.activeTab = this.categories[0].id;
+          this.setActiveTab(this.activeTab);
+        }
       },
       error: (error) => {
         console.log(error);
@@ -54,7 +57,6 @@ export class TopFeaturesSectionComponent implements OnInit {
     this.shoppingCartService.cartItems$.subscribe((items: Cart[]) => {
       this.cartItems = items;
     });
-    this.setActiveTab(this.activeTab);
   }
 
   setActiveTab(tabId: number): void {
