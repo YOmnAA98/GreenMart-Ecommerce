@@ -1,54 +1,63 @@
-<div>
-    <form>
-        <div class="mb-3 row">
-            <div class="col-md-6">
-                <label for="first-name" class="form-label">First name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="first-name" placeholder="Enter first name" required>
-            </div>
-            <div class="col-md-6">
-                <label for="last-name" class="form-label">Last name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="last-name" placeholder="Enter last name" required>
-            </div>
-        </div>
-
-        <div class="mb-3">
-            <label for="display-name" class="form-label">Display name <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="display-name" placeholder="Enter display name" required>
-            <div class="form-text">This will be how your name will be displayed in the account section and in reviews</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="email" class="form-label">Email address <span class="text-danger">*</span></label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email" required>
-        </div>
-
-        <h4 class="text-muted">Password change</h4>
-
-        <div class="mb-3 form-group">
-            <label for="current-password" class="form-label">Current password </label>
-            <input type="password" class="form-control" id="current-password" placeholder="Enter current password">
-            <button class="btn-eye" type="button" >
-                <i class="fa-regular fa-eye "></i>
-            </button>
-        </div>
-
-        <div class="mb-3 form-group">
-            <label for="new-password" class="form-label">New password </label>
-            <input type="password" class="form-control" id="new-password" placeholder="Enter new password">
-            <button class="btn-eye" type="button" >
-                <i class="fa-regular fa-eye"></i>
-            </button>
-        </div>
-
-        <div class="mb-3 form-group">
-            <label for="confirm-password" class="form-label">Confirm new password</label>
-            <input type="password" class="form-control" id="confirm-password" placeholder="Confirm new password">
-            <button class="btn-eye" type="button" >
-                <i class="fa-regular fa-eye"></i>
-            </button>
-        </div>
-
-        <button type="submit" class="btn details-button">Save changes</button>
-    </form>
-</div>
-
+<div class="change-notices-wrapper" *ngIf="successMessage">
+    <div class="change-message alert alert-success" role="alert">
+      {{ successMessage }}
+    </div>
+  </div>
+  
+  <form (submit)="saveChanges()">
+      <div class="mb-3 row">
+          <div class="col-md-6">
+              <label for="first-name" class="form-label ">First name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="first-name" placeholder="Enter first name" [(ngModel)]="userData.firstName" name="firstName" required>
+          </div>
+          <div class="col-md-6">
+              <label for="last-name" class="form-label">Last name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="last-name" placeholder="Enter last name" [(ngModel)]="userData.lastName" name="lastName" required>
+          </div>
+      </div>
+  
+      <div class="mb-3">
+          <label for="display-name" class="form-label">Display name <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="display-name" placeholder="Enter display name" [(ngModel)]="userData.displayName" name="displayName" required>
+      </div>
+  
+      <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="userData.email" name="email" readonly>
+      </div>
+  
+      <h3 class="text-muted mt-4 mb-4">Password change</h3>
+  
+      <div class="mb-3 form-group">
+          <label for="current-password" class="form-label">Current password </label>
+          <div class="input-group">
+              <input type="{{ showCurrentPassword ? 'text' : 'password' }}" class="form-control" id="current-password" placeholder="Enter current password" [(ngModel)]="passwordData.currentPassword" name="currentPassword">
+              <button type="button" class="btn btn-outline-secondary" (click)="toggleShowPassword('current')">
+                  <i class="fa" [ngClass]="showCurrentPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+              </button>
+          </div>
+      </div>
+  
+      <div class="mb-3 form-group">
+          <label for="new-password" class="form-label">New password </label>
+          <div class="input-group">
+              <input type="{{ showNewPassword ? 'text' : 'password' }}" class="form-control" id="new-password" placeholder="Enter new password" [(ngModel)]="passwordData.newPassword" name="newPassword">
+              <button type="button" class="btn btn-outline-secondary" (click)="toggleShowPassword('new')">
+                  <i class="fa" [ngClass]="showNewPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+              </button>
+          </div>
+      </div>
+  
+      <div class="mb-3 form-group">
+          <label for="confirm-password" class="form-label">Confirm new password</label>
+          <div class="input-group">
+              <input type="{{ showConfirmPassword ? 'text' : 'password' }}" class="form-control" id="confirm-password" placeholder="Confirm new password" [(ngModel)]="passwordData.confirmPassword" name="confirmPassword">
+              <button type="button" class="btn btn-outline-secondary" (click)="toggleShowPassword('confirm')">
+                  <i class="fa" [ngClass]="showConfirmPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+              </button>
+          </div>
+      </div>
+  
+      <button type="submit" class="btn details-button">Save changes</button>
+  </form>
+  

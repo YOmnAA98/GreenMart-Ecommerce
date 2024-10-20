@@ -23,10 +23,18 @@ export class RegisterLoginComponent implements OnInit {
     email: '',
     password: ''
   };
-  
+
+  displayName: string = '';
+
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.displayName = localStorage.getItem('loggedInUserName') || '';
+
+    window.addEventListener('userNameUpdated', (event: any) => {
+      this.displayName = event.detail;  
+    });
+  }
 
   toggleRegister(): void {
     this.isRegisterActive = !this.isRegisterActive;
@@ -37,12 +45,13 @@ export class RegisterLoginComponent implements OnInit {
       let users = JSON.parse(localStorage.getItem('users') || '[]');
       const emailExists = users.some((user: any) => user.email === this.registerData.email);
 
-      if (emailExists) {
-        return;
-      }
+     
 
       users.push({ ...this.registerData });
       localStorage.setItem('users', JSON.stringify(users));
+
+      localStorage.setItem('loggedInUserName', this.registerData.name);
+      this.displayName = this.registerData.name;
 
       this.toggleRegister();
     }
@@ -58,10 +67,12 @@ export class RegisterLoginComponent implements OnInit {
     if (user) {
       localStorage.setItem('loggedInUserEmail', user.email);
       localStorage.setItem('loggedInUserName', user.name);
+      this.displayName = user.name; 
+
       setTimeout(() => {
         this.router.navigate(['/my-account']); 
       }, 3000); 
-    }
+    } 
   }
 }
 
