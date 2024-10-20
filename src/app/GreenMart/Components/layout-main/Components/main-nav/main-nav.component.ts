@@ -65,6 +65,8 @@ import { ApiDataService } from '../../../../Shared/Services/api-data.service';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { Category } from '../../../../Shared/Interfaces/category';
 import { CartNavComponent } from '../cart/cart-nav/cart-nav.component';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-main-nav',
