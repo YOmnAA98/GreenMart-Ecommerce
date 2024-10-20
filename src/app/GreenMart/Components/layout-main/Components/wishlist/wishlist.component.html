@@ -30,12 +30,13 @@
           <td>{{ item.productPrice | currency }}</td>
           <td>{{ item.productQuantity > 0 ? "In Stock" : "Out of Stock" }}</td>
           <td>
-            <button (click)="addToCart(item, 1)" class="btn primary-btn">
+            <button (click)="addToCart(item, 1)" class="btn primary-btn" *ngIf="item.productQuantity > 0; else outOfStock">
               <i class="fa-solid fa-cart-shopping me-1"></i> Add to cart
             </button>
+            <ng-template #outOfStock></ng-template>
           </td>
           <td class="remove">
-            <button (click)="removeFromWishlist(item)" class="btn">
+            <button (click)="removeFromWishlist(item)" class="btn border-0">
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </td>

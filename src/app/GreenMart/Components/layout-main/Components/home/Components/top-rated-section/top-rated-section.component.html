@@ -14,9 +14,79 @@
             <div class="col" *ngFor="let product of topRatedProducts.slice(0, 4)">
               <div class="card">
                 <a [routerLink]="['/product-details', product.id]">
-                  <div class="image">
-                    <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName">
+                  <div class="image" *ngIf="product.productQuantity > 0; else outOfStock">
+                    <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName" loading="lazy">
                   </div>
+                  <ng-template #outOfStock>
+                    <div class="image">
+                      <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName" loading="lazy">
+                      <p class="overlay">out of stock</p>
+                    </div>
+                  </ng-template>
+                </a>
+                <div class="card-body">
+                  <a [routerLink]="['/product-details', product.id]">
+                    <h4 class="card-title">{{product.productName | slicing : 2}}</h4>
+                  </a>
+                  <p class="card-text">Approx {{product.productSize}}</p>
+                  <div class="card-info d-flex justify-content-between mt-2">
+                    <span class="price">{{product.productPrice | currency}}</span>
+                    <ul class="p-0 d-flex align-items-center">
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <li><i class="fa-solid fa-star"></i></li>
+                      <p class="ms-1">{{product.ratingsAverage}}</p>
+                    </ul>
+                  </div>
+                  <div class="my-2" *ngIf="product.productQuantity > 0; else readMore">
+                    <button *ngIf="!isInCart(product)" class="btn product-btn"data-bs-toggle="modal" data-bs-target="#topRate" 
+                    (click)="ModalView(product.id)" 
+                    (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart
+                    </button>
+                    <button *ngIf="isInCart(product)" class="btn product-btn" routerLink="/cart">
+                      <i class="fa-solid fa-cart-shopping"></i> VIEW CART
+                    </button>                    
+                    <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#TopModal" (click)="quickView(product.id)">
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                    <button class="btn product-btn" (click)="toggleWishlist(product)">
+                      <i [ngClass]="isInWishlist(product) ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart'"></i>
+                    </button>
+                  </div>
+                  <ng-template #readMore>
+                    <div class="my-2">
+                      <button class="btn product-btn" [routerLink]="['/product-details', product.id]">
+                        <i class="fa-solid fa-cart-shopping"></i> Read More
+                      </button>                                        
+                      <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#TopModal" (click)="quickView(product.id)">
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button class="btn product-btn" (click)="toggleWishlist(product)">
+                        <i [ngClass]="isInWishlist(product) ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart'"></i>
+                      </button>
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
+            <div class="col" *ngFor="let product of topRatedProducts.slice(4, 8)">
+              <div class="card">
+                <a [routerLink]="['/product-details', product.id]">
+                  <div class="image" *ngIf="product.productQuantity > 0; else outOfStock">
+                    <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName" loading="lazy">
+                  </div>
+                  <ng-template #outOfStock>
+                    <div class="image">
+                      <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName" loading="lazy">
+                      <p class="overlay">out of stock</p>
+                    </div>
+                  </ng-template>
                 </a>
                 <div class="card-body">
                   <a [routerLink]="['/product-details', product.id]"><h4 class="card-title">{{product.productName | slicing : 2}}</h4></a>
@@ -32,66 +102,34 @@
                       <p class="ms-1">{{product.ratingsAverage}}</p>
                     </ul>
                   </div>
-                  <div class="my-2">
-                    <button *ngIf="!isInCart(product)" class="btn product-btn"data-bs-toggle="modal" data-bs-target="#topRate" 
-                    (click)="ModalView(product.id)" 
-                    (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart
-                    </button>
-
-                    <button *ngIf="isInCart(product)" class="btn product-btn">
-                      <a href="/cart"><i class="fa-solid fa-cart-shopping"></i> VIEW CART</a>
-                    </button>                    
-                    <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#TopModal" (click)="quickView(product.id)"><i class="fa-solid fa-eye"></i></button>
-                    <button class="btn product-btn" (click)="toggleWishlist(product)">
-                      <i [ngClass]="isInWishlist(product) ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart'"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
-            <div class="col" *ngFor="let product of topRatedProducts.slice(4, 8)">
-              <div class="card">
-                <a [routerLink]="['/product-details', product.id]">
-                  <div class="image">
-                    <img [src]="product.imagesURL[0]" class="card-img-top" [alt]="product.productName">
-                  </div>
-                </a>
-                <div class="card-body">
-                  <a [routerLink]="['/product-details', product.id]"><h4 class="card-title">{{product.productName | slicing : 2}}</h4></a>
-                  <p class="card-text">Approx {{product.productSize}}</p>
-                  <div class="card-info d-flex justify-content-between mt-2">
-                    <span class="price">${{product.productPrice | currency}}</span>
-                    <ul class="p-0 d-flex align-items-center">
-                      <li><i class="fa-solid fa-star"></i></li>
-                      <li><i class="fa-solid fa-star"></i></li>
-                      <li><i class="fa-solid fa-star"></i></li>
-                      <li><i class="fa-solid fa-star"></i></li>
-                      <li><i class="fa-solid fa-star"></i></li>
-                      <p class="ms-1">{{product.ratingsAverage}}</p>
-                    </ul>
-                  </div>
-                  <div class="my-2">
-
+                  <div class="my-2" *ngIf="product.productQuantity > 0; else readMore">
                     <button *ngIf="!isInCart(product)" class="btn product-btn"data-bs-toggle="modal" data-bs-target="#topRate" 
                       (click)="ModalView(product.id)" 
                       (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart
                       </button>
-
                       <button *ngIf="isInCart(product)" class="btn product-btn">
                         <a href="/cart"><i class="fa-solid fa-cart-shopping"></i> VIEW CART</a>
+                      </button>                      
+                      <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#TopModal" (click)="quickView(product.id)">
+                        <i class="fa-solid fa-eye"></i>
                       </button>
-                      
-                    <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#TopModal" (click)="quickView(product.id)">
-                      <i class="fa-solid fa-eye"></i>
-                    </button>
-                    <button class="btn product-btn" (click)="toggleWishlist(product)">
-                      <i [ngClass]="isInWishlist(product) ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart'"></i>
-                    </button>
+                      <button class="btn product-btn" (click)="toggleWishlist(product)">
+                        <i [ngClass]="isInWishlist(product) ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart'"></i>
+                      </button>
                   </div>
+                  <ng-template #readMore>
+                    <div class="my-2">
+                      <button class="btn product-btn" [routerLink]="['/product-details', product.id]">
+                        <i class="fa-solid fa-cart-shopping"></i> Read More
+                      </button>
+                      <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#TopModal" (click)="quickView(product.id)">
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button class="btn product-btn" (click)="toggleWishlist(product)">
+                        <i [ngClass]="isInWishlist(product) ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart'"></i>
+                      </button>
+                    </div>
+                  </ng-template>
                 </div>
               </div>
             </div>
@@ -128,7 +166,7 @@
                 <div *ngFor="let image of selectedProduct?.imagesURL; let i = index"
                   class="carousel-item"
                   [ngClass]="(i === 0) ? 'active' : ''">
-                  <img [src]="image" class="d-block w-100" [alt]="selectedProduct?.productName">
+                  <img [src]="image" class="d-block w-100" [alt]="selectedProduct?.productName" loading="lazy">
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#topCarouselIndicators" data-bs-slide="prev">
@@ -152,12 +190,14 @@
             </ul>
             <span class="price">{{selectedProduct?.productPrice | currency}}</span>
             <p class="description my-3">{{selectedProduct?.productDescription}}</p>
-            <div class="actions">
+            <div class="actions" *ngIf="selectedProduct?.productQuantity > 0; else outOfStockModal">
               <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1">
               <button class="btn primary-btn" (click)="addToCart(selectedProduct, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
             </div>
-            <!-- <p class="out text-danger">Out of Stock</p> -->
+            <ng-template #outOfStockModal>
+              <p class="out text-danger">Out of Stock</p>
+            </ng-template>
             <p class="category my-3">Category: <span>{{selectedProduct?.category.name}}</span></p>
             <p class="quantity my-3">Quantity: <span>{{selectedProduct?.productQuantity}}</span></p>
           </div>
@@ -193,7 +233,7 @@
               <div class="media widget-product d-flex align-items-center">
                 <div class="carousel-inner modal-image">
                   <div *ngFor="let image of selectedProduct?.imagesURL;let i = index" class="carousel-item" [ngClass]="i === 0 ? 'active' : ''">
-                    <img [src]="image" [alt]="selectedProduct?.productName" width="200" height="150"/>
+                    <img [src]="image" [alt]="selectedProduct?.productName" width="200" height="150" loading="lazy">
                   </div>
                 </div>
 

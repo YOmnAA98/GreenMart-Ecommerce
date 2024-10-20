@@ -27,9 +27,8 @@ nav .breadcrumb-item + .breadcrumb-item::before {
 .table .remove i:hover{
   color: var(--red-color)
 }
-.table .remove button,
-.table .remove button:active{
-  border: none;
+.table .primary-btn{
+  font-size: 0.75rem;
 }
 .wishlist-header {
   background-color: #f8f9fa; 
