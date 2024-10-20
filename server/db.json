@@ -44,7 +44,7 @@
       "imagesURL": [
         "assets/images/products/milk&cream/product-01/image-01.webp"
       ],
-      "productQuantity": 0,
+      "productQuantity": 10,
       "productSize": "180g",
       "ratingsAverage": 4.4
     },
@@ -132,7 +132,7 @@
     },
     {
       "id": "7",
-      "productName": "Tesco Green",
+      "productName": "Tesco Green ",
       "productDescription": "Tesco Green Seedless Grapes are a refreshing and sweet snack option, perfect for enjoying on their own or adding to fruit salads and desserts. These plump, juicy grapes are vibrant green in color, known for their crisp texture and delightful flavor. Conveniently seedless, they offer a hassle-free eating experience, making them a favorite for both kids and adults. Packed with vitamins and antioxidants, these grapes are not only delicious but also a healthy choice. Whether enjoyed fresh, in smoothies, or as a topping for yogurt, Tesco Green Seedless Grapes are a versatile and tasty addition to any diet.",
       "productPrice": 257.99,
       "category": {
@@ -386,7 +386,7 @@
         "assets/images/products/fruits/product-01/image-01.webp",
         "assets/images/products/fruits/product-01/image-02.webp"
       ],
-      "productQuantity": 0,
+      "productQuantity": 15,
       "productSize": "300g",
       "ratingsAverage": 4.3
     },
@@ -453,7 +453,7 @@
       "imagesURL": [
         "assets/images/products/fruits/product-05/image-01.webp"
       ],
-      "productQuantity": 19,
+      "productQuantity": 15,
       "productSize": "500g",
       "ratingsAverage": 4.8
     },
@@ -967,8 +967,8 @@
     },
     {
       "id": "58",
-      "productName": "Tesco Sausages",
-      "productDescription": "Tesco 16 Irish sausages, Irish. Simply prepared and lightly seasoned for a full flavour.",
+      "productName": "Tesco 16 Irish Pork Sausages",
+      "productDescription": "Tesco 16 Irish pork sausages, Irish Pork. Simply prepared and lightly seasoned for a full flavour.",
       "productPrice": 230,
       "category": {
         "id": 5,
@@ -977,7 +977,7 @@
       "imagesURL": [
         "assets/images/products/fresh-meat/product-15/image-01.webp"
       ],
-      "productQuantity": 0,
+      "productQuantity": 52,
       "productSize": "450g",
       "ratingsAverage": 4.9
     },
