@@ -16,7 +16,7 @@ import { WishlistService } from '../../../../../../Shared/Services/wishlist.serv
   templateUrl: './top-features-section.component.html',
   styleUrl: './top-features-section.component.css'
 })
-export class TopFeaturesSectionComponent implements OnInit {
+export class TopFeaturesSectionComponent implements OnInit {  
   products: Products[] = [];
   categories: Category[] = [];
   filteredProducts: Products[] = [];
@@ -24,8 +24,7 @@ export class TopFeaturesSectionComponent implements OnInit {
   activeTab: number = 0;
   cartItems: Cart[] = [];
   searchText: string = '';
-  productDetails: any;
-  inStockModal: any;
+  productDetails: any;  
 
   constructor(
     private _apiDataService: ApiDataService,
