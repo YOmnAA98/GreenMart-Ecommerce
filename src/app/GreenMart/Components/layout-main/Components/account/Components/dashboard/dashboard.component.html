@@ -1,7 +1,9 @@
 
+
 <div class="account-sidebar-txt col-md-9">
     <div class="px-3">
-        <p class="text-muted">Hello <strong>{{ userEmail }}</strong> (not <strong>{{ userEmail }}</strong>? <a href="#">Log out</a>)</p>
-        <p class="text-muted">From your account dashboard you can view your <a href="#">recent orders</a>, manage your <a href="#">shipping and billing addresses</a>, and <a href="#">edit your password and account details</a>.</p>
+      <p class="text-muted">Hello <strong>{{ userEmail }}</strong> (not <strong>{{ userEmail }}</strong>? <a (click)="logout()">Log out</a>)</p>
+      <p class="text-muted">From your account dashboard you can view your <a href="#">recent orders</a>, manage your <a href="#">shipping and billing addresses</a>, and <a href="#">edit your password and account details</a>.</p>
     </div>
-</div>
+  </div>
+  
