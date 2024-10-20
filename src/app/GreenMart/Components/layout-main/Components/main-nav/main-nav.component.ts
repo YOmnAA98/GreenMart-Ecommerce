@@ -1,7 +1,8 @@
+
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ApiDataService } from '../../../../Shared/Services/api-data.service';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { Category } from '../../../../Shared/Interfaces/category';
 import { CartNavComponent } from '../cart/cart-nav/cart-nav.component';
 import { isPlatformBrowser } from '@angular/common';
@@ -19,11 +20,10 @@ export class MainNavComponent implements OnInit {
   isEmpty: boolean = true;
   categories: Category[] = [];
   loggedInUserEmail: string | null = null;
+  loggedInUserName: string | null = null;
+  firstName: string | null = null;
 
-  constructor(
-    private _apiDataService: ApiDataService,
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  constructor(private _apiDataService: ApiDataService, private router: Router) {}
 
   ngOnInit(): void {
     this._apiDataService.getAllCategories().subscribe({
@@ -35,17 +35,21 @@ export class MainNavComponent implements OnInit {
       }
     });
 
-    if (isPlatformBrowser(this.platformId)) {
-      this.loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
-      this.isShown = !this.loggedInUserEmail;
-    }
+    this.loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
+    this.loggedInUserName = localStorage.getItem('loggedInUserName');
+    this.firstName = this.loggedInUserName ? this.loggedInUserName.split(' ')[0] : null;
+    this.isShown = !this.loggedInUserEmail;
   }
 
   logout(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      localStorage.removeItem('loggedInUserEmail');
-      this.loggedInUserEmail = null;
-      this.isShown = true;
-    }
+    localStorage.removeItem('loggedInUserEmail');
+    localStorage.removeItem('loggedInUserName');
+    this.loggedInUserEmail = null;
+    this.loggedInUserName = null;
+    this.firstName = null;
+    this.isShown = true;
+    this.router.navigate(['/home']);
   }
 }
+
+
