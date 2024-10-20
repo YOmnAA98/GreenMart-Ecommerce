@@ -132,20 +132,6 @@
     }
 }
 
-/* .social-icons{
-    margin: 20px 0;
-}
-
-.social-icons a{
-    border: 1px solid #ccc;
-    border-radius: 20%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 3px;
-    width: 40px;
-    height: 40px;
-} */
 
 .toggle-container{
     position: absolute;
@@ -168,7 +154,6 @@
     
     background-color: #86BC42;
     height: 100%;
-    /* background: linear-gradient(to right, #86BC42, #86BC42); */
     color: #fff;
     position: relative;
     left: -100%;
@@ -215,14 +200,16 @@
 }
  
 
-/* alert */
 .alert {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 500px;
-  z-index: 9999;
-  text-align: center;
-}
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+  
+  .alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+  

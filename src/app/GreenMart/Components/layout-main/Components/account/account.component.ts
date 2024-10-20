@@ -1,14 +1,13 @@
 
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppComponent } from "../../../../../app.component";
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-account',
   standalone: true,
-  imports: [AppComponent, RouterOutlet, RouterLink, RouterLinkActive, CommonModule],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule],
   templateUrl: './account.component.html',
   styleUrl: './account.component.css'
 })
@@ -46,7 +45,9 @@ export class AccountComponent implements OnInit {
     this.loggedInUserName = null;
     this.firstName = null;
     this.isLoggedIn = false;
-    this.router.navigate(['/home']);
+    this.router.navigate(['/home']).then(() => {
+      window.location.reload();
+    });
   }
 }
 
