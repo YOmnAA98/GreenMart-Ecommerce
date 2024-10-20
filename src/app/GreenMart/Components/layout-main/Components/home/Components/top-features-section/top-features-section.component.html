@@ -48,10 +48,16 @@
                   </ul>
                 </div>
                 <div class="my-2">
-                  <button class="btn product-btn" (click)="addToCart(product, 1)">
-                    <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+                  <button *ngIf="!isInCart(product)" class="btn product-btn"data-bs-toggle="modal" data-bs-target="#featureModal" 
+                  (click)="ModalView(product.id)" 
+                  (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart
                   </button>
-                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#featuresModal" (click)="quickView(product.id)">
+
+                  <button *ngIf="isInCart(product)" class="btn product-btn">
+                    <a href="/cart"><i class="fa-solid fa-cart-shopping"></i> VIEW CART</a>
+                  </button>
+
+                  <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#quickViewFeature" (click)="quickView(product.id)">
                     <i class="fa-solid fa-eye"></i>
                   </button>
                   
@@ -72,3 +78,121 @@
     </div>
   </div>
 </section>
+
+<!-- quickViewFeature Modal -->
+<div class="modal fade" id="quickViewFeature" tabindex="-1" aria-labelledby="shopModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl w-75 m-auto">
+    <div class="modal-content rounded-0">
+      <div class="modal-body">
+        <div class="row">
+          <div class="slider col-lg-6">
+            <div id="shopCarouselIndicators" class="carousel slide">
+              <div class="carousel-indicators">
+                <button *ngFor="let image of selectedProduct?.imagesURL; let i = index"
+                  type="button"
+                  [attr.data-bs-target]="'#shopCarouselIndicators'"
+                  [attr.data-bs-slide-to]="i"
+                  [attr.aria-current]="i === 0 ? 'true' : null"
+                  [ngClass]="(i === 0) ? 'active' : ''">
+                </button>
+              </div>
+              <div class="carousel-inner">
+                <div *ngFor="let image of selectedProduct?.imagesURL; let i = index"
+                  class="carousel-item"
+                  [ngClass]="(i === 0) ? 'active' : ''">
+                  <img [src]="image" class="d-block w-100" [alt]="selectedProduct?.productName">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#shopCarouselIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#shopCarouselIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <div class="data col-lg-6">
+            <h2>{{selectedProduct?.productName}}</h2>
+            <p class="weight mb-2">(Approx {{selectedProduct?.productSize}})</p>
+            <ul class="p-0 d-flex align-items-center">
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+              <p class="mt-1 ms-1">{{selectedProduct?.ratingsAverage}}</p>
+            </ul>
+            <span class="price">{{selectedProduct?.productPrice | currency}}</span>
+            <p class="description my-3">{{selectedProduct?.productDescription}}</p>
+            <div class="actions">
+              <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1">
+              <button class="btn primary-btn" (click)="addToCart(selectedProduct, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+              <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <!-- <p class="out text-danger">Out of Stock</p> -->
+            <p class="category my-3">Category: <span>{{selectedProduct?.category.name}}</span></p>
+            <p class="quantity my-3">Quantity: <span>{{selectedProduct?.productQuantity}}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Add to cart modal -->
+<div class="modal fade" id="featureModal" tabindex="-1" aria-labelledby="shopModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl w-50 m-auto">
+    <div class="modal-content rounded-0">
+      <div class="modal-body">
+        
+        <div class="modal-body-content">
+          <div class="row popup-cart">
+            <div class="col-md-10 d-flex justify-content-between align-items-center">
+              <h3 class="title-add">
+                <i class="fa-solid fa-circle-check mb-2"></i> Product added
+              </h3>
+              <button type="button" class="btn-close position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close">
+                <i class="tb-icon tb-icon-zt-close"></i>
+              </button> 
+
+              
+              <div class="total col-md-0">
+                <h3>Subtotal: <span class="cartPrice">{{getTotalPrice() | currency}}</span></h3>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="media widget-product d-flex align-items-center">
+                <div class="carousel-inner modal-image">
+                  <div *ngFor="let image of selectedProduct?.imagesURL;let i = index" class="carousel-item" [ngClass]="i === 0 ? 'active' : ''">
+                    <img [src]="image" [alt]="selectedProduct?.productName" width="200" height="150"/>
+                  </div>
+                </div>
+
+                <div class="cart-main-content media-body mt-3 ms-2 ">
+                  <h3 class="cart-name">{{ selectedProduct?.productName }}</h3>
+                  <p class="quantity">1 × <span class="price cartPrice">{{ selectedProduct?.productPrice | currency }}</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12 d-flex flex-column">
+              <div class="mt-auto">
+                
+                <div class="gr-buttons d-flex justify-content-around">
+                  <button class="btn primary-btn">
+                    <a href="/cart"> <i class="fa-solid fa-cart-shopping"></i> VIEW CART</a>
+                  </button>
+                  <button class="btn primary-btn">
+                    <a href="/checkout"><i class="fa-solid fa-cart-shopping"></i> CHECKOUT</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

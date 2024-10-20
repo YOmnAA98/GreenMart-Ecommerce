@@ -33,7 +33,8 @@ export class ShopComponent implements OnInit {
   constructor(
     private _apiDataService: ApiDataService,
     private _cartService: ShoppingCartService,
-    private wishlistService: WishlistService
+    private wishlistService: WishlistService,
+    private shoppingCartService: ShoppingCartService
   ) {}
 
   ngOnInit(): void {
@@ -42,20 +43,27 @@ export class ShopComponent implements OnInit {
         this.products = response;
       }
     });
+    this.shoppingCartService.cartItems$.subscribe((items: Cart[]) => {
+      this.cartItems = items;
+    });
+  
 
     this._apiDataService.getAllCategories().subscribe({
       next: (response) => {
         this.categories = response;
-        this.activeTab = this.categories[0].id;
+        if (this.categories.length > 0){
+          this.activeTab = this.categories[0].id;
+          this.setActiveTab(this.activeTab);
+        }
       },
       error: (error) => {
         console.log(error);
       }
-    });
-
-    this.setActiveTab(this.activeTab);
+    });    
   }
 
+  
+  
   setActiveTab(tabId: number): void {
     this.activeTab = tabId;
 
@@ -70,29 +78,33 @@ export class ShopComponent implements OnInit {
     this.selectedProduct = this.products.find((product: any) => product.id === productId);
   }
 
-  addToCart(product: Products, quantity: number): void {
-    this._cartService.addToCart(product, quantity = 1).subscribe({
-      next: (newItem) => {
-        this.cartItems.push(newItem);
+  addToCart(product: Products, productId: any): void {
+    this._cartService.addToCart(product, 1).subscribe({
+      next: (response) => {
+        console.log('Product added to cart', response);
       },
       error: (err) => {
-        console.error(err);
+        console.error('Error adding to cart', err);
       }
     });
   }
 
-  handleAddToCart() {
-    // This method can be used for additional logic if needed
-  }
 
+  getTotalPrice(): number {
+    return this.cartItems.reduce((total, item) => {
+      if (item && item.product && item.product.productPrice) {
+        return total + item.product.productPrice * item.quantity;
+      }
+      return total;
+    }, 0);
+  }
   ModalView(productId: any): void {
     this.selectedProduct = this.products.find((product: any) => product.id === productId);
-    if (this.selectedProduct.productQuantity === 0) {
-      this.inStockModal = false;
-    } else {
-      this.inStockModal = true;
-    }
   }
+  isInCart(product: Products): boolean {
+    return this.cartItems.some(item => item.product.id === product.id);
+  }
+  
 
   toggleWishlist(product: Products): void {
     if (this.wishlistService.isInWishlist(product)) {
@@ -105,4 +117,5 @@ export class ShopComponent implements OnInit {
   isInWishlist(product: Products): boolean {
     return this.wishlistService.isInWishlist(product);
   }
+
 }

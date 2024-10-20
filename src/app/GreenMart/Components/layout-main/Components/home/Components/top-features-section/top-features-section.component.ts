@@ -17,21 +17,27 @@ import { WishlistService } from '../../../../../../Shared/Services/wishlist.serv
   styleUrl: './top-features-section.component.css'
 })
 export class TopFeaturesSectionComponent implements OnInit {
+  products: Products[] = [];
   categories: Category[] = [];
   filteredProducts: Products[] = [];
   selectedProduct: any;
   activeTab: number = 0;
   cartItems: Cart[] = [];
+  searchText: string = '';
+  productDetails: any;
+  inStockModal: any;
 
   constructor(
     private _apiDataService: ApiDataService,
     private _cartService: ShoppingCartService,
-    private wishlistService: WishlistService
+    private wishlistService: WishlistService,
+    private shoppingCartService: ShoppingCartService
   ) {}
 
   ngOnInit(): void {
     this._apiDataService.getAllProducts().subscribe({
       next: (response) => {
+        this.products = response;
         this.filteredProducts = response;
       }
     });
@@ -39,14 +45,18 @@ export class TopFeaturesSectionComponent implements OnInit {
     this._apiDataService.getAllCategories().subscribe({
       next: (response) => {
         this.categories = response;
-        this.activeTab = this.categories[0].id;
+        if (this.categories.length > 0){
+          this.activeTab = this.categories[0].id;
+          this.setActiveTab(this.activeTab);
+        }
       },
       error: (error) => {
         console.log(error);
       }
     });
-
-    this.setActiveTab(this.activeTab);
+    this.shoppingCartService.cartItems$.subscribe((items: Cart[]) => {
+      this.cartItems = items;
+    });
   }
 
   setActiveTab(tabId: number): void {
@@ -57,6 +67,21 @@ export class TopFeaturesSectionComponent implements OnInit {
         this.filteredProducts = response;
       }
     });
+  }
+
+  getTotalPrice(): number {
+    return this.cartItems.reduce((total, item) => {
+      if (item && item.product && item.product.productPrice) {
+        return total + item.product.productPrice * item.quantity;
+      }
+      return total;
+    }, 0);
+  }
+  ModalView(productId: any): void {
+    this.selectedProduct = this.products.find((product: any) => product.id === productId);
+  }
+  isInCart(product: Products): boolean {
+    return this.cartItems.some(item => item.product.id === product.id);
   }
 
   toggleWishlist(product: Products): void {

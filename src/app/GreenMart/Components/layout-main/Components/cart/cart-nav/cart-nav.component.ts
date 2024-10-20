@@ -1,89 +1,95 @@
 
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShoppingCartService } from '../../../../../Shared/Services/shopping-cart.service';
 import { Products } from '../../../../../Shared/Interfaces/products';
-import { CartItemComponent } from './cart-item/cart-item.component';
 import { ProductDetailsComponent } from '../../product-details/product-details.component';
 import { RouterLink } from '@angular/router';
+import { Cart } from '../../../../../Shared/Interfaces/cart';
 
-
-interface CartItem {
-  productId: number;
-  productName: string;
-  qty: number;
-  price: number;
-  imagesURL: string[];
-  productQuantity: number;
-}
 
 @Component({
   selector: 'app-cart-nav',
   standalone: true,
-  imports: [CartItemComponent, CommonModule, ProductDetailsComponent, RouterLink],
+  imports: [CommonModule, ProductDetailsComponent, RouterLink],
   templateUrl: './cart-nav.component.html',
   styleUrls: ['./cart-nav.component.css'] 
 })
 export class CartNavComponent implements OnInit {
+  cartItems: Cart[] = [];
 
   
-  cartItems: any[] = [];
-  cartTotal: number = 0;
-  qty: any;
-ShoppingCartService: any;
-  
-  constructor(private msg: ShoppingCartService, ) { }
+  constructor(private _cartService: ShoppingCartService) {}
 
-  ngOnInit():void {
- 
-    this.msg.getMsg().subscribe((product: any) => {
-      this.addProductToCart(product);
-    });
-    const storedCartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
-    this.cartItems = storedCartItems;
-    this.calculateCartTotal();
-    
-  }
-  
+  ngOnInit(): void {
+    this.loadCartItems();
 
- 
-  addProductToCart(product: Products) {
-    let productExists = false;
-    for (let i in this.cartItems) {
-      if (this.cartItems[i].productId === product.id) {
-        this.cartItems[i].qty++;  
-        productExists = true;
-        break;}}
-    if (!productExists) {
-      this.cartItems.push({
-        imagesURL: product.imagesURL,
-        productId: product.id,
-        productName: product.productName,
-        qty: 1,
-        price: product.productPrice
-      });}
   
-      this.updateCart();
-    this.calculateCartTotal();
-  }
-  removeFromCart(productId: any) {
-    this.cartItems = this.cartItems.filter(item => item.id !== productId);
-    this.updateCart();
-  }
+  this._cartService.getMsg().subscribe((product: Products) => {
+    console.log('Product added to cart:', product);
+    this.loadCartItems(); 
+  });
+  this._cartService.cartItems$.subscribe((items: Cart[]) => {
+    this.cartItems = items;
+  });
 
-  updateCart() {
-    localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
-    this.cartTotal = this.cartItems.reduce((total, item) => total + item.price * item.qty, 0);
-  }
-  clearCart() {
-    this.cartItems = [];
-    localStorage.removeItem('cartItems');
-    this.calculateCartTotal();
-  }
- 
-  calculateCartTotal() {
-    if (this.cartItems.length > 0) {
-      this.cartTotal = this.cartItems.reduce((total, item) => total + item.price * item.qty, 0);
+}
+
+loadCartItems(): void {
+  this._cartService.getCartItems().subscribe({
+    next: (response) => {
+      this.cartItems = response;
+    },
+    error: (err) => {
+      console.error('Error loading cart items', err);
     }
- this.updateCart();
-}}
+  });
+
+    this._cartService.getCartItems().subscribe({
+      next: (response) => {
+        this.cartItems = response;
+      },
+      error: (err) => {
+        console.error('Error loading cart items', err);
+      }
+    });
+  }
+
+  
+  updateCartQuantity(itemId: number, product: Products, newQuantity: number): void {
+    if (newQuantity < 1) return;
+
+    const cartItem = this.cartItems.find(item => item.id === itemId);
+    if (!cartItem) {
+      console.error('Cart item not found');
+      return;
+    }
+
+    this._cartService.updateCartItem(itemId, product, newQuantity).subscribe({
+      next: () => {
+        console.log('Cart updated successfully');
+        cartItem.quantity = newQuantity;
+      },
+      error: (err) => {
+        console.error('Failed to update cart item', err);
+      }
+    });
+  }
+
+  
+  getTotalPrice(): number {
+    return this.cartItems.reduce((total, item) => {
+      return total + (item.product?.productPrice ?? 0) * item.quantity;
+    }, 0);
+  }
+  removeFromCart(cartItemId: number): void {
+    this._cartService.removeFromCart(cartItemId).subscribe({
+      next: () => {
+        this.cartItems = this.cartItems.filter(item => item.id !== cartItemId);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
+}

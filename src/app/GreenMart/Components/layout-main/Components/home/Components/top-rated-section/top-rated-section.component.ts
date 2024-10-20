@@ -24,7 +24,8 @@ export class TopRatedSectionComponent implements OnInit {
   constructor(
     private _apiDataService: ApiDataService,
     private _cartService: ShoppingCartService,
-    private wishlistService: WishlistService
+    private wishlistService: WishlistService,
+    private shoppingCartService: ShoppingCartService
   ) {}
 
   ngOnInit(): void {
@@ -38,6 +39,9 @@ export class TopRatedSectionComponent implements OnInit {
       error: (error) => {
         console.log(error);
       },
+    });
+    this.shoppingCartService.cartItems$.subscribe((items: Cart[]) => {
+      this.cartItems = items;
     });
   }
 
@@ -54,6 +58,21 @@ export class TopRatedSectionComponent implements OnInit {
         console.error(err);
       }
     });
+  }
+
+  getTotalPrice(): number {
+    return this.cartItems.reduce((total, item) => {
+      if (item && item.product && item.product.productPrice) {
+        return total + item.product.productPrice * item.quantity;
+      }
+      return total;
+    }, 0);
+  }
+  ModalView(productId: any): void {
+    this.selectedProduct = this.products.find((product: any) => product.id === productId);
+  }
+  isInCart(product: Products): boolean {
+    return this.cartItems.some(item => item.product.id === product.id);
   }
 
   toggleWishlist(product: Products): void {

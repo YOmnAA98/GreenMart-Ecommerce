@@ -35,9 +35,9 @@
               <td>{{item?.product?.productPrice | currency}}</td>
               <td>
                  <div class="border d-inline-block">
-                  <button class="btn border-0 me-2" (click)="updateCartQuantity(item.id!, item.product,item.quantity + 1)">+</button>
-                  <span>{{item?.quantity}}</span>
                   <button class="btn border-0 ms-2" (click)="updateCartQuantity(item.id!, item.product, item.quantity - 1)">-</button>
+                  <span>{{item?.quantity}}</span>
+                  <button class="btn border-0 me-2" (click)="updateCartQuantity(item.id!, item.product, item.quantity + 1)">+</button>                  
                  </div>
               </td>
               <td *ngIf="item?.product && item?.quantity">{{item.product.productPrice * item.quantity | currency}}</td>
