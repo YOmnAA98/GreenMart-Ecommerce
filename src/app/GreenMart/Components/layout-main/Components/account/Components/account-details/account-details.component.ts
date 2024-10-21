@@ -75,6 +75,9 @@ export class AccountDetailsComponent implements OnInit {
     const userIndex = users.findIndex((u: any) => u.email === loggedInUserEmail);
 
     if (userIndex !== -1) {
+      localStorage.setItem('firstName', this.userData.firstName);
+      localStorage.setItem('lastName', this.userData.lastName);
+
       users[userIndex].firstName = this.userData.firstName;
       users[userIndex].lastName = this.userData.lastName;
       users[userIndex].name = this.userData.displayName;

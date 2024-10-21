@@ -1,56 +1,58 @@
 <div>
-    <form>
+    <form (ngSubmit)="saveAddress()">
         <h3 class="mb-4">Billing address</h3>
 
         <div class="mb-3 row">
             <div class="col-md-6">
                 <label for="first-name" class="form-label">First name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="first-name" placeholder="Enter first name" required>
+                <input type="text" class="form-control" id="first-name" placeholder="Enter first name" [(ngModel)]="userData.firstName" name="firstName" required>
             </div>
             <div class="col-md-6">
                 <label for="last-name" class="form-label">Last name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="last-name" placeholder="Enter last name" required>
+                <input type="text" class="form-control" id="last-name" placeholder="Enter last name" [(ngModel)]="userData.lastName" name="lastName" required>
             </div>
         </div>
 
         <div class="mb-3">
             <label for="company-name" class="form-label">Company name (optional)</label>
-            <input type="text" class="form-control" id="company-name" placeholder="Enter company name">
+            <input type="text" class="form-control" id="company-name" placeholder="Enter company name" [(ngModel)]="userData.companyName" name="companyName">
         </div>
 
         <div class="mb-3">
             <label for="country-region" class="form-label">Country / Region <span class="text-danger">*</span></label>
-            <select class="form-select" id="country-region" required>
+            <select class="form-select" id="country-region" [(ngModel)]="userData.country" name="country" required>
                 <option value="">Select a country / region...</option>
-                <option value="Eg">Egypt</option>
-                <option value="Sa">Saudi arabia</option>
+                <option *ngFor="let country of countries" [value]="country.code">{{ country.name }}</option>
             </select>
         </div>
 
         <div class="mb-3">
             <label for="street-address" class="form-label">Street address <span class="text-danger">*</span></label>
-            <input type="text" class="form-control mb-2" id="street-address" placeholder="House number and street name" required>
-            <input type="text" class="form-control" id="street-address-2" placeholder="Apartment, suite, unit, etc. (optional)">
+            <input type="text" class="form-control mb-2" id="street-address" placeholder="House number and street name" [(ngModel)]="userData.streetAddress" name="streetAddress" required>
+            <input type="text" class="form-control" id="street-address-2" placeholder="Apartment, suite, unit, etc. (optional)" [(ngModel)]="userData.streetAddress2" name="streetAddress2">
         </div>
 
         <div class="mb-3">
             <label for="postcode-zip" class="form-label">Postcode / ZIP (optional)</label>
-            <input type="text" class="form-control" id="postcode-zip" placeholder="Enter postcode or ZIP">
+            <input type="text" class="form-control" id="postcode-zip" placeholder="Enter postcode or ZIP" [(ngModel)]="userData.postcode" name="postcode">
         </div>
 
         <div class="mb-3">
             <label for="town-city" class="form-label">Town / City <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="town-city" placeholder="Enter town or city" required>
+            <select class="form-select" id="town-city" [(ngModel)]="userData.state" name="state" required>
+              <option value="">Select a governorate...</option>
+              <option *ngFor="let state of states" [value]="state.code">{{ state.name }}</option>
+            </select>
         </div>
 
         <div class="mb-3">
             <label for="phone" class="form-label">Phone <span class="text-danger">*</span></label>
-            <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" required>
+            <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" [(ngModel)]="userData.phone" name="phone" required>
         </div>
 
         <div class="mb-3">
             <label for="email" class="form-label">Email address <span class="text-danger">*</span></label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email address" required>
+            <input type="email" class="form-control" id="email" placeholder="Enter email address" [(ngModel)]="userData.email" name="email" required>
         </div>
 
         <button type="submit" class="btn billing-button">Save address</button>

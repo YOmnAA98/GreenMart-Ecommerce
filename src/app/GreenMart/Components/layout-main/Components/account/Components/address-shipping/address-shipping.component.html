@@ -1,45 +1,47 @@
 <div>
     <h3 class="mb-4">Shipping Address</h3>
-    <form>
+    <form (ngSubmit)="saveAddress()">
         <div class="row mb-3">
-            <div class="col">
-                <label for="firstName" class="form-label">First name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="firstName" placeholder="">
+            <div class="col-md-6">
+                <label for="first-name" class="form-label">First name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="first-name" placeholder="Enter first name" [(ngModel)]="userShipData.firstName" name="firstName" required>
             </div>
-            <div class="col">
-                <label for="lastName" class="form-label">Last name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="lastName" placeholder="">
+            <div class="col-md-6">
+                <label for="last-name" class="form-label">Last name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="last-name" placeholder="Enter last name" [(ngModel)]="userShipData.lastName" name="lastName" required>
             </div>
         </div>
         
         <div class="mb-3">
-            <label for="companyName" class="form-label">Company name (optional)</label>
-            <input type="text" class="form-control" id="companyName" placeholder="">
+            <label for="company-name" class="form-label">Company name (optional)</label>
+            <input type="text" class="form-control" id="company-name" placeholder="Enter company name" [(ngModel)]="userShipData.companyName" name="companyName">
         </div>
         
         <div class="mb-3">
-            <label for="country" class="form-label">Country / Region <span class="text-danger">*</span></label>
-            <select id="country" class="form-select">
-                <option selected>Select a country / region...</option>
-                <option value="Eg">Egypt</option>
-                <option value="Sa">Saudi Arabia</option>
+            <label for="country-region" class="form-label">Country / Region <span class="text-danger">*</span></label>
+            <select class="form-select" id="country-region" [(ngModel)]="userShipData.country" name="country" required>
+                <option value="">Select a country / region...</option>
+                <option *ngFor="let country of countries" [value]="country.code">{{ country.name }}</option>
             </select>
         </div>
         
         <div class="mb-3">
-            <label for="streetAddress" class="form-label">Street address <span class="text-danger">*</span></label>
-            <input type="text" class="form-control mb-2" id="streetAddress" placeholder="House number and street name">
-            <input type="text" class="form-control" id="apartment" placeholder="Apartment, suite, unit, etc. (optional)">
+            <label for="street-address" class="form-label">Street address <span class="text-danger">*</span></label>
+            <input type="text" class="form-control mb-2" id="street-address" placeholder="House number and street name" [(ngModel)]="userShipData.streetAddress" name="streetAddress" required>
+            <input type="text" class="form-control" id="street-address-2" placeholder="Apartment, suite, unit, etc. (optional)" [(ngModel)]="userShipData.streetAddress2" name="streetAddress2">
         </div>
         
         <div class="mb-3">
-            <label for="postcode" class="form-label">Postcode / ZIP (optional)</label>
-            <input type="text" class="form-control" id="postcode" placeholder="">
+            <label for="postcode-zip" class="form-label">Postcode / ZIP (optional)</label>
+            <input type="text" class="form-control" id="postcode-zip" placeholder="Enter postcode or ZIP" [(ngModel)]="userShipData.postcode" name="postcode">
         </div>
-        
+
         <div class="mb-3">
-            <label for="city" class="form-label">Town / City <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="city" placeholder="">
+            <label for="town-city" class="form-label">Town / City <span class="text-danger">*</span></label>
+            <select class="form-select" id="town-city" [(ngModel)]="userShipData.state" name="state" required>
+              <option value="">Select a governorate...</option>
+              <option *ngFor="let state of states" [value]="state.code">{{ state.name }}</option>
+            </select>
         </div>
         
         <button type="submit" class="btn shipping-button">Save address</button>

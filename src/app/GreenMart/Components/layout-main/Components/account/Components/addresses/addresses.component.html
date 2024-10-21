@@ -1,36 +1,68 @@
-<div class="address-content bg-white p-4 rounded">              
+<div class="address-content bg-white p-4 rounded">
     <h2 class="mb-4">My Addresses</h2>
-    <p class="text-muted"> The following addresses will be used on the checkout page by default.</p>
+    <p class="text-muted">The following addresses will be used on the checkout page by default.</p>
     <div class="row g-4">
         <!-- Billing Address -->
         <div class="col-md-6">
             <div class="address">
                 <div class="address-header d-flex justify-content-between align-items-center">
                     <h3 class="mb-0">Billing Address</h3>
-                    <a [routerLink]="['billing']" class="edit">
-                        <i class="fa fa-pencil-alt"></i>Edit</a>
+                    <div>
+                        <a [routerLink]="['billing']" class="edit">
+                            <i class="fa fa-pencil-alt"></i> Edit
+                        </a>
+                        
+                    </div>
                 </div>
-                <div class="address-body">
-                    <address>
-                        You have not set up this type of address yet.
+                <div class="address-body d-flex justify-content-between align-items-center">
+                    <address *ngIf="billingAddress; else noBilling">
+                        <strong>{{ billingAddress.firstName }} {{ billingAddress.lastName }}</strong><br>
+                        {{ billingAddress.companyName }}<br>
+                        {{ billingAddress.streetAddress }}<br>
+                        {{ billingAddress.streetAddress2 }}<br>
+                        {{ billingAddress.state }}<br>
+                        {{ billingAddress.postcode }}<br>
+                        {{ billingAddress.country }}<br>
+                        Phone: {{ billingAddress.phone }}<br>
+                        Email: {{ billingAddress.email }}<br>
                     </address>
+                    <a *ngIf="billingAddress" (click)="deleteBillingAddress()" class="deleteAddress text-danger ms-3" title="Delete">
+                            <i class="fa fa-trash"></i>
+                    </a>
+                    
+                    <ng-template #noBilling>
+                        You have not set up this type of address yet.
+                    </ng-template>
                 </div>
             </div>
         </div>
 
-        <!-- Shipping Address -->
+        <!-- Shipping Address-->
         <div class="col-md-6">
             <div class="address">
-                <div class="address-header d-flex justify-content-between align-items-center">
-                    <h3 class="mb-0">Shipping Address</h3>
-                    <a [routerLink]="['shipping']" class="edit"><i class="fa fa-pencil-alt"></i> Edit</a>
-                </div>
-                <div class="address-body">
-                    <address>
-                        You have not set up this type of address yet.
-                    </address>
-                </div>
+              <div class="address-header d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">Shipping Address</h3>
+                <a [routerLink]="['shipping']" class="edit"><i class="fa fa-pencil-alt"></i> Edit</a>
+              </div>
+              <div class="address-body d-flex justify-content-between align-items-center">
+                <address *ngIf="shippingAddress; else noShipping">
+                  <strong>{{ shippingAddress.firstName }} {{ shippingAddress.lastName }}</strong><br>
+                  <span *ngIf="shippingAddress.companyName">{{ shippingAddress.companyName }}<br></span>
+                  {{ shippingAddress.streetAddress }}<br>
+                  <span *ngIf="shippingAddress.streetAddress2">{{ shippingAddress.streetAddress2 }}<br></span>
+                  {{ shippingAddress.state }}<br>
+                  {{ shippingAddress.postcode }}<br>
+                  {{ shippingAddress.country }}<br>
+                  <!-- Phone and Email could also be included if they are part of userShipData -->
+                </address>
+                <a *ngIf="shippingAddress" (click)="deleteShippingAddress()" class="deleteAddress text-danger ms-3" title="Delete">
+                    <i class="fa fa-trash"></i>
+                </a>
+                <ng-template #noShipping>
+                  You have not set up this type of address yet.
+                </ng-template>
+              </div>
             </div>
-        </div>
+          </div>
     </div>
 </div>

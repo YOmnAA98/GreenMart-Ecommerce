@@ -47,41 +47,38 @@ export const routes: Routes = [
         title: 'GreenMart | Account',
         children: [
           {
-            path: 'account-details',
+          path: 'account-details',
             component: AccountDetailsComponent,
-            title: 'GreenMart | Account Details',
+          title: 'GreenMart | Account Details',
           },
           {
-            path: 'edit-address',
-      component: AddressesComponent,
-      title: 'GreenMart | Addresses',
-      children: [
-        {
-          path: 'billing',
+          path: 'edit-address',
+          component: AddressesComponent,
+          title: 'GreenMart | Addresses'},
+          {
+          path: 'edit-address/billing',
           component: AddressBillingComponent,
           title: 'GreenMart | Billing Address',
-        },
-        {
-          path: 'shipping',
+         },
+         {
+          path: 'edit-address/shipping',
           component: AddressShippingComponent,
           title: 'GreenMart | Shipping Address',
-        }
-      ]
-    },
-    {
-            path: 'dashboard',
+          },
+          {
+          path: 'dashboard',
             component: DashboardComponent,
-            title: 'GreenMart | My Account'
+          title: 'GreenMart | My Account'
           },
           {
-            path: 'downloads',
+          path: 'downloads',
             component: DownloadsComponent,
-            title: 'GreenMart | My Account'
+          title: 'GreenMart | My Account'
           },
           {
-            path: 'orders',
+          path: 'orders',
             component: OrdersComponent,
-            title: 'GreenMart | Orders',
+          title: 'GreenMart | Orders',
           },          
           {
             path: '',
