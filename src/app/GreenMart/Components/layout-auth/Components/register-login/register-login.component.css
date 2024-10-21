@@ -41,7 +41,9 @@
     background-color: transparent;
     color: #fff;
     font-size: 12px;
-    padding: 10px 45px;
+    padding-block: 10px;
+    width: 35%;
+    margin-inline: auto;
     border: 1px solid #fff;
     border-radius: 8px;
     font-weight: 600;
@@ -65,7 +67,7 @@
 .container form{
     background-color: #fff;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     flex-direction: column;
     padding: 0 40px;

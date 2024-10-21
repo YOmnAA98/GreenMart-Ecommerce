@@ -44,7 +44,7 @@
       "imagesURL": [
         "assets/images/products/milk&cream/product-01/image-01.webp"
       ],
-      "productQuantity": 10,
+      "productQuantity": 0,
       "productSize": "180g",
       "ratingsAverage": 4.4
     },
@@ -453,7 +453,7 @@
       "imagesURL": [
         "assets/images/products/fruits/product-05/image-01.webp"
       ],
-      "productQuantity": 15,
+      "productQuantity": 0,
       "productSize": "500g",
       "ratingsAverage": 4.8
     },
@@ -657,7 +657,7 @@
     },
     {
       "id": "39",
-      "productName": "Tesco Irish Potatoes",
+      "productName": "Tesco Potatoes Irish",
       "productDescription": "Tesco Irish Rooster Potatoes",
       "productPrice": 3.79,
       "category": {
@@ -791,7 +791,7 @@
     },
     {
       "id": "47",
-      "productName": "Tesco Irish Chicken Breast Mini Fillets",
+      "productName": "Tesco Breast Mini Fillets Chicken",
       "productDescription": "Tesco Irish Chicken Breast Mini Fillets IRISH CHICKEN Fed on a cereal based diet for a succulent texture",
       "productPrice": 70.5,
       "category": {
@@ -807,7 +807,7 @@
     },
     {
       "id": "48",
-      "productName": "Tesco Irish Chicken Thigh Fillets",
+      "productName": "Tesco Chicken Irish Thigh Fillets",
       "productDescription": "Irish Chicken Fed on a cereal based diet for a succulent texture",
       "productPrice": 70,
       "category": {
@@ -839,7 +839,7 @@
     },
     {
       "id": "50",
-      "productName": "Tesco Irish Beef Sirloin Steak",
+      "productName": "Tesco Beef Sirloin Steak",
       "productDescription": "Irish Beef Sirloin Steak 28 Day Matured. A prime cut, chosen for a full and rich flavour.",
       "productPrice": 60,
       "category": {
@@ -851,11 +851,11 @@
       ],
       "productQuantity": 10,
       "productSize": "260g",
-      "ratingsAverage": 4.1
+      "ratingsAverage": 4.3
     },
     {
       "id": "51",
-      "productName": "Tesco Irish Diced Beef",
+      "productName": "Tesco Diced Beef",
       "productDescription": "Tesco Irish Diced Beef, slow cook",
       "productPrice": 30,
       "category": {
@@ -865,13 +865,13 @@
       "imagesURL": [
         "assets/images/products/fresh-meat/product-10/image-01.webp"
       ],
-      "productQuantity": 12,
+      "productQuantity": 0,
       "productSize": "350g",
       "ratingsAverage": 4.3
     },
     {
       "id": "52",
-      "productName": "Tesco Irish Lean Beef Steak Mince 5% Fat",
+      "productName": "Tesco Lean Beef Steak Mince 5% Fat",
       "productDescription": "Irish lean beef steak mince. Typical percentage of fat content under 5%. Typical percentage of collagen/meat protein ratio under 12%.",
       "productPrice": 140,
       "category": {
@@ -919,7 +919,7 @@
     },
     {
       "id": "55",
-      "productName": "Tesco Irish Chicken Breast Fillets",
+      "productName": "Tesco Chicken Breast Fillets",
       "productDescription": "Tesco Large Fillet Irish Chicken Fed on a cereal based diet for a succulent texture",
       "productPrice": 155,
       "category": {
@@ -935,7 +935,7 @@
     },
     {
       "id": "56",
-      "productName": "Tesco Irish Chicken Wings",
+      "productName": "Tesco Chicken Wings",
       "productDescription": "Tesco Irish Chicken Wings, IRISH CHICKEN Fed on a cereal based diet for a succulent texture.",
       "productPrice": 135,
       "category": {
@@ -967,8 +967,8 @@
     },
     {
       "id": "58",
-      "productName": "Tesco 16 Irish Pork Sausages",
-      "productDescription": "Tesco 16 Irish pork sausages, Irish Pork. Simply prepared and lightly seasoned for a full flavour.",
+      "productName": "Tesco 16 Irish Sausages",
+      "productDescription": "Tesco 16 Irish sausages, Irish. Simply prepared and lightly seasoned for a full flavour.",
       "productPrice": 230,
       "category": {
         "id": 5,
@@ -979,7 +979,7 @@
       ],
       "productQuantity": 52,
       "productSize": "450g",
-      "ratingsAverage": 4.9
+      "ratingsAverage": 4.6
     },
     {
       "id": "59",
@@ -999,7 +999,7 @@
     },
     {
       "id": "60",
-      "productName": "Tesco Irish Beef Sirloin Steak",
+      "productName": "Tesco Sirloin Steak",
       "productDescription": "Irish Beef Sirloin Steak 28 Day Matured. A prime cut, chosen for a full and rich flavour.",
       "productPrice": 255,
       "category": {
@@ -1225,23 +1225,23 @@
   ],
   "cart": [
     {
-      "id": "cdb2",
+      "id": "a5ec",
       "product": {
-        "id": "3",
-        "productName": "Actimel Yoghurt ",
-        "productDescription": "Yogurt drink with L. casei Danone cultures, vitamins D and B6.This mighty shot has:20 Billion live L. casei cultures.Vitamin DVitamin B63 Strains of live culturesOver 8h fermentation.Gluten freeNo preservatives or coloursNo artificial flavours",
-        "productPrice": 19.99,
+        "id": "2",
+        "productName": "Strawberry Dairy ",
+        "productDescription": "Biotiful kefir is a source of calcium which contributes to the normal function of digestive enzymes.Immunity Support Biotiful kefir is a source of vitamin B12 which supports the normal functioning of the immune system.Biotiful kefir is packed with naturally healthy nutrients, supporting your immunity** and with no sugar added. We love it for breakfast or as a snack.",
+        "productPrice": 39.99,
         "category": {
           "id": 1,
           "name": "Milk & Cream"
         },
         "imagesURL": [
-          "assets/images/products/milk&cream/product-08/image-01.webp",
-          "assets/images/products/milk&cream/product-08/image-02.webp"
+          "assets/images/products/milk&cream/product-10/image-01.webp",
+          "assets/images/products/milk&cream/product-10/image-02.webp"
         ],
         "productQuantity": 20,
-        "productSize": "100g",
-        "ratingsAverage": 4.2
+        "productSize": "500Ml",
+        "ratingsAverage": 4.5
       },
       "quantity": 1
     }

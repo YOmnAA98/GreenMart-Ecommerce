@@ -106,6 +106,7 @@ nav .rightSide .account ul a {
   font-size: var(--text-small);
   font-weight: var(--main-weight);
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 nav .rightSide .account ul a:hover {
   color: var(--primary-color);
