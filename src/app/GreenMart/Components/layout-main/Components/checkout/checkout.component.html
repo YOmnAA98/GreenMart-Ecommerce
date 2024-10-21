@@ -27,35 +27,24 @@
           </div>
           <div class="mb-3">
             <label class="form-label" for="companyName">Company name(optional)</label>
-            <input type="text" id="companyName" class="form-control shadow-none rounded-1" name="companyName">
+            <input type="text" id="companyName" class="form-control shadow-none rounded-1" name="companyName" formControlName="companyName">
           </div>
           <div class="mb-3">
             <label class="form-label" for="country">Country / Region</label>
-            <select id="country" class="form-select shadow-none rounded-1" formControlName="country">
-              <option selected>Select a country / region...</option>
-              <option value="Eg">Egypt</option>
-              <option value="Ps">Palestine</option>
-              <option value="Sy">Syria</option>
-              <option value="Sa">Saudi Arabia</option>
-              <option value="Sd">Sudan</option>
-              <option value="Ua">UAE</option>
-              <option value="Ku">Kuwait</option>
-              <option value="Qa">Qatar</option>
-              <option value="Jor">Jordan</option>
-              <option value="Iq">Iraq</option>
-              <option value="Lb">Lebanon</option>
-              <option value="Ym">Yemen</option>
-            </select>
+            <select class="form-select" id="country-region"  name="country" formControlName="country" required>
+              <option value="">Select a country / region...</option>
+              <option *ngFor="let country of countries" [value]="country.code">{{ country.name }}</option>
+          </select>
             <small class="text-danger text-sm" *ngIf="checkoutForm.get('country')?.errors?.['required'] && checkoutForm.get('country')?.touched">Country / Region is required</small>
           </div>
           <div class="mb-3">
             <label class="form-label" for="streetAddress">Street address</label>
-            <input type="text" id="streetAddress" class="form-control shadow-none rounded-1" formControlName="address">
+            <input type="text" id="streetAddress" class="form-control shadow-none rounded-1" formControlName="streetAddress">
             <small class="text-danger text-sm" *ngIf="checkoutForm.get('address')?.errors?.['required'] && checkoutForm.get('address')?.touched">Street address is required</small>
           </div>
           <div class="mb-3">
             <label class="form-label" for="city">Town / City</label>
-            <input type="text" id="city" class="form-control shadow-none rounded-1" formControlName="city">
+            <input type="text" id="city" class="form-control shadow-none rounded-1" formControlName="town">
             <small class="text-danger text-sm" *ngIf="checkoutForm.get('city')?.errors?.['required'] && checkoutForm.get('city')?.touched">Town / City is required</small>
           </div>
           <div class="mb-3">

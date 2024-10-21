@@ -1223,7 +1223,29 @@
       "ratingsAverage": 4.8
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "cdb2",
+      "product": {
+        "id": "3",
+        "productName": "Actimel Yoghurt ",
+        "productDescription": "Yogurt drink with L. casei Danone cultures, vitamins D and B6.This mighty shot has:20 Billion live L. casei cultures.Vitamin DVitamin B63 Strains of live culturesOver 8h fermentation.Gluten freeNo preservatives or coloursNo artificial flavours",
+        "productPrice": 19.99,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-08/image-01.webp",
+          "assets/images/products/milk&cream/product-08/image-02.webp"
+        ],
+        "productQuantity": 20,
+        "productSize": "100g",
+        "ratingsAverage": 4.2
+      },
+      "quantity": 1
+    }
+  ],
   "wishlist": [],
   "orders": [
     {

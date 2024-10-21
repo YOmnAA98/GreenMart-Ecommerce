@@ -19,7 +19,7 @@
                         <strong>{{ billingAddress.firstName }} {{ billingAddress.lastName }}</strong><br>
                         {{ billingAddress.companyName }}<br>
                         {{ billingAddress.streetAddress }}<br>
-                        {{ billingAddress.streetAddress2 }}<br>
+                        {{ billingAddress.town }}<br>
                         {{ billingAddress.state }}<br>
                         {{ billingAddress.postcode }}<br>
                         {{ billingAddress.country }}<br>
@@ -49,7 +49,7 @@
                   <strong>{{ shippingAddress.firstName }} {{ shippingAddress.lastName }}</strong><br>
                   <span *ngIf="shippingAddress.companyName">{{ shippingAddress.companyName }}<br></span>
                   {{ shippingAddress.streetAddress }}<br>
-                  <span *ngIf="shippingAddress.streetAddress2">{{ shippingAddress.streetAddress2 }}<br></span>
+                  <span *ngIf="shippingAddress.town">{{ shippingAddress.town }}<br></span>
                   {{ shippingAddress.state }}<br>
                   {{ shippingAddress.postcode }}<br>
                   {{ shippingAddress.country }}<br>
