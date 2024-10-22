@@ -67,8 +67,7 @@
 
 .container form {
     background-color: #fff;
-    display: flex;
-    align-items: center;
+    display: flex;    
     justify-content: center;
     flex-direction: column;
     padding: 0 40px;

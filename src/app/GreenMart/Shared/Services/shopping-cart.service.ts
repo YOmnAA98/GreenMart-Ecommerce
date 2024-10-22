@@ -27,6 +27,7 @@ export class ShoppingCartService {
       tap(() => {
         this.sendMsg(product); 
         this.notifyCartChange(); 
+        this.getCartItems().subscribe();
       })
     );
   }
@@ -77,4 +78,10 @@ export class ShoppingCartService {
   // updateCart() {
   //   localStorage.setItem('cartItems', JSON.stringify(this.cartItems.value));
   // }
+  isInCart(product: Products): boolean {
+    const cartItems = this.cartItems.value;
+    return cartItems.some(item => item.product.id === product.id);
+  }
+  
+  
 }

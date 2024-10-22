@@ -27,7 +27,7 @@ export class ProductDetailsComponent implements OnInit {
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _apiDataService: ApiDataService,
-    private msg: ShoppingCartService,
+    private shoppingCartService: ShoppingCartService,
     private wishlistService: WishlistService,
     private _cartService: ShoppingCartService
   ) { }
@@ -50,6 +50,10 @@ export class ProductDetailsComponent implements OnInit {
         });
       }
     });
+    this.shoppingCartService.cartItems$.subscribe((items: Cart[]) => {
+      this.cartItems = items;
+    });
+    
   }
 
   quickView(productId: any): void {
@@ -100,7 +104,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   ModalView(productId: any): void {
-    this.selectedProduct = this.products.find((product: any) => product.id === productId);
+    this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productId);
   }
 
   getTotalPrice(): number {

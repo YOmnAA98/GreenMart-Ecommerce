@@ -155,13 +155,6 @@ nav .offcanvas-body ul.navbar-nav a.active {
     display: none;
   }
   nav .mob-cart {
-    display: flex;
-    gap: 20px;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  nav .mob-cart {
-    gap: 10px;
+    display: block;
   }
 }

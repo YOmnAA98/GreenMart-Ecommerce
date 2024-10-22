@@ -1225,27 +1225,27 @@
   ],
   "cart": [
     {
-      "id": "0d58",
+      "id": "66ab",
       "product": {
-        "id": "6",
-        "productName": "Avonmore Double",
-        "productDescription": "Avonmore Double Cream is a rich and luxurious dairy product, perfect for enhancing both sweet and savory dishes. This 229ml carton contains thick, velvety cream that boasts a high butterfat content, making it ideal for whipping, pouring, or adding a sumptuous finish to your recipes. Its smooth texture and creamy flavor make it an excellent choice for desserts like cakes, custards, and mousses, as well as for adding richness to sauces and soups. Whether used in cooking or enjoyed on its own, Avonmore Double Cream elevates any culinary creation.",
-        "productPrice": 39.99,
+        "id": "4",
+        "productName": "Glenisk Creme",
+        "productDescription": "Glenisk Creme Fraiche 250GOur Crème Fraiche is crafted using blend of Ireland's best Organic Wholemilk and Organic Fresh Cream, cultured to perfection over time to create a distinctive and delicious flavour. With much less than a third of the fat of mayonnaise, and free from any artificial ingredients, it's a tasty, healthy choice that brings good food to life.",
+        "productPrice": 15,
         "category": {
           "id": 1,
           "name": "Milk & Cream"
         },
         "imagesURL": [
-          "assets/images/products/milk&cream/product-09/image-01.webp"
+          "assets/images/products/milk&cream/product-06/image-01.webp"
         ],
-        "productQuantity": 18,
-        "productSize": "229Ml",
+        "productQuantity": 22,
+        "productSize": "250g",
         "ratingsAverage": 4.2
       },
       "quantity": 1
     },
     {
-      "id": "420e",
+      "id": "b192",
       "product": {
         "id": "3",
         "productName": "Actimel Yoghurt ",
@@ -1262,6 +1262,27 @@
         "productQuantity": 20,
         "productSize": "100g",
         "ratingsAverage": 4.2
+      },
+      "quantity": 1
+    },
+    {
+      "id": "be42",
+      "product": {
+        "id": "2",
+        "productName": "Strawberry Dairy ",
+        "productDescription": "Biotiful kefir is a source of calcium which contributes to the normal function of digestive enzymes.Immunity Support Biotiful kefir is a source of vitamin B12 which supports the normal functioning of the immune system.Biotiful kefir is packed with naturally healthy nutrients, supporting your immunity** and with no sugar added. We love it for breakfast or as a snack.",
+        "productPrice": 39.99,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-10/image-01.webp",
+          "assets/images/products/milk&cream/product-10/image-02.webp"
+        ],
+        "productQuantity": 20,
+        "productSize": "500Ml",
+        "ratingsAverage": 4.5
       },
       "quantity": 1
     }

@@ -42,10 +42,15 @@ body {
     outline: none;
     box-shadow: none; 
 }
-label {
-  font-weight: 600;
-  color: #444;
+label{
+  font-size: var(--text-small);
+  font-weight: var(--main-weight);
 }
-  input{
-    color: #666;
-  }
+::placeholder, input{
+  font-size: var(--text-small);
+  color: var(--main-text-color);  
+  padding-block: 9px;
+}
+input:focus, select:focus{
+  border-color: var(--primary-color);
+}
