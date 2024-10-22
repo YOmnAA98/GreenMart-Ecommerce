@@ -27,29 +27,32 @@
           </div>
           <div class="mb-3">
             <label class="form-label" for="companyName">Company name(optional)</label>
-            <input type="text" id="companyName" class="form-control shadow-none rounded-1" name="companyName" formControlName="companyName">
+            <input type="text" id="companyName" class="form-control shadow-none rounded-1" name="companyName">
           </div>
           <div class="mb-3">
             <label class="form-label" for="country">Country / Region</label>
-            <select class="form-select" id="country-region"  name="country" formControlName="country" required>
-              <option value="">Select a country / region...</option>
+            <select id="country" class="form-select shadow-none rounded-1" formControlName="country">
+              <option selected>Select a country / region...</option>
               <option *ngFor="let country of countries" [value]="country.code">{{ country.name }}</option>
-          </select>
+            </select>
             <small class="text-danger text-sm" *ngIf="checkoutForm.get('country')?.errors?.['required'] && checkoutForm.get('country')?.touched">Country / Region is required</small>
           </div>
           <div class="mb-3">
             <label class="form-label" for="streetAddress">Street address</label>
-            <input type="text" id="streetAddress" class="form-control shadow-none rounded-1" formControlName="streetAddress">
-            <small class="text-danger text-sm" *ngIf="checkoutForm.get('streetAddress')?.errors?.['required'] && checkoutForm.get('streetAddress')?.touched">Street address is required</small>
+            <input type="text" id="streetAddress" class="form-control shadow-none rounded-1" formControlName="address">
+            <small class="text-danger text-sm" *ngIf="checkoutForm.get('address')?.errors?.['required'] && checkoutForm.get('address')?.touched">Street address is required</small>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="town">Town / City</label>
-            <input type="text" id="town" class="form-control shadow-none rounded-1" formControlName="town">
-            <small class="text-danger text-sm" *ngIf="checkoutForm.get('town')?.errors?.['required'] && checkoutForm.get('town')?.touched">Town / City is required</small>
+            <label class="form-label" for="city">Town / City</label>
+            <input type="text" id="city" class="form-control shadow-none rounded-1" formControlName="city">
+            <small class="text-danger text-sm" *ngIf="checkoutForm.get('city')?.errors?.['required'] && checkoutForm.get('city')?.touched">Town / City is required</small>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="state">State / County</label>
-            <input type="text" id="state" class="form-control shadow-none rounded-1" formControlName="state">
+            <label class="form-label" for="state">State / County</label>            
+            <select class="form-select shadow-none rounded-1" id="state" formControlName="state">
+              <option value="">Select state...</option>
+              <option *ngFor="let state of states" [value]="state.code">{{ state.name }}</option>
+            </select>
             <small class="text-danger text-sm" *ngIf="checkoutForm.get('state')?.errors?.['required'] && checkoutForm.get('state')?.touched">State / County is required</small>
           </div>
           <div class="mb-3">

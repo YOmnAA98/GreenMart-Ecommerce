@@ -23,7 +23,7 @@ export class ProductDetailsComponent implements OnInit{
   productDetails: any = {};
   relatedProducts: Products[] = [];
   selectedProduct: any;
- isInWishlist: boolean = false;
+  isInWishlist: boolean = false;
   cartItems: Cart[] = [];
   // @Input productItem: Product
   constructor(private _activatedRoute: ActivatedRoute ,

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormsModule} from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { ShoppingCartService } from '../../../../Shared/Services/shopping-cart.service';
 import { Cart } from '../../../../Shared/Interfaces/cart';
@@ -8,7 +8,6 @@ import { Products } from '../../../../Shared/Interfaces/products';
 import { OrdersService } from '../../../../Shared/Services/orders.service';
 import { CartItem, Orders } from '../../../../Shared/Interfaces/orders';
 import { HttpClient } from '@angular/common/http';
-
 @Component({
   selector: 'app-checkout',
   standalone: true,
@@ -21,6 +20,7 @@ export class CheckoutComponent implements OnInit {
   cartItems: Cart[] = [];
   orders: Orders[] = [];
   countries: any[] = [];
+  states: any[] = [];
   constructor(
     private _formBuilder: FormBuilder,
     private _cartService: ShoppingCartService,
@@ -39,14 +39,7 @@ export class CheckoutComponent implements OnInit {
       country: [null, [Validators.required]],
       postcode: [null, [Validators.required]],
       agreement: [null, [Validators.required]],
-      companyName: [null, [Validators.required]],
-      streetAddress: [null, [Validators.required]],
-      town: [null],
-
-
-
     });
-
   }
   ngOnInit(): void {
     this._cartService.getCartItems().subscribe({
@@ -66,9 +59,37 @@ export class CheckoutComponent implements OnInit {
       this.countries = data
         .map(country => ({ code: country.cca2, name: country.name.common }))
         .sort((a, b) => a.name.localeCompare(b.name));
-    });
-    
+    });    
 
+    this.states = [
+      { code: 'ALX', name: 'Alexandria' },
+      { code: 'ASN', name: 'Aswan' },
+      { code: 'AST', name: 'Asyut' },
+      { code: 'BA', name: 'Beheira' },
+      { code: 'BNS', name: 'Beni Suef' },
+      { code: 'C', name: 'Cairo' },
+      { code: 'DK', name: 'Dakahlia' },
+      { code: 'DT', name: 'Damietta' },
+      { code: 'FYM', name: 'Faiyum' },
+      { code: 'GH', name: 'Gharbia' },
+      { code: 'GZ', name: 'Giza' },
+      { code: 'IS', name: 'Ismailia' },
+      { code: 'KFS', name: 'Kafr El Sheikh' },
+      { code: 'LX', name: 'Luxor' },
+      { code: 'MT', name: 'Matruh' },
+      { code: 'MN', name: 'Minya' },
+      { code: 'MNF', name: 'Monufia' },
+      { code: 'NS', name: 'New Valley' },
+      { code: 'PTS', name: 'Port Said' },
+      { code: 'KB', name: 'Qalyubia' },
+      { code: 'KN', name: 'Qena' },
+      { code: 'SHR', name: 'Sharqia' },
+      { code: 'SIN', name: 'North Sinai' },
+      { code: 'SYN', name: 'South Sinai' },
+      { code: 'SUZ', name: 'Suez' },
+      { code: 'RS', name: 'Red Sea' },
+      { code: 'SW', name: 'Sohag' }
+    ];
   }
 
   onSubmit() {
@@ -101,12 +122,6 @@ export class CheckoutComponent implements OnInit {
     } else {
       this.checkoutForm.markAllAsTouched();
     }
-    if (this.checkoutForm.valid) {
-      console.log('Checkout Data', this.checkoutForm.value);
-    } else {
-      console.log('Form Invalid');
-    }
-
   }
 
   updateCartQuantity(itemId: number, product: Products,newQuantity: number): void {

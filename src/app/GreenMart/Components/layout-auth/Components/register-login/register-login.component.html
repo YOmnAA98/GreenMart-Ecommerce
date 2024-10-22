@@ -9,8 +9,8 @@
               <span class="text-center d-block">or use your email for registration</span>
               <div class="mb-3">
                 <input type="text" placeholder="Name" [(ngModel)]="registerData.name" id="registerName" formControlName="registerName" autocomplete="yes">
-              </div>
                 <small class="text-danger text-sm text-start" *ngIf="registerForm.get('registerName')?.errors?.['required'] && registerForm.get('registerName')?.touched">Name is required</small>
+              </div>                
               <div class="mb-3">
                 <input type="email" placeholder="Email" [(ngModel)]="registerData.email" id="registerEmail" formControlName="registerEmail" autocomplete="yes">
                 <small class="text-danger text-sm text-start" *ngIf="registerForm.get('registerEmail')?.errors?.['required'] && registerForm.get('registerEmail')?.touched">Email is required</small>

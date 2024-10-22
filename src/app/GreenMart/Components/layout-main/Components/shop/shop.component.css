@@ -1,51 +1,55 @@
-.shop .left-side .filter .nav p{
+.shop .left-side .filter .nav p {
   background-color: var(--primary-color);
   color: var(--white-color);
   font-size: var(--text-small);
   font-weight: var(--main-weight);
 }
-.shop .left-side .filter .nav button{
+.shop .left-side .filter .nav button {
   background-color: var(--white-color);
   color: var(--dark-text-color);
   font-size: var(--text-small);
-  font-weight: var(--main-weight); 
-  transition: color 0.3s ease; 
+  font-weight: var(--main-weight);
+  transition: color 0.3s ease;
 }
-.shop .left-side .filter .nav button:hover{
+.shop .left-side .filter .nav button:hover {
   color: var(--primary-color);
   border-right: 3px solid var(--primary-color);
 }
-.shop .left-side .filter .nav button.active{
+.shop .left-side .filter .nav button.active {
   background-color: var(--border-color);
 }
-.shop .left-side .filter .nav button:last-child{
+.shop .left-side .filter .nav button:last-child {
   border-bottom: none !important;
   border-bottom-left-radius: 5px !important;
   border-bottom-right-radius: 5px !important;
 }
 
-.shop .right-side .search input:focus{
+.shop .right-side .search input:focus {
   border-color: var(--primary-color);
 }
 
-
-.title-add{
-  color: green;
+.title-add {
+  color: var(--primary-color);
 }
-.cartPrice{
+.cartPrice {
   color: var(--primary-color);
   font-weight: bold;
 }
 
-
-
 .heart-green {
-  color: #4caf50 !important;
+  color: #86bc42 !important;
+}
+.btn-close {
+  top: 10px;
+  right: 10px !important;
+}
+.gr-buttons .btn {
+  width: 170px;
 }
 
-@media (max-width: 1225px) {
+@media (max-width: 1199px) {
   .gr-buttons {
-    flex-direction: column; 
-    align-items: stretch; 
+    flex-direction: column;
+    align-items: stretch;
   }
 }

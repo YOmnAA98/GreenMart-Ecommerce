@@ -4,22 +4,22 @@
         <div class="row mb-3">
             <div class="col-md-6">
                 <label for="first-name" class="form-label">First name </label>
-                <input type="text" class="form-control" id="first-name" placeholder="Enter first name" [(ngModel)]="userShipData.firstName" name="firstName" required>
+                <input type="text" class="form-control shadow-none rounded-1" id="first-name" placeholder="Enter first name" [(ngModel)]="userShipData.firstName" name="firstName" required>
             </div>
             <div class="col-md-6">
                 <label for="last-name" class="form-label">Last name </label>
-                <input type="text" class="form-control" id="last-name" placeholder="Enter last name" [(ngModel)]="userShipData.lastName" name="lastName" required>
+                <input type="text" class="form-control shadow-none rounded-1" id="last-name" placeholder="Enter last name" [(ngModel)]="userShipData.lastName" name="lastName" required>
             </div>
         </div>
         
         <div class="mb-3">
             <label for="company-name" class="form-label">Company name (optional)</label>
-            <input type="text" class="form-control" id="company-name" placeholder="Enter company name" [(ngModel)]="userShipData.companyName" name="companyName">
+            <input type="text" class="form-control shadow-none rounded-1" id="company-name" placeholder="Enter company name" [(ngModel)]="userShipData.companyName" name="companyName">
         </div>
         
         <div class="mb-3">
             <label for="country-region" class="form-label">Country / Region </label>
-            <select class="form-select" id="country-region" [(ngModel)]="userShipData.country" name="country" required>
+            <select class="form-select shadow-none rounded-1" id="country-region" [(ngModel)]="userShipData.country" name="country" required>
                 <option value="">Select a country / region...</option>
                 <option *ngFor="let country of countries" [value]="country.code">{{ country.name }}</option>
             </select>
@@ -27,7 +27,7 @@
 
         <div class="mb-3">
             <label for="town-city" class="form-label">State </label>
-            <select class="form-select" id="town-city" [(ngModel)]="userShipData.state" name="state" required>
+            <select class="form-select shadow-none rounded-1" id="town-city" [(ngModel)]="userShipData.state" name="state" required>
               <option value="">Select a governorate...</option>
               <option *ngFor="let state of states" [value]="state.code">{{ state.name }}</option>
             </select>
@@ -45,7 +45,7 @@
         
         <div class="mb-3">
             <label for="postcode-zip" class="form-label">Postcode / ZIP (optional)</label>
-            <input type="text" class="form-control" id="postcode-zip" placeholder="Enter postcode or ZIP" [(ngModel)]="userShipData.postcode" name="postcode">
+            <input type="text" class="form-control shadow-none rounded-1" id="postcode-zip" placeholder="Enter postcode or ZIP" [(ngModel)]="userShipData.postcode" name="postcode">
         </div>
 
         

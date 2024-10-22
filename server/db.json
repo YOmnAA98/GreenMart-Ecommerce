@@ -967,7 +967,7 @@
     },
     {
       "id": "58",
-      "productName": "Tesco 16 Irish Sausages",
+      "productName": "Tesco Irish Sausages",
       "productDescription": "Tesco 16 Irish sausages, Irish. Simply prepared and lightly seasoned for a full flavour.",
       "productPrice": 230,
       "category": {
@@ -1208,7 +1208,7 @@
     },
     {
       "id": "73",
-      "productName": "Tesco 2 Lightly Dusted Cod Fillets",
+      "productName": "Tesco Lightly Dusted Cod Fillets",
       "productDescription": "Cod (Gadus morhua) fillets coated in batter and dusted in a seasoned crumb.",
       "productPrice": 340,
       "category": {
@@ -1223,7 +1223,110 @@
       "ratingsAverage": 4.8
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "product": {
+        "id": "31",
+        "productName": "Tesco Raspberries",
+        "productDescription": "Raspberries. Delicately Hand picked Selected when ripe, fragrant and bursting with flavour",
+        "productPrice": 1.95,
+        "category": {
+          "id": 3,
+          "name": "Fruits"
+        },
+        "imagesURL": [
+          "assets/images/products/fruits/product-10/image-01.webp"
+        ],
+        "productQuantity": 20,
+        "productSize": "125g",
+        "ratingsAverage": 4.8
+      },
+      "quantity": 2,
+      "id": "9b3a"
+    },
+    {
+      "id": "8dc8",
+      "product": {
+        "id": "36",
+        "productName": "Tesco Asparagus Tips",
+        "productDescription": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+        "productPrice": 100,
+        "category": {
+          "id": 4,
+          "name": "Vegetables"
+        },
+        "imagesURL": [
+          "assets/images/products/vegetables/product-01/image-01.webp",
+          "assets/images/products/vegetables/product-01/image-02.webp"
+        ],
+        "productQuantity": 100,
+        "productSize": "125g",
+        "ratingsAverage": 4.8
+      },
+      "quantity": 1
+    },
+    {
+      "id": "586b",
+      "product": {
+        "id": "61",
+        "productName": "Tesco Irish Diced Lamb ",
+        "productDescription": "Tesco Irish Diced Lamb100% Irish Lamb. Diced for your convenience, perfect for slow cooking.",
+        "productPrice": 200,
+        "category": {
+          "id": 5,
+          "name": "Fresh Meat"
+        },
+        "imagesURL": [
+          "assets/images/products/fresh-meat/product-01/image-01.webp"
+        ],
+        "productQuantity": 29,
+        "productSize": "265g",
+        "ratingsAverage": 4.6
+      },
+      "quantity": 1
+    },
+    {
+      "id": "04de",
+      "product": {
+        "id": "63",
+        "productName": "Open Ocean Garlic And Herb King Prawns",
+        "productDescription": "Description of Product 63.",
+        "productPrice": 170,
+        "category": {
+          "id": 6,
+          "name": "Ocean Food"
+        },
+        "imagesURL": [
+          "assets/images/products/ocean-food/product-03/image-01.webp"
+        ],
+        "productQuantity": 31,
+        "productSize": "90g",
+        "ratingsAverage": 4.8
+      },
+      "quantity": 1
+    },
+    {
+      "id": "23fb",
+      "product": {
+        "id": "3",
+        "productName": "Actimel Yoghurt ",
+        "productDescription": "Yogurt drink with L. casei Danone cultures, vitamins D and B6.This mighty shot has:20 Billion live L. casei cultures.Vitamin DVitamin B63 Strains of live culturesOver 8h fermentation.Gluten freeNo preservatives or coloursNo artificial flavours",
+        "productPrice": 19.99,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-08/image-01.webp",
+          "assets/images/products/milk&cream/product-08/image-02.webp"
+        ],
+        "productQuantity": 20,
+        "productSize": "100g",
+        "ratingsAverage": 4.2
+      },
+      "quantity": 1
+    }
+  ],
   "wishlist": [],
   "orders": [
     {
