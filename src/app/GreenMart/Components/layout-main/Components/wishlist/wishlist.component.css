@@ -18,47 +18,82 @@ nav .breadcrumb-item + .breadcrumb-item::before {
   border-collapse: collapse;
   margin-bottom: 20px;
 }
-.table th{
+
+.table th {
   color: var(--main-text-color);
 }
+
 .table th, .table td {
   font-size: var(--text-small);
 }
-.table .remove i:hover{
-  color: var(--red-color)
-}
-.table .primary-btn{
-  font-size: 0.75rem;
-}
-.wishlist-header {
-  background-color: #f8f9fa; 
-  border-radius: 8px; 
-  padding: 20px; 
+
+.table .remove i:hover {
+  color: var(--red-color);
 }
 
+.table .primary-btn {
+  font-size: 0.75rem;
+}
+
+.wishlist-header {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+}
 
 /* alert */
 .custom-alert {
-  margin-top: 5px; 
+  margin-top: 5px;
   position: relative;
-  background-color: #4caf50; 
+  background-color: #4caf50;
   color: white;
   padding: 10px;
   border-radius: 4px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  transition: opacity 0.5s ease; 
+  transition: opacity 0.5s ease;
   display: inline-block;
   bottom: 290px;
   left: 50%;
 }
 
 .custom-alert.hidden {
-  opacity: 0; 
-  pointer-events: none; 
+  opacity: 0;
+  pointer-events: none;
 }
 
 .custom-alert.show {
-  opacity: 1; 
-  pointer-events: all; 
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .table th, .table td {
+    font-size: 0.6rem;
+  }
+
+  .table .primary-btn {
+    font-size: 0.6rem;
+  }
+
+  .custom-alert {
+    bottom: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .table th, .table td {
+    font-size: 0.7rem;
+  }
+
+  .table .primary-btn {
+    font-size: 0.5rem;
+  }
+
+  .custom-alert {
+    bottom: 150px;
+  }
 }
