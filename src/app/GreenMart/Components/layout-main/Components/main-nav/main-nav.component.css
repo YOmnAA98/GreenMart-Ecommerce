@@ -74,8 +74,7 @@ nav .rightSide {
 nav .rightSide .auth span,
 nav .rightSide .auth p,
 nav .rightSide .account span,
-nav .rightSide .account p,
-nav .rightSide .cart .text p {
+nav .rightSide .account p {
   font-size: var(--text-small);
   color: var(--main-text-color);
   font-weight: var(--main-weight);
@@ -118,98 +117,6 @@ nav .rightSide .account:hover ul {
   position: relative;
   cursor: pointer;
 }
-/*
-nav .rightSide .cart .icon i {
-  font-size: 1.5625rem;
-}
-nav .rightSide .cart .icon span.badge{
-  background-color: var(--red-color);
-}
-nav .rightSide .cart .text .price {
-  color: var(--primary-color);
-}
-nav .rightSide .cart .text i {
-  font-size: 0.75rem;
-}
-nav .rightSide .cart .dropdown-menu {
-  position: absolute;
-  min-width: 320px;
-  border-left: none;
-  border-radius: 0%;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  cursor: default;
-}
-nav .rightSide .cart .dropdown-menu::after {
-  content: "";
-  position: absolute;
-  top: -8px;
-  right: 15px;
-  width: 0.9375rem;
-  height: 0.9375rem;
-  transform: rotate(45deg);
-  background-color: var(--white-color);
-  border-top: 1px solid var(--light-text-color);
-  border-left: 1px solid var(--light-text-color);
-}
-nav .rightSide .cart .dropdown-menu .empty {
-  padding: 0.9375rem 1.25rem;
-}
-nav .rightSide .cart .dropdown-menu p {
-  font-size: var(--text-small);
-  line-height: 2.5;
-}
-nav .rightSide .cart .dropdown-menu .products .pro {
-  max-height: 300px;
-  overflow-y: auto;
-}
-nav .rightSide .cart .dropdown-menu .products .pro::-webkit-scrollbar {
-  width: 13px;
-}
-nav .rightSide .cart .dropdown-menu .products .pro::-webkit-scrollbar-track {
-  background: var(--light-text-color);
-  border-radius: 1px;
-}
-nav .rightSide .cart .dropdown-menu .products .pro::-webkit-scrollbar-thumb {
-  background: var(--main-text-color);
-  border-radius: 1px;
-}
-nav .rightSide .cart .dropdown-menu .products .item {
-  border-bottom: 1px solid var(--border-color);
-}
-nav .rightSide .cart .dropdown-menu .products .item input:focus {
-  border-color: var(--primary-color);
-}
-nav .rightSide .cart .dropdown-menu .products .info a:hover {
-  color: var(--primary-color);
-}
-nav .rightSide .cart .dropdown-menu .products .total p {
-  color: var(--dark-text-color);
-  font-size: 16px;
-  font-weight: var(--main-weight);
-}
-nav .rightSide .cart .dropdown-menu .products .total p:last-child {
-  color: var(--primary-color);
-}
-nav .rightSide .cart .dropdown-menu .products .actions {
-  background-color: var(--primary-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 15px;
-}
-nav .rightSide .cart .dropdown-menu .products .actions a {
-  color: var(--white-color);
-  font-size: var(--text-small);
-  border: 1px solid var(--white-color);
-  border-radius: 0;
-  max-width: 60%;
-  margin: auto;
-  transition: color 0.5s ease, background-color 0.5s ease;
-}
-nav .rightSide .cart .dropdown-menu .products .actions a:hover {
-  background-color: var(--white-color);
-  color: var(--primary-color);
-} */
 
 nav .mob-cart {
   display: none;
