@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<div class="dropdown-menu dropdown-menu-end">
+<div class="dropdown-menu dropdown-menu-end custom-dropdown-menu">
   <div *ngIf="cartItems.length === 0" class="empty">
     <p>You have no items in your shopping cart</p>
     <strong>Subtotal: $0,00</strong>
@@ -44,15 +44,15 @@
       </ul>
    
 
-
-    <div class="cart-buttons d-flex justify-content-around mt-4">
+    <hr>
+    <div class=" Subtotal ">
       <strong class="mt-2">Subtotal: </strong>
       <span class="cart-price m-sm-2">{{getTotalPrice() | currency}}</span>
     </div>
-    <hr>
-    <div class="cart-buttons d-flex justify-content-around mt-3">
-      <a class="btn primary-btn" routerLink="/cart">View cart <i class="fa-solid fa-angle-right ms-1"></i></a>
-      <a class="btn primary-btn" routerLink="/checkout">Checkout <i class="fa-solid fa-angle-right ms-1"></i></a>
+    
+    <div class="cart-buttons ">
+      <a class="btn primary-btn " routerLink="/cart">View cart <i class="fa-solid fa-angle-right ms-1"></i></a>
+      <a class="btn primary-btn " routerLink="/checkout">Checkout <i class="fa-solid fa-angle-right ms-1"></i></a>
     </div>
   </div>
 </div>

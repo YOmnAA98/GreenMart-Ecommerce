@@ -40,12 +40,12 @@
           <div class="mb-3">
             <label class="form-label" for="streetAddress">Street address</label>
             <input type="text" id="streetAddress" class="form-control shadow-none rounded-1" formControlName="streetAddress">
-            <small class="text-danger text-sm" *ngIf="checkoutForm.get('address')?.errors?.['required'] && checkoutForm.get('address')?.touched">Street address is required</small>
+            <small class="text-danger text-sm" *ngIf="checkoutForm.get('streetAddress')?.errors?.['required'] && checkoutForm.get('streetAddress')?.touched">Street address is required</small>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="city">Town / City</label>
-            <input type="text" id="city" class="form-control shadow-none rounded-1" formControlName="town">
-            <small class="text-danger text-sm" *ngIf="checkoutForm.get('city')?.errors?.['required'] && checkoutForm.get('city')?.touched">Town / City is required</small>
+            <label class="form-label" for="town">Town / City</label>
+            <input type="text" id="town" class="form-control shadow-none rounded-1" formControlName="town">
+            <small class="text-danger text-sm" *ngIf="checkoutForm.get('town')?.errors?.['required'] && checkoutForm.get('town')?.touched">Town / City is required</small>
           </div>
           <div class="mb-3">
             <label class="form-label" for="state">State / County</label>

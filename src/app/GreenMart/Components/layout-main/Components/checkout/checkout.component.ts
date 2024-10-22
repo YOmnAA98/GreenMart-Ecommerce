@@ -41,7 +41,7 @@ export class CheckoutComponent implements OnInit {
       agreement: [null, [Validators.required]],
       companyName: [null, [Validators.required]],
       streetAddress: [null, [Validators.required]],
-      town: [null, [Validators.required]],
+      town: [null],
 
 
 

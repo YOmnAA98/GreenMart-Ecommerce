@@ -36,19 +36,4 @@
   color: var(--primary-color);
   font-weight: bold;
 }
-@media (max-width: 1225px) {
-  .gr-buttons {
-    flex-direction: column; 
-    align-items: stretch; 
-  }
 
-  .gr-buttons .btn {
-    width: 100%; 
-    margin-bottom: 10px; 
-  }
-  .modal-image img {
-    width: 100%; 
-    max-width: 200px; 
-    height: auto; 
-  }
-}
