@@ -250,44 +250,40 @@
 
 <!-- Add to cart modal -->
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="shopModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl w-50 m-auto">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
     <div class="modal-content rounded-0">
       <div class="modal-body">
-        
+
         <div class="modal-body-content">
           <div class="row popup-cart">
-            <div class="col-md-10 d-flex justify-content-between align-items-center">
+            <div class="col-md-10 col-12 d-flex justify-content-between align-items-center">
               <h3 class="title-add">
                 <i class="fa-solid fa-circle-check mb-2"></i> Product added
               </h3>
               <button type="button" class="btn-close position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close">
                 <i class="tb-icon tb-icon-zt-close"></i>
-              </button> 
+              </button>
 
-              
-              <div class="total col-md-0">
+              <div class="total col-md-4 col-12 mt-2 mt-md-0">
                 <h3>Subtotal: <span class="cartPrice">{{getTotalPrice() | currency}}</span></h3>
               </div>
             </div>
 
-            <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-12 col-12 mt-3">
               <div class="media widget-product d-flex align-items-center">
-                <div class="carousel-inner modal-image">
-                  <div *ngFor="let image of selectedProduct?.imagesURL;let i = index" class="carousel-item" [ngClass]="i === 0 ? 'active' : ''">
-                    <img [src]="image" [alt]="selectedProduct?.productName" width="200" height="150"/>
-                  </div>
+                <div class="modal-image me-3">
+                  <img [src]="selectedProduct?.imagesURL[0]" [alt]="selectedProduct?.productName" class="img-fluid" width="200" height="150" />
                 </div>
 
-                <div class="col-md-6 cart-main-content media-body mt-3 ms-2 ">
-                  <h3 class="cart-name text-nowrap">{{ selectedProduct?.productName }}</h3>
-                  <p class="quantity">1 × <span class="price cartPrice">{{ selectedProduct?.productPrice | currency }}</span></p>
+                <div class="cart-main-content media-body">
+                  <h3 class="cart-name mb-1">{{ selectedProduct?.productName }}</h3>
+                  <p class="quantity mb-0">1 × <span class="price cartPrice">{{ selectedProduct?.productPrice | currency }}</span></p>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-6 col-sm-12 col-xs-12 d-flex flex-column">
+            <div class="col-md-6 col-sm-12 col-12 d-flex flex-column mt-3">
               <div class="mt-auto">
-                
                 <div class="gr-buttons d-flex justify-content-around">
                   <button class="btn primary-btn">
                     <a href="/cart"> <i class="fa-solid fa-cart-shopping"></i> VIEW CART</a>
@@ -298,9 +294,11 @@
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+

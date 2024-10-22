@@ -60,8 +60,14 @@
             <p class="description my-3">{{productDetails.productDescription}}</p>
             <div class="actions border-top border-bottom py-4" *ngIf="productDetails.productQuantity > 0; else outOfStock">
               <input type="number" class="form-control shadow-none w-25" value="1" min="1" aria-label="1">
-              <button class="btn primary-btn"  (click)="addToCart(productDetails, 1)"><i class="fa-solid fa-cart-shopping" ></i>
-                 Add to Cart</button>
+              <button *ngIf="!isInCart(productDetails)" class="btn primary-btn"data-bs-toggle="modal" data-bs-target="#cartModal" 
+              (click)="ModalView(productDetails.id)" 
+              (click)="addToCart(productDetails, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart
+              </button>
+              <button *ngIf="isInCart(productDetails)" class="btn primary-btn" routerLink="/cart">
+                <i class="fa-solid fa-cart-shopping"></i> VIEW CART
+              </button>
+             
               <button class="btn primary-btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
             </div>
             <ng-template #outOfStock>
@@ -111,7 +117,13 @@
                     </ul>
                   </div>
                   <div class="my-2" *ngIf="product.productQuantity > 0; else readMore">
-                    <button class="btn product-btn" (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                    <button *ngIf="!isInCart(product)" class="btn product-btn"data-bs-toggle="modal" data-bs-target="#cartModal" 
+                    (click)="ModalView(product.id)" 
+                    (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart
+                    </button>
+                    <button *ngIf="isInCart(product)" class="btn product-btn" routerLink="/cart">
+                      <i class="fa-solid fa-cart-shopping"></i> VIEW CART
+                    </button>
                     <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#relatedModal" (click)="quickView(product.id)">
                       <i class="fa-solid fa-eye"></i>
                     </button>
@@ -166,7 +178,13 @@
                     </ul>
                   </div>
                   <div class="my-2" *ngIf="product.productQuantity > 0; else readMore">
-                    <button class="btn product-btn" (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                    <button *ngIf="!isInCart(product)" class="btn product-btn"data-bs-toggle="modal" data-bs-target="#cartModal" 
+                      (click)="ModalView(product.id)" 
+                      (click)="addToCart(product, 1)"><i class="fa-solid fa-cart-shopping"></i> Add to Cart
+                      </button>
+                      <button *ngIf="isInCart(product)" class="btn product-btn" routerLink="/cart">
+                        <i class="fa-solid fa-cart-shopping"></i> VIEW CART
+                      </button>
                     <button class="btn product-btn mx-2" data-bs-toggle="modal" data-bs-target="#relatedModal" (click)="quickView(product.id)">
                       <i class="fa-solid fa-eye"></i>
                     </button>
@@ -260,4 +278,58 @@
       </div>
     </div>
 </div>
+</div>
+
+<!-- Add to details modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="shopModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+    <div class="modal-content rounded-0">
+      <div class="modal-body">
+
+        <div class="modal-body-content">
+          <div class="row popup-cart">
+            <div class="col-md-10 col-12 d-flex justify-content-between align-items-center">
+              <h3 class="title-add">
+                <i class="fa-solid fa-circle-check mb-2"></i> Product added
+              </h3>
+              <button type="button" class="btn-close position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close">
+                <i class="tb-icon tb-icon-zt-close"></i>
+              </button>
+
+              <div class="total col-md-4 col-12 mt-2 mt-md-0">
+                <h3>Subtotal: <span class="cartPrice">{{getTotalPrice() | currency}}</span></h3>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-12 mt-3">
+              <div class="media widget-product d-flex align-items-center">
+                <div class="modal-image me-3">
+                  <img [src]="productDetails?.imagesURL[0]" [alt]="productDetails?.productName" class="img-fluid" width="200" height="150" />
+                </div>
+
+                <div class="cart-main-content media-body">
+                  <h3 class="cart-name mb-1">{{ productDetails?.productName }}</h3>
+                  <p class="quantity mb-0">1 × <span class="price cartPrice">{{ productDetails?.productPrice | currency }}</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-12 d-flex flex-column mt-3">
+              <div class="mt-auto">
+                <div class="gr-buttons d-flex justify-content-around">
+                  <button class="btn primary-btn">
+                    <a href="/cart"> <i class="fa-solid fa-cart-shopping"></i> VIEW CART</a>
+                  </button>
+                  <button class="btn primary-btn">
+                    <a href="/checkout"><i class="fa-solid fa-credit-card"></i> CHECKOUT</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

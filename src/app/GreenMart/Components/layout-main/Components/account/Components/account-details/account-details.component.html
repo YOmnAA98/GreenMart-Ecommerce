@@ -7,17 +7,17 @@
   <form (submit)="saveChanges()">
       <div class="mb-3 row">
           <div class="col-md-6">
-              <label for="first-name" class="form-label ">First name <span class="text-danger">*</span></label>
+              <label for="first-name" class="form-label ">First name </label>
               <input type="text" class="form-control" id="first-name" placeholder="Enter first name" [(ngModel)]="userData.firstName" name="firstName" required>
           </div>
           <div class="col-md-6">
-              <label for="last-name" class="form-label">Last name <span class="text-danger">*</span></label>
+              <label for="last-name" class="form-label">Last name </label>
               <input type="text" class="form-control" id="last-name" placeholder="Enter last name" [(ngModel)]="userData.lastName" name="lastName" required>
           </div>
       </div>
   
       <div class="mb-3">
-          <label for="display-name" class="form-label">Display name <span class="text-danger">*</span></label>
+          <label for="display-name" class="form-label">Display name </label>
           <input type="text" class="form-control" id="display-name" placeholder="Enter display name" [(ngModel)]="userData.displayName" name="displayName" required>
       </div>
   

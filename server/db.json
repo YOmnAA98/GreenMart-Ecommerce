@@ -1223,71 +1223,7 @@
       "ratingsAverage": 4.8
     }
   ],
-  "cart": [
-    {
-      "id": "a5ec",
-      "product": {
-        "id": "2",
-        "productName": "Strawberry Dairy ",
-        "productDescription": "Biotiful kefir is a source of calcium which contributes to the normal function of digestive enzymes.Immunity Support Biotiful kefir is a source of vitamin B12 which supports the normal functioning of the immune system.Biotiful kefir is packed with naturally healthy nutrients, supporting your immunity** and with no sugar added. We love it for breakfast or as a snack.",
-        "productPrice": 39.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-10/image-01.webp",
-          "assets/images/products/milk&cream/product-10/image-02.webp"
-        ],
-        "productQuantity": 20,
-        "productSize": "500Ml",
-        "ratingsAverage": 4.5
-      },
-      "quantity": 1
-    },
-    {
-      "id": "9542",
-      "product": {
-        "id": "2",
-        "productName": "Strawberry Dairy ",
-        "productDescription": "Biotiful kefir is a source of calcium which contributes to the normal function of digestive enzymes.Immunity Support Biotiful kefir is a source of vitamin B12 which supports the normal functioning of the immune system.Biotiful kefir is packed with naturally healthy nutrients, supporting your immunity** and with no sugar added. We love it for breakfast or as a snack.",
-        "productPrice": 39.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-10/image-01.webp",
-          "assets/images/products/milk&cream/product-10/image-02.webp"
-        ],
-        "productQuantity": 20,
-        "productSize": "500Ml",
-        "ratingsAverage": 4.5
-      },
-      "quantity": 1
-    },
-    {
-      "id": "f361",
-      "product": {
-        "id": "2",
-        "productName": "Strawberry Dairy ",
-        "productDescription": "Biotiful kefir is a source of calcium which contributes to the normal function of digestive enzymes.Immunity Support Biotiful kefir is a source of vitamin B12 which supports the normal functioning of the immune system.Biotiful kefir is packed with naturally healthy nutrients, supporting your immunity** and with no sugar added. We love it for breakfast or as a snack.",
-        "productPrice": 39.99,
-        "category": {
-          "id": 1,
-          "name": "Milk & Cream"
-        },
-        "imagesURL": [
-          "assets/images/products/milk&cream/product-10/image-01.webp",
-          "assets/images/products/milk&cream/product-10/image-02.webp"
-        ],
-        "productQuantity": 20,
-        "productSize": "500Ml",
-        "ratingsAverage": 4.5
-      },
-      "quantity": 1
-    }
-  ],
+  "cart": [],
   "wishlist": [],
   "orders": [
     {

@@ -19,6 +19,7 @@ import { Cart } from '../../../../Shared/Interfaces/cart';
   styleUrl: './product-details.component.css'
 })
 export class ProductDetailsComponent implements OnInit{  
+  products: Products[] = [];
   productDetails: any = {};
   relatedProducts: Products[] = [];
   selectedProduct: any;
@@ -101,6 +102,20 @@ export class ProductDetailsComponent implements OnInit{
         console.error(err);
       }
     });
+  }
+  ModalView(productId: any): void {
+    this.selectedProduct = this.products.find((product: any) => product.id === productId);
+  }
+  getTotalPrice(): number {
+    return this.cartItems.reduce((total, item) => {
+      if (item && item.product && item.product.productPrice) {
+        return total + item.product.productPrice * item.quantity;
+      }
+      return total;
+    }, 0);
+  }
+  isInCart(product: Products): boolean {
+    return this.cartItems.some(item => item.product.id === product.id);
   }
 }
 
