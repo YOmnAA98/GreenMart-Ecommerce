@@ -250,47 +250,47 @@
 
 <!-- Add to cart modal -->
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="shopModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
-    <div class="modal-content rounded-0">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl w-75 m-auto">
+    <div class="modal-content rounded-0">      
       <div class="modal-body">
-
         <div class="modal-body-content">
-          <div class="row popup-cart">
-            <div class="col-md-10 col-12 d-flex justify-content-between align-items-center">
-              <h3 class="title-add">
+          <div>
+            <button type="button" class="btn-close position-absolute border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close">
+              <i class="tb-icon tb-icon-zt-close"></i>
+            </button>
+          </div>
+          <div class="popup-cart">
+            <div class="row mt-2">
+              <h3 class="title-add col-sm-6">
                 <i class="fa-solid fa-circle-check mb-2"></i> Product added
-              </h3>
-              <button type="button" class="btn-close position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close">
-                <i class="tb-icon tb-icon-zt-close"></i>
-              </button>
-
-              <div class="total col-md-4 col-12 mt-2 mt-md-0">
+              </h3>              
+              <div class="total col-sm-6">
                 <h3>Subtotal: <span class="cartPrice">{{getTotalPrice() | currency}}</span></h3>
               </div>
             </div>
-
-            <div class="col-md-6 col-sm-12 col-12 mt-3">
-              <div class="media widget-product d-flex align-items-center">
-                <div class="modal-image me-3">
-                  <img [src]="selectedProduct?.imagesURL[0]" [alt]="selectedProduct?.productName" class="img-fluid" width="200" height="150" />
+            <div class="row align-items-center">
+              <div class="col-lg-6 mt-3">
+                <div class="media widget-product d-flex align-items-center">
+                  <div class="modal-image me-3">
+                    <img [src]="selectedProduct?.imagesURL[0]" [alt]="selectedProduct?.productName" class="img-fluid" width="200px" loading="lazy"/>
+                  </div>
+  
+                  <div class="cart-main-content media-body">
+                    <h3 class="cart-name mb-1 h4">{{ selectedProduct?.productName }}</h3>
+                    <p class="quantity mb-0">1 × <span class="price cartPrice">{{ selectedProduct?.productPrice | currency }}</span></p>
+                  </div>
                 </div>
-
-                <div class="cart-main-content media-body">
-                  <h3 class="cart-name mb-1">{{ selectedProduct?.productName }}</h3>
-                  <p class="quantity mb-0">1 × <span class="price cartPrice">{{ selectedProduct?.productPrice | currency }}</span></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-sm-12 col-12 d-flex flex-column mt-3">
-              <div class="mt-auto">
-                <div class="gr-buttons d-flex justify-content-around">
-                  <button class="btn primary-btn">
-                    <a href="/cart"> <i class="fa-solid fa-cart-shopping"></i> VIEW CART</a>
-                  </button>
-                  <button class="btn primary-btn">
-                    <a href="/checkout"><i class="fa-solid fa-credit-card"></i> CHECKOUT</a>
-                  </button>
+              </div>  
+              <div class="col-lg-6 mt-3">
+                <div class="mt-auto">
+                  <div class="gr-buttons d-flex justify-content-around">
+                    <button class="btn primary-btn">
+                      <a routerLink="/cart"> <i class="fa-solid fa-cart-shopping me-1"></i> VIEW CART</a>
+                    </button>
+                    <button class="btn primary-btn">
+                      <a routerLink="/checkout"><i class="fa-solid fa-credit-card me-1"></i> CHECKOUT</a>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

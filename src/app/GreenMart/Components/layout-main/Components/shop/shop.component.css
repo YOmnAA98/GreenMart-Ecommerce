@@ -29,7 +29,7 @@
 }
 
 .title-add {
-  color: green;
+  color: var(--primary-color);
 }
 .cartPrice {
   color: var(--primary-color);
@@ -39,8 +39,15 @@
 .heart-green {
   color: #86bc42 !important;
 }
+.btn-close {
+  top: 10px;
+  right: 10px !important;
+}
+.gr-buttons .btn {
+  width: 170px;
+}
 
-@media (max-width: 1225px) {
+@media (max-width: 1199px) {
   .gr-buttons {
     flex-direction: column;
     align-items: stretch;
