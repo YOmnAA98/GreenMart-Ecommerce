@@ -23,7 +23,7 @@ export class AddressShippingComponent {
     country: 'EG', 
     state: '',
     streetAddress: '',
-    streetAddress2: '',
+    town: '',
     postcode: '',
     phone: '',
     email: ''

@@ -23,7 +23,7 @@ export class AddressBillingComponent {
     country: 'EG', 
     state: '',
     streetAddress: '',
-    streetAddress2: '',
+    town: '',
     postcode: '',
     phone: '',
     email: ''

@@ -1,17 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { ShoppingCartService } from '../../../../Shared/Services/shopping-cart.service';
 import { Cart } from '../../../../Shared/Interfaces/cart';
 import { Products } from '../../../../Shared/Interfaces/products';
 import { OrdersService } from '../../../../Shared/Services/orders.service';
 import { CartItem, Orders } from '../../../../Shared/Interfaces/orders';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule, CommonModule],
+  imports: [RouterLink, ReactiveFormsModule, CommonModule, FormsModule],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.css',
 })
@@ -19,11 +20,13 @@ export class CheckoutComponent implements OnInit {
   checkoutForm: FormGroup;
   cartItems: Cart[] = [];
   orders: Orders[] = [];
+  countries: any[] = [];
   constructor(
     private _formBuilder: FormBuilder,
     private _cartService: ShoppingCartService,
     private _orderService: OrdersService,
-    private _router: Router
+    private _router: Router,
+    private http: HttpClient
   ) {
     this.checkoutForm = this._formBuilder.group({
       firstName: [null, [Validators.required]],
@@ -36,7 +39,14 @@ export class CheckoutComponent implements OnInit {
       country: [null, [Validators.required]],
       postcode: [null, [Validators.required]],
       agreement: [null, [Validators.required]],
+      companyName: [null, [Validators.required]],
+      streetAddress: [null, [Validators.required]],
+      town: [null, [Validators.required]],
+
+
+
     });
+
   }
   ngOnInit(): void {
     this._cartService.getCartItems().subscribe({
@@ -47,6 +57,18 @@ export class CheckoutComponent implements OnInit {
         console.error(err);
       },
     });
+    const billingData = localStorage.getItem('billingAddress');
+    if (billingData) {
+      const parsedBillingData = JSON.parse(billingData);
+      this.checkoutForm.patchValue(parsedBillingData);
+    }
+    this.http.get<any[]>('https://restcountries.com/v3.1/all').subscribe(data => {
+      this.countries = data
+        .map(country => ({ code: country.cca2, name: country.name.common }))
+        .sort((a, b) => a.name.localeCompare(b.name));
+    });
+    
+
   }
 
   onSubmit() {
@@ -79,6 +101,12 @@ export class CheckoutComponent implements OnInit {
     } else {
       this.checkoutForm.markAllAsTouched();
     }
+    if (this.checkoutForm.valid) {
+      console.log('Checkout Data', this.checkoutForm.value);
+    } else {
+      console.log('Form Invalid');
+    }
+
   }
 
   updateCartQuantity(itemId: number, product: Products,newQuantity: number): void {
