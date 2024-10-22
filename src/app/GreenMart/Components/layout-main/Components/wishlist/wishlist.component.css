@@ -42,10 +42,9 @@ nav .breadcrumb-item + .breadcrumb-item::before {
 }
 
 /* alert */
-.custom-alert {
-  margin-top: 5px;
-  position: relative;
-  background-color: #4caf50;
+.custom-alert {  
+  position: absolute;
+  background-color: var(--primary-color);
   color: white;
   padding: 10px;
   border-radius: 4px;
@@ -53,8 +52,9 @@ nav .breadcrumb-item + .breadcrumb-item::before {
   z-index: 1000;
   transition: opacity 0.5s ease;
   display: inline-block;
-  bottom: 290px;
+  top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .custom-alert.hidden {
