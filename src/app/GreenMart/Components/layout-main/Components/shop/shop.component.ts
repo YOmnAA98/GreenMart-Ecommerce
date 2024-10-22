@@ -46,7 +46,6 @@ export class ShopComponent implements OnInit {
     this.shoppingCartService.cartItems$.subscribe((items: Cart[]) => {
       this.cartItems = items;
     });
-  
 
     this._apiDataService.getAllCategories().subscribe({
       next: (response) => {

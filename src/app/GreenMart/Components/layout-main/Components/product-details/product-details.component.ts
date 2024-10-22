@@ -23,13 +23,13 @@ export class ProductDetailsComponent implements OnInit{
   productDetails: any = {};
   relatedProducts: Products[] = [];
   selectedProduct: any;
-  isInWishlist: boolean = false;
+ isInWishlist: boolean = false;
   cartItems: Cart[] = [];
   // @Input productItem: Product
   constructor(private _activatedRoute: ActivatedRoute ,
     
     private _apiDataService: ApiDataService,
-    private msg: ShoppingCartService,
+    private shoppingCartService: ShoppingCartService,
     private wishlistService: WishlistService,
     private _cartService: ShoppingCartService) { }
   ngOnInit(): void {
@@ -49,7 +49,11 @@ export class ProductDetailsComponent implements OnInit{
           return product.category.name === this.productDetails.category.name;
         })        
       }
-    })
+    });
+    this.shoppingCartService.cartItems$.subscribe((items: Cart[]) => {
+      this.cartItems = items;
+    });
+    
   }
   quickView(productId: any): void{
     this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productId);    
@@ -104,7 +108,7 @@ export class ProductDetailsComponent implements OnInit{
     });
   }
   ModalView(productId: any): void {
-    this.selectedProduct = this.products.find((product: any) => product.id === productId);
+    this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productId);
   }
   getTotalPrice(): number {
     return this.cartItems.reduce((total, item) => {

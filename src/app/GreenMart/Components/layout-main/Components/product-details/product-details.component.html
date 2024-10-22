@@ -280,7 +280,7 @@
 </div>
 </div>
 
-<!-- Add to details modal -->
+<!-- Add to details Modal -->
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="shopModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
     <div class="modal-content rounded-0">
@@ -304,12 +304,12 @@
             <div class="col-md-6 col-sm-12 col-12 mt-3">
               <div class="media widget-product d-flex align-items-center">
                 <div class="modal-image me-3">
-                  <img [src]="productDetails?.imagesURL[0]" [alt]="productDetails?.productName" class="img-fluid" width="200" height="150" />
+                  <img [src]="selectedProduct?.imagesURL[0]" [alt]="selectedProduct?.productName" class="img-fluid" width="200" height="150" />
                 </div>
 
                 <div class="cart-main-content media-body">
-                  <h3 class="cart-name mb-1">{{ productDetails?.productName }}</h3>
-                  <p class="quantity mb-0">1 × <span class="price cartPrice">{{ productDetails?.productPrice | currency }}</span></p>
+                  <h3 class="cart-name mb-1">{{ selectedProduct?.productName }}</h3>
+                  <p class="quantity mb-0">1 × <span class="price cartPrice">{{ selectedProduct?.productPrice | currency }}</span></p>
                 </div>
               </div>
             </div>

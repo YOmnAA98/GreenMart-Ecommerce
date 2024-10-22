@@ -967,7 +967,7 @@
     },
     {
       "id": "58",
-      "productName": "Tesco Irish Sausages",
+      "productName": "Tesco 16 Irish Sausages",
       "productDescription": "Tesco 16 Irish sausages, Irish. Simply prepared and lightly seasoned for a full flavour.",
       "productPrice": 230,
       "category": {
@@ -1208,7 +1208,7 @@
     },
     {
       "id": "73",
-      "productName": "Tesco Lightly Dusted Cod Fillets",
+      "productName": "Tesco 2 Lightly Dusted Cod Fillets",
       "productDescription": "Cod (Gadus morhua) fillets coated in batter and dusted in a seasoned crumb.",
       "productPrice": 340,
       "category": {
@@ -1225,88 +1225,27 @@
   ],
   "cart": [
     {
+      "id": "66ab",
       "product": {
-        "id": "31",
-        "productName": "Tesco Raspberries",
-        "productDescription": "Raspberries. Delicately Hand picked Selected when ripe, fragrant and bursting with flavour",
-        "productPrice": 1.95,
+        "id": "4",
+        "productName": "Glenisk Creme",
+        "productDescription": "Glenisk Creme Fraiche 250GOur Crème Fraiche is crafted using blend of Ireland's best Organic Wholemilk and Organic Fresh Cream, cultured to perfection over time to create a distinctive and delicious flavour. With much less than a third of the fat of mayonnaise, and free from any artificial ingredients, it's a tasty, healthy choice that brings good food to life.",
+        "productPrice": 15,
         "category": {
-          "id": 3,
-          "name": "Fruits"
+          "id": 1,
+          "name": "Milk & Cream"
         },
         "imagesURL": [
-          "assets/images/products/fruits/product-10/image-01.webp"
+          "assets/images/products/milk&cream/product-06/image-01.webp"
         ],
-        "productQuantity": 20,
-        "productSize": "125g",
-        "ratingsAverage": 4.8
-      },
-      "quantity": 2,
-      "id": "9b3a"
-    },
-    {
-      "id": "8dc8",
-      "product": {
-        "id": "36",
-        "productName": "Tesco Asparagus Tips",
-        "productDescription": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-        "productPrice": 100,
-        "category": {
-          "id": 4,
-          "name": "Vegetables"
-        },
-        "imagesURL": [
-          "assets/images/products/vegetables/product-01/image-01.webp",
-          "assets/images/products/vegetables/product-01/image-02.webp"
-        ],
-        "productQuantity": 100,
-        "productSize": "125g",
-        "ratingsAverage": 4.8
+        "productQuantity": 22,
+        "productSize": "250g",
+        "ratingsAverage": 4.2
       },
       "quantity": 1
     },
     {
-      "id": "586b",
-      "product": {
-        "id": "61",
-        "productName": "Tesco Irish Diced Lamb ",
-        "productDescription": "Tesco Irish Diced Lamb100% Irish Lamb. Diced for your convenience, perfect for slow cooking.",
-        "productPrice": 200,
-        "category": {
-          "id": 5,
-          "name": "Fresh Meat"
-        },
-        "imagesURL": [
-          "assets/images/products/fresh-meat/product-01/image-01.webp"
-        ],
-        "productQuantity": 29,
-        "productSize": "265g",
-        "ratingsAverage": 4.6
-      },
-      "quantity": 1
-    },
-    {
-      "id": "04de",
-      "product": {
-        "id": "63",
-        "productName": "Open Ocean Garlic And Herb King Prawns",
-        "productDescription": "Description of Product 63.",
-        "productPrice": 170,
-        "category": {
-          "id": 6,
-          "name": "Ocean Food"
-        },
-        "imagesURL": [
-          "assets/images/products/ocean-food/product-03/image-01.webp"
-        ],
-        "productQuantity": 31,
-        "productSize": "90g",
-        "ratingsAverage": 4.8
-      },
-      "quantity": 1
-    },
-    {
-      "id": "23fb",
+      "id": "b192",
       "product": {
         "id": "3",
         "productName": "Actimel Yoghurt ",
@@ -1323,6 +1262,27 @@
         "productQuantity": 20,
         "productSize": "100g",
         "ratingsAverage": 4.2
+      },
+      "quantity": 1
+    },
+    {
+      "id": "be42",
+      "product": {
+        "id": "2",
+        "productName": "Strawberry Dairy ",
+        "productDescription": "Biotiful kefir is a source of calcium which contributes to the normal function of digestive enzymes.Immunity Support Biotiful kefir is a source of vitamin B12 which supports the normal functioning of the immune system.Biotiful kefir is packed with naturally healthy nutrients, supporting your immunity** and with no sugar added. We love it for breakfast or as a snack.",
+        "productPrice": 39.99,
+        "category": {
+          "id": 1,
+          "name": "Milk & Cream"
+        },
+        "imagesURL": [
+          "assets/images/products/milk&cream/product-10/image-01.webp",
+          "assets/images/products/milk&cream/product-10/image-02.webp"
+        ],
+        "productQuantity": 20,
+        "productSize": "500Ml",
+        "ratingsAverage": 4.5
       },
       "quantity": 1
     }
