@@ -17,6 +17,9 @@
   color: var(--primary-color);
   border-bottom: 1px solid var(--primary-color);
 }
+.heart-green {
+  color: #4caf50 !important;
+}
 
 @media screen and (max-width: 767px) {
   .top-featured nav{
