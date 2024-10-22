@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ApiDataService } from '../../../../Shared/Services/api-data.service';
@@ -9,8 +10,6 @@ import { ShoppingCartService } from '../../../../Shared/Services/shopping-cart.s
 import { WishlistService } from '../../../../Shared/Services/wishlist.service';
 import { Cart } from '../../../../Shared/Interfaces/cart';
 
-
-
 @Component({
   selector: 'app-product-details',
   standalone: true,
@@ -18,73 +17,69 @@ import { Cart } from '../../../../Shared/Interfaces/cart';
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })
-export class ProductDetailsComponent implements OnInit{  
+export class ProductDetailsComponent implements OnInit {
   products: Products[] = [];
   productDetails: any = {};
   relatedProducts: Products[] = [];
   selectedProduct: any;
- isInWishlist: boolean = false;
   cartItems: Cart[] = [];
-  // @Input productItem: Product
-  constructor(private _activatedRoute: ActivatedRoute ,
-    
+
+  constructor(
+    private _activatedRoute: ActivatedRoute,
     private _apiDataService: ApiDataService,
     private msg: ShoppingCartService,
     private wishlistService: WishlistService,
-    private _cartService: ShoppingCartService) { }
+    private _cartService: ShoppingCartService
+  ) { }
+
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe({
       next: (param) => {
         let productId: any = param.get('id');
         this._apiDataService.getProductById(productId).subscribe({
           next: (response) => {
-            this.productDetails = response;           
+            this.productDetails = response;
           }
-        })
+        });
       }
     });
     this._apiDataService.getAllProducts().subscribe({
       next: (response) => {
         this.relatedProducts = response.filter((product: any) => {
           return product.category.name === this.productDetails.category.name;
-        })        
+        });
       }
-    })
+    });
   }
-  quickView(productId: any): void{
-    this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productId);    
+
+  quickView(productId: any): void {
+    this.selectedProduct = this.relatedProducts.find((product: any) => product.id === productId);
   }
-  // handleAddToCart() {
-  //   this.msg.sendMsg(this.productDetails);
-  // }
 
   addToWishlist(product: Products): void {
     if (product) {
       this.wishlistService.addToWishlist(product);
-      this.isInWishlist = true; 
       this.showCustomAlert(`${product.productName} added to wishlist!`);
     } else {
       console.error('Product is undefined');
     }
   }
-  
-  
+
   showCustomAlert(message: string): void {
     const alertBox = document.getElementById('custom-alert');
     const alertMessage = document.getElementById('custom-alert-message');
-  
+
     if (alertBox && alertMessage) {
       alertMessage.textContent = message;
       alertBox.classList.remove('hidden');
       alertBox.classList.add('show');
-  
-     
+
       setTimeout(() => {
         this.hideCustomAlert();
       }, 4000);
     }
   }
-  
+
   hideCustomAlert(): void {
     const alertBox = document.getElementById('custom-alert');
     if (alertBox) {
@@ -92,9 +87,9 @@ export class ProductDetailsComponent implements OnInit{
       alertBox.classList.add('hidden');
     }
   }
-  
+
   addToCart(product: Products, quantity: number): void {
-    this._cartService.addToCart(product, quantity = 1).subscribe  ({
+    this._cartService.addToCart(product, quantity = 1).subscribe({
       next: (newItem) => {
         this.cartItems.push(newItem);
       },
@@ -103,9 +98,11 @@ export class ProductDetailsComponent implements OnInit{
       }
     });
   }
+
   ModalView(productId: any): void {
     this.selectedProduct = this.products.find((product: any) => product.id === productId);
   }
+
   getTotalPrice(): number {
     return this.cartItems.reduce((total, item) => {
       if (item && item.product && item.product.productPrice) {
@@ -114,11 +111,22 @@ export class ProductDetailsComponent implements OnInit{
       return total;
     }, 0);
   }
+
   isInCart(product: Products): boolean {
     return this.cartItems.some(item => item.product.id === product.id);
   }
+
+  toggleWishlist(product: Products): void {
+    if (this.wishlistService.isInWishlist(product)) {
+      this.wishlistService.removeFromWishlist(product);
+      this.showCustomAlert(`${product.productName} removed from wishlist!`);
+    } else {
+      this.wishlistService.addToWishlist(product);
+      this.showCustomAlert(`${product.productName} added to wishlist!`);
+    }
+  }
+
+  isInWishlist(product: Products): boolean {
+    return this.wishlistService.isInWishlist(product);
+  }
 }
-
-
-
-

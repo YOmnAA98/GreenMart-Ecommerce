@@ -121,6 +121,11 @@
 }
 
 
+.heart-green {
+  color: #86BC42 !important;
+}
+
+
 /* wishlist */
 @media screen and (max-width: 575px){
   .details .left-side .carousel-inner lib-ngx-image-zoom{
