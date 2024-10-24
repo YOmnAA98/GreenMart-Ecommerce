@@ -35,10 +35,12 @@ export class MainNavComponent implements OnInit {
       }
     });
 
-    this.loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
-    this.loggedInUserName = localStorage.getItem('loggedInUserName');
-    this.firstName = this.loggedInUserName ? this.loggedInUserName.split(' ')[0] : null;
-    this.isShown = !this.loggedInUserEmail;
+    if(typeof localStorage !== 'undefined'){
+      this.loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
+      this.loggedInUserName = localStorage.getItem('loggedInUserName');
+      this.firstName = this.loggedInUserName ? this.loggedInUserName.split(' ')[0] : null;
+      this.isShown = !this.loggedInUserEmail;
+    }
   }
 
   logout(): void {
