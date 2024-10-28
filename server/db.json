@@ -1225,44 +1225,5 @@
   ],
   "cart": [],
   "wishlist": [],
-  "orders": [
-    {
-      "id": "3338",
-      "cartItems": [
-        {
-          "productId": "24",
-          "quantity": 2,
-          "productName": "Tesco Juicing Orange",
-          "productPrice": 2.29
-        },
-        {
-          "productId": "2",
-          "quantity": 1,
-          "productName": "Strawberry Dairy ",
-          "productPrice": 39.99
-        },
-        {
-          "productId": "3",
-          "quantity": 1,
-          "productName": "Actimel Yoghurt ",
-          "productPrice": 19.99
-        }
-      ],
-      "totalAmount": 64.56,
-      "date": "2024-10-23T15:13:59.307Z",
-      "shippingInfo": {
-        "firstName": "Yomna",
-        "lastName": "Raafat",
-        "email": "yomna.raafat98@gmail.com",
-        "phone": "01065769909",
-        "address": "9-street",
-        "city": "Assuit ",
-        "state": "AST",
-        "country": "EG",
-        "postcode": "71517",
-        "agreement": true
-      },
-      "paymentStatus": "Processing"
-    }
-  ]
+  "orders": []
 }
